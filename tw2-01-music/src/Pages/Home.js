@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <div>
-      HOme page
+      Music Home Page Test page
     </div>
   )
 }
