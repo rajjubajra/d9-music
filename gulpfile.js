@@ -22,4 +22,4 @@ function watchTask(){
 }
 
 //default gulp
-exports.default = series(moveFiles, watchTask);
+exports.default = series(moveFiles);
