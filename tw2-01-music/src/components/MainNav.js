@@ -5,20 +5,22 @@ import {Link} from 'react-router-dom';
 function MainNav() {
 
   const state = useSelector(state => state.reducerNav.nav_data);
+  
 
-  console.log("Nav",state, state.data);
+  console.log("Nav",state);
 
 
   return (
     <div>
       {
-      {/* state.data.length > 0 
+        /*
+      state.data.length > 0 
       ? state.map(item=>{
         const { attribution:{title, url}} = item
         return <Link to={url}>{title}</Link>
       })
-      : "Data not loaded" */}
-        
+      : "Data not loaded" 
+        */
       }
       
     </div>
