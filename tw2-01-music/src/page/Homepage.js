@@ -1,14 +1,9 @@
-import React, {useEffect} from 'react';
-import {action} from '../redux/actions';
-import {useDispatch} from 'react-redux';
+import React from 'react';
+
 
 function Homepage() {
 
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-      dispatch(action());
-  },[dispatch])
+  
 
   return (
     <div>
