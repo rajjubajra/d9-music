@@ -14,15 +14,7 @@ function MainNav() {
 
   return (
     <div>
-      {
-      length > 0 
-      ? state.data.map(item =>{
-        const { attribution:{title, url}} = item
-        return <Link to={url}>{title}</Link>
-      })
-      : "Data not loaded" 
-      
-      }
+      <h1>Main Nav</h1>
       
     </div>
   )
