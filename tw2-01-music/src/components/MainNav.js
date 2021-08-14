@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 function MainNav() {
 
   const state = useSelector(state => state.reducerNav.nav_data);
+  const length = useSelector(state => state.reducerNav.nav_dataLength);
   
 
   console.log("Nav", state);
@@ -14,9 +15,8 @@ function MainNav() {
   return (
     <div>
       {
-        
-      state.data.length > 0 
-      ? state.map(item=>{
+      length > 0 
+      ? state.data.map(item =>{
         const { attribution:{title, url}} = item
         return <Link to={url}>{title}</Link>
       })
