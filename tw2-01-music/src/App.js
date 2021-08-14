@@ -31,13 +31,13 @@ function App() {
         <BrowserRouter>
           <MainNav />
           <Switch>
-            <Route exact path={`/${baseurl}`} component={Homepage} />
-            <Route path={`/${baseurl}/tour`} component={Tour} />
-            <Route path={`/${baseurl}/news`} component={News} />
-            <Route path={`/${baseurl}/about`} component={About} />
-            <Route path={`/${baseurl}/music`} component={Music} />
-            <Route path={`/${baseurl}/gallery`} component={Gallery} />
-            <Route path={`/${baseurl}/form/contact`} component={Contact} />
+            <Route exact path={`${baseurl}`} component={Homepage} />
+            <Route exact path={`${baseurl}/tour`} component={Tour} />
+            <Route exact path={`${baseurl}/news`} component={News} />
+            <Route exact path={`${baseurl}/about`} component={About} />
+            <Route exact path={`${baseurl}/music`} component={Music} />
+            <Route exact path={`${baseurl}/gallery`} component={Gallery} />
+            <Route exact path={`${baseurl}/form/contact`} component={Contact} />
           </Switch>
           
         </BrowserRouter>
