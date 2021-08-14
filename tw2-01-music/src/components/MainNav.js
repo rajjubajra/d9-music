@@ -8,6 +8,7 @@ function MainNav() {
   
 
   console.log("Nav", state);
+  console.log("data nav", state.data );
 
 
   return (

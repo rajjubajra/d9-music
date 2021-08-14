@@ -25,7 +25,7 @@ export const reducerNav = (state = initalStateNav, action) => {
       return {
         nav_data: action.data,
         nav_fetched: true,
-        nav_dataLength: action.data.length
+        nav_dataLength: action.data.nav_data.length
       }
     case actionTypes.MAINMENU_FETCH_ERROR:
       return {
