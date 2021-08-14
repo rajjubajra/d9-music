@@ -24,7 +24,8 @@ function MainNav() {
           newurl[0] = 'd9-music';
           newurl[1] = 'themes';
           newurl[2] = 'tw2-01';
-          console.log("new url",newurl);
+          const useUrl = newurl.join('/');
+          console.log("new url",newurl,"use url",useUrl);
           return <Link className="m-1" to={url}>{title}</Link>
         })
         : 'data not loaded yet'
