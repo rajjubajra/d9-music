@@ -27,11 +27,11 @@ export const action = () => {
    * fetch data from local json file.
    */
   // /** MAIN NAVIGATION */
-  // const NavLocal = './data/mainnav.json';
-  // const NavRemote = `${baseurl.URL}/api/menu_items/main`;
-  // const NAV = window.location.origin === 'http://localhost:3000' 
-  //                   ? NavLocal
-  //                   : NavRemote;
+  const NavLocal = './data/mainnav.json';
+  const NavRemote = `${baseurl.URL}/jsonapi/menu_items/main`;
+  const NAV = window.location.origin === 'http://localhost:3000' 
+                    ? NavLocal
+                    : NavRemote;
 
   /** HOME PAGE */
   const homeUrl = `${baseurl.URL}/jsonapi/media/image?include=field_media_image`;
@@ -40,6 +40,28 @@ export const action = () => {
 
   
   return function (dispatch) {
+
+      /** MAIN MENU  */
+      dispatch({
+        type: actionTypes.MAINMENU_START_FETCHING
+      })
+      const reqNAV= axios.get(NAV, headers)
+      reqNAV.then((res) => {
+          console.log("MAIN MENU",res.data)
+          dispatch({
+            type: actionTypes.MAINMENU_FETCHED,
+            data: res.data
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: actionTypes.MAINMENU_FETCH_ERROR,
+            fetched: false,
+            error: err
+          })
+        })
+
+
 
     /** HOME */
     dispatch({

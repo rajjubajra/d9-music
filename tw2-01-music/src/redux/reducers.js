@@ -1,7 +1,48 @@
 const { actionTypes } = require('./actionTypes');
 
 
-/** NAVIGATION */
+
+
+/** MAIN NAV */
+const initalStateNav = {  
+  nav_fetching: false,
+  nav_fetched: false,
+  nav_fetch_error: '',
+  nav_data: [],
+  nav_dataLength: 0,
+}
+
+export const reducerNav = (state = initalStateNav, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.MAINMENU_START_FETCHING:
+      return {
+        fetching: true,
+        nav_data: []
+      }
+    case actionTypes.MAINMENU_FETCHED:
+      return {
+        nav_data: action.data,
+        nav_fetched: true,
+        nav_dataLength: action.data.length
+      }
+    case actionTypes.MAINMENU_FETCH_ERROR:
+      return {
+        nav_fetched: false,
+        nav_fetching: false,
+        nav_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// MAIN NAV CLOSED
+
+
+/** HOMEPAGE */
 const initalStateHome = {  
   home_fetching: false,
   home_fetched: false,
@@ -37,7 +78,7 @@ export const reducerHomePage = (state = initalStateHome, action) => {
       return state;
   }
 
-}// MAIN NAV CLOSED
+}// Home CLOSED
 
 
 
