@@ -18,9 +18,8 @@ function MainNav() {
       <h1>Main Nav</h1>
       {
         length > 0
-        ? state.map((item, index)=>{
-          const {attributes:{title}} = item;
-          return <Link key={index}>{title}</Link>
+        ? state.map((item, index) =>{
+          return <Link key={index}>{item.attributes.title}</Link>
         })
         : 'data not loaded yet'
       }
