@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import './App.css';
 import Homepage from './page/Homepage';
 import {useDispatch} from 'react-redux';
 import {action} from './redux/actions';
