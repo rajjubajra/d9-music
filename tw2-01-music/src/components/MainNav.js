@@ -19,6 +19,8 @@ function MainNav() {
         length > 0
         ? state.map((item, index) =>{
           const {attributes:{title, url}} = item;
+          const newurl = url.split('/');
+          console.log("new url",newurl);
           return <Link className="m-1" to={url}>{title}</Link>
         })
         : 'data not loaded yet'
