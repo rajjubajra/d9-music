@@ -34,7 +34,7 @@ export const action = () => {
                     : NavRemote;
 
   /** HOME PAGE */
-  const homeUrl = `${baseurl.URL}/jsonapi/media/image?include=field_media_image`;
+  const homeUrl = `${baseurl.URL}/jsonapi/media/image/6a41bf3a-8adb-4a6a-a998-024ae6de1f20?include=field_media_image`;
   const HOME = homeUrl;
   
 
