@@ -14,13 +14,12 @@ function MainNav() {
 
 
   return (
-    <div>
-      <h1>Main Nav</h1>
+    <div className="w-full h-8 bg-gray-50 flex">
       {
         length > 0
         ? state.map((item, index) =>{
           const {attributes:{title, url}} = item;
-          return <Link to={url}>{title}</Link>
+          return <Link className="m-1" to={url}>{title}</Link>
         })
         : 'data not loaded yet'
       }
