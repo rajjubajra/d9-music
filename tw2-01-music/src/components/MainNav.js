@@ -21,8 +21,9 @@ function MainNav() {
           const {attributes:{title, url}} = item;
           /** URL Manupulation in order to multiple use of main manu */
           const newurl = url.split('/');
-          newurl[2] = 'themes';
-          newurl[3] = 'tw2-01';
+          newurl[0] = 'd9-music';
+          newurl[1] = 'themes';
+          newurl[2] = 'tw2-01';
           console.log("new url",newurl);
           return <Link className="m-1" to={url}>{title}</Link>
         })
