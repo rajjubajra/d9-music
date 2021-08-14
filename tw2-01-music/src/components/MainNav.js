@@ -19,7 +19,10 @@ function MainNav() {
       {
         length > 0
         ? state.map(item=>{
-          return item.attributes.title
+          const {attributes:{title, url}} = item;
+          return <div>
+          <Link to={url}>{title}</Link>
+          </div>
         })
         : 'data not loaded yet'
       }
