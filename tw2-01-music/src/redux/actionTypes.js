@@ -1,0 +1,9 @@
+export const actionTypes = {
+
+  HOME_START_FETCHING: 'HOME_START_FETCHING',
+  HOME_FETCHED: 'HOME_FETCHED',
+  HOME_FETCH_ERROR: 'HOME_FETCH_ERROR',
+
+  
+
+}
