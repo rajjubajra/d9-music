@@ -14,7 +14,7 @@ function MainNav() {
 
 
   return (
-    <div className="w-full h-8 bg-gray-50 flex">
+    <div className="w-full h-8 bg-gray-100 flex justify-center align-middle">
       {
         length > 0
         ? state.map((item, index) =>{
