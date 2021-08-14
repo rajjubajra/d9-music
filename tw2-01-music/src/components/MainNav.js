@@ -16,6 +16,13 @@ function MainNav() {
   return (
     <div>
       <h1>Main Nav</h1>
+      {
+        length > 0
+        ? state.map(item=>{
+          return item.attributes.title
+        })
+        : 'data not loaded yet'
+      }
     
     </div>
   )
