@@ -1,9 +1,16 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 
 
 function Homepage() {
 
-  
+
+  const data = useSelector(state => state.reducerHomepage.home_data.data);
+  const included = useSelector(state => state.reducerHomepage.home_data.included);
+
+  console.log("one",data.attributes);
+  console.log("two",data[0].attributes);
+
 
   return (
     <div>
