@@ -18,7 +18,7 @@ function moveFiles(){
 }
 
 function watchTask(){
-  watch('./tw2-01-music/build/*.*');
+  watch('./tw2-01-music/build/**/*.*');
 }
 
 //default gulp
