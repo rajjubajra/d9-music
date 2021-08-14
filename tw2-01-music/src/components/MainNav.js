@@ -10,20 +10,14 @@ function MainNav() {
 
   console.log("Nav", state);
   console.log("data nav", state.data );
+  console.log("data length", state.data.length);
+  console.log("Length:",length);
 
 
   return (
     <div>
       <h1>Main Nav</h1>
-      {
-        state.data.length > 0 
-        ? state.data.map(item=>{
-          const {attributes:{title}} = item;
-          return <Link to="#">{title}</Link>
-        })
-        : "DATA NOT LOADED"
-
-      }
+     
     </div>
   )
 }
