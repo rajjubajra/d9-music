@@ -4,6 +4,7 @@ import Homepage from './page/Homepage';
 import {useDispatch} from 'react-redux';
 import {action} from './redux/actions';
 import MainNav from './components/MainNav';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
 
@@ -20,8 +21,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MainNav />
-        <Homepage />
+        <BrowserRouter>
+          <MainNav />
+          <Homepage />
+        </BrowserRouter>
       </header>
     </div>
   );
