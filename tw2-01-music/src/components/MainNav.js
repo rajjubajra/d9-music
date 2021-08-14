@@ -10,7 +10,7 @@ function MainNav() {
 
   console.log("Nav", state);
   console.log("data nav", state.data );
-  console.log("data length", state.data.length);
+  
   console.log("Length:",length);
 
 
