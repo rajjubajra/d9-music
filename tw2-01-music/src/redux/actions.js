@@ -35,7 +35,7 @@ export const action = () => {
 
   /** HOME PAGE */
   //const homeUrl = `${baseurl.URL}/jsonapi/media/image/6a41bf3a-8adb-4a6a-a998-024ae6de1f20?include=field_media_image`;
-  const homeUrl = `${baseurl.URL}/jsonapi/node/home_page`;
+  const homeUrl = `${baseurl.URL}/jsonapi/node/home_page?include=field_home_main_media,field_home_main_media.field_media_image`;
   const HOME = homeUrl;
 
 
