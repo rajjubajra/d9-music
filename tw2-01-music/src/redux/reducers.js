@@ -80,6 +80,8 @@ export const reducerHomePage = (state = initalStateHome, action) => {
 
 }// Home CLOSED
 
+
+
 /** TOUR PAGE */
 const initalStateTour = {  
   tour_fetching: false,
@@ -120,94 +122,41 @@ export const reducerTour = (state = initalStateTour, action) => {
 
 
 
-// /** BLOG */
-// const initialStateBlog = {
-//  blog_fetching: false,
-//  blog_fetched: false,
-//  blog_fetch_error: '',
-//  blog_data: [],
-//  blog_dataLength: 0
-// }
+/** NEWS PAGE */
+const initalStateNews = {  
+  news_fetching: false,
+  news_fetched: false,
+  news_fetch_error: '',
+  news_data: [],
+  news_dataLength: 0,
+}
 
-// export const reducerBlog = (state = initialStateBlog, action) => {
-  
-//   switch(action.type){
+export const reducerNews = (state = initalStateNews, action) => {
 
-//     case actionTypes.BLOG_START_FETCHING:
-//       return {
-//         blog_fetching: true,
-//         blog_data: []
-//       }
-//     case actionTypes.BLOG_FETCHED:
-//       return {
-//         blog_data: action.data,
-//         blog_fetched: true,
-//         blog_dataLength: action.data.length
-//       }
-//     case actionTypes.BLOG_FETCH_ERROR:
-//       return {
-//         blog_fetched: false,
-//         blog_fetching: false,
-//         blog_fetch_error: action.error
-//       }
-//       /** default state */
-//       default:
-//         return state;
-//   }
-// }
+  switch (action.type) {
 
+    case actionTypes.NEWS_START_FETCHING:
+      return {
+        fetching: true,
+        news_data: []
+      }
+    case actionTypes.NEWS_FETCHED:
+      return {
+        news_data: action.data,
+        news_fetched: true,
+        news_dataLength: action.data.data.length
+      }
+    case actionTypes.NEWS_FETCH_ERROR:
+      return {
+        news_fetched: false,
+        news_fetching: false,
+        news_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
 
-// /** TAXONOMY */
-// const initialStateTaxonomy = {
-//   taxonomy_fetching: false,
-//   taxonomy_fetched: false,
-//   taxonomy_fetch_error: '',
-//   taxonomy_data: [],
-//   taxonomy_dataLength: 0
-// }
-
-// export const reducerTaxonomy = (state = initialStateTaxonomy, action) => {
-  
-//   switch(action.type){
-
-//     case actionTypes.TAXONOMY_START_FETCHING:
-//       return {
-//         taxonomy_fetching: true,
-//         taxonomy_data: []
-//       }
-//     case actionTypes.TAXONOMY_FETCHED:
-//       return {
-//         taxonomy_data: action.data,
-//         taxonomy_fetched: true,
-//         taxonomy_dataLength: action.data.length
-//       }
-//     case actionTypes.TAXONOMY_FETCH_ERROR:
-//       return {
-//         taxonomy_fetched: false,
-//         taxonomy_fetching: false,
-//         taxonomy_fetch_error: action.error
-//       }
-//        /** default state */
-//       default:
-//         return state;
-//   }
-// }
-
-// /** SET BLOG SELECTION FOR THE MONTH OF THE YEAR */
-// const initialStateYearMonth = {
-//   blog_YearMonth: null
-// }
-// export const reducerBlogYearMonth = (state = initialStateYearMonth, action)=>{
-//   switch(action.type){
-//     case actionTypes.SELECTED_YEAR_MONTH:
-//       return {
-//         blog_YearMonth: action.YearMonth
-//       }
-//     default:
-//       return state;
-//   }
-
-// }
-
-
+}// News CLOSED
 

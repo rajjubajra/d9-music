@@ -169,6 +169,48 @@ export const actionTour = () => {
 }// actionTour Closed
 
 
+
+/** NEWS */
+export const actionNews = () => {
+
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+
+  const tourUrl = `${baseurl.URL}/jsonapi/node/news`;
+  const TOUR = tourUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.NEW_START_FETCHING
+  })
+  const reqTour = axios.get(TOUR, headers)
+  reqTour.then((res) => {
+      console.log("action",res.data)
+      dispatch({
+        type: actionTypes.NEW_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.NEW_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+
+  }
+
+}// actionNews Closed
+
+
 export const actionSetYearMonth = (YearMonth) => (
   {
     type: actionTypes.SELECTED_YEAR_MONTH,

@@ -4,7 +4,8 @@ import thunk from 'redux-thunk';
 import {
   reducerNav,
   reducerHomePage,
-  reducerTour
+  reducerTour,
+  reducerNews,
   
   
 } from './reducers';
@@ -14,7 +15,8 @@ const reducer = combineReducers(
     // reducerFetchData,
     reducerNav,
     reducerHomePage,
-    reducerTour
+    reducerTour,
+    reducerNews
   }
 );
 
