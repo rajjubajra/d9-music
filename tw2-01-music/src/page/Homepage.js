@@ -9,8 +9,8 @@ function Homepage() {
   const included = useSelector(state => state.reducerHomePage.home_data.included);
   const length = useSelector(state => state.reducerHomePage.home_dataLength );
 
-  console.log("one",data);
-  console.log("two",included);
+  //console.log("one",data);
+  //console.log("two",included);
 
   const [arr, setArr] = useState();
 
@@ -25,7 +25,7 @@ function Homepage() {
     setArr(newArr);
   },[data, included, length]);
 
-  console.log("new array ",arr);
+  //console.log("new array ",arr);
 
 
 

@@ -29,9 +29,6 @@ export const action = () => {
   const HOME = homeUrl;
 
 
-  const tourUrl = `${baseurl.URL}/jsonapi/node/tour`;
-  const TOUR = tourUrl;
-
 
   
 
@@ -81,25 +78,7 @@ export const action = () => {
       })
 
 
-    /** TOUR */
-    dispatch({
-      type: actionTypes.TOUR_START_FETCHING
-    })
-    const reqTour = axios.get(TOUR, headers)
-    reqTour.then((res) => {
-        console.log("action",res.data)
-        dispatch({
-          type: actionTypes.TOUR_FETCHED,
-          data: res.data
-        })
-      })
-      .catch(err => {
-        dispatch({
-          type: actionTypes.TOUR_FETCH_ERROR,
-          fetched: false,
-          error: err
-        })
-      })  
+     
 
   //   /** BLOG */
   //   dispatch({
@@ -148,6 +127,46 @@ export const action = () => {
   }
 }//ActionAll closed
 
+
+export const actionTour = () => {
+
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+
+  const tourUrl = `${baseurl.URL}/jsonapi/node/tour`;
+  const TOUR = tourUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.TOUR_START_FETCHING
+  })
+  const reqTour = axios.get(TOUR, headers)
+  reqTour.then((res) => {
+      console.log("action",res.data)
+      dispatch({
+        type: actionTypes.TOUR_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.TOUR_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+
+  }
+
+
+}// actionTour Closed
 
 
 export const actionSetYearMonth = (YearMonth) => (
