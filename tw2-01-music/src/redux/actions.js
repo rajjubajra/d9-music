@@ -188,19 +188,19 @@ export const actionNews = () => {
 
   /** TOUR */
   dispatch({
-    type: actionTypes.NEW_START_FETCHING
+    type: actionTypes.NEWS_START_FETCHING
   })
   const reqTour = axios.get(TOUR, headers)
   reqTour.then((res) => {
-      console.log("action",res.data)
+      console.log("action news",res.data)
       dispatch({
-        type: actionTypes.NEW_FETCHED,
+        type: actionTypes.NEWS_FETCHED,
         data: res.data
       })
     })
     .catch(err => {
       dispatch({
-        type: actionTypes.NEW_FETCH_ERROR,
+        type: actionTypes.NEWS_FETCH_ERROR,
         fetched: false,
         error: err
       })
