@@ -20,7 +20,7 @@ function News() {
     
   },[dispatch])
 
-  
+
 
   useEffect(()=>{
 
@@ -35,7 +35,7 @@ function News() {
           const {attributes:{uri}} = inc;    
           return newdata.push({
             title: title, 
-            body: field_news_body.value, 
+            body: field_news_body.processed, 
             data: field_news_date, 
             image: uri.url});
         }
@@ -50,7 +50,18 @@ function News() {
   
   return (
     <div>
-      <h1>News Page</h1>
+      {
+        length > 0 &&
+        arr.map(item=>{
+          return(
+            <div className="m-5">
+              <h1 className="text-2xl">{item.title}</h1>
+              <div><img src={item.image} alt="news" /></div>
+              <div dangerouslySetInnerHTML={{__html: item.body}} />
+            </div>
+          )
+        })
+      }
     </div>
   )
 }
