@@ -35,12 +35,12 @@ function Homepage() {
       
         {
         length > 0 
-        ? data.map(item=>{
-          const {attributes:{title, field_home_body}} = item;
+        ? arr.map(item=>{
           return <div>
-            <h1 className="text-2xl">{title}</h1>
+            <h1 className="text-2xl">{item.title}</h1>
+            <div><img className="w-40" src={item.image} alt="homepage" /></div>
             <div>
-              <div dangerouslySetInnerHTML={{__html: field_home_body.value }}></div>
+              <div dangerouslySetInnerHTML={{__html: item.body }}></div>
             </div>
           </div>
         })
