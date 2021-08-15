@@ -20,19 +20,23 @@ function Gallery() {
 
   useEffect(()=>{
     const data = [];
+
     length > 0 &&
     state.map(item => {
       const {attributes:{title, field_gallery_body}} = item;
+      console.log("loop 1");
+
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
           const {attributes: {uri}} = inc;
+          console.log("loop 2");
           return data.push({title: title, body: field_gallery_body.processed, image: uri.url})
-
         }
-        
       })
-      return setArr(data);
+
+
     })
+    console.log("loop 3")
   },[inc_data, length, state])
 
   console.log("gallery arr",arr);
