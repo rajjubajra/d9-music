@@ -14,7 +14,19 @@ function Homepage() {
 
   return (
     <div>
-      <h1>Test Page</h1>      
+      {
+        data.length > 0 
+        ? data.map(item=>{
+          const {attributes:{title, field_home_body}} = item;
+          return <div>
+            <h1 className="text-2xl">{title}</h1>
+            <div>
+              {field_home_body.value}
+            </div>
+          </div>
+        })
+        : 'Loading...'
+      }    
     </div>
   )
 }
