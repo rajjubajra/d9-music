@@ -14,7 +14,27 @@ function Gallery() {
   const inc_data = useSelector(state => state.reducerGallery.gallery_data.included);
   const length = useSelector(state => state.reducerGallery.gallery_dataLength);
 
+  const [arr, setArr] = useState([]);
+
   console.log("gallery state", state, "include gallery", inc_data,"length", length);
+
+  useEffect(()=>{
+    const data = [];
+    length > 0 &&
+    state.map(item => {
+      const {attributes:{title, field_gallery_body}} = item;
+      inc_data.map(inc => {
+        if(inc.type === 'file--file'){
+          const {attributes: {uri}} = inc;
+          data.push({title: title, body: field_gallery_body.proccessed, image: uri.url})
+        }
+        return setArr(data);
+      })
+    })
+  })
+
+  console.log("gallery arr",arr);
+  
   
   return (
     <div>
