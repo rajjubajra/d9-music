@@ -12,7 +12,7 @@ function Homepage() {
   console.log("one",data);
   console.log("two",included);
 
-  const [arr, setArr] = useState([]);
+  const [arr, setArr] = useState();
 
   useEffect(()=>{
     const newArr = [];
@@ -21,10 +21,10 @@ function Homepage() {
       const {attributes:{title, field_home_body}} = item;
       included.map(inc => {
         const {attributes:{uri}} = inc
-        newArr.push({title: title, body: field_home_body.value, image: uri.url})
+        newArr.push({title: title, body: field_home_body.value, image: uri})
       })
     })
-    setArr(newArr)
+    console.log("new arr",newArr);
   },[data, included, length]);
 
   console.log("new array ",arr);
