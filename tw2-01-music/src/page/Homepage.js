@@ -7,6 +7,7 @@ function Homepage() {
 
   const data = useSelector(state => state.reducerHomePage.home_data.data);
   const included = useSelector(state => state.reducerHomePage.home_data.included);
+  const length = useSelector(state => state.reducerHomePage.home_dataLength );
 
   console.log("one",data);
   console.log("two",included);
@@ -15,7 +16,8 @@ function Homepage() {
   return (
     <div>
       
-        {/* data.length > 0 
+        {
+        length > 0 
         ? data.map(item=>{
           const {attributes:{title, field_home_body}} = item;
           return <div>
@@ -25,7 +27,8 @@ function Homepage() {
             </div>
           </div>
         })
-        : 'Loading...' */}
+        : 'Loading...'
+        }
         
     </div>
   )

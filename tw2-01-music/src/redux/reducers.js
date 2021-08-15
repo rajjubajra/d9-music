@@ -64,7 +64,7 @@ export const reducerHomePage = (state = initalStateHome, action) => {
       return {
         home_data: action.data,
         home_fetched: true,
-        home_dataLength: action.data.length
+        home_dataLength: action.data.data.length
       }
     case actionTypes.HOME_FETCH_ERROR:
       return {
