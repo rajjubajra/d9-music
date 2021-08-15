@@ -23,7 +23,7 @@ function Homepage() {
           return <div>
             <h1 className="text-2xl">{title}</h1>
             <div>
-              {field_home_body.value}
+              <div dangerouslySetInnerHTML={{__html: field_home_body.value }}></div>
             </div>
           </div>
         })
