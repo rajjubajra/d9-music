@@ -178,19 +178,19 @@ export const reducerAbout = (state = initalStateAbout, action) => {
     case actionTypes.ABOUT_START_FETCHING:
       return {
         fetching: true,
-        news_data: []
+        about_data: []
       }
     case actionTypes.ABOUT_FETCHED:
       return {
-        news_data: action.data,
-        news_fetched: true,
-        news_dataLength: action.data.data.length
+        about_data: action.data,
+        about_fetched: true,
+        about_dataLength: action.data.data.length
       }
     case actionTypes.ABOUT_FETCH_ERROR:
       return {
-        news_fetched: false,
-        news_fetching: false,
-        news_fetch_error: action.error
+        about_fetched: false,
+        about_fetching: false,
+        about_fetch_error: action.error
       }
     
     /** default state */
