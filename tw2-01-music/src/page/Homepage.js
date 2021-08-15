@@ -22,7 +22,7 @@ function Homepage() {
       const image = included[1].attributes.uri.url;
         newArr.push({title: title, body: field_home_body.value, image: image})
     })
-    console.log("new arr",newArr);
+    setArr(newArr);
   },[data, included, length]);
 
   console.log("new array ",arr);
