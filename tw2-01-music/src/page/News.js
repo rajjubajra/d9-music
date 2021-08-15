@@ -15,7 +15,14 @@ function News() {
 
   console.log("news",data,"news length", length);
   useEffect(()=>{
+
     dispatch(actionNews());
+    
+  },[dispatch])
+
+  
+
+  useEffect(()=>{
 
     const newdata = [];
     console.log("newdata", newdata);
@@ -36,8 +43,8 @@ function News() {
     })
 
     setArr(newdata);
-    
-  },[data, dispatch, length, inc_data])
+
+  },[data, inc_data, length])
 
   console.log("data arr news", arr);
   
