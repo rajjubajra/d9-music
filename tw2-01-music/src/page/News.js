@@ -25,15 +25,18 @@ function News() {
   useEffect(()=>{
 
     const newdata = [];
+
     console.log("newdata", newdata);
+    
     length > 0 && data.map(item => {
+
       const {attributes:{title, field_news_body, field_news_date}} = item;
       
       inc_data.map(inc => {
 
         if(inc.type === 'file--file'){
           const {attributes:{uri}} = inc;    
-          return newdata.push({
+          newdata.push({
             title: title, 
             body: field_news_body.processed, 
             data: field_news_date, 
