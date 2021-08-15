@@ -147,8 +147,8 @@ export const actionNews = () => {
   }
 
 
-  const tourUrl = `${baseurl.URL}/jsonapi/node/news`;
-  const TOUR = tourUrl;
+  const newsUrl = `${baseurl.URL}/jsonapi/node/news_page?include=field_news_media,field_news_media.field_media_image`;
+  const NEWS = newsUrl;
 
   return function (dispatch) {
 
@@ -156,7 +156,7 @@ export const actionNews = () => {
   dispatch({
     type: actionTypes.NEWS_START_FETCHING
   })
-  const reqTour = axios.get(TOUR, headers)
+  const reqTour = axios.get(NEWS, headers)
   reqTour.then((res) => {
       console.log("action news",res.data)
       dispatch({
