@@ -37,10 +37,19 @@ function About() {
   },[inc_data, length, state])
 
   console.log("Array about data",arr);
-  
+
   return (
     <div>
-      <h1>About Page</h1>
+      {
+        length > 0 &&
+        arr.map(item=>{
+          return <div className="m-12">
+            <h1 className="text-2xl">{item.title}</h1>
+            <div><img className="w-56" src={item.image} alt="" /></div>
+            <div dangerouslySetInnerHTML={{__html: item.body}} />
+          </div>
+        })
+      }
     </div>
   )
 }
