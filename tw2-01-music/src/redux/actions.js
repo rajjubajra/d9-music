@@ -147,7 +147,7 @@ export const actionNews = () => {
   }
 
 
-  const newsUrl = `${baseurl.URL}/jsonapi/node/news?include=field_news_media,field_news_media.field_media_image`;
+  const newsUrl = `${baseurl.URL}/jsonapi/node/news?include=field_news_media,field_news_media.field_media_image&fields[file--file]=filename,uri`;
   const NEWS = newsUrl;
 
   return function (dispatch) {
