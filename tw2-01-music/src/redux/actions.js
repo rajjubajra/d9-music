@@ -217,6 +217,46 @@ export const actionAbout = () => {
 
 
 
+
+/** GALLARY PAGE */
+export const actionGallery = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const galleryUrl = `${baseurl.URL}/jsonapi/node/gallery?include=field_gallery_media,field_gallery_media.field_media_image`;
+  const GALLERY = galleryUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.GALLERY_START_FETCHING
+  })
+  const reqAbout = axios.get(GALLERY, headers)
+  reqAbout.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.GALLERY_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.GALLERY_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+
+}// actionGallery Closed
+
+
+
 export const actionSetYearMonth = (YearMonth) => (
   {
     type: actionTypes.SELECTED_YEAR_MONTH,

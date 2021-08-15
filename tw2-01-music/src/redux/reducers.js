@@ -200,3 +200,43 @@ export const reducerAbout = (state = initalStateAbout, action) => {
 
 }// About CLOSED
 
+
+
+/** GALLERY PAGE */
+const initalStateGallery = {  
+  gallery_fetching: false,
+  gallery_fetched: false,
+  gallery_fetch_error: '',
+  gallery_data: [],
+  gallery_dataLength: 0,
+}
+
+export const reducerGallery = (state = initalStateGallery, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.GALLERY_START_FETCHING:
+      return {
+        fetching: true,
+        gallery_data: []
+      }
+    case actionTypes.GALLERY_FETCHED:
+      return {
+        gallery_data: action.data,
+        gallery_fetched: true,
+        gallery_dataLength: action.data.data.length
+      }
+    case actionTypes.GALLERY_FETCH_ERROR:
+      return {
+        gallery_fetched: false,
+        gallery_fetching: false,
+        gallery_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// Gallery CLOSED
+
