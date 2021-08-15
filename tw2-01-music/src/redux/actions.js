@@ -3,7 +3,7 @@ import axios from "axios";
 import { baseurl } from '../config/config';
 
 
-export const action = () => {
+export const actionNav = () => {
  
   const headers = {
     headers: {
@@ -22,15 +22,6 @@ export const action = () => {
   const NAV = window.location.origin === 'http://localhost:3000' 
                     ? NavLocal
                     : NavRemote;
-
-  /** HOME PAGE */
-  //const homeUrl = `${baseurl.URL}/jsonapi/media/image/6a41bf3a-8adb-4a6a-a998-024ae6de1f20?include=field_media_image`;
-  const homeUrl = `${baseurl.URL}/jsonapi/node/home_page?include=field_home_main_media,field_home_main_media.field_media_image`;
-  const HOME = homeUrl;
-
-
-
-  
 
   
   return function (dispatch) {
@@ -55,77 +46,52 @@ export const action = () => {
           })
         })
 
+  }
+}//ActionNav closed
 
 
-    /** HOME */
+
+/** HOME PAGE  */
+export const actionHome = () => {
+
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const homeUrl = `${baseurl.URL}/jsonapi/node/home_page?include=field_home_main_media,field_home_main_media.field_media_image`;
+  const HOME = homeUrl;
+
+  return function (dispatch) {
+
+ /** HOME */
+ dispatch({
+  type: actionTypes.HOME_START_FETCHING
+})
+const reqHome= axios.get(HOME, headers)
+reqHome.then((res) => {
+    console.log("action",res.data)
     dispatch({
-      type: actionTypes.HOME_START_FETCHING
+      type: actionTypes.HOME_FETCHED,
+      data: res.data
     })
-    const reqHome= axios.get(HOME, headers)
-    reqHome.then((res) => {
-        console.log("action",res.data)
-        dispatch({
-          type: actionTypes.HOME_FETCHED,
-          data: res.data
-        })
-      })
-      .catch(err => {
-        dispatch({
-          type: actionTypes.HOME_FETCH_ERROR,
-          fetched: false,
-          error: err
-        })
-      })
-
-
-     
-
-  //   /** BLOG */
-  //   dispatch({
-  //     type: actionTypes.BLOG_START_FETCHING
-  //   })
-  //   const reqBlog = axios.get(Blog, headers)
-  //   reqBlog.then((res) => {
-  //       console.log("action",res.data)
-  //       dispatch({
-  //         type: actionTypes.BLOG_FETCHED,
-  //         data: res.data
-  //       })
-  //     })
-  //     .catch(err => {
-  //       dispatch({
-  //         type: actionTypes.BLOG_FETCH_ERROR,
-  //         fetched: false,
-  //         error: err
-  //       })
-  //     })
-
-      
-  // /** TAXONOMY */
-  //   dispatch({
-  //     type: actionTypes.TAXONOMY_START_FETCHING
-  //   })
-  //   const reqTaxonomy = axios.get(Taxonomy, headers)
-  //   reqTaxonomy.then((res) => {
-  //       console.log("action",res.data)
-  //       dispatch({
-  //         type: actionTypes.TAXONOMY_FETCHED,
-  //         data: res.data
-  //       })
-  //     })
-  //     .catch(err => {
-  //       dispatch({
-  //         type: actionTypes.TAXONOMY_FETCH_ERROR,
-  //         fetched: false,
-  //         error: err
-  //       })
-  //     })
-
-
-
+  })
+  .catch(err => {
+    dispatch({
+      type: actionTypes.HOME_FETCH_ERROR,
+      fetched: false,
+      error: err
+    })
+  })
 
   }
-}//ActionAll closed
+
+
+}// actionHome Closed
+
+
 
 
 export const actionTour = () => {

@@ -1,10 +1,11 @@
 import React,{useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {actionHome} from '../redux/actions';
 
 
 function Homepage() {
 
-
+  const dispatch = useDispatch();
   const data = useSelector(state => state.reducerHomePage.home_data.data);
   const included = useSelector(state => state.reducerHomePage.home_data.included);
   const length = useSelector(state => state.reducerHomePage.home_dataLength );
@@ -13,6 +14,11 @@ function Homepage() {
   //console.log("two",included);
 
   const [arr, setArr] = useState();
+
+
+  useEffect(()=>{
+      dispatch(actionHome());
+  },[dispatch])
 
   useEffect(()=>{
     const newArr = [];
