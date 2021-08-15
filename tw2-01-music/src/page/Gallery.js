@@ -26,10 +26,12 @@ function Gallery() {
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
           const {attributes: {uri}} = inc;
-          data.push({title: title, body: field_gallery_body.proccessed, image: uri.url})
+          return data.push({title: title, body: field_gallery_body.processed, image: uri.url})
+
         }
-        return setArr(data);
+        
       })
+      return setArr(data);
     })
   },[inc_data, length, state])
 
