@@ -156,8 +156,8 @@ export const actionNews = () => {
   dispatch({
     type: actionTypes.NEWS_START_FETCHING
   })
-  const reqTour = axios.get(NEWS, headers)
-  reqTour.then((res) => {
+  const reqNews = axios.get(NEWS, headers)
+  reqNews.then((res) => {
       console.log("action news",res.data)
       dispatch({
         type: actionTypes.NEWS_FETCHED,
@@ -175,6 +175,46 @@ export const actionNews = () => {
   }
 
 }// actionNews Closed
+
+
+
+/** ABOUT PAGE */
+export const actionAbout = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const aboutUrl = `${baseurl.URL}/jsonapi/node/about`;
+  const ABOUT = aboutUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.ABOUT_START_FETCHING
+  })
+  const req = axios.get(ABOUT, headers)
+  req.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.ABOUT_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.ABOUT_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+
+}// actionABOUT Closed
+
 
 
 export const actionSetYearMonth = (YearMonth) => (

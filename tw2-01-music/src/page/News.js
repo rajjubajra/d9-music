@@ -28,7 +28,8 @@ function News() {
 
     console.log("newdata", newdata);
     
-    length > 0 && data.map(item => {
+    length > 0 && 
+    data.map(item => {
 
       const {attributes:{title, field_news_body, field_news_date}} = item;
       
@@ -36,13 +37,15 @@ function News() {
 
         if(inc.type === 'file--file'){
           const {attributes:{uri}} = inc;    
-          newdata.push({
+          return newdata.push({
             title: title, 
             body: field_news_body.processed, 
             data: field_news_date, 
             image: uri.url});
         }
+
       })
+      
     })
 
     setArr(newdata);
@@ -53,6 +56,7 @@ function News() {
   
   return (
     <div>
+      <h1 className="m-10">Note: Need to check array repeat</h1>
       {
         length > 0 &&
         arr.map(item=>{

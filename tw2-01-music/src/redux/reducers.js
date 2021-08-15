@@ -160,3 +160,43 @@ export const reducerNews = (state = initalStateNews, action) => {
 
 }// News CLOSED
 
+
+
+/** ABOUT PAGE */
+const initalStateAbout = {  
+  about_fetching: false,
+  about_fetched: false,
+  about_fetch_error: '',
+  about_data: [],
+  about_dataLength: 0,
+}
+
+export const reducerAbout = (state = initalStateAbout, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.ABOUT_START_FETCHING:
+      return {
+        fetching: true,
+        news_data: []
+      }
+    case actionTypes.ABOUT_FETCHED:
+      return {
+        news_data: action.data,
+        news_fetched: true,
+        news_dataLength: action.data.data.length
+      }
+    case actionTypes.ABOUT_FETCH_ERROR:
+      return {
+        news_fetched: false,
+        news_fetching: false,
+        news_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// About CLOSED
+

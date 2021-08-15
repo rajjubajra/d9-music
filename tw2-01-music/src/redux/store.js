@@ -6,17 +6,19 @@ import {
   reducerHomePage,
   reducerTour,
   reducerNews,
+  reducerAbout
   
   
 } from './reducers';
 
 const reducer = combineReducers(
   {
-    // reducerFetchData,
+    //reducerFetchData,
     reducerNav,
     reducerHomePage,
     reducerTour,
-    reducerNews
+    reducerNews,
+    reducerAbout
   }
 );
 
