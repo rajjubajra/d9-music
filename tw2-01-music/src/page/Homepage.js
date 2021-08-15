@@ -38,7 +38,7 @@ function Homepage() {
         ? arr.map(item=>{
           return <div>
             <h1 className="text-2xl">{item.title}</h1>
-            <div><img className="w-40" src={item.image} alt="homepage" /></div>
+            <div><img className="w-3/4" src={item.image} alt="homepage" /></div>
             <div>
               <div dangerouslySetInnerHTML={{__html: item.body }}></div>
             </div>
