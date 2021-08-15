@@ -196,8 +196,8 @@ export const actionAbout = () => {
   dispatch({
     type: actionTypes.ABOUT_START_FETCHING
   })
-  const req = axios.get(ABOUT, headers)
-  req.then((res) => {
+  const reqAbout = axios.get(ABOUT, headers)
+  reqAbout.then((res) => {
       console.log("action news",res.data)
       dispatch({
         type: actionTypes.ABOUT_FETCHED,
