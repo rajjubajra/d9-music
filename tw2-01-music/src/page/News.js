@@ -37,18 +37,18 @@ function News() {
 
         if(inc.type === 'file--file'){
           const {attributes:{uri}} = inc;    
-          return newdata.push({
+          newdata.push({
             title: title, 
             body: field_news_body.processed, 
             data: field_news_date, 
             image: uri.url});
         }
-
+        return setArr(newdata);
       })
       
     })
 
-    setArr(newdata);
+    
 
   },[data, inc_data, length])
 
