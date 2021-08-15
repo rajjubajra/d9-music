@@ -187,7 +187,7 @@ export const actionAbout = () => {
     }
   }
 
-  const aboutUrl = `${baseurl.URL}/jsonapi/node/about_page`;
+  const aboutUrl = `${baseurl.URL}/jsonapi/node/about_page?include=field_about_page_media,field_about_page_media.field_media_image`;
   const ABOUT = aboutUrl;
 
   return function (dispatch) {
