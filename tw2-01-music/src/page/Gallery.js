@@ -31,7 +31,7 @@ function Gallery() {
         return setArr(data);
       })
     })
-  })
+  },[inc_data, length, state])
 
   console.log("gallery arr",arr);
   
