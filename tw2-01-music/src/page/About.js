@@ -23,7 +23,7 @@ function About() {
 
     const data = [];
     length > 0 &&
-    state.map(item =>{
+    state.map(item => {
       const {attributes:{title, field_about_page}} = item;
       inc_data.map(inc => {
         if(inc.type === 'file--file'){

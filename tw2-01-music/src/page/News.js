@@ -23,11 +23,7 @@ function News() {
 
 
   useEffect(()=>{
-
     const newdata = [];
-
-    console.log("newdata", newdata);
-    
     length > 0 && 
     data.map(item => {
 
@@ -45,11 +41,7 @@ function News() {
         }
         return setArr(newdata);
       })
-      
     })
-
-    
-
   },[data, inc_data, length])
 
   console.log("data arr news", arr);
