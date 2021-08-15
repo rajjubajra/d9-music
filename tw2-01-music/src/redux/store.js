@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import {
   reducerNav,
   reducerHomePage,
+  reducerTour
   
   
 } from './reducers';
@@ -13,6 +14,7 @@ const reducer = combineReducers(
     // reducerFetchData,
     reducerNav,
     reducerHomePage,
+    reducerTour
   }
 );
 

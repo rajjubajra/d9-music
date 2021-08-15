@@ -13,17 +13,7 @@ export const action = () => {
 
   /**
    * REMOTE SITE
-   * Install Module used
-   * https://www.drupal.org/project/rest_menu_items
-   * 
-   * Enable : Rest UI : Menu Item to GET 
-   * Set Permission : Access GET on Menu items per menu resource
-   * 
-   * 
-   */
-  
-  /**
-   * if npm run on localhost:3000
+   * jsonapi
    * fetch data from local json file.
    */
   // /** MAIN NAVIGATION */
@@ -37,6 +27,10 @@ export const action = () => {
   //const homeUrl = `${baseurl.URL}/jsonapi/media/image/6a41bf3a-8adb-4a6a-a998-024ae6de1f20?include=field_media_image`;
   const homeUrl = `${baseurl.URL}/jsonapi/node/home_page?include=field_home_main_media,field_home_main_media.field_media_image`;
   const HOME = homeUrl;
+
+
+  const tourUrl = `${baseurl.URL}/jsonapi/node/tour`;
+  const TOUR = tourUrl;
 
 
   
@@ -85,6 +79,27 @@ export const action = () => {
           error: err
         })
       })
+
+
+    /** TOUR */
+    dispatch({
+      type: actionTypes.TOUR_START_FETCHING
+    })
+    const reqTour = axios.get(TOUR, headers)
+    reqTour.then((res) => {
+        console.log("action",res.data)
+        dispatch({
+          type: actionTypes.TOUR_FETCHED,
+          data: res.data
+        })
+      })
+      .catch(err => {
+        dispatch({
+          type: actionTypes.TOUR_FETCH_ERROR,
+          fetched: false,
+          error: err
+        })
+      })  
 
   //   /** BLOG */
   //   dispatch({

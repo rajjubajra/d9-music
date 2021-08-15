@@ -80,6 +80,44 @@ export const reducerHomePage = (state = initalStateHome, action) => {
 
 }// Home CLOSED
 
+/** TOUR PAGE */
+const initalStateTour = {  
+  tour_fetching: false,
+  tour_fetched: false,
+  tour_fetch_error: '',
+  tour_data: [],
+  tour_dataLength: 0,
+}
+
+export const reducerTour = (state = initalStateTour, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.TOUR_START_FETCHING:
+      return {
+        fetching: true,
+        tour_data: []
+      }
+    case actionTypes.TOUR_FETCHED:
+      return {
+        tour_data: action.data,
+        tour_fetched: true,
+        tour_dataLength: action.data.data.length
+      }
+    case actionTypes.TOUR_FETCH_ERROR:
+      return {
+        tour_fetched: false,
+        tour_fetching: false,
+        tour_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// Tour CLOSED
+
 
 
 // /** BLOG */
