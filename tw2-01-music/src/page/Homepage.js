@@ -14,8 +14,8 @@ function Homepage() {
 
   return (
     <div>
-      {
-        data.length > 0 
+      
+        {/* data.length > 0 
         ? data.map(item=>{
           const {attributes:{title, field_home_body}} = item;
           return <div>
@@ -25,8 +25,8 @@ function Homepage() {
             </div>
           </div>
         })
-        : 'Loading...'
-      }    
+        : 'Loading...' */}
+        
     </div>
   )
 }
