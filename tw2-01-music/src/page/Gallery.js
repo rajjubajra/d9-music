@@ -29,13 +29,14 @@ function Gallery() {
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
           const {attributes: {uri}, id} = inc;
-          console.log("loop 2");
+          data.some(function(i){return i["id"] !== id}) && console.log("loop 2");
           /** in order to avoide repeat loop */
           return data.some(function(i){return i["id"] !== id}) &&
           data.push({id: id, title: title, body: field_gallery_body.processed, image: uri.url})
         }
       })
     })
+    setArr(data);
     console.log("loop 3")
   },[inc_data, length, state])
 
