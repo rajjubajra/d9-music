@@ -7,7 +7,8 @@ import {
   reducerTour,
   reducerNews,
   reducerAbout,
-  reducerGallery
+  reducerGallery,
+  reducerMusic,
   
   
 } from './reducers';
@@ -20,7 +21,8 @@ const reducer = combineReducers(
     reducerTour,
     reducerNews,
     reducerAbout,
-    reducerGallery
+    reducerGallery,
+    reducerMusic
 
     
   }
