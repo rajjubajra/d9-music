@@ -257,6 +257,47 @@ export const actionGallery = () => {
 
 
 
+/** MUSIC PAGE */
+export const actionMusic = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const musicUrl = `${baseurl.URL}/jsonapi/node/music?include=field_music_media,field_music_media.field_media_image,field_music_media.field_media_audio, field_music_media.field_media_remote_video`;
+  const MUSIC = musicUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.MUSIC_START_FETCHING
+  })
+  const reqAbout = axios.get(MUSIC, headers)
+  reqAbout.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.MUSIC_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.MUSIC_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+
+}// actionMusic Closed
+
+
+
+
+
 export const actionSetYearMonth = (YearMonth) => (
   {
     type: actionTypes.SELECTED_YEAR_MONTH,

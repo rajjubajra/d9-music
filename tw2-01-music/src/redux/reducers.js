@@ -240,3 +240,43 @@ export const reducerGallery = (state = initalStateGallery, action) => {
 
 }// Gallery CLOSED
 
+
+
+
+/** MUSIC PAGE */
+const initalStateMusic = {  
+  music_fetching: false,
+  music_fetched: false,
+  music_fetch_error: '',
+  music_data: [],
+  music_dataLength: 0,
+}
+
+export const reducerMusic = (state = initalStateMusic, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.MUSIC_START_FETCHING:
+      return {
+        fetching: true,
+        music_data: []
+      }
+    case actionTypes.MUSIC_FETCHED:
+      return {
+        music_data: action.data,
+        music_fetched: true,
+        music_dataLength: action.data.data.length
+      }
+    case actionTypes.MUSIC_FETCH_ERROR:
+      return {
+        music_fetched: false,
+        music_fetching: false,
+        music_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// Gallery CLOSED
