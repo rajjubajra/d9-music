@@ -20,7 +20,6 @@ function Gallery() {
 
   useEffect(()=>{
     const data = [];
-    console.log("DATA",data);
     length > 0 &&
     state.map(item => {
       const {attributes:{title, field_gallery_body}} = item;
@@ -28,13 +27,11 @@ function Gallery() {
 
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
-          const {attributes: {uri}} = inc;
-          
+          const {attributes: {uri}} = inc;  
           /** in order to avoide repeat loop */
           const hasId = data.some(key => key.id === inc.id);
-          console.log(hasId);
-          !hasId && 
-          data.push({
+          //console.log(hasId);
+          !hasId && data.push({
             id: inc.id, 
             title: title, 
             body: field_gallery_body.processed, 
@@ -43,7 +40,6 @@ function Gallery() {
       })
     })
     setArr(data);
-    console.log("loop 3")
   },[inc_data, length, state])
 
   console.log("gallery arr",arr);
@@ -51,7 +47,17 @@ function Gallery() {
   
   return (
     <div>
-      <h1>Gallery Page</h1>
+      {
+        arr.map(item=>{
+          return(
+            <div key={item.id} className="m-12">
+                <h1>{item.title}</h1>
+                <div><img src={item.image} alt="gallery" /></div>
+                <div dangerouslySetInnerHTML={{__html: item.body}} />
+            </div>
+          )
+        })
+      }
     </div>
   )
 
