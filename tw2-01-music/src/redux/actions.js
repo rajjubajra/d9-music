@@ -266,7 +266,7 @@ export const actionMusic = () => {
     }
   }
 
-  const musicUrl = `${baseurl.URL}/jsonapi/node/music_album?include=field_music_album_media,field_music_album_media.field_media_image,field_music_album_media.field_media_audio, field_music_album_media.field_media_remote_video`;
+  const musicUrl = `${baseurl.URL}/jsonapi/node/music_album?include=field_music_audio,field_music_audio.field_media_audio_file,field_music_image.field_media_image`;
   const MUSIC = musicUrl;
 
   return function (dispatch) {
