@@ -52,7 +52,7 @@ function Gallery() {
           return(
             <div key={item.id} className="m-12">
                 <h1>{item.title}</h1>
-                <div><img src={item.image} alt="gallery" /></div>
+                <div><img className="w-64" src={item.image} alt="gallery" /></div>
                 <div dangerouslySetInnerHTML={{__html: item.body}} />
             </div>
           )
