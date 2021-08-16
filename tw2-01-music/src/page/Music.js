@@ -13,6 +13,8 @@ function Music() {
     dispatch(actionMusic());
   },[dispatch])
 
+  console.log(state, inc_data, length);
+
   const [arr, setArr] = useState([]);
 
   useEffect(() => {
