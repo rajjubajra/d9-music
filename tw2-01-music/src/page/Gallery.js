@@ -31,8 +31,10 @@ function Gallery() {
           const {attributes: {uri}} = inc;
           
           /** in order to avoide repeat loop */
-          console.log("include",data.id.includes(inc.id));
-          console.log("index of",data.id.indexOf(inc.id));
+          console.log("include",data.includes(inc.id));
+          console.log("index of",data.indexOf(inc.id));
+          console.log("find", data.find(opt =>  opt.id))
+          console.log("every", data.every(opt =>  opt.id))
           data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
         }
       })
