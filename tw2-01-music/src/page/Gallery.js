@@ -29,10 +29,13 @@ function Gallery() {
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
           const {attributes: {uri}} = inc;
-          console.log(data.some(function(i){return i['id'] === inc.id}));
-          data.some(function(i){return i["id"] !== inc.id}) && console.log("loop 2");
+          
           /** in order to avoide repeat loop */
-          return data.some(function(i){return i["id"] !== inc.id}) &&
+          const dataHasId = data.some(operative => data.id !== inc.id)
+          console.log(dataHasId);
+          dataHasId && console.log("loop 2");
+          
+          return dataHasId &&
           data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
         }
       })
