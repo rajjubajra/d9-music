@@ -31,7 +31,7 @@ function Gallery() {
           const {attributes: {uri}} = inc;
           
           /** in order to avoide repeat loop */
-          const dataHasId = data.some(operative => operative.id !==  inc.id);
+          const dataHasId = data.some(operative => operative.id);
           console.log(dataHasId);
           dataHasId && console.log("loop 2");
           data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
