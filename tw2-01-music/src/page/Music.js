@@ -18,14 +18,14 @@ function Music() {
   const [arr, setArr] = useState([]);
 
   useEffect(() => {
-
     const data = [];
-    console.log("data arr",data);
     length > 0 &&
     state.map(item => {
-        const {attributes:{title,field_music_body}} = item;
-        data.push({title: "title"});
-    })
+        const {atributes:{title}} = item;
+        return data.push({title: title});
+    },[])
+
+    
   },[length, state])
 
 
