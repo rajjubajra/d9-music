@@ -33,8 +33,8 @@ function Gallery() {
           /** in order to avoide repeat loop */
           const dataHasId = data.some(operative => operative.id);
           console.log(dataHasId);
-          dataHasId && console.log("loop 2");
-          data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
+          !dataHasId && console.log("loop 2");
+          !dataHasId && data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
         }
       })
     })
