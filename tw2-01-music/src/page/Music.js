@@ -21,9 +21,9 @@ function Music() {
     const data = [];
     length > 0 &&
     state.map(item => {
-        const {atributes:{title}} = item;
+        const {attributes:{title}} = item;
         return data.push({title: title});
-    },[])
+    })
 
     
   },[length, state])
