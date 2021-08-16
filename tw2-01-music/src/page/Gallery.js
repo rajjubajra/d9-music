@@ -31,9 +31,13 @@ function Gallery() {
           const {attributes: {uri}} = inc;
           
           /** in order to avoide repeat loop */
-          const dataHasId = data.index(p => p.id === inc.id);
-          console.log(dataHasId);
-          data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
+          const hasId = data.some(key => key.id === inc.id);
+          console.log(hasId);
+          data.push({
+            id: inc.id, 
+            title: title, 
+            body: field_gallery_body.processed, 
+            image: uri.url})
         }
       })
     })
