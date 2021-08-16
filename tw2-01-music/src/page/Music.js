@@ -24,7 +24,7 @@ function Music() {
     length > 0 &&
     state.map(item => {
         const {attributes:{title,field_music_body}} = item;
-        data.push({title: title, body: field_music_body.processed});
+        data.push({title: "title"});
     })
   },[length, state])
 
