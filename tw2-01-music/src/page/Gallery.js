@@ -28,12 +28,12 @@ function Gallery() {
 
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
-          const {attributes: {uri}, id} = inc;
-          console.log(data.some(function(i){return i["id"] === id}));
-          data.some(function(i){return i["id"] !== id}) && console.log("loop 2");
+          const {attributes: {uri}} = inc;
+          console.log(data.some(function(i){return i['id'] === inc.id}));
+          data.some(function(i){return i["id"] !== inc.id}) && console.log("loop 2");
           /** in order to avoide repeat loop */
-          return data.some(function(i){return i["id"] !== id}) &&
-          data.push({id: id, title: title, body: field_gallery_body.processed, image: uri.url})
+          return data.some(function(i){return i["id"] !== inc.id}) &&
+          data.push({id: inc.id, title: title, body: field_gallery_body.processed, image: uri.url})
         }
       })
     })
