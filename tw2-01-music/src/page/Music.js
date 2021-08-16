@@ -21,9 +21,12 @@ function Music() {
     const data = [];
     length > 0 &&
     state.map(item => {
-        const {attributes:{title}} = item;
-        return data.push({title: title});
+        const {attributes:{title, field_music_body}} = item;
+        const {relationships:{field_music_audio:{data}}} = item;
+        return data.push({title: title, body: field_music_body.processed, data: data});
     })
+
+    console.log(data);
 
     
   },[length, state])
