@@ -20,7 +20,7 @@ function Gallery() {
 
   useEffect(()=>{
     const data = [];
-
+    console.log("DATA",data);
     length > 0 &&
     state.map(item => {
       const {attributes:{title, field_gallery_body}} = item;
@@ -29,6 +29,7 @@ function Gallery() {
       inc_data.map(inc => {
         if(inc.type === 'file--file'){
           const {attributes: {uri}, id} = inc;
+          console.log(data.some(function(i){return i["id"] !== id}));
           data.some(function(i){return i["id"] !== id}) && console.log("loop 2");
           /** in order to avoide repeat loop */
           return data.some(function(i){return i["id"] !== id}) &&
