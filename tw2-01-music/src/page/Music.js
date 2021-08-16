@@ -17,7 +17,7 @@ function Music() {
 
   useEffect(()=>{
     const data = [];
-    console.log(data);
+    console.log("data arr",data);
     length > 0 &&
     state.map(item => {
         const {attributes:{title,field_music_body}, relationships:{field_music_audio:{data}}} = item;
