@@ -33,6 +33,7 @@ function Gallery() {
           /** in order to avoide repeat loop */
           const hasId = data.some(key => key.id === inc.id);
           console.log(hasId);
+          !hasId && 
           data.push({
             id: inc.id, 
             title: title, 
