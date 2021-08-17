@@ -9,6 +9,9 @@ import {
   reducerAbout,
   reducerGallery,
   reducerMusic,
+  reducerMediaAudio,
+  reducerMediaImage,
+  reducerMediaRemoteVideo
   
   
 } from './reducers';
@@ -22,8 +25,10 @@ const reducer = combineReducers(
     reducerNews,
     reducerAbout,
     reducerGallery,
-    reducerMusic
-
+    reducerMusic,
+    reducerMediaAudio,
+    reducerMediaImage,
+    reducerMediaRemoteVideo
     
   }
 );

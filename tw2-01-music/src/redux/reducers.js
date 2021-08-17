@@ -279,4 +279,124 @@ export const reducerMusic = (state = initalStateMusic, action) => {
       return state;
   }
 
-}// Gallery CLOSED
+}// Music CLOSED
+
+
+
+/** MEDIA AUDIO */
+const initalStateMediaAudio = {  
+  media_audio_fetching: false,
+  media_audio_fetched: false,
+  media_audio_fetch_error: '',
+  media_audio_data: [],
+  media_audio_dataLength: 0,
+}
+
+export const reducerMediaAudio = (state = initalStateMediaAudio, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.MEDIA_AUDIO_START_FETCHING:
+      return {
+        fetching: true,
+        media_audio_data: []
+      }
+    case actionTypes.MEDIA_AUDIO_FETCHED:
+      return {
+        media_audio_data: action.data,
+        media_audio_fetched: true,
+        media_audio_dataLength: action.data.data.length
+      }
+    case actionTypes.MEDIA_AUDIO_FETCH_ERROR:
+      return {
+        media_audio_fetched: false,
+        media_audio_fetching: false,
+        media_audio_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// Media Audio CLOSED
+
+
+
+/** MEDIA IMAGE */
+const initalStateMediaImage = {  
+  media_image_fetching: false,
+  media_image_fetched: false,
+  media_image_fetch_error: '',
+  media_image_data: [],
+  media_image_dataLength: 0,
+}
+
+export const reducerMediaImage = (state = initalStateMediaImage, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.MEDIA_IMAGE_START_FETCHING:
+      return {
+        fetching: true,
+        media_image_data: []
+      }
+    case actionTypes.MEDIA_IMAGE_FETCHED:
+      return {
+        media_image_data: action.data,
+        media_image_fetched: true,
+        media_image_dataLength: action.data.data.length
+      }
+    case actionTypes.MEDIA_IMAGE_FETCH_ERROR:
+      return {
+        media_image_fetched: false,
+        media_image_fetching: false,
+        media_image_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// Media IMAGE CLOSED
+
+
+
+/** MEDIA REMOTE VIDEO */
+const initalStateMediaRemoteVideo = {  
+  media_remote_video_fetching: false,
+  media_remote_video_fetched: false,
+  media_remote_video_fetch_error: '',
+  media_remote_video_data: [],
+  media_remote_video_dataLength: 0,
+}
+
+export const reducerMediaRemoteVideo = (state = initalStateMediaRemoteVideo, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.MEDIA_REMOTE_VIDEO_START_FETCHING:
+      return {
+        fetching: true,
+        media_remote_video_data: []
+      }
+    case actionTypes.MEDIA_REMOTE_VIDEO_FETCHED:
+      return {
+        media_remote_video_data: action.data,
+        media_remote_video_fetched: true,
+        media_remote_video_dataLength: action.data.data.length
+      }
+    case actionTypes.MEDIA_REMOTE_VIDEO_FETCH_ERROR:
+      return {
+        media_remote_video_fetched: false,
+        media_remote_video_fetching: false,
+        media_remote_video_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// Media REMOTE VIDEO CLOSED

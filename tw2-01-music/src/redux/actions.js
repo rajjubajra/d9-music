@@ -295,6 +295,116 @@ export const actionMusic = () => {
 }// actionMusic Closed
 
 
+/** MEDIA AUDIO PAGE */
+export const actionMediaAudio = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const audioUrl = `${baseurl.URL}/jsonapi/media/audio?include=field_media_audio_file&field[file--file]=id,filename,uri`;
+  const AUDIO = audioUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.MEDIA_AUDIO_START_FETCHING
+  })
+  const reqAudio = axios.get(AUDIO, headers)
+  reqAudio.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.MEDIA_AUDIO_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.MEDIA_AUDIO_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+
+}// actionMediaAudio Closed
+
+
+/** MEDIA IMAGE PAGE */
+export const actionMediaImage = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const imageUrl = `${baseurl.URL}/jsonapi/media/image?include=field_media_image_file&field[file--file]=id,filename,uri`;
+  const IMAGE = imageUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.MEDIA_IMAGE_START_FETCHING
+  })
+  const reqImage = axios.get(IMAGE, headers)
+  reqImage.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.MEDIA_IMAGE_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.MEDIA_IMAGE_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+}// actionMediaImage Closed
+
+
+/** MEDIA REMOTE VIDEO PAGE */
+export const actionMediaRemoteVideo = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const imageUrl = `${baseurl.URL}/jsonapi/media/remote_video?include=field_media_remote_video_file&field[file--file]=id,filename,uri`;
+  const REMOTE_VIDEO = imageUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.MEDIA_REMOTE_VIDEO_START_FETCHING
+  })
+  const reqImage = axios.get(REMOTE_VIDEO, headers)
+  reqImage.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.MEDIA_REMOTE_VIDEO_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.MEDIA_REMOTE_VIDEO_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+}// actionMediaRemoteVideo Closed
 
 
 
