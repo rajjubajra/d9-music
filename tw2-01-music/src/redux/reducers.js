@@ -298,7 +298,7 @@ export const reducerMediaAudio = (state = initalStateMediaAudio, action) => {
 
     case actionTypes.MEDIA_AUDIO_START_FETCHING:
       return {
-        fetching: true,
+        media_audio_fetching: true,
         media_audio_data: []
       }
     case actionTypes.MEDIA_AUDIO_FETCHED:
