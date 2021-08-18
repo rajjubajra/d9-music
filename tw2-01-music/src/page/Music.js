@@ -12,34 +12,40 @@ function Music() {
   const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
   const audioLength = useSelector(state => state.reducerMediaAudio.media_audio_dataLength);
 
+  const [newArr, setNewArr] = useState([]); 
   
+
   useEffect(()=>{
     dispatch(actionMusic());
     dispatch(actionMediaAudio());
   },[dispatch])
 
+  
   console.log(state, inc_data, length, mediaAudio);
 
-  
 
-  useEffect(() => {
-    const newData = [];
-
-    newData = length > 0 &&
-    state.map((item) => {
+  function mergeArrObject(arr1, arr2, lng1, lng2){
+    lng1 > 0 && lng2 &&
+    arr1.map((item) => {
         //const {attributes:{title, field_music_body}} = item;
         const {relationships:{field_music_audio:{data}}} = item;
         data.map((dt, index) => {
-          if(dt.id === mediaAudio[index]){
-            return Object.assign({},item, mediaAudio[index]);
+          if(dt.id === arr2[index]){
+            return Object.assign({},item, arr2[index]);
           } 
         })
     })
+  }
+
+  useEffect(() => {
     
-    console.log(newData);
 
-  },[length, mediaAudio, state])
+    setNewArr(mergeArrObject(state, mediaAudio, length, audioLength));
 
+
+  },[length, mediaAudio, state, audioLength])
+
+  console.log("NEW ARRAY",newArr);
 
   return (
     <div>
