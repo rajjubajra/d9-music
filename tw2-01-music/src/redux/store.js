@@ -9,6 +9,7 @@ import {
   reducerAbout,
   reducerGallery,
   reducerMusic,
+  
   reducerMediaAudio,
   reducerMediaImage,
   reducerMediaRemoteVideo
@@ -26,6 +27,7 @@ const reducer = combineReducers(
     reducerAbout,
     reducerGallery,
     reducerMusic,
+    
     reducerMediaAudio,
     reducerMediaImage,
     reducerMediaRemoteVideo
