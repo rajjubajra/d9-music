@@ -6,7 +6,7 @@ function Music() {
   
   const dispatch = useDispatch();
   const state = useSelector(state => state.reducerMusic.music_data.data);
-  const mediaAudio = useSelector(state.reducerMediaAudio.media_audio_data );
+  const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
   const inc_data = useSelector(state => state.reducerMusic.music_data.included);
   const length = useSelector(state => state.reducerMusic.music_dataLength);
   
