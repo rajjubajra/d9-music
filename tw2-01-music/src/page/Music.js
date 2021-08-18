@@ -23,29 +23,38 @@ function Music() {
   
   console.log(state, inc_data, length, mediaAudio);
 
+  // const Arr =  lng1 > 0 && lng2 &&
+  //   arr1.map((item) => {
+  //       //const {attributes:{title, field_music_body}} = item;
+  //       const {relationships:{field_music_audio:{data}}} = item;
+  //       data.map((dt, index) => {
+  //         if(dt.id === arr2[index]){
+  //           return Object.assign({},item, arr2[index]);
+  //         } 
+  //       })
+  //   })
+  // }
 
-  function mergeArrObject(arr1, arr2, lng1, lng2){
-    lng1 > 0 && lng2 &&
-    arr1.map((item) => {
-        //const {attributes:{title, field_music_body}} = item;
-        const {relationships:{field_music_audio:{data}}} = item;
-        data.map((dt, index) => {
-          if(dt.id === arr2[index]){
-            return Object.assign({},item, arr2[index]);
-          } 
-        })
+  function mergeArrayObjects(arr1,arr2){
+    return arr1.map((item,i) => {
+      if(item.id === arr2[i].id){
+           //merging two objects
+        return Object.assign({},item,arr2[i]);
+      }
     })
   }
 
   useEffect(() => {
-    
 
-    setNewArr(mergeArrObject(state, mediaAudio, length, audioLength));
-
+    const Arr = length > 0 && audioLength > 0 &&
+    state.map(item => {
+        const {relationships:{field_music_audio:{data}}} = item;
+        return mergeArrayObjects(data,mediaAudio);
+    })
+  
+    console.log("ARR +: ",Arr);
 
   },[length, mediaAudio, state, audioLength])
-
-  console.log("NEW ARRAY",newArr);
 
   return (
     <div>
