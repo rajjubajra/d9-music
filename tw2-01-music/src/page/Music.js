@@ -86,7 +86,7 @@ function Music() {
       arr.push({
         id: item.id,
         title: title, 
-        body: field_music_body,
+        body: field_music_body.processed,
         data: mergeArrayObjects(data, audioData)
       });
     })
@@ -106,10 +106,10 @@ function Music() {
       {
         viewData.length > 0 &&
         viewData.map((item)=>{
-          const {id, title} = item;
+          const {id, title, body } = item;
           return <div key={id}>
             <h2>{title}</h2>
-        
+            <div dangerouslySetInnerHTML={{__html: body}} />
           </div>
         })
       }
