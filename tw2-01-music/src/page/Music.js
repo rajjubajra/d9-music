@@ -41,12 +41,12 @@ function Music() {
 
     mediaAudioLength > 0 &&
     mediaAudio.map(item => {
-      const {id} = item;
+      const {id, field_audio_title} = item;
       mediaAudioInc.map(inc => {
-        const {attributes:{filemime, filename,filesize,uri}} = inc;
+        const {attributes:{filemime, filename,filesize, uri}} = inc;
         /** stop re-looping push if "id" exists */
         const hasId = audio.some(key => key.id === id);
-        return !hasId && audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
+        return !hasId && audio.push({id: id, title:field_audio_title, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
       })
     })
     
@@ -99,7 +99,7 @@ function Music() {
 
 
   console.log("view Data", viewData, "vlength ",viewData.length );
-  
+
   return (
     <div>
       <h1>Music Page</h1>
