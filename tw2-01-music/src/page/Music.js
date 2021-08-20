@@ -57,22 +57,22 @@ function Music() {
   }
 
 
-  // useEffect(()=>{
-  //   const audio = [];
-  //   console.log("audio arr: ",audio);
+  useEffect(()=>{
+    const audio = [];
+    console.log("audio arr: ",audio);
 
-  //   mediaAudioLength > 0 &&
-  //   mediaAudio.map(item=> {
-  //     const {attributes:{id}} = item;
-  //     mediaAudioInc.map(inc => {
-  //       const {attributes:{filemime, filename,filesize,uri}} = inc;
-  //       audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
-  //     })
-  //   })
+    mediaAudioLength > 0 &&
+    mediaAudio.map(item => {
+      const {attributes:{id}} = item;
+      mediaAudioInc.map(inc => {
+        const {attributes:{filemime, filename,filesize,uri}} = inc;
+        audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
+      })
+    })
 
-  //   setAudiData(audio);
+    setAudiData(audio);
 
-  // },[mediaAudio, mediaAudioInc, mediaAudioLength])
+  },[mediaAudio, mediaAudioInc, mediaAudioLength])
  
   
 
