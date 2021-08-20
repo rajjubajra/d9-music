@@ -6,12 +6,9 @@ function Music() {
   
   const dispatch = useDispatch();
 
-
   const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
   const mediaAudioInc = useSelector(state => state.reducerMediaAudio.media_audio_data.includec);
   const mediaAudioLength = useSelector(state => state.reducerMediaAudio.media_audio_dataLength);
-
-
 
   const state = useSelector(state => state.reducerMusic.music_data.data);
   const inc_data = useSelector(state => state.reducerMusic.music_data.included);
@@ -29,7 +26,7 @@ function Music() {
   },[dispatch])
 
   
-  console.log("medial audo length: ?",mediaAudioLength);
+  console.log(mediaAudio, mediaAudioInc,mediaAudioLength);
 
 
   console.log(state, inc_data, length);
@@ -57,23 +54,22 @@ function Music() {
   }
 
 
-  // useEffect(()=>{
-  //   const audio = [];
-  //   console.log("audio arr: ",audio);
+  useEffect(()=>{
+    const audio = [];
+    console.log("audio arr: ",audio);
 
-  //   mediaAudioLength > 0 &&
-  //   mediaAudio.map(item => {
-  //     const {attributes:{id}} = item;
-  //     mediaAudioInc.map(inc => {
-  //       const {attributes:{filemime, filename,filesize,uri}} = inc;
-  //       audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
-  //     })
-  //   })
+    mediaAudio.length > 0 &&
+    mediaAudio.map(item => {
+      const {attributes:{id}} = item;
+      mediaAudioInc.map(inc => {
+        const {attributes:{filemime, filename,filesize,uri}} = inc;
+        audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
+      })
+    })
+    
+    setAudiData(audio);
 
-  //   setAudiData(audio);
-
-  // },[mediaAudio, mediaAudioInc, mediaAudioLength])
- 
+  },[mediaAudio, mediaAudioInc, mediaAudioLength])
   
 
 
