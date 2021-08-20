@@ -68,7 +68,8 @@ function Music() {
   useEffect(()=>{
     const arr = [];
     console.log("final array",arr);
-    musicDataLength > 0 && audioData.length > 0 &&
+    
+    musicDataLength > 0 && audioData.length > 0 ?
     musicData.map((item)=>{
       const {attributes:{title, field_music_body}} = item;
       const {relationships:{field_music_audio:{data}}} = item;
@@ -78,6 +79,7 @@ function Music() {
         data: mergeArrayObjects(data, audioData)
       });
     })
+    : arr.push({title: 'none'})
 
     
 
