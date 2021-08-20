@@ -5,13 +5,19 @@ import {actionMusic, actionMediaAudio} from '../redux/actions';
 function Music() {
   
   const dispatch = useDispatch();
+
+
+  const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
+  const mediaAudioInc = useSelector(state => state.reducerMediaAudio.media_audio_data.includec);
+  const mediaAudioLength = useSelector(state => state.reducerMediaAudio.media_audio_dataLength);
+
+
+
   const state = useSelector(state => state.reducerMusic.music_data.data);
   const inc_data = useSelector(state => state.reducerMusic.music_data.included);
   const length = useSelector(state => state.reducerMusic.music_dataLength);
   
-  const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
-  const mediaAudioInc = useSelector(state => state.reducerMediaAudio.media_audio_data.includec);
-  const mediaAudioLength = useSelector(state => state.reducerMediaAudio.media_audio_dataLength);
+  
 
   const [newArr, setNewArr] = useState([]); 
   const [audioData, setAudiData] = useState([]);
@@ -63,28 +69,8 @@ function Music() {
     setAudiData(audio);
 
   },[mediaAudio, mediaAudioInc, mediaAudioLength])
-
-
-
-
-  useEffect(() => {
-
-    const Arr = [];
-
-    length > 0 &&
-    state.map(item => {
-        const {attributes:{title,field_music_body}} = item;
-        const {relationships:{field_music_audio:{data}}} = item;
-        Arr.push({
-          title: title, 
-          body: field_music_body, 
-          data:mergeArrayObjects(data, audioData)
-        })
-    })
+ 
   
-    console.log("ARR +: ", Arr);
-
-  },[length, state, audioData])
 
 
   console.log("Audio data +: ",audioData);  
