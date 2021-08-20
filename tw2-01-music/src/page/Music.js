@@ -60,7 +60,7 @@ function Music() {
 
     mediaAudioLength > 0 &&
     mediaAudio.map(item => {
-      const {attributes:{id}} = item;
+      const {id} = item;
       mediaAudioInc.map(inc => {
         const {attributes:{filemime, filename,filesize,uri}} = inc;
         return audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
