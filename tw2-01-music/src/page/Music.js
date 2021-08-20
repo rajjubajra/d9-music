@@ -6,19 +6,25 @@ function Music() {
   
   const dispatch = useDispatch();
 
+  /** DRUPAL MEDIA LIBRARY FILE DATA */
   const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
   const mediaAudioInc = useSelector(state => state.reducerMediaAudio.media_audio_data.included);
   const mediaAudioLength = useSelector(state => state.reducerMediaAudio.media_audio_dataLength);
 
+
+  /** DRUPAL DATA CREATED BY CONTENT TYPE */
   const musicData = useSelector(state => state.reducerMusic.music_data.data);
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
   const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
   
   
+  /** FINAL DATA TO VIEW ON PAGE */
+  const [ viewData, setViewData ] = useState([]); 
 
-  const [newArr, setNewArr] = useState([]); 
+  /** DRUPAL MEDIA FILE AUDIO DATA FILTERED */
   const [audioData, setAudiData] = useState([]);
   
+
   /** RUN action  */
   useEffect(()=>{
     dispatch(actionMusic());
@@ -49,7 +55,6 @@ function Music() {
   },[mediaAudio, mediaAudioInc, mediaAudioLength])
   
   console.log("Audio data +: ",audioData);  
-
 
 
   /** FUNCTION: merge Array with same "id"  */
@@ -86,10 +91,13 @@ function Music() {
     })
     : arr.push({title: 'could not pushed'})
 
-    
+    /** FINAL DATA TO VIEW ON PAGE */
+    setViewData(arr);
 
   },[audioData, musicData, musicDataLength])
 
+
+  console.log("view Data", viewData, "vlength ",viewData.length );
   return (
     <div>
       <h1>Music Page</h1>
