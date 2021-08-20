@@ -58,7 +58,7 @@ function Music() {
     const audio = [];
     console.log("audio arr: ",audio);
 
-    mediaAudio.length > 0 &&
+    mediaAudioLength > 0 &&
     mediaAudio.map(item => {
       const {attributes:{id}} = item;
       mediaAudioInc.map(inc => {
