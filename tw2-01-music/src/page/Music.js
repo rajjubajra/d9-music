@@ -99,6 +99,7 @@ function Music() {
 
 
   console.log("view Data", viewData, "vlength ",viewData.length );
+  console.log("view data type: ",typeof(viewData));
 
   return (
     <div>
