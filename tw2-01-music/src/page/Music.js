@@ -110,7 +110,7 @@ function Music() {
           return <div key={id} className="m-5 p-3">
             <h2 className="my-2">{title}</h2>
             <div dangerouslySetInnerHTML={{__html: body}} />
-            <div>{Object.keys(viewData.data).length}</div>
+            <div>{Object.keys(data).length}</div>
 
           </div>
         })
