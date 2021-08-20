@@ -67,6 +67,7 @@ function Music() {
   /** AudioMedia and MusicData */
   useEffect(()=>{
     const arr = [];
+    console.log("final array",arr);
     musicDataLength > 0 && audioData.length > 0 &&
     musicData.map((item)=>{
       const {attributes:{title, field_music_body}} = item;
@@ -77,6 +78,8 @@ function Music() {
         data: mergeArrayObjects(data, audioData)
       });
     })
+
+    
 
   },[audioData, musicData, musicDataLength])
 
