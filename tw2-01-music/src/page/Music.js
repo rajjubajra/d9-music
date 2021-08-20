@@ -112,6 +112,7 @@ function Music() {
             <h2 className="my-2">{title}</h2>
             <div dangerouslySetInnerHTML={{__html: body}} />
             {console.log(typeof(data))}
+            {console.log(data)}
 
           </div>
         })
