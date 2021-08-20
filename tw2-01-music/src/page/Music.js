@@ -47,10 +47,17 @@ function Music() {
 
   useEffect(() => {
 
-    const Arr = length > 0 && audioLength > 0 &&
+    const Arr = [];
+
+    length > 0 && audioLength > 0 &&
     state.map(item => {
+        const {attributes:{title,field_music_body}} = item;
         const {relationships:{field_music_audio:{data}}} = item;
-        return mergeArrayObjects(data,mediaAudio);
+        Arr.push({
+          title: title, 
+          body: field_music_body, 
+          data:mergeArrayObjects(data, mediaAudio)
+        })
     })
   
     console.log("ARR +: ",Arr);
