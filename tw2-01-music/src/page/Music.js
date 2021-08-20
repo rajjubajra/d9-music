@@ -29,7 +29,10 @@ function Music() {
   },[dispatch])
 
   
-  console.log(state, inc_data, length, mediaAudio);
+  console.log(mediaAudio, mediaAudioInc, mediaAudioLength);
+
+
+  console.log(state, inc_data, length);
 
   // const Arr =  lng1 > 0 && lng2 &&
   //   arr1.map((item) => {
@@ -54,26 +57,27 @@ function Music() {
   }
 
 
-  useEffect(()=>{
-    const audio = [];
+  // useEffect(()=>{
+  //   const audio = [];
+  //   console.log("audio arr: ",audio);
 
-    mediaAudioLength > 0 &&
-    mediaAudio.map(item=> {
-      const {attributes:{id}} = item;
-      mediaAudioInc.map(inc => {
-        const {attributes:{filemime, filename,filesize,uri}} = inc;
-        audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
-      })
-    })
+  //   mediaAudioLength > 0 &&
+  //   mediaAudio.map(item=> {
+  //     const {attributes:{id}} = item;
+  //     mediaAudioInc.map(inc => {
+  //       const {attributes:{filemime, filename,filesize,uri}} = inc;
+  //       audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
+  //     })
+  //   })
 
-    setAudiData(audio);
+  //   setAudiData(audio);
 
-  },[mediaAudio, mediaAudioInc, mediaAudioLength])
+  // },[mediaAudio, mediaAudioInc, mediaAudioLength])
  
   
 
 
-  console.log("Audio data +: ",audioData);  
+  //console.log("Audio data +: ",audioData);  
 
   return (
     <div>
