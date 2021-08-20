@@ -109,15 +109,7 @@ function Music() {
           const {id, title, body, data} = item;
           return <div key={id}>
             <h2>{title}</h2>
-            
-            <div>
-              { data.length > 0 && data.map(aud =>{
-                return <div key={aud.id}>
-                      <h3>{aud.title}</h3>
-                      <div>{aud.uri.url}</div>
-                  </div>
-              })}
-            </div>
+            <div dangerouslySetInnerHTML={{__html: body.value}} />
           </div>
         })
       }
