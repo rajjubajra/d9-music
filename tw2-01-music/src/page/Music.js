@@ -111,7 +111,7 @@ function Music() {
             <h2>{title}</h2>
             
             <div>
-              {data.map(aud =>{
+              { data.length > 0 && data.map(aud =>{
                 return <div key={aud.id}>
                       <h3>{aud.title}</h3>
                       <div>{aud.uri.url}</div>
