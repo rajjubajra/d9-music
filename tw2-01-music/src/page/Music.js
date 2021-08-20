@@ -103,9 +103,24 @@ function Music() {
   return (
     <div>
       <h1>Music Page</h1>
-      
-      
-
+      {
+        viewData.length > 0 &&
+        viewData.map((item)=>{
+          const {id, title, body, data} = item;
+          return <div key={id}>
+            <h2>{title}</h2>
+            <div dangerouslySetInnerHTML={{__html: body.processed}} />
+            <div>
+              {data.map(aud =>{
+                return <div key={aud.id}>
+                      <h3>{aud.title}</h3>
+                      <div>{aud.uri.url}</div>
+                  </div>
+              })}
+            </div>
+          </div>
+        })
+      }
     </div>
   )
 }

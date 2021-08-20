@@ -42,6 +42,7 @@ function News() {
         return setArr(newdata);
       })
     })
+    
   },[data, inc_data, length])
 
   console.log("data arr news", arr);
