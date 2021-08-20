@@ -84,6 +84,7 @@ function Music() {
       const {attributes:{title, field_music_body}} = item;
       const {relationships:{field_music_audio:{data}}} = item;
       arr.push({
+        id: item.id,
         title: title, 
         body: field_music_body,
         data: mergeArrayObjects(data, audioData)
@@ -101,6 +102,8 @@ function Music() {
   return (
     <div>
       <h1>Music Page</h1>
+      
+      
     </div>
   )
 }
