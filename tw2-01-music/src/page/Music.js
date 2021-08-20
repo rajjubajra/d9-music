@@ -106,10 +106,10 @@ function Music() {
       {
         viewData.length > 0 &&
         viewData.map((item)=>{
-          const {id, title, body, data} = item;
+          const {id, title} = item;
           return <div key={id}>
             <h2>{title}</h2>
-            <div dangerouslySetInnerHTML={{__html: body.value}} />
+        
           </div>
         })
       }
