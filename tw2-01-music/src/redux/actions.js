@@ -304,7 +304,7 @@ export const actionMediaAudio = () => {
     }
   }
 
-  const audioUrl = `${baseurl.URL}/jsonapi/media/audio?include=field_media_audio_file&field[file--file]=id,filename,uri`;
+  const audioUrl = `${baseurl.URL}/jsonapi/media/audio?include=field_media_audio_file`;
   const AUDIO = audioUrl;
 
   return function (dispatch) {
