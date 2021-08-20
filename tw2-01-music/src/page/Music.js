@@ -56,14 +56,14 @@ function Music() {
 
   useEffect(()=>{
     const audio = [];
-    console.log("audio arr: ",audio);
+    console.log("audio arr: ", audio);
 
     mediaAudioLength > 0 &&
     mediaAudio.map(item => {
       const {attributes:{id}} = item;
       mediaAudioInc.map(inc => {
         const {attributes:{filemime, filename,filesize,uri}} = inc;
-        audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
+        return audio.push({id: id, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
       })
     })
     
@@ -73,7 +73,7 @@ function Music() {
   
 
 
-  //console.log("Audio data +: ",audioData);  
+  console.log("Audio data +: ",audioData);  
 
   return (
     <div>
