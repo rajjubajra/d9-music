@@ -41,7 +41,7 @@ function Music() {
 
     mediaAudioLength > 0 &&
     mediaAudio.map(item => {
-      const {id, field_audio_title} = item;
+      const {id, attributes:{field_audio_title}} = item;
       mediaAudioInc.map(inc => {
         const {attributes:{filemime, filename,filesize, uri}} = inc;
         /** stop re-looping push if "id" exists */
