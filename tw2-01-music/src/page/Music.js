@@ -70,12 +70,12 @@ function Music() {
     musicDataLength > 0 && audioData.length > 0 &&
     musicData.map((item)=>{
       const {attributes:{title, field_music_body}} = item;
-      const {relationships:{file_music_audio:{data}}} = item;
+      const {relationships:{field_music_audio:{data}}} = item;
       arr.push({
         title: title, 
         body: field_music_body,
         data: mergeArrayObjects(data, audioData)
-      })
+      });
     })
 
   },[audioData, musicData, musicDataLength])
