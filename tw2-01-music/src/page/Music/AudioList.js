@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-function AudioList({data}) {
+function AudioList(props) {
 
-  console.log(data);
+  console.log(props.data);
 
   return (
     
