@@ -62,14 +62,10 @@ function Music() {
   function mergeArrayObjects(arr1,arr2){
     //let start = 0;
     let merge = [];
-
-    arr1.length > 0 &&
     arr1.map(item => {
-        if(arr2.indexOf(item.id) >= 0){
-          merge.push({...arr1, ...arr2})
-        }
+      return arr2.some((el)=> el.id === item.id) &&
+      merge.push({...arr1, ...arr2});
     })
-
 
       // while(start < arr1.length){
       // if(arr1[start].id === arr2[start].id){
