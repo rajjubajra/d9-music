@@ -111,7 +111,7 @@ function Music() {
             <div dangerouslySetInnerHTML={{__html: body}} />
             {console.log(typeof(data))}
             {console.log(data)}
-            <ul>AudioList(data)</ul>
+            <ul className="m-5">{AudioList(data)}</ul>
             
           </div>
         })
