@@ -64,8 +64,12 @@ function Music() {
     //let start = 0;
     let merge = [];
     arr1.map(item => {
-      return arr2.some((el) => el.id === item.id) &&
-        merge.push({...arr1, ...arr2});
+      arr2.map(ar => {
+        const {title, uri:{url}} = ar;
+        return arr2.some((el) => el.id === item.id) &&
+        merge.push({id:item.id, title: title, url: url});
+      })
+      
     })
     return merge;
   }
