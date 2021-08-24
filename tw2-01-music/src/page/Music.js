@@ -112,7 +112,7 @@ function Music() {
             {console.log(typeof(data))}
             {console.log(data)}
             <ul className="m-5 border p-4">
-              {AudioList(data)}
+              {AudioList({data})}
             </ul>
             
           </div>

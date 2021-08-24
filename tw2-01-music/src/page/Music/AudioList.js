@@ -3,11 +3,11 @@ import React from 'react'
 
 function AudioList(props) {
 
-  console.log("test data",props.data);
+  console.log("test - data", props.data);
 
   return (
     
-    <div>Audio List</div>
+    <div>- Audio List -</div>
     // data.map(item =>{
     //   const {title, uri:{url}} = item;
     //   return <li>
