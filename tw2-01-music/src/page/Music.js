@@ -13,15 +13,15 @@ function Music() {
 
 
   /** DRUPAL DATA CREATED BY CONTENT TYPE */
-  const data = useSelector(state => state.reducerMusic.music_data.data);
-  const dataLength = useSelector(state => state.reducerMusic.music_dataLength);
+  const musicData = useSelector(state => state.reducerMusic.music_data.data);
+  const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
+  const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
   
   
   /** FINAL DATA TO VIEW ON PAGE */
   const [ viewData, setViewData ] = useState([]); 
 
   /** DRUPAL MEDIA FILE AUDIO DATA FILTERED */
-  const [musicData, setMusicData] = useState([]);
   const [audioData, setAudiData] = useState([]);
   
 
@@ -31,21 +31,8 @@ function Music() {
     dispatch(actionMediaAudio());
   },[dispatch])
 
-
-
-  /** reducer data re-arange */
-  useEffect(()=>{
-    const arr = [];
-    console.log("Reducer DATA regaranged",arr);
-    dataLength > 0 &&
-    data.map(item => {
-      const {attributes: {id, title,field_music_body:{processed}}} = item;
-      const {relationships:{field_music_audio:{data}}} = item;
-      return arr.push({id: id, title:title, body: processed, data: data });
-    })
-    setMusicData(arr);
-  },[data, dataLength]);
-
+  //console.log(mediaAudio, mediaAudioInc,mediaAudioLength);
+  console.log(musicData, musicDataInc, musicDataLength);
 
 
   /** AudioMedia "data" array  and "included" array merged */
@@ -68,6 +55,7 @@ function Music() {
 
   },[mediaAudio, mediaAudioInc, mediaAudioLength])
   
+  console.log("Audio data +: ",audioData);  
 
 
   /** FUNCTION: merge Array with same "id"  */
@@ -92,15 +80,15 @@ function Music() {
     const arr = [];
     console.log("final array",arr);
     
-    musicData.length > 0 && audioData.length > 0 ?
+    musicDataLength > 0 && audioData.length > 0 ?
     musicData.map((item)=>{
-      //const {attributes:{title, field_music_body}} = item;
-      //const {relationships:{field_music_audio:{data}}} = item;
-      return arr.push({
+      const {attributes:{title, field_music_body}} = item;
+      const {relationships:{field_music_audio:{data}}} = item;
+      arr.push({
         id: item.id,
-        title: item.title, 
-        body: item.body,
-        data: mergeArrayObjects(item.data, audioData)
+        title: title, 
+        body: field_music_body.processed,
+        data: mergeArrayObjects(data, audioData)
       });
     })
     : arr.push({title: 'could not pushed'})
@@ -108,12 +96,9 @@ function Music() {
     /** FINAL DATA TO VIEW ON PAGE */
     setViewData(arr);
 
-  },[audioData, musicData])
+  },[audioData, musicData, musicDataLength])
 
 
-  console.log("Audio data +: ",audioData);  
-  //console.log(mediaAudio, mediaAudioInc,mediaAudioLength);
-  console.log(musicData, musicData.length);
   console.log("view Data", viewData, "vlength ",viewData.length );
   console.log("view data type: ",typeof(viewData));
 
