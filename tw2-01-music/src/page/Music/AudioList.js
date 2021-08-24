@@ -7,14 +7,14 @@ function AudioList(props) {
 
   return (
     props.data.map(item =>{
-      const {title, uri:{url}} = item;
+      const {title, url} = item;
       return <li>
         <h3>{title}</h3>
         <div>{url}</div>
       </li>
     })
   )
-  
+
 }
 
 export default AudioList
