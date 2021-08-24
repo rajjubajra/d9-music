@@ -66,10 +66,12 @@ function Music() {
     arr1.map(item => {
       return arr2.some((el) => el.id === item.id) &&
         arr2.map(ar => {
-          const {title, uri:{url}} = ar;
-          return merge.push({id: item.id, title:title, url: url });
+          const {id, title, uri:{url}} = ar;
+          /** in order to avoide repeat loop */
+          const hasId = merge.some(key => key.id === id);
+          //console.log(hasId);
+          return !hasId && merge.push({id: item.id, title:title, url: url });
         })
-        
     })
     return merge;
   }
