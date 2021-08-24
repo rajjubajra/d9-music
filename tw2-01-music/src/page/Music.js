@@ -39,8 +39,9 @@ function Music() {
     console.log("Reducer DATA regaranged",arr);
     dataLength > 0 &&
     data.map(item => {
-      const {attributes: {id, title,field_music_body}} = item;
-      return arr.push({id: id, title:title, body: field_music_body.processed });
+      const {attributes: {id, title,field_music_body:{processed}}} = item;
+      const {relationships:{field_music_audio:{data}}} = item;
+      return arr.push({id: id, title:title, body: processed, data: data });
     })
     setMusicData(arr);
   },[data, dataLength]);
@@ -93,13 +94,13 @@ function Music() {
     
     musicData.length > 0 && audioData.length > 0 ?
     musicData.map((item)=>{
-      const {attributes:{title, field_music_body}} = item;
-      const {relationships:{field_music_audio:{data}}} = item;
+      //const {attributes:{title, field_music_body}} = item;
+      //const {relationships:{field_music_audio:{data}}} = item;
       return arr.push({
         id: item.id,
-        title: title, 
-        body: field_music_body.processed,
-        data: mergeArrayObjects(data, audioData)
+        title: item.title, 
+        body: item.body,
+        data: mergeArrayObjects(item.data, audioData)
       });
     })
     : arr.push({title: 'could not pushed'})
