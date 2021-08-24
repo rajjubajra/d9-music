@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionMusic, actionMediaAudio} from '../redux/actions';
+import AudioList from './Music/AudioList';
 
 function Music() {
   
@@ -66,15 +67,6 @@ function Music() {
       return arr2.some((el)=> el.id === item.id) &&
       merge.push({...arr1, ...arr2});
     })
-
-      // while(start < arr1.length){
-      // if(arr1[start].id === arr2[start].id){
-      //    //pushing the merged objects into array
-      //   merge.push({...arr1[start],...arr2[start]})
-      // }
-      //   //incrementing start value
-      //   start = start+1
-      // }
     return merge;
   }
 
@@ -106,6 +98,7 @@ function Music() {
   console.log("view Data", viewData, "vlength ",viewData.length );
   console.log("view data type: ",typeof(viewData));
 
+
   return (
     <div>
       <h1>Music Page</h1>
@@ -118,7 +111,8 @@ function Music() {
             <div dangerouslySetInnerHTML={{__html: body}} />
             {console.log(typeof(data))}
             {console.log(data)}
-
+            <ul>AudioList(data)</ul>
+            
           </div>
         })
       }
