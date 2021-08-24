@@ -112,7 +112,6 @@ function Music() {
             {console.log(typeof(data))}
             {console.log(data)}
             
-            <ul className="m-5">{data.length > 0 && AudioList(data)}</ul>
             
           </div>
         })
