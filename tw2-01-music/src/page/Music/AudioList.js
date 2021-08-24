@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function AudioList(data) {
+function AudioList({data}) {
   return (
     
     data.map(item =>{
