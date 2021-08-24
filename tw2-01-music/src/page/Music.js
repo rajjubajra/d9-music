@@ -31,14 +31,12 @@ function Music() {
     dispatch(actionMediaAudio());
   },[dispatch])
 
-  //console.log(mediaAudio, mediaAudioInc,mediaAudioLength);
-  console.log(musicData, musicData.length);
 
 
   /** reducer data re-arange */
   useEffect(()=>{
     const arr = [];
-    console.log(arr);
+    console.log("Reducer DATA regaranged",arr);
     dataLength > 0 &&
     data.map(item => {
       const {attributes: {id, title,field_music_body}} = item;
@@ -69,7 +67,6 @@ function Music() {
 
   },[mediaAudio, mediaAudioInc, mediaAudioLength])
   
-  console.log("Audio data +: ",audioData);  
 
 
   /** FUNCTION: merge Array with same "id"  */
@@ -113,6 +110,9 @@ function Music() {
   },[audioData, musicData])
 
 
+  console.log("Audio data +: ",audioData);  
+  //console.log(mediaAudio, mediaAudioInc,mediaAudioLength);
+  console.log(musicData, musicData.length);
   console.log("view Data", viewData, "vlength ",viewData.length );
   console.log("view data type: ",typeof(viewData));
 
