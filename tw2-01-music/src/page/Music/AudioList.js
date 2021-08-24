@@ -3,7 +3,7 @@ import React from 'react'
 
 function AudioList(props) {
 
-  console.log(props.data);
+  console.log("test data",props.data);
 
   return (
     
