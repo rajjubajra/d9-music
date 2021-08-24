@@ -94,11 +94,11 @@ function Music() {
     const arr = [];
     console.log("final array",arr);
     
-    musicDataLength > 0 && audioData.length > 0 ?
+    musicData.length > 0 && audioData.length > 0 ?
     musicData.map((item)=>{
       const {attributes:{title, field_music_body}} = item;
       const {relationships:{field_music_audio:{data}}} = item;
-      arr.push({
+      return arr.push({
         id: item.id,
         title: title, 
         body: field_music_body.processed,
@@ -110,7 +110,7 @@ function Music() {
     /** FINAL DATA TO VIEW ON PAGE */
     setViewData(arr);
 
-  },[audioData, musicData, musicDataLength])
+  },[audioData, musicData])
 
 
   console.log("view Data", viewData, "vlength ",viewData.length );
