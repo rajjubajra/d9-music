@@ -38,9 +38,7 @@ function Music() {
 
   /** AudioMedia "data" array  and "included" array merged */
   useEffect(()=>{
-
-
-    const start = 0;
+    let start = 0;
     const audio = [];
     
     while(mediaAudioLength > 0){    
