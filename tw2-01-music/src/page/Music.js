@@ -38,11 +38,12 @@ function Music() {
 
   /** AudioMedia "data" array  and "included" array merged */
   useEffect(()=>{
+
+
     const start = 0;
     const audio = [];
-
-    if(mediaAudioLength > 0){
-    while(mediaAudio[start] === mediaAudioInc[start]){
+    
+    while(mediaAudioLength > 0 && mediaAudio[start] === mediaAudioInc[start]){
       audio.push({
         id: mediaAudio[start].id, 
         title: mediaAudio[start].attribuites.field_audio_title,
@@ -51,8 +52,6 @@ function Music() {
       })
       start++;
     }
-  }
-    
     
     setAudiData(audio);
 
