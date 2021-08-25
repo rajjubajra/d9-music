@@ -11,6 +11,7 @@ function Music() {
   const mediaAudio = useSelector(state => state.reducerMediaAudio.media_audio_data.data );
   const mediaAudioInc = useSelector(state => state.reducerMediaAudio.media_audio_data.included);
   const mediaAudioLength = useSelector(state => state.reducerMediaAudio.media_audio_dataLength);
+  const mediaAudioFetched = useSelector(state => state.reducerMediaAudio.media_audio_fetched);
 
 
   /** DRUPAL DATA CREATED BY CONTENT TYPE */
@@ -41,9 +42,10 @@ function Music() {
     let start = 0;
     const audio = [];
     console.log("media audio length in use",mediaAudioLength)
-    console.log( mediaAudioLength > 0 && mediaAudio[0].id );
-    console.log( mediaAudioLength > 0 && mediaAudio[start].id );
+    console.log( mediaAudioFetched && mediaAudio[0].id );
+    console.log( mediaAudioFetched && mediaAudio[start].id );
     
+    if(mediaAudioFetched){
     for(start; start <= mediaAudioLength; start++){  
       audio.push({
         id: mediaAudio[start].id, 
@@ -52,8 +54,10 @@ function Music() {
         filesize: mediaAudioInc[start].attributes.filesize 
       });
     }
+  }
     setAudiData(audio);
-  },[mediaAudio, mediaAudioInc, mediaAudioLength])
+
+  },[mediaAudio, mediaAudioInc, mediaAudioLength, mediaAudioFetched])
   
   console.log("Audio data +: ",audioData);  
 
