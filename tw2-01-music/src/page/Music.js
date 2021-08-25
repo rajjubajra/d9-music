@@ -65,11 +65,11 @@ function Music() {
     let merge = [];
     arr1.map(item => {
       arr2.map(ar => {
-        const {title, uri:{url}} = ar;
+        const {id, title, uri:{url}} = ar;
         /** avoid repeat loop */
         const hasId = merge.some((mer) => mer.id === item.id);
         return !hasId && arr2.some((el) => el.id === item.id) &&
-        merge.push({id:item.id, title: title, url: url});
+        merge.push({id:id, title: title, url: url});
       })
       
     })
