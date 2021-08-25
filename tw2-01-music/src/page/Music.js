@@ -38,19 +38,8 @@ function Music() {
 
   /** AudioMedia "data" array  and "included" array merged */
   useEffect(()=>{
-    const audio = [];
-    console.log("audio arr: ", audio);
-
-    mediaAudioLength > 0 &&
-    mediaAudio.map(item => {
-      const {id, attributes:{field_audio_title}} = item;
-      mediaAudioInc.map(inc => {
-        const {attributes:{filemime, filename,filesize, uri}} = inc;
-        /** stop re-looping push if "id" exists */
-        const hasId = audio.some(key => key.id === id);
-        return !hasId && audio.push({id: id, title:field_audio_title, filetype: filemime, filename: filename, filesize:filesize, uri: uri })
-      })
-    })
+    
+    const audio = mediaAudioLength > 0 && mediaAudio.map((obj, index) => Object.assign({}, obj, mediaAudioInc[index]));
     
     setAudiData(audio);
 
