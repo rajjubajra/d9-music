@@ -39,7 +39,8 @@ function Music() {
   /** AudioMedia "data" array  and "included" array merged */
   useEffect(()=>{
     
-    const audio = mediaAudioLength > 0 && mediaAudio.map((obj, index) => Object.assign({}, obj, mediaAudioInc[index]));
+    const audio = mediaAudioLength > 0 && 
+    mediaAudioInc.map((obj, index) => Object.assign({}, obj, mediaAudio[index]));
     
     setAudiData(audio);
 
