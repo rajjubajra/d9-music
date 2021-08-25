@@ -44,18 +44,15 @@ function Music() {
     console.log( mediaAudioLength > 0 && mediaAudio[0].id );
     console.log( mediaAudioLength > 0 && mediaAudio[start].id );
     
-    while(mediaAudioLength > 0){    
+    for(start; start <= mediaAudioLength; start++){  
       audio.push({
         id: mediaAudio[start].id, 
         title: mediaAudio[start].attributes.field_audio_title,
         url: mediaAudioInc[start].attributes.uri.url,
         filesize: mediaAudioInc[start].attributes.filesize 
       });
-      start++;
     }
-    
     setAudiData(audio);
-
   },[mediaAudio, mediaAudioInc, mediaAudioLength])
   
   console.log("Audio data +: ",audioData);  
