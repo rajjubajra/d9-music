@@ -69,7 +69,7 @@ function Music() {
     let merge = [];
     arr2.map(item => {
     return arr1.some((el) => el.id === item.id) && 
-        merge.push({id: item.id, title: item.title, uri: item.uri});
+        merge.push({id: item.id, title: item.title, url: item.url});
       
     })
     return merge;
