@@ -41,6 +41,7 @@ function Music() {
     const start = 0;
     const audio = [];
 
+    if(mediaAudioLength > 0){
     while(mediaAudio[start] === mediaAudioInc[start]){
       audio.push({
         id: mediaAudio[start].id, 
@@ -50,6 +51,7 @@ function Music() {
       })
       start++;
     }
+  }
     
     
     setAudiData(audio);
