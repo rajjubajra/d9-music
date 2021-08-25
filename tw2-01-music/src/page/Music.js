@@ -41,6 +41,7 @@ function Music() {
     let start = 0;
     const audio = [];
     console.log("media audio length in use",mediaAudioLength)
+    console.log(mediaAudio[0].id, "start?",mediaAudio[start].id);
     
     while(mediaAudioLength > 0){    
       audio.push({
