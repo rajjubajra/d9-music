@@ -7,10 +7,10 @@ function AudioList(props) {
 
   return (
     props.data.map(item =>{
-      const {title, url} = item;
+      const {title, uri} = item;
       return <li>
         <h3>{title}</h3>
-        <div>{url}</div>
+        <div>Audio link: {uri.url}</div>
       </li>
     })
   )

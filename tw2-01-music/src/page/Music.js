@@ -63,25 +63,11 @@ function Music() {
   function mergeArrayObjects(arr1,arr2){
    // let start = 0;
     let merge = [];
-
     arr2.map(item => {
-
     return arr1.some((el) => el.id === item.id) && 
         merge.push({id: item.id, title: item.title, uri: item.uri});
       
     })
-
-    
-
-    // arr1.map(item => {
-    //   arr2.map(ar => {
-    //     const {id, title, uri:{url}} = ar;
-    //     /** avoid repeat loop */
-    //     const hasId = merge.some((mer) => mer.id === item.id);
-    //     return !hasId && arr2.some((el) => el.id === item.id) &&
-    //     merge.push({id:id, title: title, url: url});
-    //   })
-    //})
     return merge;
   }
 
