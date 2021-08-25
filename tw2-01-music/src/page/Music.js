@@ -44,6 +44,7 @@ function Music() {
     console.log("media audio length in use",mediaAudioLength)
     console.log( mediaAudioFetched && mediaAudio[0].id );
     console.log( mediaAudioFetched && mediaAudio[start].id );
+    console.log(mediaAudioFetched);
     
     if(mediaAudioFetched){
     for(start; start <= mediaAudioLength; start++){  
