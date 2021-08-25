@@ -47,6 +47,7 @@ function Music() {
     console.log(mediaAudioFetched);
     
     if(mediaAudioFetched){
+      console.log(mediaAudio[start].id);
     for(start; start <= mediaAudioLength; start++){  
       audio.push({
         id: mediaAudio[start].id, 
