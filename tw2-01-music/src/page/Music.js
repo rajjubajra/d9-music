@@ -50,7 +50,7 @@ function Music() {
       console.log(mediaAudio[start].id);
     for(start; start <= mediaAudioLength; start++){  
       audio.push({
-        id: mediaAudio[start].id, 
+        
         title: mediaAudio[start].attributes.field_audio_title,
         url: mediaAudioInc[start].attributes.uri.url,
         filesize: mediaAudioInc[start].attributes.filesize 
