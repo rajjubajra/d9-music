@@ -45,18 +45,10 @@ function Music() {
     console.log( mediaAudioFetched && mediaAudio[0].id );
     console.log( mediaAudioFetched && mediaAudio[start].id );
     console.log(mediaAudioFetched);
-    
-    if(mediaAudioFetched){
-      console.log(mediaAudio[start].id);
-    for(start; start <= mediaAudioLength; start++){  
-      audio.push({
-        
-        title: mediaAudio[start].attributes.field_audio_title,
-        url: mediaAudioInc[start].attributes.uri.url,
-        filesize: mediaAudioInc[start].attributes.filesize 
-      });
-    }
-  }
+    mediaAudioFetched && 
+    mediaAudioInc.map((obj, index) => {
+      return audio.push({id:mediaAudio[index].id, url: obj.uri.url});
+    })
     setAudiData(audio);
 
   },[mediaAudio, mediaAudioInc, mediaAudioLength, mediaAudioFetched])
