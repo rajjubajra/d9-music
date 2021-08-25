@@ -47,8 +47,14 @@ function Music() {
     console.log(mediaAudioFetched);
     mediaAudioFetched && 
     mediaAudioInc.map((obj, index) => {
-      const {attributes:{uri:{url}}} = obj;
-      return audio.push({id:mediaAudio[index].id, url: url });
+      const {attributes:{uri:{url}, filemime, filesize}} = obj;
+      return audio.push({
+        id: mediaAudio[index].id, 
+        title: mediaAudio[index].attributes.field_audio_title, 
+        filetype: filemime,
+        filesize: filesize,
+        url: url
+      });
     })
     setAudiData(audio);
 
