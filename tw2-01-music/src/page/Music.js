@@ -46,9 +46,9 @@ function Music() {
     while(mediaAudioLength > 0){    
       audio.push({
         id: mediaAudio[start].id, 
-        title: mediaAudio[start].attribuites.field_audio_title,
-        url: mediaAudioInc[start].attribuites.uri.url,
-        filesize: mediaAudioInc[start].attribuites.filesize 
+        title: mediaAudio[start].attributes.field_audio_title,
+        url: mediaAudioInc[start].attributes.uri.url,
+        filesize: mediaAudioInc[start].attributes.filesize 
       });
       start++;
     }
