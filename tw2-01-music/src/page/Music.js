@@ -61,17 +61,17 @@ function Music() {
 
   /** FUNCTION: merge Array with same "id"  */
   function mergeArrayObjects(arr1,arr2){
-    let start = 0;
+   // let start = 0;
     let merge = [];
 
-    while(start < arr1.length){
-      if(arr1[start].id === arr2[start].id){
-         //pushing the merged objects into array
-        merge.push({id: arr2[start].id, title: arr2[start].title, uri:arr2[start].uri})
-      }
-      //incrementing start value
-        start = start+1
-    }
+    arr2.map(item => {
+
+    return arr1.some((el) => el.id === item.id) && 
+        merge.push({id: item.id, title: item.title, uri: item.uri});
+      
+    })
+
+    
 
     // arr1.map(item => {
     //   arr2.map(ar => {
