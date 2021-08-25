@@ -40,6 +40,7 @@ function Music() {
   useEffect(()=>{
     let start = 0;
     const audio = [];
+    console.log("media audio length in use",mediaAudioLength)
     
     while(mediaAudioLength > 0){    
       audio.push({
