@@ -32,7 +32,7 @@ function Music() {
     dispatch(actionMediaAudio());
   },[dispatch])
 
-  //console.log(mediaAudio, mediaAudioInc,mediaAudioLength);
+  console.log("media audio",mediaAudio,"media audio lnc", mediaAudioInc,mediaAudioLength);
   console.log(musicData, musicDataInc, musicDataLength);
 
 
