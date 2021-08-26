@@ -12,12 +12,13 @@ function Homepage() {
   const fetched = useSelector(state => state.reducerHomePage.home_fetched );
 
 
-  //console.log("one",data);
-  //console.log("two",included);
+  console.log("one",data);
+  console.log("two",included);
+  console.log("homepage",fetched, "length", length);
 
   const [arr, setArr] = useState();
 
-  console.log("homepage",fetched);
+  
 
 
   useEffect(()=>{
