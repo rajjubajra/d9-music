@@ -1,4 +1,4 @@
-import React from 'react'
+import ReactAudioPlayer from 'react-audio-player';
 
 
 function AudioList(props) {
@@ -11,6 +11,13 @@ function AudioList(props) {
       return <li>
         <h3>{title}</h3>
         <div>Audio link: {url}</div>
+        <div>
+        <ReactAudioPlayer
+            src={url}
+            autoPlay
+            controls
+          />
+        </div>
       </li>
     })
   )
