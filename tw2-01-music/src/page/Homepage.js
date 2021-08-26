@@ -16,7 +16,7 @@ function Homepage() {
   console.log("two",included);
   console.log("homepage",fetched, "length", length);
 
-  const [arr, setArr] = useState();
+  const [arr, setArr] = useState([]);
 
   
 
@@ -28,14 +28,14 @@ function Homepage() {
 
   useEffect(()=>{
     const newArr = [];
-    length > 0 
+    fetched
     && data.map(item => {
       const {attributes:{title, field_home_body}} = item;
       const image = included[1].attributes.uri.url;
         newArr.push({title: title, body: field_home_body.value, image: image})
     })
     setArr(newArr);
-  },[data, included, length]);
+  },[data, fetched, included]);
 
   console.log("new array ",arr);
 
@@ -46,7 +46,7 @@ function Homepage() {
     <div>
       
         {
-        fetched
+        arr.length > 0
         ? arr.map(item=>{
           return <div>
             <h1 className="text-2xl">{item.title}</h1>
