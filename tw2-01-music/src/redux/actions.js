@@ -50,7 +50,6 @@ export const actionNav = () => {
 }//ActionNav closed
 
 
-
 /** HOME PAGE  */
 export const actionHome = () => {
 
@@ -90,8 +89,6 @@ reqHome.then((res) => {
 
 
 }// actionHome Closed
-
-
 
 
 export const actionTour = () => {
@@ -177,7 +174,6 @@ export const actionNews = () => {
 }// actionNews Closed
 
 
-
 /** ABOUT PAGE */
 export const actionAbout = () => {
 
@@ -214,8 +210,6 @@ export const actionAbout = () => {
   }
 
 }// actionABOUT Closed
-
-
 
 
 /** GALLARY PAGE */
@@ -405,6 +399,7 @@ export const actionMediaRemoteVideo = () => {
     }) 
   }
 }// actionMediaRemoteVideo Closed
+
 
 
 
