@@ -40,11 +40,8 @@ function Homepage() {
   console.log("new array ",arr);
 
 
-
-
   return (
     <div>
-      
         {
         arr.length > 0
         ? arr.map(item=>{
