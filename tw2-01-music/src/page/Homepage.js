@@ -37,7 +37,7 @@ function Homepage() {
     setArr(newArr);
   },[data, included, length]);
 
-  //console.log("new array ",arr);
+  console.log("new array ",arr);
 
 
 
