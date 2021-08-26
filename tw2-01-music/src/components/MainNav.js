@@ -25,7 +25,7 @@ function MainNav() {
           newurl[1] = 'themes';
           newurl[2] = 'tw2-01';
           const useUrl = newurl.join('/');
-          //console.log("new url",newurl,"use url",useUrl);
+          console.log("new url",newurl,"use url",useUrl);
           return <Link className="m-1" to={`/${useUrl}`}>{title}</Link>
         })
         : 'data not loaded yet'
