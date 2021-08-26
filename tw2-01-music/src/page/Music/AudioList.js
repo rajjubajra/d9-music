@@ -14,7 +14,6 @@ function AudioList(props) {
         <div>
         <ReactAudioPlayer
             src={url}
-            autoPlay
             controls
           />
         </div>
