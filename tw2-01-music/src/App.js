@@ -22,7 +22,7 @@ function App() {
   },[dispatch])
 
   const baseurl = `/d9-music/themes/tw2-01`
-
+  useEffect(() => console.log("Refresh"));
 
 
   return (
