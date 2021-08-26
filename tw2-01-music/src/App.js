@@ -31,7 +31,7 @@ function App() {
         <BrowserRouter>
           <MainNav />
           <Switch>
-            <Route exact path={`${baseurl}`} component={Homepage} />
+            <Route exact path={`${baseurl}/`} component={Homepage} />
             <Route exact path={`${baseurl}/tour`} component={Tour} />
             <Route exact path={`${baseurl}/news`} component={News} />
             <Route exact path={`${baseurl}/about`} component={About} />
