@@ -9,6 +9,8 @@ function Homepage() {
   const data = useSelector(state => state.reducerHomePage.home_data.data);
   const included = useSelector(state => state.reducerHomePage.home_data.included);
   const length = useSelector(state => state.reducerHomePage.home_dataLength );
+  const fetched = useSelector(state => state.reducerHomePage.home_fetched );
+
 
   //console.log("one",data);
   //console.log("two",included);
@@ -40,7 +42,7 @@ function Homepage() {
     <div>
       
         {
-        length > 0 
+        fetched
         ? arr.map(item=>{
           return <div>
             <h1 className="text-2xl">{item.title}</h1>
