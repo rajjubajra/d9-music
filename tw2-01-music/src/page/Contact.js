@@ -11,7 +11,7 @@ function Contact() {
           <input className="border border-gray-100 p-2"  type="text" id="email" name="email" placeholder="Email" />
         </div>
         <div>
-          <textarea className="w-full border border-gray-100 p-2 h-60"  name="message" id="message"  placeholder="Message"></textarea>
+          <textarea className="w-auto md:w-3/6 border border-gray-100 p-2 h-60"  name="message" id="message"  placeholder="Message"></textarea>
         </div>  
         <div>
           <input  className="border border-gray-500 p-4"  type="submit" id="submit" name="submit" value="Submit" />
