@@ -17,7 +17,8 @@ function Homepage() {
 
   const [arr, setArr] = useState();
 
-  console.log("homepage");
+  console.log("homepage",fetched);
+
 
   useEffect(()=>{
     console.log("action is runing");
