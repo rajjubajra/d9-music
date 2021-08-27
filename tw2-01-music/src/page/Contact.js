@@ -20,7 +20,14 @@ function Contact() {
 
 
   useEffect(()=>{
-    contact_form_fetched && setSubmitMessage(contact_form.attributes.settings.confirmation_message)
+    
+    contact_form_fetched && 
+    setSubmitMessage(contact_form.attributes.settings.confirmation_message);
+    setName('');
+    setEmail('');
+    setMessage('');
+
+
   },[contact_form_fetched, contact_form])
   
 
