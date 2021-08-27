@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {baseurl} from './baseurl'
+import {baseurl} from './config'
 
 /*
  * Wrapper for axios AJAX library.

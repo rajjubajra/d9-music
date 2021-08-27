@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {baseurl} from '../config/config';
 import axios from 'axios';
+import ajax from '../config/ajax';
 
 
 
@@ -16,30 +17,31 @@ function Contact() {
 
   console.log(name, email, message);
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) =>{
     e.preventDefault();
     console.log(name, email, message);
-    const headers = {
-      headers: {
-      'Accept': 'application/vnd.api+json'
-      }
+    // const headers = {
+    //   headers: {
+    //   'Accept': 'application/vnd.api+json'
+    //   }
+    // }
+
+    const data = {
+      "webform_id": "contact",
+      "name": name,
+      "email": email,
+      "message": message
     }
 
     const webform_rest_url = `${baseurl.URL}/webform_rest/submit`;
 
-    axios({
-      method: 'post',
-      url: webform_rest_url,
-      headers: headers,
-      data: {
-        "webform_id": "contact",
-        "name": name,
-        "email": email,
-        "message": message
-      }
-    })
-    .then(res=> console.log(res))
-    .catch(err => console.log(err))
+    try{
+      const axios = await ajax(); //wait for initalized axios object
+      const response = await axios.post(webform_rest_url, data);
+      console.log("Data Posted:",response);
+    }catch(e){
+      console.log(e);
+    }
 
   }
 
