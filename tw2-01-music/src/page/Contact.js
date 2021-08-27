@@ -9,8 +9,8 @@ import {actionBasicContactForm} from '../redux/actions';
 function Contact() {
 
   const dispatch = useDispatch();
-  const confirmation_message = useSelector(state => state.reducerBasicContactForm.contact_form.data );
-  console.log("Conf message",confirmation_message);
+  const confirmation_message = useSelector(state => state.reducerBasicContactForm.contact_form_data.data);
+  console.log("Conf message", confirmation_message);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
