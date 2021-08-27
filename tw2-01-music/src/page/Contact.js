@@ -20,12 +20,15 @@ function Contact() {
 
 
   useEffect(()=>{
+    
     dispatch(actionBasicContactForm())
+
 
     submitMessage &&
     setName('');
     setEmail('');
     setMessage('');
+    
 
   },[dispatch, submitMessage])
   
@@ -62,9 +65,9 @@ function Contact() {
       <h1 className="text-3xl text-center m-5">
         {contact_form_fetched && contact_form.attributes.title}
       </h1>
-      <div>{contact_form_fetched && contact_form.attributes.description}</div>
+      <div className="text-center">{contact_form_fetched && contact_form.attributes.description}</div>
       <div className="text-1xl text-center">
-        {submitMessage && contact_form.attributes.settings.confirmation_message }
+        {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
       </div>
       <div className="w-full flex justify-center align-middle">
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
