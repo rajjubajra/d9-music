@@ -401,3 +401,44 @@ export const reducerMediaRemoteVideo = (state = initalStateMediaRemoteVideo, act
   }
 
 }// Media REMOTE VIDEO CLOSED
+
+
+
+
+/** BASIC CONTACT FORM */
+const initalStateBasicContactForm = {  
+  contact_form_fetching: false,
+  contact_form_fetched: false,
+  contact_form_fetch_error: '',
+  contact_form_data: [],
+  contact_form_dataLength: 0,
+}
+
+export const reducerBasicContactForm = (state = initalStateBasicContactForm, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.BASIC_CONTACT_FORM_START_FETCHING:
+      return {
+        contact_form_fetching: true,
+        contact_form_data: []
+      }
+    case actionTypes.BASIC_CONTACT_FORM_FETCHED:
+      return {
+        contact_form_data: action.data,
+        contact_form_fetched: true,
+        contact_form_dataLength: action.data.data.length
+      }
+    case actionTypes.BASIC_CONTACT_FORM_FETCH_ERROR:
+      return {
+        contact_form_fetched: false,
+        contact_form_fetching: false,
+        contact_form_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// BASIC CONTACT FORM CLOSED

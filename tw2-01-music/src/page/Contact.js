@@ -31,7 +31,7 @@ function Contact() {
     try{
       const axios = await ajax(); //wait for initalized axios object
       const response = await axios.post(webform_rest_url, data);
-      response.status === 200 && setSubmitMessage('Post Submited. Thank you message from Drupal json data');
+      response.status === 200 && setSubmitMessage('Post Submited. Thank you message should be Drupal json data');
       console.log("Data Posted:",response);
     }catch(e){
       console.log(e);
