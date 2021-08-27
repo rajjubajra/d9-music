@@ -9,8 +9,8 @@ import {actionBasicContactForm} from '../redux/actions';
 function Contact() {
 
   const dispatch = useDispatch();
-  const confirmation_message = useSelector(state => state.reducerBasicContactForm.contact_form_data.data);
-  console.log("Conf message", confirmation_message);
+  const contact_form = useSelector(state => state.reducerBasicContactForm.contact_form_data.data);
+  console.log("Conf message", contact_form);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -36,7 +36,10 @@ function Contact() {
     try{
       const axios = await ajax(); //wait for initalized axios object
       const response = await axios.post(webform_rest_url, data);
-      response.status === 200 && dispatch(actionBasicContactForm());
+      response.status === 200 && 
+      dispatch(actionBasicContactForm())
+      setSubmitMessage(contact_form.attributes.settings.confirmation_message)
+
       //console.log("Data Posted:",response);
     }catch(e){
       console.log(e);
