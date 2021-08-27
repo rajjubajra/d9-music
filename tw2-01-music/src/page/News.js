@@ -31,12 +31,17 @@ function News() {
       console.log("loop 1");
       inc_data.map(inc => {
         console.log("loop 2");
-        if(inc.type === 'file--file'){
-          const {attributes:{uri}} = inc;    
+        const { attributes:{uri}, id } = inc;
+        /** stop repeat push */
+        const hasId = newdata.some((el) => el.incId === id);
+
+        if(inc.type === 'file--file' && !hasId){
+              
           newdata.push({
             title: title, 
             body: field_news_body.processed, 
             data: field_news_date, 
+            incId: id,
             image: uri.url});
         }
         return setArr(newdata);
