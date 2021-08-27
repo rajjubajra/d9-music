@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import {baseurl} from '../config/config';
-import axios from 'axios';
 import ajax from '../config/ajax';
-
-
 
 
 
@@ -13,6 +10,7 @@ function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState('');
   
 
   console.log(name, email, message);
@@ -20,11 +18,6 @@ function Contact() {
   const handleSubmit = async (e) =>{
     e.preventDefault();
     console.log(name, email, message);
-    // const headers = {
-    //   headers: {
-    //   'Accept': 'application/vnd.api+json'
-    //   }
-    // }
 
     const data = {
       "webform_id": "contact",
@@ -38,6 +31,7 @@ function Contact() {
     try{
       const axios = await ajax(); //wait for initalized axios object
       const response = await axios.post(webform_rest_url, data);
+      response.status === 200 && setSubmitMessage('Post Submited. Thank you message from Drupal json data');
       console.log("Data Posted:",response);
     }catch(e){
       console.log(e);
@@ -48,6 +42,7 @@ function Contact() {
   return (
     <div>
       <h1 className="text-3xl text-center m-5">Contact Form</h1>
+      {submitMessage}
       <div className="w-full flex justify-center align-middle">
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
