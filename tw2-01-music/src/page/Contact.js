@@ -87,7 +87,7 @@ function Contact() {
           />
           <input 
           className="w-full md:w-1/2 outline-none border-gray-500 p-2
-          border-l-0 border-r border-t border-b-0 
+          border-l border-r border-t border-b-0 
           md:border-l-0 md:border-r md:border-t md:border-b-0"
           required  
           type="text" 
