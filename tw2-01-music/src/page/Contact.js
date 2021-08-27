@@ -16,19 +16,18 @@ function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState(false);
 
 
   useEffect(()=>{
-    
-    contact_form_fetched && 
-    setSubmitMessage(contact_form.attributes.settings.confirmation_message);
+    dispatch(actionBasicContactForm())
+
+    submitMessage &&
     setName('');
     setEmail('');
     setMessage('');
 
-
-  },[contact_form_fetched, contact_form])
+  },[dispatch, submitMessage])
   
 
 
@@ -50,7 +49,7 @@ function Contact() {
     try{
       const axios = await ajax(); //wait for initalized axios object
       const response = await axios.post(webform_rest_url, data);
-      response.status === 200 && dispatch(actionBasicContactForm())
+      response.status === 200 && setSubmitMessage(true);
       //console.log("Data Posted:",response);
     }catch(e){
       console.log(e);
@@ -60,8 +59,13 @@ function Contact() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center m-5">Contact Form</h1>
-      <div className="text-1xl text-center">{contact_form_fetched && submitMessage}</div>
+      <h1 className="text-3xl text-center m-5">
+        {contact_form_fetched && contact_form.attributes.title}
+      </h1>
+      <div>{contact_form_fetched && contact_form.attributes.description}</div>
+      <div className="text-1xl text-center">
+        {submitMessage && contact_form.attributes.settings.confirmation_message }
+      </div>
       <div className="w-full flex justify-center align-middle">
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
