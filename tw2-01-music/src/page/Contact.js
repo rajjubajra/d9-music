@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {baseurl} from '../config/config';
 import { useDispatch, useSelector } from 'react-redux';
 import ajax from '../config/ajax';
@@ -17,6 +17,11 @@ function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [submitMessage, setSubmitMessage] = useState('');
+
+
+  useEffect(()=>{
+    contact_form_fetched && setSubmitMessage(contact_form.attributes.settings.confirmation_message)
+  },[contact_form_fetched, contact_form])
   
 
 
@@ -38,10 +43,7 @@ function Contact() {
     try{
       const axios = await ajax(); //wait for initalized axios object
       const response = await axios.post(webform_rest_url, data);
-      response.status === 200 && 
-      dispatch(actionBasicContactForm())
-      setSubmitMessage(contact_form.attributes.settings.confirmation_message)
-
+      response.status === 200 && dispatch(actionBasicContactForm())
       //console.log("Data Posted:",response);
     }catch(e){
       console.log(e);
