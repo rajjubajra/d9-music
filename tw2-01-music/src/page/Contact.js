@@ -12,10 +12,11 @@ function Contact() {
   const [message, setMessage] = useState('');
   
 
+  console.log(name, email, message);
 
   const handleSubmit = (e) =>{
     e.prventDefault();
-    console.log(e)
+    console.log(name, email, message);
   }
 
   return (
