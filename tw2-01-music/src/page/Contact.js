@@ -10,7 +10,8 @@ function Contact() {
 
   const dispatch = useDispatch();
   const contact_form = useSelector(state => state.reducerBasicContactForm.contact_form_data.data);
-  console.log("Conf message", contact_form);
+  const contact_form_fetched = useSelector(state => state.reducerBasicContactForm.contact_form_fetched);
+  console.log("Conf message", contact_form_fetched && contact_form);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,7 +19,8 @@ function Contact() {
   const [submitMessage, setSubmitMessage] = useState('');
   
 
-  console.log(name, email, message);
+
+  console.log(name, email, message, "sumbited", submitMessage);
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -50,7 +52,7 @@ function Contact() {
   return (
     <div>
       <h1 className="text-3xl text-center m-5">Contact Form</h1>
-      {submitMessage}
+      {contact_form_fetched && submitMessage}
       <div className="w-full flex justify-center align-middle">
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
