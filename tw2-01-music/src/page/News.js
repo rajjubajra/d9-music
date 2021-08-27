@@ -13,11 +13,10 @@ function News() {
 
   const [arr, setArr] = useState([]);
 
-  console.log("news",data,"news length", length);
-  useEffect(()=>{
+  //console.log("news",data,"news length", length);
 
+  useEffect(()=>{
     dispatch(actionNews());
-    
   },[dispatch])
 
 
@@ -28,9 +27,9 @@ function News() {
     data.map(item => {
 
       const {attributes:{title, field_news_body, field_news_date}} = item;
-      console.log("loop 1");
+      
       inc_data.map(inc => {
-        console.log("loop 2");
+        
         const { attributes:{uri}, id } = inc;
         /** stop repeat push */
         const hasId = newdata.some((el) => el.incId === id);
@@ -50,11 +49,10 @@ function News() {
     
   },[data, inc_data, length])
 
-  console.log("data arr news", arr);
+  //console.log("data arr news", arr);
   
   return (
     <div>
-      <h1 className="m-10">Note: Need to check array repeat</h1>
       {
         length > 0 &&
         arr.map(item=>{
