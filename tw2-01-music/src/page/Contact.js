@@ -54,7 +54,7 @@ function Contact() {
   return (
     <div>
       <h1 className="text-3xl text-center m-5">Contact Form</h1>
-      {contact_form_fetched && submitMessage}
+      <div className="text-1xl text-center">{contact_form_fetched && submitMessage}</div>
       <div className="w-full flex justify-center align-middle">
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
