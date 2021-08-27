@@ -7,7 +7,10 @@ import React, {useState} from 'react';
 function Contact() {
 
 
-  const [postData, setPostData] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  
 
 
   const handleSubmit = (e) =>{
@@ -27,7 +30,8 @@ function Contact() {
           id="name"  
           name="name"  
           placeholder="Name" 
-
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
           />
           <input 
           className="w-full md:w-1/2 border md:border-l-0 md:border-r md:border-t md:border-b-0 border-gray-500 p-2 outline-none"  
@@ -35,6 +39,8 @@ function Contact() {
           id="email" 
           name="email" 
           placeholder="Email" 
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
           />
         </div>
         <div>
@@ -42,7 +48,10 @@ function Contact() {
           className="w-full border border-gray-500 p-2 h-60 outline-none"  
           name="message" 
           id="message"  
-          placeholder="Message"></textarea>
+          placeholder="Message"
+          value={message}
+          onChange={(e)=>setMessage(e.target.value)}
+          ></textarea>
         </div>
         <div>
           <input  
