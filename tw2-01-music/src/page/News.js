@@ -28,9 +28,9 @@ function News() {
     data.map(item => {
 
       const {attributes:{title, field_news_body, field_news_date}} = item;
-      
+      console.log("loop 1");
       inc_data.map(inc => {
-
+        console.log("loop 2");
         if(inc.type === 'file--file'){
           const {attributes:{uri}} = inc;    
           newdata.push({

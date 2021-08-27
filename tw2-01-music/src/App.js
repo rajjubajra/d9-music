@@ -38,8 +38,7 @@ function App() {
             <Route exact path={`${baseurl}/music`} component={Music} />
             <Route exact path={`${baseurl}/gallery`} component={Gallery} />
             <Route exact path={`${baseurl}/form/contact`} component={Contact} />
-          </Switch>
-          
+          </Switch>  
         </BrowserRouter>
       </header>
     </div>
