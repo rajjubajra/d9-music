@@ -23,7 +23,7 @@ function Contact() {
     <div>
       <h1 className="text-3xl text-center m-5">Contact Form</h1>
       <div className="w-full flex justify-center align-middle">
-        <form onSubmit={handleSubmit} method="get" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
+        <form onSubmit={handleSubmit}  class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
           <input 
           className="w-full md:w-1/2 border md:border-l md:border-r md:border-t md:border-b-0 border-gray-500 p-2 outline-none" 
