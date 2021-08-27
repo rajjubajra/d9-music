@@ -15,7 +15,7 @@ function Contact() {
   console.log(name, email, message);
 
   const handleSubmit = (e) =>{
-    e.prventDefault();
+    e.preventDefault();
     console.log(name, email, message);
   }
 
