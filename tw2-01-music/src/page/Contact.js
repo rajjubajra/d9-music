@@ -65,7 +65,8 @@ function Contact() {
       <h1 className="text-3xl text-center m-5">
         {contact_form_fetched && contact_form.attributes.title}
       </h1>
-      <div className="text-center">{contact_form_fetched && contact_form.attributes.description}</div>
+      <div className="text-center">
+        {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
       <div className="text-1xl text-center">
         {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
       </div>
