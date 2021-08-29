@@ -1,4 +1,4 @@
-import './loadingbar.csss';
+import './loadingbar.css';
 
 function LoadingBar() {
   return (
