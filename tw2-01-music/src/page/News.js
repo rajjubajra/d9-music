@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionNews} from '../redux/actions';
+import ImageOnload from '../components/ImageOnload';
 
 
 
@@ -59,7 +60,13 @@ function News() {
           return(
             <div className="m-5">
               <h1 className="text-2xl">{item.title}</h1>
-              <div><img src={item.image} alt="news" /></div>
+              <div>
+                <ImageOnload 
+                  cssClass="w-60"
+                  src={item.image}
+                  alt="news"
+                />
+              </div>
               <div dangerouslySetInnerHTML={{__html: item.body}} />
             </div>
           )

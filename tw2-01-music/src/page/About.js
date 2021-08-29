@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import ImageOnload from '../components/ImageOnload';
 import {actionAbout} from '../redux/actions';
 
 
@@ -45,7 +46,13 @@ function About() {
         arr.map(item=>{
           return <div className="m-12">
             <h1 className="text-2xl">{item.title}</h1>
-            <div><img className="w-56" src={item.image} alt="" /></div>
+            <div>
+              <ImageOnload 
+              cssClass="w-56"
+              src={item.image}
+              alt="about" 
+              />
+            </div>
             <div dangerouslySetInnerHTML={{__html: item.body}} />
           </div>
         })
