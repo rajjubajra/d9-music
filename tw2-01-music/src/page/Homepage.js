@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
+import LoadingBar from '../components/LoadingBar';
 //import {actionHome} from '../redux/actions';
 
 
@@ -53,7 +54,7 @@ function Homepage() {
             </div>
           </div>
         })
-        : 'Loading...'
+        : <LoadingBar />
         }
         
     </div>

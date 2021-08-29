@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
+import LoadingBar from './LoadingBar';
 
 function MainNav() {
 
@@ -28,7 +29,7 @@ function MainNav() {
           //console.log("new url",newurl,"use url",useUrl);
           return <Link className="m-1" to={`/${useUrl}`}>{title}</Link>
         })
-        : 'data not loaded yet'
+        : <LoadingBar />
       }
     
     </div>
