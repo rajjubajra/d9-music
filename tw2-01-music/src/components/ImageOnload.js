@@ -8,15 +8,18 @@ function ImageOnload({src, alt, cssClass}) {
 
   useEffect(()=>{
 
-    
+    status && setBlur('');
+
+  },[status])
+
+  useEffect(()=>{    
     const img = new Image();
     img.src = {src};
     img.onload = function() {
       console.log(img.width, img.height);
     }
-    status && setBlur('');
 
-  },[src, status])
+  },[src])
 
   return (
     <img 
