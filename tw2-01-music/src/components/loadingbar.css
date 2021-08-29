@@ -1,6 +1,7 @@
 
 .loader { 
-  width:500px; 
+  margin: 40px;
+  width:150px; 
   margin:0 auto;
   border-radius:10px;
   border:4px solid transparent;

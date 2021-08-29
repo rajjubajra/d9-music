@@ -1,8 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import LoadingBar from '../components/LoadingBar';
-//import {actionHome} from '../redux/actions';
-
+import ImageOnload from '../components/ImageOnload';
 
 function Homepage() {
 
@@ -48,7 +47,10 @@ function Homepage() {
         ? arr.map(item=>{
           return <div>
             <h1 className="text-2xl">{item.title}</h1>
-            <div><img className="w-60" src={item.image} alt="homepage" /></div>
+            <div>
+              <img className="w-60" src={item.image} alt="homepage" />
+              <ImageOnload src={item.image} alt="Homepage" />
+            </div>
             <div>
               <div dangerouslySetInnerHTML={{__html: item.body }}></div>
             </div>
