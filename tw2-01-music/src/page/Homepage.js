@@ -32,7 +32,9 @@ function Homepage() {
     && data.map(item => {
       const {attributes:{title, field_home_body}} = item;
       const image = included[1].attributes.uri.url;
-        newArr.push({title: title, body: field_home_body.value, image: image})
+      const imageWidth = included[0].relationships.field_media_image.data.meta.width;
+      const imageHeight = included[0].relationships.field_media_image.data.meta.height;
+        newArr.push({title: title, body: field_home_body.value, image: image, image_height: imageHeight, image_width: imageWidth})
     })
     setArr(newArr);
   },[data, fetched, included]);
@@ -49,6 +51,8 @@ function Homepage() {
             <h1 className="text-2xl">{item.title}</h1>
             <div>
               <ImageOnload 
+              height={item.image_height}
+              width={item.image_width}
               cssClass="w-60"
               src={item.image} 
               alt="Homepage" 

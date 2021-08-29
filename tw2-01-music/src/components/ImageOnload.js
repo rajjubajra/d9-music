@@ -1,32 +1,24 @@
 import React, {useState, useEffect} from 'react'
 
-function ImageOnload({src, alt, cssClass}) {
+function ImageOnload({src, alt, cssClass, height, width}) {
 
   const [status, setStatus] = useState(false);
-  const [blur, setBlur] = useState('hidden');
+  //const [blur, setBlur] = useState('hidden');
+  const [imgHeight, setImgHeight] = (height/10);
+  const [imgWidth, setImgWidth] = (width/10);
   console.log(status);
 
   useEffect(()=>{
-    console.log('effect 1')
 
-    status && setBlur('');
-
+    status && setImgHeight('auto');
+    status && setImgWidth('auto');
   },[status])
 
-  useEffect(()=>{    
-    console.log('effect 2')
-    const img = new Image();
-    img.src = {src};
-    img.onload = function() {
-      console.log(img.width, img.height);
-    }
-
-  },[src])
 
   return (
     <img 
-    width="auto" height="auto"
-    className={`${blur} ${cssClass}`}
+    width={imgWidth} height={imgHeight}
+    className={`${cssClass}`}
     onLoad={()=>setStatus(true)}
     onError={()=>setStatus(false)}
     src={src} 
