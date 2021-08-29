@@ -8,13 +8,13 @@ function ImageOnload({src, alt, cssClass}) {
 
   useEffect(()=>{
 
-    status && setBlur('');
+    
     const img = new Image();
     img.src = {src};
     img.onload = function() {
       console.log(img.width, img.height);
     }
-    
+    status && setBlur('');
 
   },[src, status])
 
