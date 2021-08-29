@@ -2,7 +2,7 @@ import './loadingbar.css';
 
 function LoadingBar() {
   return (
-    <div class="loader">
+    <div className="loader">
       <div class="loaderBar"></div>
     </div>
   )
