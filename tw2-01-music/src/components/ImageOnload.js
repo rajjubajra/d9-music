@@ -6,6 +6,7 @@ function ImageOnload({src, alt, cssClass}) {
   console.log(status);
 
   return (
+    status &&
     <img 
     className={cssClass}
     onLoad={()=>setStatus(true)}
