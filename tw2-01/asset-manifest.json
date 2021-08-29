@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/d9-music/themes/tw2-01/static/css/main.f3313dad.chunk.css",
-    "main.js": "/d9-music/themes/tw2-01/static/js/main.062f3872.chunk.js",
-    "main.js.map": "/d9-music/themes/tw2-01/static/js/main.062f3872.chunk.js.map",
+    "main.css": "/d9-music/themes/tw2-01/static/css/main.c48d74c4.chunk.css",
+    "main.js": "/d9-music/themes/tw2-01/static/js/main.4f4c0442.chunk.js",
+    "main.js.map": "/d9-music/themes/tw2-01/static/js/main.4f4c0442.chunk.js.map",
     "runtime-main.js": "/d9-music/themes/tw2-01/static/js/runtime-main.6746e4a3.js",
     "runtime-main.js.map": "/d9-music/themes/tw2-01/static/js/runtime-main.6746e4a3.js.map",
     "static/js/2.5732ecfb.chunk.js": "/d9-music/themes/tw2-01/static/js/2.5732ecfb.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f591e1c6.chunk.js": "/d9-music/themes/tw2-01/static/js/3.f591e1c6.chunk.js",
     "static/js/3.f591e1c6.chunk.js.map": "/d9-music/themes/tw2-01/static/js/3.f591e1c6.chunk.js.map",
     "index.html": "/d9-music/themes/tw2-01/index.html",
-    "static/css/main.f3313dad.chunk.css.map": "/d9-music/themes/tw2-01/static/css/main.f3313dad.chunk.css.map",
+    "static/css/main.c48d74c4.chunk.css.map": "/d9-music/themes/tw2-01/static/css/main.c48d74c4.chunk.css.map",
     "static/js/2.5732ecfb.chunk.js.LICENSE.txt": "/d9-music/themes/tw2-01/static/js/2.5732ecfb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6746e4a3.js",
     "static/js/2.5732ecfb.chunk.js",
-    "static/css/main.f3313dad.chunk.css",
-    "static/js/main.062f3872.chunk.js"
+    "static/css/main.c48d74c4.chunk.css",
+    "static/js/main.4f4c0442.chunk.js"
   ]
 }
