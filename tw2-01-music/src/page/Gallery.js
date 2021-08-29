@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import ImageOnload from '../components/ImageOnload';
 import {actionGallery} from '../redux/actions';
 
 function Gallery() {
@@ -52,7 +53,12 @@ function Gallery() {
           return(
             <div key={item.id} className="m-12">
                 <h1>{item.title}</h1>
-                <div><img className="w-64" src={item.image} alt="gallery" /></div>
+                <div>
+                  <ImageOnload 
+                  cssClass="w-64"
+                  src={item.image} 
+                  alt="gallery" />
+                </div>
                 <div dangerouslySetInnerHTML={{__html: item.body}} />
             </div>
           )

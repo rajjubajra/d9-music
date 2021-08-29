@@ -48,7 +48,6 @@ function Homepage() {
           return <div>
             <h1 className="text-2xl">{item.title}</h1>
             <div>
-              <img className="w-60" src={item.image} alt="homepage" />
               <ImageOnload 
               cssClass="w-60"
               src={item.image} 
