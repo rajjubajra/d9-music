@@ -10,7 +10,9 @@ function ImageOnload({src, alt, cssClass, height, width}) {
 
   useEffect(()=>{
 
-    status && setImgHeight('auto') && setImgWidth('auto') && setBlur('blur-none')
+    status && setImgHeight('auto') 
+    status && setImgWidth('auto') 
+    status && setBlur('blur-none')
 
   },[status])
 
