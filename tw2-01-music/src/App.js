@@ -7,7 +7,7 @@ import Music from './page/Music';
 import Contact from './page/Contact';
 import News from './page/News';
 import {useDispatch} from 'react-redux';
-import {actionNav} from './redux/actions';
+import {actionNav, actionHome} from './redux/actions';
 import MainNav from './components/MainNav';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
@@ -19,8 +19,15 @@ function App() {
 
   useEffect(()=>{
       dispatch(actionNav());
+      dispatch(actionHome());
   },[dispatch])
 
+
+
+
+
+
+  
   const baseurl = `/d9-music/themes/tw2-01`
   useEffect(() => console.log("Refresh"));
 

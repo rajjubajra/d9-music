@@ -21,10 +21,10 @@ function Homepage() {
   
 
 
-  useEffect(()=>{
-    console.log("action is runing");
-      dispatch(actionHome());
-  },[dispatch])
+  // useEffect(()=>{
+  //   console.log("action is runing");
+  //     dispatch(actionHome());
+  // },[dispatch])
 
   useEffect(()=>{
     const newArr = [];
