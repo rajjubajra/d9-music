@@ -9,8 +9,13 @@ function ImageOnload({src, alt, cssClass}) {
   useEffect(()=>{
 
     status && setBlur('');
+    const img = new Image();
+    img.onload = function() {
+      alert(`${this.width} x ${this.height}`);
+    }
+    img.src = {src};
 
-  },[status])
+  },[src, status])
 
   return (
     <img 
@@ -20,8 +25,7 @@ function ImageOnload({src, alt, cssClass}) {
     onError={()=>setStatus(false)}
     src={src} 
     alt={alt} 
-    />
-    
+    /> 
   )
 }
 
