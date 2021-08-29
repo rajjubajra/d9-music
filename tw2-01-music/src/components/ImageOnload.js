@@ -4,8 +4,8 @@ function ImageOnload({src, alt, cssClass, height, width}) {
 
   const [status, setStatus] = useState(false);
   const [blur, setBlur] = useState('blur-3xl');
-  const [imgHeight, setImgHeight] = useState(parseInt(height)/10);
-  const [imgWidth, setImgWidth] = useState(parseInt(width)/10);
+  const [imgHeight, setImgHeight] = useState(parseInt(height)/1000);
+  const [imgWidth, setImgWidth] = useState(parseInt(width)/1000);
   console.log(status);
 
   useEffect(()=>{
