@@ -10,10 +10,11 @@ function ImageOnload({src, alt, cssClass}) {
 
     status && setBlur('');
     const img = new Image();
-    img.onload = function() {
-      alert(`${this.width} x ${this.height}`);
-    }
     img.src = {src};
+    img.onload = function() {
+      console.log(img.width, img.height);
+    }
+    
 
   },[src, status])
 
