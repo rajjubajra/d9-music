@@ -1,4 +1,4 @@
-body { background:#333; }
+
 .loader { 
   width:500px; 
   margin:0 auto;
@@ -9,7 +9,7 @@ body { background:#333; }
 }
 .loader:before {
   content:'';
-  border:1px solid #fff; 
+  border:1px solid rgb(15, 15, 15); 
   border-radius:10px;
   position:absolute;
   top:-4px; 
@@ -24,7 +24,7 @@ body { background:#333; }
   right:100%;
   bottom:0;
   left:0;
-  background:#fff; 
+  background:rgb(96, 95, 95); 
   width:0;
   animation:borealisBar 2s linear infinite;
 }
