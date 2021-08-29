@@ -7,12 +7,14 @@ function ImageOnload({src, alt, cssClass}) {
   console.log(status);
 
   useEffect(()=>{
+    console.log('effect 1')
 
     status && setBlur('');
 
   },[status])
 
   useEffect(()=>{    
+    console.log('effect 2')
     const img = new Image();
     img.src = {src};
     img.onload = function() {
