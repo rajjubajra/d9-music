@@ -14,6 +14,7 @@ function ImageOnload({src, alt, cssClass, height, width}) {
 
   },[status])
 
+  console.log("image size",imgWidth, imgHeight);
 
   return (
     <img 
