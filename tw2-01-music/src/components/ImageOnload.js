@@ -3,12 +3,12 @@ import React, {useState, useEffect} from 'react'
 function ImageOnload({src, alt, cssClass}) {
 
   const [status, setStatus] = useState(false);
-  const [blur, setBlur] = useState('blur-3xl');
+  const [blur, setBlur] = useState('hidden');
   console.log(status);
 
   useEffect(()=>{
 
-    status && setBlur('blur-none');
+    status && setBlur('');
 
   },[status])
 
