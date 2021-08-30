@@ -2,7 +2,8 @@ function Logo() {
   return (
     <div>
       <img 
-        style={{width: "3rem", height: "auto"}}
+        width='3rem'
+        height='3rem'
         src="./yellow-website-square150x150.png" 
         alt="logo" />
     </div> 
