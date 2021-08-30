@@ -1,12 +1,6 @@
 import React, {useEffect} from 'react';
 import Loadable from 'react-loadable';
 import LoadingBar from './components/LoadingBar';
-import Tour from './page/Tour';
-import About from './page/About';
-import Gallery from './page/Gallery';
-import Music from './page/Music';
-import Contact from './page/Contact';
-import News from './page/News';
 import {useDispatch} from 'react-redux';
 import {actionNav, actionHome} from './redux/actions';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
@@ -18,6 +12,36 @@ const MenuBar = Loadable({
 
 const Homepage = Loadable({
   loader: () => import('./page/Homepage'),
+  loading: LoadingBar,
+})
+
+const Tour = Loadable({
+  loader: () => import('./page/Tour'),
+  loading: LoadingBar,
+})
+
+const About = Loadable({
+  loader: () => import('./page/About'),
+  loading: LoadingBar,
+})
+
+const Gallery = Loadable({
+  loader: () => import('./page/Gallery'),
+  loading: LoadingBar,
+})
+
+const Music = Loadable({
+  loader: () => import('./page/Music'),
+  loading: LoadingBar,
+})
+
+const Contact = Loadable({
+  loader: () => import('./page/Contact'),
+  loading: LoadingBar,
+})
+
+const News = Loadable({
+  loader: () => import('./page/News'),
   loading: LoadingBar,
 })
 
