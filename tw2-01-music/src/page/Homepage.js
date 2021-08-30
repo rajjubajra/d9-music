@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import LoadingBar from '../components/LoadingBar';
 import ImageOnload from '../components/ImageOnload';
 
 function Homepage() {
@@ -45,8 +44,7 @@ function Homepage() {
   return (
     <div>
         {
-        arr.length > 0
-        ? arr.map(item=>{
+        arr.length > 0 && arr.map(item=>{
           return <div>
             <h1 className="text-2xl">{item.title}</h1>
             <div>
@@ -63,8 +61,7 @@ function Homepage() {
             </div>
           </div>
         })
-        : <LoadingBar />
-        }
+      }
         
     </div>
   )
