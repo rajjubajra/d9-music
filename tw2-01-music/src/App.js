@@ -8,7 +8,7 @@ import Contact from './page/Contact';
 import News from './page/News';
 import {useDispatch} from 'react-redux';
 import {actionNav, actionHome} from './redux/actions';
-import MainNav from './components/MainNav';
+import MainMenu from './components/MainMenu/MainMenu';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-          <MainNav />
+          <MainMenu />
           <Switch>
             <Route exact path={`${baseurl}/`} component={Homepage} />
             <Route exact path={`${baseurl}/tour`} component={Tour} />
