@@ -1,4 +1,4 @@
-import React, {useEffect, lazy, Suspense} from 'react';
+import React, {useEffect, lazy} from 'react';
 import Homepage from './page/Homepage';
 import Tour from './page/Tour';
 import About from './page/About';
