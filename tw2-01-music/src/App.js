@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import Loadable from 'react-loadable';
 import LoadingBar from './components/LoadingBar';
-import Homepage from './page/Homepage';
 import Tour from './page/Tour';
 import About from './page/About';
 import Gallery from './page/Gallery';
@@ -16,6 +15,13 @@ const MenuBar = Loadable({
   loader: () => import ('./components/MainMenu/MenuBar'),
   loading: LoadingBar,
 });
+
+const Homepage = Loadable({
+  loader: () => import('./page/Homepage'),
+  loading: LoadingBar,
+})
+
+
 
 function App() {
 
