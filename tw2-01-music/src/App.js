@@ -8,7 +8,7 @@ import Contact from './page/Contact';
 import News from './page/News';
 import {useDispatch} from 'react-redux';
 import {actionNav, actionHome} from './redux/actions';
-import MainMenu from './components/MainMenu/MainMenu';
+import MenuBar from './components/MainMenu/MenuBar';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
@@ -22,11 +22,6 @@ function App() {
       dispatch(actionHome());
   },[dispatch])
 
-
-
-
-
-
   
   const baseurl = `/d9-music/themes/tw2-01`
   useEffect(() => console.log("Refresh"));
@@ -36,7 +31,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-          <MainMenu />
+          <MenuBar />
           <Switch>
             <Route exact path={`${baseurl}/`} component={Homepage} />
             <Route exact path={`${baseurl}/tour`} component={Tour} />

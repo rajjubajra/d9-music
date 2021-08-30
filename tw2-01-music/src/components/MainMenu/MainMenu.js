@@ -26,7 +26,7 @@ function MainMenu({showHideNav}) {
           const useUrl = newurl.join('/');
           return <div key={index}>
             <Link exact="true" 
-            to={useUrl}
+            to={`/${useUrl}`}
             onClick={showHideNav}
             className="px-3 py-2">
               {title}
