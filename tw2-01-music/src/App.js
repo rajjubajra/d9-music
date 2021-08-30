@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, lazy, Suspense} from 'react';
 import Homepage from './page/Homepage';
 import Tour from './page/Tour';
 import About from './page/About';
@@ -8,10 +8,9 @@ import Contact from './page/Contact';
 import News from './page/News';
 import {useDispatch} from 'react-redux';
 import {actionNav, actionHome} from './redux/actions';
-import MenuBar from './components/MainMenu/MenuBar';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-
+const MenuBar = lazy(() => import('./components/MainMenu/MenuBar'));
 
 function App() {
 
@@ -21,11 +20,11 @@ function App() {
       dispatch(actionNav());
       dispatch(actionHome());
   },[dispatch])
-
   
   const baseurl = `/d9-music/themes/tw2-01`
   useEffect(() => console.log("Refresh"));
 
+  
 
   return (
     <div className="App">
