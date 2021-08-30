@@ -3,7 +3,7 @@ function Logo() {
     <div>
       <img 
         style={{width: "4rem", height: "auto"}}
-        src="./data/images/tailwindlogo.png" 
+        src="./yellow-website-square150x150.png" 
         alt="logo" />
     </div> 
   )
