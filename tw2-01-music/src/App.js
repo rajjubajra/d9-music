@@ -1,4 +1,6 @@
-import React, {useEffect, lazy,Suspense} from 'react';
+import React, {useEffect} from 'react';
+import Loadable from 'react-loadable';
+import LoadingBar from './components/LoadingBar';
 import Homepage from './page/Homepage';
 import Tour from './page/Tour';
 import About from './page/About';
@@ -9,9 +11,11 @@ import News from './page/News';
 import {useDispatch} from 'react-redux';
 import {actionNav, actionHome} from './redux/actions';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import LoadingBar from './components/LoadingBar';
 
-const MenuBar = lazy(() => import('./components/MainMenu/MenuBar'));
+const MenuBar = Loadable({
+  loader: () => import ('./components/MainMenu/MenuBar'),
+  loading: LoadingBar,
+});
 
 function App() {
 
@@ -31,9 +35,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-        <Suspense fallback={LoadingBar}>
           <MenuBar />
-        </Suspense>
           <Switch>
             <Route exact path={`${baseurl}/`} component={Homepage} />
             <Route exact path={`${baseurl}/tour`} component={Tour} />
