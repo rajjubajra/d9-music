@@ -65,8 +65,8 @@ function Homepage() {
       } */}
 
       {
-        fetched > 0 &&
-        data.map((item)=>{
+        arr.length > 0 &&
+        arr.map((item)=>{
         return <div key={item.id} className="w-full p-5 max-w-screen-xl m-auto">
 
           <div className="grid gap-3 
