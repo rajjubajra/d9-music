@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function TourList({tourdata}) {
 
-  const month = ["Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const month = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   return (
       <div className="max-w-screen-xl m-auto p-10 mb-6 font-extralight">
       {
