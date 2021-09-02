@@ -18,13 +18,6 @@ function Homepage() {
 
   const [arr, setArr] = useState([]);
 
-  
-
-
-  // useEffect(()=>{
-  //   console.log("action is runing");
-  //     dispatch(actionHome());
-  // },[dispatch])
 
   useEffect(()=>{
     const newArr = [];
@@ -44,25 +37,6 @@ function Homepage() {
 
   return (
     <div>
-        {/* {
-        arr.length > 0 && arr.map(item=>{
-          return <div>
-            <h1 className="text-2xl">{item.title}</h1>
-            <div>
-              <ImageOnload 
-              height={item.image_height}
-              width={item.image_width}
-              cssClass="w-60"
-              src={item.image} 
-              alt="Homepage" 
-              />
-            </div>
-            <div>
-              <div dangerouslySetInnerHTML={{__html: item.body }}></div>
-            </div>
-          </div>
-        })
-      } */}
 
       {
         arr.length > 0 &&
@@ -101,12 +75,10 @@ function Homepage() {
             </div>
             </div>
           </div>
-
         </div>
         })
       }
     
-        
     </div>
   )
 }
