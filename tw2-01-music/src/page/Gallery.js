@@ -48,7 +48,7 @@ function Gallery() {
   
   
   return (
-    <div className="grid grid-col-3 grid-rows-3 gap-2">
+    <div className="grid grid-cols-3 grid-rows-3 gap-3 p-10">
       {
         arr.map(item=>{
           return(<Gear title={item.title} src={item.image} text={item.body} />

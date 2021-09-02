@@ -4,9 +4,8 @@ import ImageOnload from '../components/ImageOnload';
 function Gear(props) {
 
   return (
-    <div>
+    
     <div className="grid w-full lg:max-w-screen-sm bg-gray-200 ">
-      
       <div>
         <ImageOnload src={props.src} 
         alt="Music Gear" 
@@ -23,7 +22,7 @@ function Gear(props) {
           : 'Text contents goes here'}
       </div>
     </div>
-    </div>
+    
   )
 }
 
