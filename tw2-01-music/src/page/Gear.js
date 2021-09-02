@@ -4,9 +4,8 @@ import ImageOnload from '../components/ImageOnload';
 function Gear(props) {
 
   return (
-    <div className="p-10">
-    <div className="grid w-full
-    md:w-1/2 md:m-10 lg:max-w-screen-sm bg-gray-200 ">
+    <div>
+    <div className="grid w-full lg:max-w-screen-sm bg-gray-200 ">
       
       <div>
         <ImageOnload src={props.src} 
