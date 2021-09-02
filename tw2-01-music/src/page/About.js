@@ -61,21 +61,22 @@ function About() {
       {
         length > 0 &&
         arr.map(item => {
-          return <div className="grid grid-cols-12 max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
+          return <div className="grid grid-cols-12 gap-4
+          max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
 
           <div className="p-10 w-full">
-            <h1 className="text-4xl w-full">{ item.title}</h1>
+            <h1 className="text-4xl col-span-12">{ item.title}</h1>
           </div>
 
       
-          <div className="col-span-12 p-10">
-            <div>
+          <div className="col-span-2">
                 <ImageOnload 
-                cssClass="w-56"
+                cssClass="w-full h-96 object-cover"
                 src={item.image}
                 alt="about" 
                 />
-            </div>
+          </div>
+          <div className="col-span-10 p-10">
             <div className="tracking-wider" dangerouslySetInnerHTML={{__html: item.body}} />
           </div>
         </div>
