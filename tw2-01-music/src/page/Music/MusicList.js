@@ -3,7 +3,8 @@ import ImageOnload from '../../components/ImageOnload';
 
 function MusicList({listdata}) {
   return (
-    <div className="p-10 grid grid-flow-col grid-cols-3 gap-6 font-extralight">
+    <div className="p-10 grid grid-flow-col grid-cols-3 grid-rows-3 gap-6 
+                    font-extralight">
     {
       listdata.length > 0 && listdata.map( item => {
         return <div className="w-full
