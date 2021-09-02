@@ -1,23 +1,20 @@
 import React from 'react';
-import ImageOnload from '../components/ImageOnload';
+import BtnReadMore from '../components/Buttons/BtnReadMore';
 
 function NewsList({listdata}) {
   return (
-    <div className="p-10 grid grid-flow-col grid-cols-3 gap-6 font-extralight">
+    <div>
     {
       listdata.length > 0 && listdata.map( item => {
-        return <div className="w-full
-                lg:max-w-screen-sm">
-        <div>
-          <h3 className="text-3xl py-4">{item.title}</h3>
+        return <div key={item.id} className="grid grid-rows-1 p-10 font-extralight">
+          <div className="text-center my-4">{item.article_id}</div>
+          <div className="text-center">{item.date}</div>
+          <div className="text-center">
+            <h2 className="text-2xl my-4">{item.title}</h2>
+          </div>
+          <div><div  className="text-center my-4" dangerouslySetInnerHTML={{__html: item.body.substring(0,300)}} /></div>
+          <div className="text-center"><BtnReadMore link="#" /></div>
         </div>
-        <div>
-          <ImageOnload cssClass="w-full h-64 object-cover" src={item.image} />
-        </div>
-        <div className="py-4">
-          <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
-        </div>
-      </div>
       })
     }
     </div>
