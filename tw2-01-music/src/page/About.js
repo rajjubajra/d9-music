@@ -64,18 +64,18 @@ function About() {
           return <div className="grid grid-cols-12 gap-4
           max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
 
-          <div className="p-10 w-full">
-            <h1 className="text-4xl col-span-12">{ item.title}</h1>
+          <div className="p-10 col-span-12">
+            <h1 className="text-4xl">{ item.title}</h1>
           </div>
-
       
-          <div className="col-span-2">
+          <div className="col-span-2 mt-12">
                 <ImageOnload 
                 cssClass="w-full h-96 object-cover"
                 src={item.image}
                 alt="about" 
                 />
           </div>
+
           <div className="col-span-10 p-10">
             <div className="tracking-wider" dangerouslySetInnerHTML={{__html: item.body}} />
           </div>
