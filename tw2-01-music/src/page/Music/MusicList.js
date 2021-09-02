@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageOnload from '../components/ImageOnload';
+import ImageOnload from '../../components/ImageOnload';
 
 function MusicList({listdata}) {
   return (

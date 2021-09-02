@@ -1,12 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionMusic, actionMediaAudio} from '../redux/actions';
-//import AudioList from './Music/AudioList';
-import MusicList from './Music/MusicList';
+import AudioList from './Music/AudioList';
 
 
-
-function Music() {
+function MusicDetail() {
   
   const dispatch = useDispatch();
 
@@ -109,9 +107,24 @@ function Music() {
 
   return (
     <div>
-      <MusicList listdata={viewData} />
+      <h1>Music Page</h1>
+      {
+        viewData.length > 0 &&
+        viewData.map((item)=>{
+          const {id, title, body, data } = item;
+          return <div key={id} className="m-5 p-3">
+            <h2 className="my-2">{title}</h2>
+            <div dangerouslySetInnerHTML={{__html: body}} />
+            {console.log(typeof(data))}
+            {console.log(data)}
+            <ul className="m-5 border p-4">
+              {AudioList({data})}
+            </ul>            
+          </div>
+        })
+      }
     </div>
   )
 }
 
-export default Music
+export default MusicDetail
