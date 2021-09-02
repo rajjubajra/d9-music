@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionNews} from '../redux/actions';
-import ImageOnload from '../components/ImageOnload';
+//import ImageOnload from '../components/ImageOnload';
+import NewsList from './NewsList';
 
 
 
@@ -54,7 +55,7 @@ function News() {
   
   return (
     <div>
-      {
+      {/* {
         length > 0 &&
         arr.map(item=>{
           return(
@@ -71,7 +72,9 @@ function News() {
             </div>
           )
         })
-      }
+      } */}
+
+      <NewsList listdata={length > 0 ? arr : []} />
     </div>
   )
 }

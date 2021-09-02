@@ -18,7 +18,7 @@ function TourList({tourdata}) {
                     md:grid-cols-7 md:grid-rows-1 mb-8">
             <div className="border border-gray-300 p-2 col-span-2 
                             md:col-span-1">
-                            {month[date.getMonth()]} {date.getDate()},{date.getFullYear()}
+                            {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
                             </div>
             <div className="border border-gray-300 col-span-2
                             md:col-span-4 p-2">
