@@ -108,9 +108,9 @@ function Music() {
 
 
   return (
-    <div>
+    <>
       <MusicList listdata={viewData} />
-    </div>
+    </>
   )
 }
 
