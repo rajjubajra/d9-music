@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionTour} from '../redux/actions'
 import {Link} from 'react-router-dom';
+import TourList from './TourList';
 
 function Tour() {
 
@@ -19,7 +20,8 @@ function Tour() {
 
   return (
     <div>
-    {
+      <TourList tourdata={length > 0 ? data : []} /> 
+    {/*
       length > 0 &&
         data.map(item => {
           const {attributes:{title, field_event_details, field_event_location, field_buy_ticket}} = item;
@@ -35,7 +37,7 @@ function Tour() {
           </div>
           </div>
       })
-    }
+     */}
     </div>
   )
 }
