@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import ImageOnload from '../components/ImageOnload';
+//import ImageOnload from '../components/ImageOnload';
 import {actionGallery} from '../redux/actions';
+import Gear from './Gear';
 
 function Gallery() {
 
@@ -50,8 +51,8 @@ function Gallery() {
     <div>
       {
         arr.map(item=>{
-          return(
-            <div key={item.id} className="m-12">
+          return(<Gear title={item.title} src={item.image} text={item.body} />
+            /* <div key={item.id} className="m-12">
                 <h1>{item.title}</h1>
                 <div>
                   <ImageOnload 
@@ -60,7 +61,7 @@ function Gallery() {
                   alt="gallery" />
                 </div>
                 <div dangerouslySetInnerHTML={{__html: item.body}} />
-            </div>
+            </div> */
           )
         })
       }
