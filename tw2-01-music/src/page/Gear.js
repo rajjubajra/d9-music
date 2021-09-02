@@ -9,7 +9,7 @@ function Gear(props) {
     md:w-1/2 md:m-10 lg:max-w-screen-sm bg-gray-200 ">
       
       <div>
-        <ImageOnload src="./images/Music2011_3.jpeg" 
+        <ImageOnload src={props.src} 
         alt="Music Gear" 
         cssClass="w-full"
         />
