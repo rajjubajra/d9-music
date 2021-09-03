@@ -23,7 +23,7 @@ function ContactInfo() {
 
             <ImageOnload 
             cssClass="w-1/2 h-96 object-cover"
-            src={inc[1].attributes.uri.url} 
+            src={fetched && inc[1].attributes.uri.url} 
             alt="Music Page"
             />
 
