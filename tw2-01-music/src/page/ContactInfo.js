@@ -8,8 +8,8 @@ function ContactInfo() {
 
   const dispatch = useDispatch()
 
-  const data = useSelector(state => state.reducderContactInfo.contact_info_data.data);
-  const fetched = useSelector(state => state.reducderContactInfo.contact_info_fetched);
+  const data = useSelector(state =>    state.reducerContactInfo.contact_info_data.data);
+  const fetched = useSelector(state => state.reducerContactInfo.contact_info_fetched);
   
   useEffect(()=> {
     dispatch(actionContactInfo());
