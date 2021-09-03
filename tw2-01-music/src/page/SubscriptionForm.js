@@ -101,7 +101,7 @@ function SubscriptionForm() {
           <input 
           className="w-full  outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
-          md:border-l-0 md:border-r md:border-t md:border-b-0"
+          md:border-l md:border-r md:border-t md:border-b-0"
           required  
           type="text" 
           id="city" 
@@ -113,7 +113,7 @@ function SubscriptionForm() {
           <input 
           className="w-full  outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
-          md:border-l-0 md:border-r md:border-t md:border-b-0"
+          md:border-l md:border-r md:border-t md:border-b"
           required  
           type="text" 
           id="country" 
@@ -126,7 +126,7 @@ function SubscriptionForm() {
         
         <div>
           <input  
-          className="border cursor-pointer border-gray-500 p-4 outline-none"  type="submit" 
+          className="border cursor-pointer border-gray-500 p-4 mt-4 outline-none"  type="submit" 
           id="submit" 
           name="submit" 
           value="Submit" />
