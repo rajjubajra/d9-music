@@ -89,7 +89,7 @@ function SubscriptionForm() {
           <input 
           className="w-full outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
-          md:border-l-0 md:border-r md:border-t md:border-b-0"
+          md:border-l md:border-r md:border-t md:border-b-0"
           required  
           type="text" 
           id="email" 
