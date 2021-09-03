@@ -451,7 +451,7 @@ export const actionContactInfo = () => {
     }
   }
 
-  const contactInfoUrl = `${baseurl.URL}/jsonapi/node/contact_info`;
+  const contactInfoUrl = `${baseurl.URL}/jsonapi/node/contact_info?include=field_contact_info_image,field_contact_info_image.field_media_image`;
   const CONTACT_INFO = contactInfoUrl;
 
   return function (dispatch) {
