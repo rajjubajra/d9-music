@@ -9,8 +9,8 @@ import {actionSubscriptionForm} from '../redux/actions';
 function SubscriptionForm() {
 
   const dispatch = useDispatch();
-  const form = useSelector(state => state.reducerBasicContactForm.contact_form_data.data);
-  const form_fetched = useSelector(state => state.reducerBasicContactForm.contact_form_fetched);
+  const form = useSelector(state => state.reducerSubscriptionForm.subscription_form_data.data);
+  const form_fetched = useSelector(state => state.reducerSubscriptionForm.subscription_form_fetched);
   console.log("Conf message", form_fetched && form);
 
   const [name, setName] = useState('');

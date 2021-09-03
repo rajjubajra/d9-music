@@ -511,7 +511,7 @@ export const reducerSubscriptionForm = (state = initalStateSubscriptionForm, act
       return {
         subscription_form_data: action.data,
         subscription_form_fetched: true,
-        subscription_form_dataLength: action.data.data.length
+        subscription_form_dataLength: action.data.length
       }
     case actionTypes.SUBSCRIPTIONS_FORM_FETCH_ERROR:
       return {

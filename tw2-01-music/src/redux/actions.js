@@ -502,7 +502,7 @@ export const actionSubscriptionForm = () => {
   
   const reqImage = axios.get(SUBSCRIPTION_FORM, headers)
   reqImage.then((res) => {
-      console.log("action news",res.data)
+      console.log("action Subscription",res.data)
       dispatch({
         type: actionTypes.SUBSCRIPTION_FORM_FETCHED,
         data: res.data
