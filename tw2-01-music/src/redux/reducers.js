@@ -442,3 +442,50 @@ export const reducerBasicContactForm = (state = initalStateBasicContactForm, act
   }
 
 }// BASIC CONTACT FORM CLOSED
+
+
+
+
+
+
+/** CONTACT INFO */
+const initalStateContactInfo = {  
+  contact_info_fetching: false,
+  contact_info_fetched: false,
+  contact_info_fetch_error: '',
+  contact_info_data: [],
+  contact_info_dataLength: 0,
+}
+
+export const reducerContactInfo = (state = initalStateContactInfo, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.CONTACT_INFO_START_FETCHING:
+      return {
+        contact_info_fetching: true,
+        contact_info_data: []
+      }
+    case actionTypes.CONTACT_INFO_FETCHED:
+      return {
+        contact_info_data: action.data,
+        contact_info_fetched: true,
+        contact_info_dataLength: action.data.data.length
+      }
+    case actionTypes.CONTACT_INFO_FETCH_ERROR:
+      return {
+        contact_info_fetched: false,
+        contact_info_fetching: false,
+        contact_info_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// CONTACT INFO CLOSED
+
+
+
+

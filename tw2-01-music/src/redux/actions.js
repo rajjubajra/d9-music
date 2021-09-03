@@ -442,6 +442,46 @@ export const actionBasicContactForm = () => {
 
 
 
+/** CONTACT INFO */
+export const actionContactInfo = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const contactInfoUrl = `${baseurl.URL}/jsonapi/node/contact_info`;
+  const CONTACT_INFO = contactInfoUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.CONTACT_INFO_START_FETCHING
+  });
+  
+  const reqImage = axios.get(CONTACT_INFO, headers)
+  reqImage.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.CONTACT_INFO_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.CONTACT_INFO_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+}// actionContactInfo Closed
+
+
+
+
 export const actionSetYearMonth = (YearMonth) => (
   {
     type: actionTypes.SELECTED_YEAR_MONTH,
