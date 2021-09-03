@@ -14,7 +14,8 @@ import {
   reducerMediaImage,
   reducerMediaRemoteVideo,
   reducerBasicContactForm,
-  reducerContactInfo
+  reducerContactInfo,
+  reducerSubscriptionForm,
   
   
 } from './reducers';
@@ -34,7 +35,8 @@ const reducer = combineReducers(
     reducerMediaImage,
     reducerMediaRemoteVideo,
     reducerBasicContactForm,
-    reducerContactInfo
+    reducerContactInfo,
+    reducerSubscriptionForm
 
     
   }

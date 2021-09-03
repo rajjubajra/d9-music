@@ -481,6 +481,45 @@ export const actionContactInfo = () => {
 
 
 
+/** SUBSCRIPTION FORM */
+export const actionSubscriptionForm = () => {
+
+  const headers = {
+    headers: {
+    'Accept': 'application/vnd.api+json'
+    }
+  }
+
+  const subscriptionUrl = `${baseurl.URL}/jsonapi/webform/webform/8979d944-eba5-4587-9d0b-2002f663d15b`;
+  const SUBSCRIPTION_FORM = subscriptionUrl;
+
+  return function (dispatch) {
+
+  /** TOUR */
+  dispatch({
+    type: actionTypes.SUBSCRIPTION_FORM_START_FETCHING
+  });
+  
+  const reqImage = axios.get(SUBSCRIPTION_FORM, headers)
+  reqImage.then((res) => {
+      console.log("action news",res.data)
+      dispatch({
+        type: actionTypes.SUBSCRIPTION_FORM_FETCHED,
+        data: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: actionTypes.SUBSCRIPTION_FORM_FETCH_ERROR,
+        fetched: false,
+        error: err
+      })
+    }) 
+  }
+}// actionSubscriptionForm Closed
+
+
+
 
 export const actionSetYearMonth = (YearMonth) => (
   {

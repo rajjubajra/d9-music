@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {baseurl} from '../config/config';
 import { useDispatch, useSelector } from 'react-redux';
 import ajax from '../config/ajax';
-import {actionBasicContactForm} from '../redux/actions';
+import {actionSubscriptionForm} from '../redux/actions';
 
 
 
@@ -22,7 +22,7 @@ function SubscriptionForm() {
 
   useEffect(()=>{
     
-    dispatch(actionBasicContactForm())
+    dispatch(actionSubscriptionForm())
 
     submitForm &&
     setName('');

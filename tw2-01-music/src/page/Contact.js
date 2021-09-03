@@ -1,12 +1,18 @@
-import React from 'react';
+import {useEffect} from 'react';
 //import ContactForm from './ContactForm';
 import SubscriptionFrom from './SubscriptionForm';
 import ImageOnload from '../components/ImageOnload';
+import {useDispatch} from 'react-redux';
+import {actionContactInfo} from '../redux/actions';
 
 function Contact() {
 
-
+  const dispatch = useDispatch()
   
+  useEffect(()=> {
+    dispatch(actionContactInfo());
+  },[dispatch]);
+
   return (
     <div className="grid grid-cols-12 max-w-screen-xl m-auto p-10">
         <div className="col-span-4">

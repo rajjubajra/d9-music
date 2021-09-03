@@ -489,3 +489,44 @@ export const reducerContactInfo = (state = initalStateContactInfo, action) => {
 
 
 
+/** SUBSCRIPTION FORM */
+const initalStateSubscriptionForm = {  
+  subscription_form_fetching: false,
+  subscription_form_fetched: false,
+  subscription_form_fetch_error: '',
+  subscription_form_data: [],
+  subscription_form_dataLength: 0,
+}
+
+export const reducerSubscriptionForm = (state = initalStateSubscriptionForm, action) => {
+
+  switch (action.type) {
+
+    case actionTypes.SUBSCRIPTION_FORM_START_FETCHING:
+      return {
+        subscription_form_fetching: true,
+        subscription_form_data: []
+      }
+    case actionTypes.SUBSCRIPTION_FORM_FETCHED:
+      return {
+        subscription_form_data: action.data,
+        subscription_form_fetched: true,
+        subscription_form_dataLength: action.data.data.length
+      }
+    case actionTypes.SUBSCRIPTIONS_FORM_FETCH_ERROR:
+      return {
+        subscription_form_fetched: false,
+        subscription_form_fetching: false,
+        subscription_form_fetch_error: action.error
+      }
+    
+    /** default state */
+    default:
+      return state;
+  }
+
+}// SUBSCRIPTION FORM CLOSED
+
+
+
+
