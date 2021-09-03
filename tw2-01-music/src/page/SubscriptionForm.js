@@ -75,7 +75,7 @@ function SubscriptionForm() {
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
           <input 
-          className="w-full md:w-1/2 outline-none p-2 border-gray-500 
+          className="w-full outline-none p-2 border-gray-500 
           border-l border-r border-t border-b-0
           md:border-l md:border-r md:border-t md:border-b-0" 
           required
@@ -87,7 +87,7 @@ function SubscriptionForm() {
           onChange={(e)=>setName(e.target.value)}
           />
           <input 
-          className="w-full md:w-1/2 outline-none border-gray-500 p-2
+          className="w-full outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
           md:border-l-0 md:border-r md:border-t md:border-b-0"
           required  
@@ -99,7 +99,7 @@ function SubscriptionForm() {
           onChange={(e)=>setEmail(e.target.value)}
           />
           <input 
-          className="w-full md:w-1/2 outline-none border-gray-500 p-2
+          className="w-full  outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
           md:border-l-0 md:border-r md:border-t md:border-b-0"
           required  
@@ -111,7 +111,7 @@ function SubscriptionForm() {
           onChange={(e)=>setCity(e.target.value)}
           />
           <input 
-          className="w-full md:w-1/2 outline-none border-gray-500 p-2
+          className="w-full  outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
           md:border-l-0 md:border-r md:border-t md:border-b-0"
           required  
