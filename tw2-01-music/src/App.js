@@ -73,7 +73,7 @@ function App() {
             <Route exact path={`${baseurl}/about`} component={About} />
             <Route exact path={`${baseurl}/music`} component={Music} />
             <Route exact path={`${baseurl}/gallery`} component={Gallery} />
-            <Route exact path={`${baseurl}/form/contact`} component={Contact} />
+            <Route exact path={`${baseurl}/form/subscription`} component={Contact} />
           </Switch>  
           
         </BrowserRouter>
