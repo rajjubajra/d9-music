@@ -8,7 +8,8 @@ function ContactInfo() {
 
   const dispatch = useDispatch()
 
-  const data = useSelector(state =>    state.reducerContactInfo.contact_info_data.data);
+  const data = useSelector(state => state.reducerContactInfo.contact_info_data.data);
+  const inc  = useSelector(state => state.reducerContactInfo.contact_info_data.included);
   const fetched = useSelector(state => state.reducerContactInfo.contact_info_fetched);
   
   useEffect(()=> {
@@ -22,7 +23,7 @@ function ContactInfo() {
 
             <ImageOnload 
             cssClass="w-1/2 h-96 object-cover"
-            src="./images/Music2011_5.jpeg" 
+            src={inc[1].attributes.uri.url} 
             alt="Music Page"
             />
 
