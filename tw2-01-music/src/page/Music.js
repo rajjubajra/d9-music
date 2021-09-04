@@ -23,7 +23,7 @@ function Music(){
    console.log(musicDataFetched,musicDataInc);
 
   /** NEW WORKOUT */
-  const [file_file, setfile_file] = useState([]);
+  const [file_file, setFile_file] = useState([]);
 
   useEffect(()=>{
     const file = [];
@@ -32,6 +32,7 @@ function Music(){
       return item.type === 'file--file' &&
       file.push({id: item.id, uri: item.attributes.uri}); 
     })
+    setFile_file(file);
   },[musicDataFetched, musicDataInc])
 
   console.log("FILE ONLY INCLUDED", file_file);
