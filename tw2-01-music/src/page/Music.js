@@ -62,24 +62,7 @@ function Music(){
     
   },[file_file, musicDataFetched, musicDataInc])
 
-  useEffect(()=>{
-
-    const arr = [];
-
-    musicDataFetched &&
-    musicDataInc.map(item => {
-      arr.push({
-        id: item.id, 
-        imageUrl: item.type === 'media_image' && 
-                  getMedia(item.relationships.field_media_image.data.id, file_file),
-        audioUrl: item.type === 'media_audio' &&
-                  getMedia(item.relationships.field_media_audio_file, file_file)
-        })
-    });
-
-    setMediaArr(arr);
-
-  },[file_file, musicDataFetched, musicDataInc])
+  
   
 
   console.log("FILE ARRAY", file_file);
