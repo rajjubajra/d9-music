@@ -24,6 +24,7 @@ function Music(){
 
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
+  const [media, setMedia] = useState([]);
   
 
 
@@ -57,10 +58,26 @@ function Music(){
     setFile_file(arr);
   },[musicDataFetched, musicDataInc])
 
+  useEffect(() => {
+    const arr = [];
+    musicDataFetched &&
+    musicDataInc.map((item)=>{
+      return item.type !== 'file--file' &&
+      arr.push({
+        id: item.id, 
+        name:item.attributes.name,
+        mediaId: item.type === 'media--audio' ? item.relationships.field_media_audio_file.data.id : item.relationships.field_media_image.data.id,
+      })
+    })
+    setMedia(arr);
+
+  },[musicDataFetched, musicDataInc])
+
   
 
 
   console.log("FILE ARRAY", file_file);
+  console.log("Media Array", media);
   
 
 
