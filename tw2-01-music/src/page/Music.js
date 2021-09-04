@@ -112,7 +112,7 @@ function Music() {
     musicData.map((item) => {
           const {attributes:{title}, field_music_body:{processed}} = item;
           const {relationships:{field_music_audio:{data}, field_music_image}} = item;
-          newarr.push({
+          return newarr.push({
             title: title, 
             body:processed,
             audio: mergeArrayObjects(data, musicDataInc),
