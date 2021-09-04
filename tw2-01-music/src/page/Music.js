@@ -73,8 +73,8 @@ function Music() {
     let merge = [];
     arr2.map(item => {
       //const {attributes:{filemime}, attributes:{uri:{url}}} = item;
-        arr1.some((el) => el.id === item.field_media_audio_file.data.id) && 
-        arr1.some((el) => el.id === item.field_media_image_file.data.id) &&
+        arr1.some((el) => el.id === item.id) && 
+        arr1.some((el) => el.id === item.id) &&
         merge.push({
           id: item.id, 
           url: item.attributes.uri.url, 
