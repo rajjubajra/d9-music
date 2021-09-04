@@ -72,9 +72,9 @@ function Music() {
    // let start = 0;
     let merge = [];
     arr2.map(item => {
+      const {attributes:{filemime}, attributes:{uri:{url}}} = item;
     return arr1.some((el) => el.id === item.id) && 
-        merge.push({id: item.id, title: item.title, url: item.url});
-      
+        merge.push({incId: item.id, url:url, filetype: filemime});
     })
     return merge;
   }
