@@ -20,22 +20,54 @@ function Music(){
   //const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
 
 
-   console.log(musicDataFetched,musicDataInc);
+  console.log(musicDataFetched,musicDataInc);
 
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
 
+
+  /** FUNCTION: merge Array with same "id"  */
+  function mergeArrayObjects(arr1,arr2){
+    // let start = 0;
+      let merge = [];
+      arr2.map(item => {
+       //const {attributes:{filemime}, attributes:{uri:{url}}} = item;
+          arr1.some((el) => el.id === item.id)
+          merge.push({
+            mediaId: item.id, 
+            url: item.uri
+          });
+      })
+      return merge;
+  }
+
+
   useEffect(()=>{
     const file = [];
+    const media = [];
     musicDataFetched &&
     musicDataInc.map((item)=>{
       return item.type === 'file--file' &&
-      file.push({id: item.id, uri: item.attributes.uri}); 
+      file.push({id: item.id, uri: item.attributes.uri})
+      && item.type !== 'file--file' &&
+      media.push(...musicDataInc); 
+
     })
-    setFile_file(file);
+    console.log("FILE", file);
+    console.log("MEDIA", media);
+
+
   },[musicDataFetched, musicDataInc])
 
-  console.log("FILE ONLY INCLUDED", file_file);
+  
+
+
+  //console.log("FILE ONLY INCLUDED", file_file);
+
+  
+
+
+
 
   return(
     <div>
