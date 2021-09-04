@@ -73,8 +73,8 @@ function Music() {
     let merge = [];
     arr2.map(item => {
       //const {attributes:{filemime}, attributes:{uri:{url}}} = item;
-      return item.type === 'file--file' &&
-        arr1.some((el) => el.id === item.id) && 
+        arr1.some((el) => el.id === item.field_media_audio_file.data.id) && 
+        arr1.some((el) => el.id === item.field_media_image_file.data.id) &&
         merge.push({
           id: item.id, 
           url: item.attributes.uri.url, 
@@ -109,6 +109,22 @@ function Music() {
   },[audioData, musicData, musicDataLength])
 
 
+  /** NEW WORKOUT */
+  const [included, setIncluded] = useState([]);
+  useEffect(()=>{
+    const newInc = [];
+    musicDataFetched &&
+    musicDataInc.map((item) => {
+      return item.relationships.field_media_audio_file.data.id === item.id &&
+      item.relationships.field_media_image.data.id === item.id &&
+      item.type === 'file--file' &&
+      newInc.push({id:item.id, uri:item.attributes.uri, filetype: item.filemime });
+    })
+    setIncluded(newInc);
+  },[musicDataFetched, musicDataInc])
+
+  console.log("NEW INCLUDED", included);
+  
   useEffect(()=>{
 
     const newarr = []
