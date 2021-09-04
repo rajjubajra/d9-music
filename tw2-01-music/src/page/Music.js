@@ -19,6 +19,7 @@ function Music() {
 
   /** DRUPAL DATA CREATED BY CONTENT TYPE */
   const musicData = useSelector(state => state.reducerMusic.music_data.data);
+  const musicDataFetched = useSelector(state => state.reducerMusic.music_data_fetched);
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
   const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
   
@@ -92,7 +93,8 @@ function Music() {
         id: item.id,
         title: title, 
         body: field_music_body.processed,
-        data: mergeArrayObjects(data, audioData)
+        data: mergeArrayObjects(data, audioData),
+
       });
     })
     
@@ -101,6 +103,25 @@ function Music() {
     setViewData(arr);
 
   },[audioData, musicData, musicDataLength])
+
+
+  useEffect(()=>{
+
+    const newarr = []
+    musicDataFetched &&
+    musicData.map((item) => {
+          const {attributes:{title}, field_music_body:{processed}} = item;
+          const {relationships:{field_music_audio, field_music_image}} = item;
+          newarr.push({
+            title: title, 
+            body:processed,
+            audio: mergeArrayObjects(field_music_audio.data, musicDataInc),
+            image: mergeArrayObjects(field_music_image.data, musicDataInc)
+          })
+    });
+    console.log("NEW MUSIC DATA ARRAY", newarr);
+
+  })
 
 
   console.log("view Data", viewData, "vlength ",viewData.length );
