@@ -60,8 +60,6 @@ function Music(){
     
     musicDataFetched &&
     musicDataInc.map(item => {
-      const {relationships:{field_media_image:{data:{id}}}} = item;
-      
       mediaArr.push({
         id: item.id, 
         imageUrl: item.type === 'media_image' && 
