@@ -73,19 +73,7 @@ function Music(){
    console.log("MEDIA ARRAY",mediaArr);
 
   },[file_file, musicDataFetched, musicDataInc])
-
   
-
-
-  useEffect(()=>{
-      const newInc = [];
-      musicDataInc.map((item)=>{
-
-       
-      })
-      console.log("NEW INCLUDED",newInc);
-
-  },[musicDataInc, file_file])
 
   //console.log("FILE ONLY INCLUDED", file_file);
 
