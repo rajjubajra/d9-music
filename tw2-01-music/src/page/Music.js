@@ -23,22 +23,18 @@ function Music(){
    console.log(musicDataFetched,musicDataInc);
 
   /** NEW WORKOUT */
-  const [included, setIncluded] = useState([]);
+  const [file_file, setfile_file] = useState([]);
+
   useEffect(()=>{
-    const newInc = [];
+    const file = [];
     musicDataFetched &&
-    musicDataInc.map((item) => {
-      (item.type === 'media--audio' && item.relationships.field_media_audio_file.data.id) === item.id &&
-      (item.type === 'media-image' && item.relationships.field_media_image.data.id) === item.id &&
-      newInc.push({
-        id:item.id, 
-        uri:item.type === 'file--file' && item.attributes.uri, 
-        filetype: item.type === 'file--file' && item.filemime });
+    musicDataInc.map((item)=>{
+      return item.type === 'file--file' &&
+      file.push({...musicDataInc}); 
     })
-    setIncluded(newInc);
   },[musicDataFetched, musicDataInc])
 
-  console.log("NEW INCLUDED", included);
+  console.log("FILE ONLY INCLUDED", file_file);
 
   return(
     <div>
