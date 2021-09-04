@@ -121,7 +121,7 @@ function Music() {
     });
     console.log("NEW MUSIC DATA ARRAY", newarr);
 
-  })
+  },[musicData, musicDataFetched, musicDataInc])
 
 
   console.log("view Data", viewData, "vlength ",viewData.length );
