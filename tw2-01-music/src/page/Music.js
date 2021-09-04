@@ -67,17 +67,13 @@ function Music(){
         audioUrl: item.type === 'media_audio' &&
                   getMedia(item.relationships.field_media_audio_file, file_file)
         })
-    })
-   console.log("MEDIA ARRAY",mediaArr);
+    });
+  console.log("MEDIA ARRAY",mediaArr);
 
   },[file_file, musicDataFetched, musicDataInc])
   
 
   //console.log("FILE ONLY INCLUDED", file_file);
-
-  
-
-
 
 
   return(
