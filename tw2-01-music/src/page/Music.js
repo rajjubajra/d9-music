@@ -76,8 +76,8 @@ function Music() {
     return arr1.some((el) => el.id === item.id) && 
         merge.push({
           id: item.id, 
-          url: item.attributes.type === 'file--file' && item.attributes.uri.url, 
-          filetype: item.attributes.type === 'file--file' && item.attributes.filemime});
+          url: item.type === 'file--file' && item.attributes.uri.url, 
+          filetype: item.type === 'file--file' && item.attributes.filemime});
     })
     return merge;
   }
