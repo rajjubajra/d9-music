@@ -75,11 +75,13 @@ function Music(){
   },[musicDataFetched, musicDataInc]);
 
   function getUri(id, arr){
+    console.log("mediaId uri", id)
     arr.map( item => {
       return item.id === id && item.uri
     });
   }
   function getFileType(id, arr){
+    console.log("meidiaId filetype",id);
     arr.map(item => {
       return item.id === id && item.filetype
     } );
