@@ -19,7 +19,7 @@ function Music() {
 
   /** DRUPAL DATA CREATED BY CONTENT TYPE */
   const musicData = useSelector(state => state.reducerMusic.music_data.data);
-  const musicDataFetched = useSelector(state => state.reducerMusic.music_data_fetched);
+  const musicDataFetched = useSelector(state => state.reducerMusic.music_fetched);
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
   const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
   
