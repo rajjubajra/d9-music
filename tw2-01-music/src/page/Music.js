@@ -42,25 +42,50 @@ function Music(){
   }
 
 
+  function getMedia(id, arr){
+    arr.map(item => {return id === item.id && item.uri})
+  }
+
+
   useEffect(()=>{
     const file = [];
-    const media = [];
+    const mediaArr = [];
     musicDataFetched &&
     musicDataInc.map((item)=>{
       return item.type === 'file--file' &&
       file.push({id: item.id, uri: item.attributes.uri})
-      && item.type !== 'file--file' &&
-      media.push(...musicDataInc); 
-
     })
+    setFile_file(file);
     console.log("FILE", file);
-    console.log("MEDIA", media);
+    
+    musicDataFetched &&
+    musicDataInc.map(item => {
+      const {relationships:{field_media_image:{data:{id}}}} = item;
+      
+      mediaArr.push({
+        id: item.id, 
+        imageUrl: item.type === 'media_image' && 
+                  getMedia(item.relationships.field_media_image.data.id, file_file),
+        audioUrl: item.type === 'media_audio' &&
+                  getMedia(item.relationships.field_media_audio_file, file_file)
+        })
+    })
+   console.log("MEDIA ARRAY",mediaArr);
 
-
-  },[musicDataFetched, musicDataInc])
+  },[file_file, musicDataFetched, musicDataInc])
 
   
 
+
+  useEffect(()=>{
+      const newInc = [];
+      musicDataInc.map((item)=>{
+
+       
+      })
+      console.log("NEW INCLUDED",newInc);
+
+  },[musicDataInc, file_file])
 
   //console.log("FILE ONLY INCLUDED", file_file);
 
