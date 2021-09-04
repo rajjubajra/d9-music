@@ -48,19 +48,7 @@ function Music(){
   }
 
 
-  useEffect(()=>{
-
-    const file = [];
-    
-    musicDataFetched &&
-    musicDataInc.map((item)=>{
-      return item.type === 'file--file' &&
-      file.push({id: item.id, uri: item.attributes.uri})
-    })
-    setFile_file(file);
-
-    
-  },[file_file, musicDataFetched, musicDataInc])
+  
 
 
   console.log("FILE ARRAY", file_file);
