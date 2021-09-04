@@ -82,7 +82,7 @@ function Music(){
   },[file_file, musicDataFetched, musicDataInc])
   
 
-  console.log("FILE ONLY INCLUDED", file_file);
+  console.log("FILE ARRAY", file_file);
   console.log("MEDIA ARRAY", mediaArr);
 
 
