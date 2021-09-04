@@ -75,20 +75,21 @@ function Music(){
   },[musicDataFetched, musicDataInc]);
 
   function getUri(id, arr){
-    arr.some((el)=> el.id === id)
-    return arr.uri;
+    arr.map( item => {
+      return item.id === id && item.uri
+    });
   }
   function getFileType(id, arr){
-    arr.some(el => el.id === id)
-      return arr.filetype
-    
+    arr.map(item => {
+      return item.id === id && item.filetype
+    } );
   }
 
   useEffect(() => {
     const arr = [];
     media.length > 0 &&
     media.map( (item) => {
-      arr.push({
+      return arr.push({
         id: item.id,
         name: item.name,
         uri: getUri(item.mediaId, file_file),
@@ -96,7 +97,7 @@ function Music(){
       })
     })
     setResultArr(arr);
-  },[media]);
+  },[file_file, media]);
 
 
   console.log("FILE ARRAY", file_file);
