@@ -41,12 +41,21 @@ function Music(){
       })
       return merge;
   }
-
+ 
 
   function getMedia(id, arr){
     arr.map(item => {return id === item.id && item.uri})
   }
 
+  useEffect(()=>{
+    const arr = [];
+    musicDataFetched &&
+    musicDataInc.map((item) => {
+      item.type === 'file--file' &&
+      arr.push({id: item.id, uri: item.attributes.uri, filetype: item.attributes.filemime})
+    });
+    setFile_file(arr);
+  },[musicDataFetched, musicDataInc])
 
   
 
