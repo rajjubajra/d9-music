@@ -24,7 +24,7 @@ function Music(){
 
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
-  const [mediaArr, setMediaArr] = useState([]);
+  
 
 
   /** FUNCTION: merge Array with same "id"  */
@@ -62,11 +62,9 @@ function Music(){
     
   },[file_file, musicDataFetched, musicDataInc])
 
-  
-  
 
   console.log("FILE ARRAY", file_file);
-  console.log("MEDIA ARRAY", mediaArr);
+  
 
 
   return(
