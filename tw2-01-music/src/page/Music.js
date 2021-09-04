@@ -110,7 +110,7 @@ function Music() {
     const newarr = []
     musicDataFetched &&
     musicData.map((item) => {
-          const {attributes:{title}, field_music_body:{processed}} = item;
+          const {attributes:{title}, attributes:{field_music_body:{processed}}} = item;
           const {relationships:{field_music_audio:{data}, field_music_image}} = item;
           return newarr.push({
             title: title, 
