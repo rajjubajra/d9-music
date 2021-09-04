@@ -73,11 +73,12 @@ function Music() {
     let merge = [];
     arr2.map(item => {
       //const {attributes:{filemime}, attributes:{uri:{url}}} = item;
-    return arr1.some((el) => el.id === item.id) && 
+      return item.type === 'file--file' &&
+        arr1.some((el) => el.id === item.id) && 
         merge.push({
           id: item.id, 
-          url: item.type === 'file--file' && item.attributes.uri.url, 
-          filetype: item.type === 'file--file' && item.attributes.filemime});
+          url: item.attributes.uri.url, 
+          filetype: item.attributes.filemime});
     })
     return merge;
   }
