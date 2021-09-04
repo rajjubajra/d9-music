@@ -30,7 +30,7 @@ function Music(){
     musicDataFetched &&
     musicDataInc.map((item)=>{
       return item.type === 'file--file' &&
-      file.push({...musicDataInc}); 
+      file.push({id: item.id, uri: item.attributes.uri}); 
     })
   },[musicDataFetched, musicDataInc])
 
