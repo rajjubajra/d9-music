@@ -28,8 +28,8 @@ function Music(){
     const newInc = [];
     musicDataFetched &&
     musicDataInc.map((item) => {
-      item.relationships.field_media_audio_file.data.id === item.id &&
-      item.relationships.field_media_image.data.id === item.id &&
+      (item.type === 'media--audio' && item.relationships.field_media_audio_file.data.id) === item.id &&
+      (item.type === 'media-image' && item.relationships.field_media_image.data.id) === item.id &&
       item.type === 'file--file' &&
       newInc.push({id:item.id, uri:item.attributes.uri, filetype: item.filemime });
     })
