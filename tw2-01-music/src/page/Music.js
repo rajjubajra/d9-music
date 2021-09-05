@@ -83,6 +83,7 @@ function Music(){
   //console.log("Media Array", media);
   console.log("Result", includedArr);
   console.log("musicData", musicData);
+  console.log("usethisData", dataArr);
 
   function getUrlForMusicAudio(arr1, arr2){
       const newArr = [];
