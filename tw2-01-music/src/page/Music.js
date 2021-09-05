@@ -99,18 +99,19 @@ function Music(){
       return newArr;
   }
 
-
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
     musicData.map( item => {
       const {attributes:{title,field_music_body:{processed}}} = item
-      const {relationships:{field_music_audio:{data}}} = item;
+      const {relationships:{field_music_audio:{data: dtAudio}}} = item;
+      const {relationships:{field_music_image:{data: dtImage}}} = item;
       arr.push({
         id: item.id,
         title: title,
         body: processed,
-        data: includedArr.length > 0 && getUrlForMusicAudio(data, includedArr)   
+        audio: includedArr.length > 0 && getUrlForMusicAudio(dtAudio, includedArr),
+        image: includedArr.length > 0 && getUrlForMusicAudio(dtImage, includedArr)   
       })
     })
 
