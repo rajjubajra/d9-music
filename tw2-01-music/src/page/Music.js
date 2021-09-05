@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionMusic} from '../redux/actions';
-//import MusicList from './Music/MusicList';
+import MusicList from './Music/MusicList';
 
 
 function Music(){
@@ -87,7 +87,6 @@ function Music(){
 
   function getUrlForAudio(arr1, arr2){
       const newArr = [];
-      console.log("NEW ARRAY",newArr);
       arr2.length > 0 && arr1.length > 0 &&
       arr2.map( item => {
         arr1.some( el => el.id === item.id ) &&
@@ -136,7 +135,7 @@ function Music(){
 
   return(
     <div>
-      Music
+      <MusicList listdata={dataArr} />
     </div>
   )
 

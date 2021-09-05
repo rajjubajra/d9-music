@@ -13,7 +13,7 @@ function MusicList({listdata}) {
           <h3 className="text-3xl py-4">{item.title}</h3>
         </div>
         <div>
-          <ImageOnload cssClass="w-full h-64 object-cover" src={item.image} />
+          <ImageOnload cssClass="w-full h-64 object-cover" src={item.image[0].url} />
         </div>
         <div className="py-4">
           <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
