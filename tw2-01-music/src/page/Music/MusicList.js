@@ -14,7 +14,11 @@ function MusicList({listdata}) {
         </div>
         <div>
           {
-            item.image && <ImageOnload cssClass="w-full h-64 object-cover" src={item.image[0].url} />
+            item.image && <ImageOnload 
+            cssClass="w-full h-64 object-cover" 
+            src={item.image[0].url} 
+            alt="Cover"
+            />
           }
           
         </div>
