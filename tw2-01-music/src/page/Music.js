@@ -20,7 +20,7 @@ function Music(){
   //const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
 
 
-  console.log(musicDataFetched,musicDataInc);
+  //console.log(musicDataFetched,musicDataInc);
 
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
@@ -28,6 +28,8 @@ function Music(){
   const [includedArr, setIncludedArr] = useState([]);
   const [dataArr, setDataArr] = useState([]);
   
+
+
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
@@ -81,8 +83,8 @@ function Music(){
 
   //console.log("FILE ARRAY", file_file);
   //console.log("Media Array", media);
-  console.log("Result", includedArr);
-  console.log("musicData", musicData);
+  //console.log("Result", includedArr);
+  //console.log("musicData", musicData);
   console.log("usethisData", dataArr);
 
   function getUrlForAudio(arr1, arr2){
@@ -102,7 +104,7 @@ function Music(){
   }
 
   function getUrlForImage(id, arr){
-
+  
     const index = arr.findIndex( el => el.id === id);
     const newArr = [{
       "id": arr[index].id,
@@ -136,7 +138,10 @@ function Music(){
 
   return(
     <div>
-     
+      {
+        dataArr.length > 0 && <MusicList listdata={dataArr} />
+      }
+    
     </div>
   )
 
