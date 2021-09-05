@@ -87,13 +87,14 @@ function Music(){
 
   function getUrlForMusicAudio(arr1, arr2){
       const newArr = [];
+      arr2.length > 0 &&
       arr2.map( item => {
         return arr1.some( el => el.id === item.id ) &&
         newArr.push({
           id: item.id,
           filetype: item.filetype,
           name: item.name,
-          url: item.uri.url
+          url: item.uri
         })
       });
       return newArr;
