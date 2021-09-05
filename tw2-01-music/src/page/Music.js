@@ -107,7 +107,8 @@ function Music(){
       const {attributes:{title,field_music_body:{processed}}} = item
       const {relationships:{field_music_audio:{data: dtAudio}}} = item;
       const {relationships:{field_music_image:{data: dtImage}}} = item;
-      console.log(dtImage);
+      console.log("dt image",dtImage);
+      console.log('td',dtAudio);
       arr.push({
         id: item.id,
         title: title,
