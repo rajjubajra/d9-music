@@ -25,7 +25,8 @@ function Music(){
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
   const [media, setMedia] = useState([]);
-  const [resultArr, setResultArr] = useState([]);
+  const [includedArr, setIncludedArr] = useState([]);
+  const [dataArr, setDataArr] = useState([]);
   
   useEffect(()=>{
     const arr = [];
@@ -74,14 +75,38 @@ function Music(){
         filetype: getFileType(item.mediaId, file_file)
       })
     })
-    setResultArr(arr);
+    setIncludedArr(arr);
   },[file_file, media]);
 
 
   //console.log("FILE ARRAY", file_file);
   //console.log("Media Array", media);
-  console.log("Result", resultArr);
+  console.log("Result", includedArr);
   console.log("musicData", musicData);
+
+  function getImageUrl(id, arr){
+    const index  = arr.findIndex( el => el.id === id);
+    return arr[index].uri;
+  }
+
+  useEffect(()=>{
+    const arr = [];
+    musicDataFetched &&
+    musicData.map( item => {
+      const {attributes:{title}, field_music_body:{processed}} = item
+      const {relationships:{field_music_audio:{data:{id}}}} = item;
+      arr.push({
+        id: item.id,
+        title: title,
+        body: processed,
+        url_image: getImageUrl(id, includedArr)   
+      })
+    })
+
+    setDataArr(arr);
+    
+  },[includedArr, musicData, musicDataFetched]);
+
 
   return(
     <div>
