@@ -84,22 +84,32 @@ function Music(){
   console.log("Result", includedArr);
   console.log("musicData", musicData);
 
-  function getImageUrl(id, arr){
-    const index  = arr.findIndex( el => el.id === id);
-    return arr[index].uri;
+  function getUrlForMusicAudio(arr1, arr2){
+      const newArr = [];
+      arr2.map( item => {
+        return arr1.some( el => el.id === item.id ) &&
+        newArr.push({
+          id: item.id,
+          filetype: item.filetype,
+          name: item.name,
+          url: item.uri.url
+        })
+      });
+      return newArr;
   }
+
 
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
     musicData.map( item => {
       const {attributes:{title,field_music_body:{processed}}} = item
-      const {relationships:{field_music_audio:{data:{id}}}} = item;
+      const {relationships:{field_music_audio:{data}}} = item;
       arr.push({
         id: item.id,
         title: title,
         body: processed,
-        url_image: includedArr.length > 0 && getImageUrl(id, includedArr)   
+        data: includedArr.length > 0 && getUrlForMusicAudio(data, includedArr)   
       })
     })
 
