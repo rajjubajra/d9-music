@@ -75,15 +75,15 @@ function Music(){
   },[musicDataFetched, musicDataInc]);
 
   function getUri(id, arr){
-    console.log("mediaId uri", id)
+
     return arr.map( item => {
-      return item.id === id && item.uri;
+      return item.id === id ? item.uri : null
     });
   }
   function getFileType(id, arr){
     console.log("meidiaId filetype",typeof(id));
     return arr.map(item => {
-      return item.id === id && item.filetype
+      return item.id === id ? item.filetype : null
     } );
   }
 
