@@ -14,7 +14,7 @@ function Music(){
   },[dispatch])
 
   /** DRUPAL DATA CREATED BY CONTENT TYPE */
-  //const musicData = useSelector(state => state.reducerMusic.music_data.data);
+  const musicData = useSelector(state => state.reducerMusic.music_data.data);
   const musicDataFetched = useSelector(state => state.reducerMusic.music_fetched);
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
   //const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
@@ -27,28 +27,6 @@ function Music(){
   const [media, setMedia] = useState([]);
   const [resultArr, setResultArr] = useState([]);
   
-
-
-  /** FUNCTION: merge Array with same "id"  */
-  function mergeArrayObjects(arr1,arr2){
-    // let start = 0;
-      let merge = [];
-      arr2.map(item => {
-       //const {attributes:{filemime}, attributes:{uri:{url}}} = item;
-          arr1.some((el) => el.id === item.id)
-          merge.push({
-            mediaId: item.id, 
-            url: item.uri
-          });
-      })
-      return merge;
-  }
- 
-
-  function getMedia(id, arr){
-    return arr.map(item => {return id === item.id && item.uri})
-  }
-
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
@@ -100,10 +78,10 @@ function Music(){
   },[file_file, media]);
 
 
-  console.log("FILE ARRAY", file_file);
-  console.log("Media Array", media);
+  //console.log("FILE ARRAY", file_file);
+  //console.log("Media Array", media);
   console.log("Result", resultArr);
-
+  console.log("musicData", musicData);
 
   return(
     <div>
