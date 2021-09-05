@@ -90,8 +90,7 @@ function Music(){
       console.log("NEW ARRAY",newArr);
       arr2.length > 0 && arr1.length > 0 &&
       arr2.map( item => {
-        return arr1.some( el => el.id === item.id ) &&
-        console.log("true") &&
+        arr1.some( el => el.id === item.id ) &&
         newArr.push({
           id: item.id,
           filetype: item.filetype,
