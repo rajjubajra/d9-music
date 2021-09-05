@@ -77,15 +77,13 @@ function Music(){
   function getUri(id, arr){
     console.log("mediaId uri", id)
     return arr.map( item => {
-      //console.log(item.id===id ? item.uri : item.id);
-      return item.id === id ? item.uri : item.id
+      return item.id === id && item.uri;
     });
   }
   function getFileType(id, arr){
     console.log("meidiaId filetype",typeof(id));
     return arr.map(item => {
-      //console.log(item.id===id ? item.filetype : typeof(item.id));
-      return item.id === id ? item.filetype : item.id
+      return item.id === id && item.filetype
     } );
   }
 
