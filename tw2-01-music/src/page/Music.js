@@ -32,7 +32,7 @@ function Music(){
     const arr = [];
     musicDataFetched &&
     musicDataInc.map((item) => {
-      item.type === 'file--file' &&
+      return item.type === 'file--file' &&
       arr.push({id: item.id, uri: item.attributes.uri, filetype: item.attributes.filemime})
     });
     setFile_file(arr);
@@ -89,7 +89,7 @@ function Music(){
       const newArr = [];
       arr2.length > 0 && arr1.length > 0 &&
       arr2.map( item => {
-        arr1.some( el => el.id === item.id ) &&
+        return arr1.some( el => el.id === item.id ) &&
         newArr.push({
           id: item.id,
           filetype: item.filetype,
@@ -120,7 +120,7 @@ function Music(){
       const {attributes:{title,field_music_body:{processed}}} = item
       const {relationships:{field_music_audio:{data: dtAudio}}} = item;
       const {relationships:{field_music_image:{data:{id}}}} = item;
-      arr.push({
+    return  arr.push({
         id: item.id,
         title: title,
         body: processed,
