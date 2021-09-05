@@ -9,8 +9,8 @@ function MainMenu({showHideNav}) {
   const state = useSelector(state => state.reducerNav.nav_data.data);
   const length = useSelector(state => state.reducerNav.nav_dataLength);
   
-  console.log("Nav", state);  
-  console.log("Length:",length);
+ // console.log("Nav", state);  
+ // console.log("Length:",length);
 
   return (
     <div className="grid gap-2 md:flex font-thin text-sm">

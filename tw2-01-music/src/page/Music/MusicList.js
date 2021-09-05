@@ -13,7 +13,7 @@ function MusicList({listdata}) {
           <h3 className="text-3xl py-4">{item.title}</h3>
         </div>
         <div>
-          
+          {console.log("Image in LIST",item.image)}
         </div>
         <div className="py-4">
           <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />

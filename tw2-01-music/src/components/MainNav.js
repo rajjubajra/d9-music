@@ -9,9 +9,9 @@ function MainNav() {
   const length = useSelector(state => state.reducerNav.nav_dataLength);
   
 
-  console.log("Nav", state);
+  //console.log("Nav", state);
   
-  console.log("Length:",length);
+  //console.log("Length:",length);
 
 
   return (
