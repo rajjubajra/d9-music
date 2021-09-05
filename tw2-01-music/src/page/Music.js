@@ -91,6 +91,7 @@ function Music(){
       arr2.length > 0 && arr1.length > 0 &&
       arr2.map( item => {
         return arr1.some( el => el.id === item.id ) &&
+        console.log("true") &&
         newArr.push({
           id: item.id,
           filetype: item.filetype,
@@ -113,8 +114,8 @@ function Music(){
         id: item.id,
         title: title,
         body: processed,
-        audio: includedArr.length > 0 && getUrlForMusicAudio(dtAudio, dataArr),
-        image: includedArr.length > 0 && getUrlForMusicAudio(dtImage, dataArr)   
+        audio: includedArr.length > 0 && getUrlForMusicAudio(dtAudio, includedArr),
+        image: includedArr.length > 0 && getUrlForMusicAudio(dtImage, includedArr)   
       })
     })
 
