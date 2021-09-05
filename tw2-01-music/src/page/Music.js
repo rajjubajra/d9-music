@@ -110,7 +110,7 @@ function Music(){
       "id": arr[index].id,
       "filetype": arr[index].filetype,
       "name": arr[index].name,
-      "url": arr[index].uri
+      "url": arr[index].uri.url
     }]
     return newArr;
   }
