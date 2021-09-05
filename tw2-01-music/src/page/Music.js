@@ -85,7 +85,7 @@ function Music(){
   console.log("musicData", musicData);
   console.log("usethisData", dataArr);
 
-  function getUrlForMusicAudio(arr1, arr2){
+  function getUrlForAudio(arr1, arr2){
       const newArr = [];
       console.log("NEW ARRAY",newArr);
       arr2.length > 0 && arr1.length > 0 &&
@@ -102,19 +102,30 @@ function Music(){
       
   }
 
+  function getUrlForImage(id, arr){
+    const index = arr.findIndex( el => el.id === id);
+    const newArr = [{
+      "id": arr[index].id,
+      "filetype": arr[index].filetype,
+      "name": arr[index].name,
+      "url": arr[index].uri
+    }]
+    return newArr;
+  }
+
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
     musicData.map( item => {
       const {attributes:{title,field_music_body:{processed}}} = item
       const {relationships:{field_music_audio:{data: dtAudio}}} = item;
-      const {relationships:{field_music_image:{data: dtImage}}} = item;
+      const {relationships:{field_music_image:{data:{id}}}} = item;
       arr.push({
         id: item.id,
         title: title,
         body: processed,
-        audio: includedArr.length > 0 && getUrlForMusicAudio(dtAudio, includedArr),
-        image: includedArr.length > 0 && getUrlForMusicAudio(dtImage, includedArr)   
+        audio: includedArr.length > 0 && getUrlForAudio(dtAudio, includedArr),
+        image: includedArr.length > 0 && getUrlForImage(id, includedArr)   
       })
     })
 
