@@ -107,14 +107,12 @@ function Music(){
       const {attributes:{title,field_music_body:{processed}}} = item
       const {relationships:{field_music_audio:{data: dtAudio}}} = item;
       const {relationships:{field_music_image:{data: dtImage}}} = item;
-      console.log("dt image",dtImage);
-      console.log('td',dtAudio);
       arr.push({
         id: item.id,
         title: title,
         body: processed,
-        audio: includedArr.length > 0 && getUrlForMusicAudio(dtAudio, includedArr),
-        image: includedArr.length > 0 && getUrlForMusicAudio(dtImage, includedArr)   
+        audio: includedArr.length > 0 && getUrlForMusicAudio(dtAudio, dataArr),
+        image: includedArr.length > 0 && getUrlForMusicAudio(dtImage, dataArr)   
       })
     })
 
