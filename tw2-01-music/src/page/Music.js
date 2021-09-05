@@ -102,6 +102,7 @@ function Music(){
   }
 
   function getUrlForImage(id, arr){
+
     const index = arr.findIndex( el => el.id === id);
     const newArr = [{
       "id": arr[index].id,
@@ -109,7 +110,7 @@ function Music(){
       "name": arr[index].name,
       "url": arr[index].uri
     }]
-    return newArr;
+    return arr.length > 0 && newArr;
   }
 
   useEffect(()=>{
