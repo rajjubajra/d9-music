@@ -110,7 +110,7 @@ function Music(){
       "name": arr[index].name,
       "url": arr[index].uri
     }]
-    return arr.length > 0 && newArr;
+    return newArr;
   }
 
   useEffect(()=>{
@@ -136,7 +136,7 @@ function Music(){
 
   return(
     <div>
-      
+      <MusicList listdata={includedArr.length > 0 && dataArr} />
     </div>
   )
 
