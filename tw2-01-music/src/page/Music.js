@@ -93,7 +93,7 @@ function Music(){
     const arr = [];
     musicDataFetched &&
     musicData.map( item => {
-      const {attributes:{title}, field_music_body:{processed}} = item
+      const {attributes:{title,field_music_body:{processed}}} = item
       const {relationships:{field_music_audio:{data:{id}}}} = item;
       arr.push({
         id: item.id,
@@ -104,7 +104,7 @@ function Music(){
     })
 
     setDataArr(arr);
-    
+
   },[includedArr, musicData, musicDataFetched]);
 
 
