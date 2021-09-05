@@ -99,7 +99,7 @@ function Music(){
         id: item.id,
         title: title,
         body: processed,
-        url_image: getImageUrl(id, includedArr)   
+        url_image: includedArr.length > 0 && getImageUrl(id, includedArr)   
       })
     })
 
