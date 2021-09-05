@@ -136,7 +136,7 @@ function Music(){
 
   return(
     <div>
-      <MusicList listdata={dataArr} />
+      
     </div>
   )
 
