@@ -74,17 +74,15 @@ function Music(){
 
   },[musicDataFetched, musicDataInc]);
 
-  function getUri(id, arr){
 
-    return arr.map( item => {
-      return item.id === id ? item.uri : null
-    });
+  function getUri(id, arr){
+      const index = arr.findIndex( el => el.id === id);
+      return arr[index].uri;
   }
+
   function getFileType(id, arr){
-    console.log("meidiaId filetype",typeof(id));
-    return arr.map(item => {
-      return item.id === id ? item.filetype : null
-    } );
+    const index = arr.findIndex(el =>  el.id === id );
+    return arr[index].filetype;
   }
 
   useEffect(() => {
