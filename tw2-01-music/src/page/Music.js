@@ -136,10 +136,7 @@ function Music(){
 
   return(
     <div>
-      {
-        includedArr.length > 0 && <MusicList listdata={dataArr} />
-        
-      }
+     
     </div>
   )
 
