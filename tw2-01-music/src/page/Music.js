@@ -136,7 +136,10 @@ function Music(){
 
   return(
     <div>
-      <MusicList listdata={includedArr.length > 0 && dataArr} />
+      {
+        includedArr.length > 0 && <MusicList listdata={dataArr} />
+        
+      }
     </div>
   )
 
