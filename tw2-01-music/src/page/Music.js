@@ -2,9 +2,11 @@ import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionMusic} from '../redux/actions';
 import MusicList from './Music/MusicList';
-
+import {useParams} from 'react-router-dom';
 
 function Music(){
+
+  const {id} = useParams();
 
   const dispatch = useDispatch();
 
@@ -139,6 +141,7 @@ function Music(){
   return(
     <>
       {
+        id ? "Single page" :
         dataArr.length > 0 && <MusicList listdata={dataArr} />
       }   
     </>

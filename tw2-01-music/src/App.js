@@ -72,6 +72,7 @@ function App() {
             <Route exact path={`${baseurl}/news`} component={News} />
             <Route exact path={`${baseurl}/about`} component={About} />
             <Route exact path={`${baseurl}/music`} component={Music} />
+            <Route exact path={`${baseurl}/music/:id`} component={Music} />
             <Route exact path={`${baseurl}/gallery`} component={Gallery} />
             <Route exact path={`${baseurl}/form/subscription`} component={Contact} />
           </Switch>  
