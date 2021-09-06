@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {BiPlay, BiPause} from 'react-icons/bi';
 
 const useAudio = url => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
-  const [currentUpdate] = useRef();
+  //const [currentUpdate] = useRef();
 
   const toggle = () => setPlaying(!playing);
 
@@ -20,13 +20,8 @@ const useAudio = url => {
     };
   }, [audio]);
 
-  useEffect(()=>{
-    
-  })
-
   console.log("duration?",audio.duration, audio);
   
-
   return [playing, toggle];
 };
 
