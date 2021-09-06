@@ -145,7 +145,7 @@ function Music(){
     setSingleDataArr(dataArr[index]);
   },[dataArr, id])
 
-  console.log("Single data",singleDataArr.length, singleDataArr);
+  console.log("Single data", singleDataArr);
 
 
   return(
