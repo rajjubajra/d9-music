@@ -4,7 +4,7 @@ import ImageOnload from '../../components/ImageOnload';
 
 function MusicDetail({singleData}) {
   
-  console.log("arrsingle",singleData[0])
+  
   console.log("passsing",singleData);
   
 
