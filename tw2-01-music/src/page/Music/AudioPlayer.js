@@ -24,13 +24,19 @@ const useAudio = url => {
 
 
   
+  
   useEffect(()=>{
-    playing ?
-    setInterval(()=>{
-      console.log("update", audio.ontimeupdate);
-      console.log("tiemupdate", audio.currentTime);
-    },1000) : clearInterval();
-  })
+
+    const timeUpdate = () => (
+      setInterval(()=>{
+        console.log("update", audio.ontimeupdate);
+        console.log("tiemupdate", audio.currentTime);
+      },1000)
+    );
+
+    playing  ? timeUpdate() : clearInterval(timeUpdate);
+    
+  },[audio.currentTime, audio.ontimeupdate, playing])
   
   return [playing, toggle];
 };
