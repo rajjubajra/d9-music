@@ -1,4 +1,4 @@
-
+import ReactAudioPlayer from 'react-audio-player';
 
 
 function AudioList(props) {
@@ -10,18 +10,15 @@ function AudioList(props) {
       const {title, url:{url}} = item;
       return <li>
         <h3>{title}</h3>
-        <figure>
-          <figcaption>{title}</figcaption>
-            <audio
-              controls
-              src={url}>
-                Your browser does not support the
-            <code>audio</code> element.
-            </audio>
-        </figure>
+        <ReactAudioPlayer
+            src={url}
+            controls
+            ref={(element) => { console.log("AUDIO ELEM",element) }}
+          />
       </li>
     })
   )
+
 }
 
 export default AudioList
