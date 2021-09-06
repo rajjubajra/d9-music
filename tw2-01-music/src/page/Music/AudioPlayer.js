@@ -22,10 +22,14 @@ const useAudio = url => {
 
   console.log("duration?",audio.duration, audio);
 
-  setInterval(()=>{
-    console.log("update", audio.ontimeupdate);
-  },1000)
   
+  useEffect(()=>{
+    playing &&
+    setInterval(()=>{
+      console.log("update", audio.ontimeupdate);
+      console.log("tiemupdate", audio.currentTime);
+    },1000)
+  })
   
   return [playing, toggle];
 };
@@ -47,6 +51,8 @@ const AudioPlayer = ({ url }) => {
  };
 
   const [playing, toggle] = useAudio(url);
+
+ 
 
   return (
     <div>
