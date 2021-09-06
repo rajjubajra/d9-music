@@ -18,6 +18,8 @@ const useAudio = url => {
   }, [audio]);
 
   console.log("duration?",audio.duration, audio);
+  console.log("time update", audio.currentTime);
+
 
   return [playing, toggle];
 };
