@@ -13,7 +13,7 @@ function AudioList(props) {
         <ReactAudioPlayer
             src={url}
             controls
-            ref={(element) => { console.log("AUDIO ELEM",element) }}
+            ref={(element) => { console.log("AUDIO ELEM play",element.onPlay,"on ended", element.onEnded, "element", element) }}
           />
       </li>
     })
