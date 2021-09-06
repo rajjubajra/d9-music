@@ -142,7 +142,8 @@ function Music(){
   useEffect(() => {
     const index = dataArr.length > 0 && id && dataArr.findIndex( el => el.id === id);
     console.log("INDEX",index);
-   
+    console.log("selected data",dataArr[index]);
+  
   },[dataArr, id])
 
   console.log("Single data", singleDataArr);
