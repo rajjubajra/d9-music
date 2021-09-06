@@ -4,7 +4,8 @@ import ImageOnload from '../../components/ImageOnload';
 
 function MusicDetail({singleData}) {
   
-  
+  console.log("arrsingle",singleData[0])
+  console.log("passsing",singleData);
   
 
   return (
@@ -12,16 +13,15 @@ function MusicDetail({singleData}) {
       <h1>Music Page</h1>
       {
         singleData.length > 0 &&
-        <div key={singleData.id} className="m-5 p-3">
-            <h2 className="my-2">{singleData.title}</h2>
+        <div className="m-5 p-3">
+            <h2 className="my-2">{singleData[0].title}</h2>
             
-            <div dangerouslySetInnerHTML={{__html: singleData.body}} />
+            <div dangerouslySetInnerHTML={{__html: singleData[0].body}} />
           
             <ul className="m-5 border p-4">
               
             </ul>            
           </div>
-        })
       }
     </div>
   )
