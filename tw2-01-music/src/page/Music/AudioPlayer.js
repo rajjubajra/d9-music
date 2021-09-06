@@ -21,6 +21,11 @@ const useAudio = url => {
   }, [audio]);
 
   console.log("duration?",audio.duration, audio);
+
+  setInterval(()=>{
+    console.log("update", audio.ontimeupdate);
+  },1000)
+  
   
   return [playing, toggle];
 };
