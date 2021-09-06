@@ -8,21 +8,25 @@ const useAudio = url => {
 
   useEffect(() => {
       playing ? audio.play() : audio.pause();
+      console.log("time update", audio.currentTime);
     },[audio, playing]);
 
   useEffect(() => {
     audio.addEventListener('ended', () => setPlaying(false));
     return () => {
       audio.removeEventListener('ended', () => setPlaying(false));
+      
     };
+    
   }, [audio]);
 
   console.log("duration?",audio.duration, audio);
-  console.log("time update", audio.currentTime);
-
+  
 
   return [playing, toggle];
 };
+
+
 
 const AudioPlayer = ({ url }) => {
   const [playing, toggle] = useAudio(url);
