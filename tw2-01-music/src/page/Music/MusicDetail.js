@@ -8,6 +8,7 @@ function MusicDetail({singleData}) {
   useEffect(()=>{
     setTimeout(() => {
       if(singleData === ''){ window.location.href = "/d9-music/themes/tw2-01/music"}
+      console.log("three sec gone")
     }, 3000);
   },[singleData])
   
