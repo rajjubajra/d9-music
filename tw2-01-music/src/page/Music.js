@@ -33,6 +33,7 @@ function Music(){
   const [singleDataArr, setSingleDataArr] = useState('');
 
 
+  /** SEPEARATE 'file--file' type into an Array - 'file-file  */
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
@@ -43,6 +44,7 @@ function Music(){
     setFile_file(arr);
   },[musicDataFetched, musicDataInc]);
 
+  /** SEPERATE NOT 'file--file' type in an Array - 'media' */
   useEffect(() => {
     const arr = [];
     musicDataFetched &&
@@ -50,6 +52,7 @@ function Music(){
       return item.type !== 'file--file' &&
       arr.push({
         id: item.id, 
+        audio_title: item.type === 'media--audio' ? item.field_audio_title : null,
         name:item.attributes.name,
         mediaId: item.type === 'media--audio' ? item.relationships.field_media_audio_file.data.id : item.relationships.field_media_image.data.id,
       })
@@ -59,11 +62,13 @@ function Music(){
   },[musicDataFetched, musicDataInc]);
 
 
+  /** get "URL" From "file_file" array combined with "media" array "id" */
   function getUri(id, arr){
       const index = arr.findIndex( el => el.id === id);
       return arr[index].uri;
   }
 
+/** get "FILE TYPE" From "file_file" array combined with "media" array "id" */
   function getFileType(id, arr){
     const index = arr.findIndex(el =>  el.id === id );
     return arr[index].filetype;
@@ -76,6 +81,7 @@ function Music(){
       return arr.push({
         id: item.id,
         name: item.name,
+        audio_title: item.audio_title,
         uri: getUri(item.mediaId, file_file),
         filetype: getFileType(item.mediaId, file_file)
       })
@@ -97,6 +103,7 @@ function Music(){
         return arr1.some( el => el.id === item.id ) &&
         newArr.push({
           id: item.id,
+          title: item.audio_title,
           filetype: item.filetype,
           name: item.name,
           url: item.uri
