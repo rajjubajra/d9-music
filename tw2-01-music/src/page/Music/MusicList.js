@@ -1,4 +1,5 @@
 import React from 'react';
+import BtnReadMore from '../../components/Buttons/BtnReadMore';
 import ImageOnload from '../../components/ImageOnload';
 
 function MusicList({listdata}) {
@@ -10,7 +11,7 @@ function MusicList({listdata}) {
     {
       listdata.length > 0 && listdata.map( item => {
         return <div className="w-full
-                lg:max-w-screen-sm">
+                lg:max-w-screen-sm" key={item.id}>
         <div>
           <h3 className="text-3xl py-4">{item.title}</h3>
         </div>
@@ -27,6 +28,7 @@ function MusicList({listdata}) {
         <div className="py-4">
           <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
         </div>
+        <div><BtnReadMore link={`/d9-music/themes/tw2-01/music/${item.id}`} /></div>
       </div>
       })
     }

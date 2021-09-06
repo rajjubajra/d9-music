@@ -13,7 +13,7 @@ function NewsList({listdata}) {
             <h2 className="text-2xl my-4">{item.title}</h2>
           </div>
           <div><div  className="text-center my-4" dangerouslySetInnerHTML={{__html: item.body.substring(0,300)}} /></div>
-          <div className="text-center"><BtnReadMore link={`/d9-music/themes/tw2-01/music/${item.id}`} /></div>
+          <div className="text-center"><BtnReadMore link={`#`} /></div>
         </div>
       })
     }
