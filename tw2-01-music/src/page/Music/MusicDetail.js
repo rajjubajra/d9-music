@@ -12,11 +12,11 @@ function MusicDetail({singleData}) {
     <div>
       <h1>Music Page</h1>
       {
-        singleData.length > 0 &&
+        
         <div className="m-5 p-3">
-            <h2 className="my-2">{singleData[0].title}</h2>
+            <h2 className="my-2">{singleData.title}</h2>
             
-            <div dangerouslySetInnerHTML={{__html: singleData[0].body}} />
+            <div dangerouslySetInnerHTML={{__html: singleData.body}} />
           
             <ul className="m-5 border p-4">
               
