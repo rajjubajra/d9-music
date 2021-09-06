@@ -22,13 +22,14 @@ const useAudio = url => {
 
   console.log("duration?",audio.duration, audio);
 
+
   
   useEffect(()=>{
-    playing &&
+    playing ?
     setInterval(()=>{
       console.log("update", audio.ontimeupdate);
       console.log("tiemupdate", audio.currentTime);
-    },1000)
+    },1000) : clearInterval();
   })
   
   return [playing, toggle];
