@@ -137,12 +137,11 @@ function Music(){
 
 
   return(
-    <div>
+    <>
       {
         dataArr.length > 0 && <MusicList listdata={dataArr} />
-      }
-    
-    </div>
+      }   
+    </>
   )
 
 }
