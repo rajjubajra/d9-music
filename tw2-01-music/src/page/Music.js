@@ -86,7 +86,7 @@ function Music(){
 
   //console.log("FILE ARRAY", file_file);
   //console.log("Media Array", media);
-  //console.log("Result", includedArr);
+  console.log("Result", includedArr);
   //console.log("musicData", musicData);
   console.log("usethisData", dataArr);
 
@@ -160,6 +160,5 @@ function Music(){
   )
 
 }
-
 
 export default Music;
