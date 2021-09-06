@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import ImageOnload from '../../components/ImageOnload';
+import AudioList from './AudioList';
 
 
 function MusicDetail({singleData}) {
@@ -26,13 +27,7 @@ function MusicDetail({singleData}) {
             <div dangerouslySetInnerHTML={{__html: singleData.body}} />
             <div>
               <h3>Play songs</h3>
-              <ul>
-              {
-                singleData.audio.map((item) => {
-                  return <li>{item.name} - {item.url.url}</li>
-                })
-              }
-              </ul>
+              <AudioList data={singleData.audio} />
             </div>
       </div>
       }

@@ -7,20 +7,16 @@ function AudioList(props) {
 
   return (
     props.data.map(item =>{
-      const {title, url} = item;
+      const {title, url:{url}} = item;
       return <li>
         <h3>{title}</h3>
-        <div>Audio link: {url}</div>
-        <div>
         <ReactAudioPlayer
             src={url}
             controls
           />
-        </div>
       </li>
     })
   )
-
 }
 
 export default AudioList
