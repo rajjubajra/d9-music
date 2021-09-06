@@ -1,9 +1,15 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect} from 'react';
 import ImageOnload from '../../components/ImageOnload';
 import AudioList from './AudioList';
 
 
 function MusicDetail({singleData}) {
+
+  useEffect(()=>{
+    setTimeout(() => {
+      if(singleData === ''){ window.location.href = "/d9-music/themes/tw2-01/music"}
+    }, 3000);
+  },[singleData])
   
   
   console.log("single data",singleData);
