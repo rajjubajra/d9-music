@@ -17,7 +17,7 @@ const useAudio = url => {
     };
   }, [audio]);
 
-  console.log("duration?",audio.duration);
+  console.log("duration?",audio.duration, audio);
 
   return [playing, toggle];
 };
