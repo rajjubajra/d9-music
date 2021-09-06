@@ -141,7 +141,7 @@ function Music(){
   return(
     <>
       {
-        id ? "Single page" :
+        id ? "Single page" + id :
         dataArr.length > 0 && <MusicList listdata={dataArr} />
       }   
     </>
