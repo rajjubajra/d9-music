@@ -52,7 +52,7 @@ function Music(){
       return item.type !== 'file--file' &&
       arr.push({
         id: item.id, 
-        audio_title: item.type === 'media--audio' ? item.field_audio_title : null,
+        audio_title: item.type === 'media--audio' ? item.attributes.field_audio_title : null,
         name:item.attributes.name,
         mediaId: item.type === 'media--audio' ? item.relationships.field_media_audio_file.data.id : item.relationships.field_media_image.data.id,
       })
