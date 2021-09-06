@@ -151,7 +151,7 @@ function Music(){
     // }])
   },[dataArr, id])
 
-  console.log("Single data",singleDataArr);
+  console.log("Single data",singleDataArr.length, singleDataArr);
 
 
   return(
