@@ -30,7 +30,7 @@ function Music(){
   const [media, setMedia] = useState([]);
   const [includedArr, setIncludedArr] = useState([]);
   const [dataArr, setDataArr] = useState([]);
-  const [singleDataArr, setSingleDataArr] = useState([]);
+  const [singleDataArr, setSingleDataArr] = useState('');
 
 
   useEffect(()=>{
@@ -143,7 +143,8 @@ function Music(){
     const index = dataArr.length > 0 && id && dataArr.findIndex( el => el.id === id);
     console.log("INDEX",index);
     console.log("selected data",dataArr[index]);
-  
+    console.log("selected data",dataArr[index].image);
+    setSingleDataArr(dataArr[index]);
   },[dataArr, id])
 
   console.log("Single data", singleDataArr);
