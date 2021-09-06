@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {actionMusic} from '../redux/actions';
 import MusicList from './Music/MusicList';
 import {useParams} from 'react-router-dom';
+import MusicDetail from './Music/MusicDetail';
 
 function Music(){
 
@@ -156,7 +157,7 @@ function Music(){
   return(
     <>
       {
-        id ? "Single page" + id :
+        id ? <MusicDetail singleData={singleDataArr} /> :
         dataArr.length > 0 && <MusicList listdata={dataArr} />
       }   
     </>
