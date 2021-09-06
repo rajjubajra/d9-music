@@ -141,7 +141,7 @@ function Music(){
   useEffect(() => {
     const index = dataArr.length > 0 && id && dataArr.findIndex( el => el.id === id);
     setSingleDataArr([{
-      id: dataArr[index].id,
+      id: id,
       title: dataArr[index].title,
       body: dataArr[index].body,
       image: dataArr[index].image,
