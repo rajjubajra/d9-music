@@ -143,7 +143,7 @@ function Music(){
     const index = dataArr.length > 0 && id && dataArr.findIndex( el => el.id === id);
     console.log("INDEX",index);
     console.log("selected data",dataArr[index]);
-    console.log("selected data",dataArr[index].image);
+    console.log("type of data", typeof(dataArr[index]));
     setSingleDataArr(dataArr[index]);
   },[dataArr, id])
 
