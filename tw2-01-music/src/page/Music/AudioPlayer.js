@@ -35,7 +35,7 @@ const useAudio = url => {
     );
 
     playing  ? timeUpdate() : clearInterval(timeUpdate);
-    
+
   },[audio.currentTime, audio.ontimeupdate, playing])
   
   return [playing, toggle];
@@ -62,8 +62,9 @@ const AudioPlayer = ({ url }) => {
  
 
   return (
-    <div>
-      {ProgressBar(80)}
+    <div className="grid grid-cols-1 grid-rows-2
+                    md:grid-cols-2 md:grid-rows-1 gap-4">
+      <div className="border border-gray-400">{ProgressBar(50)}</div>
       <button onClick={toggle}>{playing ? <BiPause /> : <BiPlay />}</button>
     </div>
   );
