@@ -36,14 +36,6 @@ const useAudio = url => {
 
   },[audio.currentTime, audio.duration, audio.ontimeupdate, playing])
 
-  return [playing, toggle, duration, updateTime];
-};
-
-
-
-const AudioPlayer = ({ url }) => {
-
-
 
   const ProgressBar = ({ progressPercentage }) => {
     return (
@@ -57,7 +49,14 @@ const AudioPlayer = ({ url }) => {
     );
  };
 
-  const [playing, toggle, duration, updateTime] = useAudio(url);
+  return [playing, toggle];
+};
+
+
+
+const AudioPlayer = ({ url }) => {
+
+  const [playing, toggle, ProgressBar] = useAudio(url);
 
   console.log("PLAYING?",playing);
 
@@ -65,7 +64,11 @@ const AudioPlayer = ({ url }) => {
     <div className="grid grid-cols-1 grid-rows-2
                     md:grid-cols-2 md:grid-rows-1 gap-4">
       <div className="border border-gray-400">{ProgressBar(50)}</div>
-      <button className="border border-gray-400 p-2 w-8" onClick={toggle}>{playing ? <BiPause /> : <BiPlay />}</button>
+
+      <button className="border border-gray-400 p-2 w-8" 
+      onClick={toggle}>{playing 
+      ? <BiPause /> 
+      : <BiPlay />}</button>
     </div>
   );
 };
