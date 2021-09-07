@@ -26,7 +26,7 @@ function MusicDetail({singleData}) {
         <div className="m-5 p-3">
             <h2 className="my-2">{singleData.title}</h2>
             <ul className="m-5 border p-4">
-              <ImageOnload 
+              <ImageOnload
                 src={singleData.image[0].url}
                 alt="Cover"
               />

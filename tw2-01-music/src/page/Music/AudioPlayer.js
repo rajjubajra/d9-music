@@ -59,6 +59,8 @@ const AudioPlayer = ({ url }) => {
 
   const [playing, toggle] = useAudio(url);
 
+  console.log("PLAYING?",playing);
+
  
 
   return (
