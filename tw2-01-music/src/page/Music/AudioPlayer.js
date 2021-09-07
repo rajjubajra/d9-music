@@ -63,7 +63,7 @@ const AudioPlayer = ({ url }) => {
   return (
     <div className="grid grid-cols-1 grid-rows-2
                     md:grid-cols-2 md:grid-rows-1 gap-4">
-      <div className="border border-gray-400">{ProgressBar(50)}</div>
+      <div className="border border-gray-400">{ProgressBar}</div>
 
       <button className="border border-gray-400 p-2 w-8" 
       onClick={toggle}>{playing 
