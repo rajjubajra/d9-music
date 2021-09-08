@@ -12,10 +12,10 @@ const tracks = [
 ]
 
 
-function AudioPlayer({tracks}) {
+function AudioPlayer({url}) {
 
 
-  const audioElement = new Audio(tracks);
+  const audioElement = new Audio(url);
 
   /** states */
   const [trackIndex, setTrackIndex] = useState(0);
