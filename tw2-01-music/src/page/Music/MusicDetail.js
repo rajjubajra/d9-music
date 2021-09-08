@@ -1,5 +1,6 @@
 import React,{useEffect} from 'react';
 import ImageOnload from '../../components/ImageOnload';
+import Iframe from 'react-iframe';
 
 
 
@@ -34,6 +35,13 @@ function MusicDetail({singleData}) {
             <div dangerouslySetInnerHTML={{__html: singleData.body}} />
             <div>
               <h3>Play songs</h3>
+              <Iframe  
+              url="https://open.spotify.com/embed/playlist/37i9dQZF1DX3PFzdbtx1Us" width="100%" 
+              height="380" 
+              id="myId" 
+              />
+            
+              
               
             </div>
       </div>
