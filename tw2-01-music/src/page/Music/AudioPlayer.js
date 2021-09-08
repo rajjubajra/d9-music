@@ -1,76 +1,67 @@
-import React, { useState, useEffect } from "react";
-import {BiPlay, BiPause} from 'react-icons/bi';
-
-const useAudio = url => {
-
-  const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
-  const [duration, SetDuration] = useState('');
-  const [updateTime, setUpdateTime] = useState('');
+import React, {useState, useEffect, useRef} from 'react';
 
 
-  const toggle = () => setPlaying(!playing);
-
-  useEffect(() => {
-      playing ? audio.play() : audio.pause();    
-  },[audio, playing]);
-
-  useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(false));
-    return () => {
-      audio.removeEventListener('ended', () => setPlaying(false));
-    };
-  }, [audio]);
-
-  useEffect(()=>{
-    
-    const timeUpdate = setInterval(()=>{
-        console.log("update", audio.ontimeupdate);
-        console.log("tiemupdate", audio.currentTime);
-        setUpdateTime(audio.currentTime);
-      },1000);
-
-    return playing 
-    ? timeUpdate && SetDuration(audio.duration) 
-    : clearInterval(timeUpdate);
-
-  },[audio.currentTime, audio.duration, audio.ontimeupdate, playing])
+const tracks = [
+  {
+    title: "string",
+    artist: "string",
+    audioSrc: "string | import",
+    image: "string",
+    color: "string",
+  }
+]
 
 
-  const ProgressBar = ({ progressPercentage }) => {
-    return (
-        <div className='h-1 w-full bg-gray-300'>
-            <div
-                style={{ width: `${progressPercentage}%`}}
-                className={`h-full ${
-                    progressPercentage < 70 ? 'bg-red-600' : 'bg-green-600'}`}>
-            </div>
-        </div>
-    );
- };
+function AudioPlayer({tracks}) {
 
-  return [playing, toggle];
-};
+
+  const audioElement = new Audio(tracks);
+
+  /** states */
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [trackProgress, setTrackProgress] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  /** Destructure for conciesness */
+  const { title, artist, color, image, audioSrc} = tracks[trackIndex];
+
+  /** Refs */
+  const audioRef = useRef(new Audio(audioSrc));
+  const intervalRef = useRef();
+  const isReady = useRef(false);
+
+  /** Destructure for conciesness */
+  const {duration} = audioRef.current;
+
+
+  const toPrevTrack = () => {
+    console.log('TODO GO TO PREV');
+  }
+
+  const toNextTrack = () => {
+    console.log('TODO GO TO NEXT');
+  }
 
 
 
-const AudioPlayer = ({ url }) => {
+  // audioElement.play();
+  // audioElement.pause();
 
-  const [playing, toggle, ProgressBar] = useAudio(url);
+  // audioElement.currentTime;
+  // audioElement.ended;
+  // audioElement.duration;
 
-  console.log("PLAYING?",playing);
+  
 
   return (
-    <div className="grid grid-cols-1 grid-rows-2
-                    md:grid-cols-2 md:grid-rows-1 gap-4">
-      <div className="border border-gray-400">{ProgressBar}</div>
-
-      <button className="border border-gray-400 p-2 w-8" 
-      onClick={toggle}>{playing 
-      ? <BiPause /> 
-      : <BiPlay />}</button>
+    <div className="audio-player">
+      <div className="track-info">
+        <img src={image} alt="track artwork" />
+        <h2 className="title">{title}</h2>
+        <h3 className="artist">{artist}</h3>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default AudioPlayer;
+export default AudioPlayer
