@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import ImageOnload from '../../components/ImageOnload';
-import AudioList from './AudioList';
+import Spotify from 'react-spotify-embed';
 
 
 function MusicDetail({singleData}) {
@@ -34,7 +34,16 @@ function MusicDetail({singleData}) {
             <div dangerouslySetInnerHTML={{__html: singleData.body}} />
             <div>
               <h3>Play songs</h3>
-              <AudioList data={singleData.audio} />
+              <div>
+                <Spotify link="https://open.spotify.com/track/5ihDGnhQgMA0F0tk9fNLlA?si=4472348a63dd4f83" />
+              </div>
+              <div>
+              <Spotify link="https://open.spotify.com/album/0fUy6IdLHDpGNwavIlhEsl?si=mTiITmlHQpaGkoivGTv8Jw" />
+              </div>
+              <div>
+              <Spotify wide link="https://open.spotify.com/track/5ihDGnhQgMA0F0tk9fNLlA?si=4472348a63dd4f83"/>
+              </div>
+              
             </div>
       </div>
       }
