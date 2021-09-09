@@ -3,6 +3,7 @@ import {baseurl} from '../config/config';
 import { useDispatch, useSelector } from 'react-redux';
 import ajax from '../config/ajax';
 import {actionSubscriptionForm} from '../redux/actions';
+import { CountryDropdown } from 'react-country-region-selector';
 
 
 
@@ -117,8 +118,8 @@ function SubscriptionForm() {
           required  
           type="text" 
           id="country" 
-          name="country" 
-          placeholder="Country" 
+          name="country"
+          placeholder="Country"
           value={country}
           onChange={(e)=>setCountry(e.target.value)}
           />
