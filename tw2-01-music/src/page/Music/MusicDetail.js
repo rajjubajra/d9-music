@@ -75,7 +75,7 @@ function MusicDetail({singleData}) {
             url="https://open.spotify.com/embed/playlist/37i9dQZF1DX3PFzdbtx1Us" width="100%" 
             height="380" 
             id="myId"
-            className="p-4 bg-gray-200" />
+            />
         </div>
 
       </div>
