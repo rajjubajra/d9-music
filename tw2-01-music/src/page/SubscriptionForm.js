@@ -121,7 +121,7 @@ function SubscriptionForm() {
           name="country"
           placeholder="Country"
           value={country}
-          onChange={(e)=>setCountry(e.target.value)}
+          onChange={(val)=>setCountry(val)}
           />
         </div>
         
