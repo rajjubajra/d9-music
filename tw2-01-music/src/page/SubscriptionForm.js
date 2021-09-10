@@ -98,7 +98,7 @@ function SubscriptionForm() {
           onChange={(e)=>setEmail(e.target.value)}
           />
           <CountryDropdown 
-          classes="w-full outline-none border-gray-500 p-2 border-l border-r"
+          classes="w-full outline-none border-gray-500 p-2 border"
           required  
           type="text" 
           id="country" 
@@ -116,7 +116,7 @@ function SubscriptionForm() {
         
         <div>
           <input  
-          className="border cursor-pointer border-gray-500 p-4 mt-4 outline-none"  type="submit" 
+          className="border-l border-r border-b cursor-pointer border-gray-500 p-4 mt-4 outline-none"  type="submit" 
           id="submit" 
           name="submit" 
           value="Submit" />
