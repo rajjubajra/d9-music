@@ -63,11 +63,11 @@ function SubscriptionForm() {
   }
 
   return (
-    <div className="w-full p-10">
+    <div className="w-full md:p-10">
       <h1 className="text-3xl">
         {form_fetched && form.attributes.title}
       </h1>
-      <div className="text-center">
+      <div>
         {form_fetched && !submitForm && form.attributes.description}</div>
       <div className="text-1xl">
         {submitForm && form_fetched && form.attributes.settings.confirmation_message }
@@ -77,8 +77,7 @@ function SubscriptionForm() {
         <div>
           <input
           className="w-full outline-none p-2 border-gray-500 
-          border-l border-r border-t border-b-0
-          md:border-l md:border-r md:border-t md:border-b-0" 
+          border-l border-r border-t border-b-0" 
           required
           type="text" 
           id="name"  
@@ -89,8 +88,7 @@ function SubscriptionForm() {
           />
           <input 
           className="w-full outline-none border-gray-500 p-2
-          border-l border-r border-t border-b-0 
-          md:border-l md:border-r md:border-t md:border-b-0"
+          border-l border-r border-t border-b-0"
           required  
           type="text" 
           id="email" 
@@ -101,8 +99,7 @@ function SubscriptionForm() {
           />
           <input 
           className="w-full  outline-none border-gray-500 p-2
-          border-l border-r border-t border-b-0 
-          md:border-l md:border-r md:border-t md:border-b-0"
+          border-l border-r border-t border-b-0"
           required  
           type="text" 
           id="city" 
