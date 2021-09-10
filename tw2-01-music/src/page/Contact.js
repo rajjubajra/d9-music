@@ -14,7 +14,7 @@ function Contact() {
         <ContactInfo />
       </div>
 
-      <div className="col-span-12 md:col-span-8">
+      <div className="col-span-12 md:col-span-8 mt-10 md:mt-0">
         <SubscriptionFrom />
       </div>
       

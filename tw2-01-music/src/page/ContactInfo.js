@@ -22,7 +22,7 @@ function ContactInfo() {
             <h2 className="text-3xl py-10">Contact</h2>
 
             <ImageOnload 
-            cssClass="w-1/2 h-96 object-cover"
+            cssClass="w-full h-40 md:w-1/2 md:h-96 object-cover"
             src={fetched && inc[1].attributes.uri.url} 
             alt="Music Page"
             />
