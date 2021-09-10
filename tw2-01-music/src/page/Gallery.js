@@ -48,6 +48,7 @@ function Gallery() {
   
   
   return (
+    <div className="max-w-screen-xl m-auto p-10">
     <div className="grid grid-cols-3 grid-rows-3 gap-3 p-10">
       {
         arr.map(item=>{
@@ -65,6 +66,7 @@ function Gallery() {
           )
         })
       }
+    </div>
     </div>
   )
 

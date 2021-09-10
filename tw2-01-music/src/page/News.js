@@ -54,26 +54,7 @@ function News() {
   //console.log("data arr news", arr);
   
   return (
-    <div>
-      {/* {
-        length > 0 &&
-        arr.map(item=>{
-          return(
-            <div className="m-5">
-              <h1 className="text-2xl">{item.title}</h1>
-              <div>
-                <ImageOnload 
-                  cssClass="w-60"
-                  src={item.image}
-                  alt="news"
-                />
-              </div>
-              <div dangerouslySetInnerHTML={{__html: item.body}} />
-            </div>
-          )
-        })
-      } */}
-
+    <div className="max-w-screen-xl m-auto p-10">
       <NewsList listdata={length > 0 ? arr : []} />
     </div>
   )

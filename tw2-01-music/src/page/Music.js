@@ -158,12 +158,12 @@ function Music(){
 
 
   return(
-    <>
+    <div className="max-w-screen-xl p-10 m-auto">
       {
         id ? <MusicDetail singleData={singleDataArr} /> :
         dataArr.length > 0 && <MusicList listdata={dataArr} />
       }   
-    </>
+    </div>
   )
 
 }
