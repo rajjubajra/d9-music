@@ -108,7 +108,7 @@ function SubscriptionForm() {
           onChange={(val)=>setCountry(val)}
           />
           <RegionDropdown
-          classes="border-l border-r border-b border-gray-300 outline-none px-3 py-2 w-full"
+          classes="border-l border-r border-b border-gray-500 outline-none px-3 py-2 w-full"
           country={country}
           value={region}
           onChange={(val) => setRegion(val)} />
@@ -116,7 +116,7 @@ function SubscriptionForm() {
         
         <div>
           <input  
-          className="border cursor-pointer border-gray-500 p-4 mt-4 outline-none"  type="submit" 
+          className="border border-gray-300 px-3 py-2 hover:bg-gray-500 hover:text-white"  type="submit" 
           id="submit" 
           name="submit" 
           value="Submit" />
