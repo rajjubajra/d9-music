@@ -108,7 +108,7 @@ function SubscriptionForm() {
           value={city}
           onChange={(e)=>setCity(e.target.value)}
           />
-          <input 
+          <CountryDropdown 
           className="w-full  outline-none border-gray-500 p-2
           border-l border-r border-t border-b"
           required  
