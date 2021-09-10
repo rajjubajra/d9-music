@@ -64,18 +64,18 @@ function SubscriptionForm() {
 
   return (
     <div className="w-full p-10">
-      <h1 className="text-3xl text-center m-5">
+      <h1 className="text-3xl">
         {form_fetched && form.attributes.title}
       </h1>
       <div className="text-center">
         {form_fetched && !submitForm && form.attributes.description}</div>
-      <div className="text-1xl text-center">
+      <div className="text-1xl">
         {submitForm && form_fetched && form.attributes.settings.confirmation_message }
       </div>
-      <div className="w-full flex justify-center align-middle">
-        <form onSubmit={handleSubmit}  method="post" class="w-full p-4 m-5 flex flex-col">
+      <div className="w-full flex">
+        <form onSubmit={handleSubmit}  method="post" class="w-full mt-5 flex flex-col">
         <div>
-          <input 
+          <input
           className="w-full outline-none p-2 border-gray-500 
           border-l border-r border-t border-b-0
           md:border-l md:border-r md:border-t md:border-b-0" 
@@ -113,8 +113,7 @@ function SubscriptionForm() {
           />
           <input 
           className="w-full  outline-none border-gray-500 p-2
-          border-l border-r border-t border-b-0 
-          md:border-l md:border-r md:border-t md:border-b"
+          border-l border-r border-t border-b"
           required  
           type="text" 
           id="country" 

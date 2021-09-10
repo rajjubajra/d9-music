@@ -32,7 +32,7 @@ function ContactInfo() {
               <p>{fetched && data[0].attributes.field_contact_email}</p>  
             </div>
 
-            <div className="py-10">
+            <div className="py-5 md:py-10">
               <h3 className="text-2xl mb-3">Booking Agencies</h3>
               <ul className="grid gap-y-4">
                 {
