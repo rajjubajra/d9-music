@@ -3,7 +3,7 @@ import {baseurl} from '../config/config';
 import { useDispatch, useSelector } from 'react-redux';
 import ajax from '../config/ajax';
 import {actionSubscriptionForm} from '../redux/actions';
-import { CountryDropdown } from 'react-country-region-selector';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 
 
 
@@ -16,7 +16,7 @@ function SubscriptionForm() {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [city, setCity] = useState('');
+  const [region, setRegion] = useState('');
   const [country, setCountry] = useState('');
   const [submitForm, setSubmitForm] = useState(false);
 
@@ -28,7 +28,7 @@ function SubscriptionForm() {
     submitForm &&
     setName('');
     setEmail('');
-    setCity('');
+    setRegion('');
     setCountry('');
 
 
@@ -36,7 +36,7 @@ function SubscriptionForm() {
   
 
 
-  console.log(name, email, city, country,"sumbited", submitForm);
+  console.log(name, email, region, country,"sumbited", submitForm);
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -45,7 +45,7 @@ function SubscriptionForm() {
       "webform_id": "subscription",
       "name": name,
       "email": email,
-      "city": city,
+      "city": region,
       "country": country
     }
 
@@ -77,7 +77,7 @@ function SubscriptionForm() {
         <div>
           <input
           className="w-full outline-none p-2 border-gray-500 
-          border-l border-r border-t border-b-0" 
+          border" 
           required
           type="text" 
           id="name"  
@@ -88,7 +88,7 @@ function SubscriptionForm() {
           />
           <input 
           className="w-full outline-none border-gray-500 p-2
-          border-l border-r border-t border-b-0"
+          border-l border-r"
           required  
           type="text" 
           id="email" 
@@ -97,20 +97,8 @@ function SubscriptionForm() {
           value={email}
           onChange={(e)=>setEmail(e.target.value)}
           />
-          <input 
-          className="w-full  outline-none border-gray-500 p-2
-          border-l border-r border-t border-b-0"
-          required  
-          type="text" 
-          id="city" 
-          name="city" 
-          placeholder="City" 
-          value={city}
-          onChange={(e)=>setCity(e.target.value)}
-          />
           <CountryDropdown 
-          classes="w-full outline-none border-gray-500 p-2
-          border-l border-r border-t border-b"
+          classes="w-full outline-none border-gray-500 p-2 border-l border-r"
           required  
           type="text" 
           id="country" 
@@ -119,6 +107,11 @@ function SubscriptionForm() {
           value={country}
           onChange={(val)=>setCountry(val)}
           />
+          <RegionDropdown
+          classes="border border-gray-300 outline-none px-3 py-2 w-full"
+          country={country}
+          value={region}
+          onChange={(val) => setRegion(val)} />
         </div>
         
         <div>
