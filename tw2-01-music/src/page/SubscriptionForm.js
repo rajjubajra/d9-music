@@ -116,7 +116,7 @@ function SubscriptionForm() {
         
         <div>
           <input  
-          className="border border-gray-300 px-3 py-2 hover:bg-gray-500 hover:text-white"  type="submit" 
+          className="border border-gray-500 px-4 py-2 mt-5 hover:bg-gray-500 hover:text-white cursor-pointer"  type="submit" 
           id="submit" 
           name="submit" 
           value="Submit" />
