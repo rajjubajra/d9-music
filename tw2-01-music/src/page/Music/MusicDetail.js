@@ -51,7 +51,7 @@ function MusicDetail({singleData}) {
 
         <div className="px-10">
           <h3 className="py-4">Shop</h3>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4">
+          <div className="grid grid-cols-4 grid-rows-1 gap-4">
             <div><RiAmazonFill /></div>
             <div><FaSpotify /></div>
             <div><FaGooglePlay /></div>
