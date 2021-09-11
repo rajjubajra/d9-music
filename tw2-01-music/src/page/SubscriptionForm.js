@@ -53,9 +53,9 @@ function SubscriptionForm() {
       const axios = await ajax(); //wait for initalized axios object
       const response = await axios.post(webform_rest_url, data);
       response.status === 200 && setSubmitForm(true);
-      //console.log("Data Posted:",response);
+      console.log("Data Posted:",response);
     }catch(e){
-      console.log(e);
+      console.log("Submit Error",e);
     }
 
   }
