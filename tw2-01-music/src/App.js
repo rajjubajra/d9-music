@@ -62,7 +62,7 @@ function App() {
   
 
   return (
-    <div className="max-w-screen-xl">
+    <div className="max-w-screen-xl m-auto">
       <header className="App-header">
         <BrowserRouter>
           <MenuBar />
