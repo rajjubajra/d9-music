@@ -42,10 +42,9 @@ function SubscriptionForm() {
     e.preventDefault();
     
     const data = {
-      "webform_id": "contact",
+      "webform_id": "subscription",
       "name": name,
-      "email": email,
-      "message": "test message"
+      "email": email
     }
     console.log("DATA submitted",data);
     const webform_rest_url = `${baseurl.URL}/webform_rest/submit`;
