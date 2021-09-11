@@ -48,7 +48,7 @@ function SubscriptionForm() {
       "city": region,
       "country": country
     }
-
+    console.log("DATA submited",data);
     const webform_rest_url = `${baseurl.URL}/webform_rest/submit`;
 
     try{
