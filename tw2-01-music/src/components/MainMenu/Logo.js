@@ -2,7 +2,7 @@ function Logo() {
   return (
     <div>
       <img 
-        width='100px'
+        width='50px'
         height='auto'
         src="./yellow-website-square150x150.png" 
         alt="logo" />

@@ -36,7 +36,7 @@ function Homepage() {
 
 
   return (
-    <div>
+    <div className="w-full min-h-screen flex align-middle">
 
       {
         arr.length > 0 &&
