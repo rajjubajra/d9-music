@@ -42,13 +42,12 @@ function SubscriptionForm() {
     e.preventDefault();
     
     const data = {
-      "webform_id": "subscription",
+      "webform_id": "contact",
       "name": name,
       "email": email,
-      "city": region,
-      "country": country
+      "message": "test message"
     }
-    console.log("DATA submited",data);
+    console.log("DATA submitted",data);
     const webform_rest_url = `${baseurl.URL}/webform_rest/submit`;
 
     try{
