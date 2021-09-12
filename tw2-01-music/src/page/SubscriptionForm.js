@@ -24,7 +24,7 @@ function SubscriptionForm() {
 
   useEffect(()=>{
     
-    submitForm && dispatch(actionSubscriptionForm())
+    dispatch(actionSubscriptionForm())
 
     submitForm &&
     setName('');
