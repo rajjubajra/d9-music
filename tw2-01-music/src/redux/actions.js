@@ -490,7 +490,7 @@ export const actionSubscriptionForm = () => {
     }
   }
 
-  const subscriptionUrl = `${baseurl.URL}/jsonapi/webform/webform/84e92249-d6c9-4e3a-95f8-36daf42e4100`;
+  const subscriptionUrl = `${baseurl.URL}/jsonapi/webform_submission/fansclub`;
   const SUBSCRIPTION_FORM = subscriptionUrl;
 
   return function (dispatch) {
