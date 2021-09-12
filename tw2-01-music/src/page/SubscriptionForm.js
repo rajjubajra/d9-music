@@ -42,7 +42,7 @@ function SubscriptionForm() {
     e.preventDefault();
     
     const data = {
-      "webform_id": "subscription",
+      "webform_id": "fansclub",
       "name": name,
       "email": email
     }
