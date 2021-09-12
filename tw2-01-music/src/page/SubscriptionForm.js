@@ -12,6 +12,7 @@ function SubscriptionForm() {
   const dispatch = useDispatch();
   const form = useSelector(state => state.reducerSubscriptionForm.subscription_form_data.data);
   const form_fetched = useSelector(state => state.reducerSubscriptionForm.subscription_form_fetched);
+
   console.log("Conf message", form_fetched && form);
 
   const [name, setName] = useState('');
@@ -44,7 +45,9 @@ function SubscriptionForm() {
     const data = {
       "webform_id": "fansclub",
       "name": name,
-      "email": email
+      "email": email,
+      "country": country,
+      "state": region,
     }
     console.log("DATA submitted",data);
     const webform_rest_url = `${baseurl.URL}/webform_rest/submit`;
