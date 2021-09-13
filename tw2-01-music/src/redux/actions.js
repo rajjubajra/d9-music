@@ -155,7 +155,7 @@ export const actionNews = () => {
   })
   const reqNews = axios.get(NEWS, headers)
   reqNews.then((res) => {
-      console.log("action news",res.data)
+      //console.log("action news",res.data)
       dispatch({
         type: actionTypes.NEWS_FETCHED,
         data: res.data
@@ -482,6 +482,7 @@ export const actionContactInfo = () => {
 
 
 /** SUBSCRIPTION FORM */
+/** NOTE: REST API IS USED FOR "WEBFORM" NOT THE JSONAPI */
 export const actionSubscriptionForm = () => {
 
   const headers = {
@@ -490,7 +491,7 @@ export const actionSubscriptionForm = () => {
     }
   }
 
-  const subscriptionUrl = `${baseurl.URL}/jsonapi/webform/webform/32fd5b50-c69f-403a-acca-dbc485a125d4`;
+  const subscriptionUrl = `${baseurl.URL}/webform_rest/fansclub/fields?_format=json`;
   const SUBSCRIPTION_FORM = subscriptionUrl;
 
   return function (dispatch) {
