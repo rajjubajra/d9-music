@@ -463,7 +463,7 @@ export const actionContactInfo = () => {
   
   const reqImage = axios.get(CONTACT_INFO, headers)
   reqImage.then((res) => {
-      console.log("action news",res.data)
+      //console.log("action contact info",res.data)
       dispatch({
         type: actionTypes.CONTACT_INFO_FETCHED,
         data: res.data
@@ -485,6 +485,8 @@ export const actionContactInfo = () => {
 /** NOTE: REST API IS USED FOR "WEBFORM" NOT THE JSONAPI */
 export const actionSubscriptionForm = () => {
 
+  console.log("THIS IS is action subscription");
+
   const headers = {
     headers: {
     'Accept': 'application/vnd.api+json'
@@ -493,6 +495,8 @@ export const actionSubscriptionForm = () => {
 
   const subscriptionUrl = `${baseurl.URL}/webform_rest/fansclub/fields?_format=json`;
   const SUBSCRIPTION_FORM = subscriptionUrl;
+
+  console.log("THIS IS is action subscription", SUBSCRIPTION_FORM);
 
   return function (dispatch) {
 
