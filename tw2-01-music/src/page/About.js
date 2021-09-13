@@ -61,7 +61,7 @@ function About() {
       {
         length > 0 &&
         arr.map(item => {
-          return <div className="grid grid-cols-12 gap-4
+          return <div className="grid grid-cols-12 gap-4 bg-gray-500
           max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
 
           <div className="p-10 col-span-12">
