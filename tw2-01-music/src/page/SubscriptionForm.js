@@ -66,6 +66,7 @@ function SubscriptionForm() {
   return (
     <div className="w-full md:p-10">
       <h1 className="text-3xl">
+        FAN'S CLUB
         {/* {form_fetched && form.attributes.title} */}
       </h1>
       <div>
