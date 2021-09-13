@@ -41,6 +41,10 @@ function SubscriptionForm() {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
+    /** NOTE: Permission need to allowed to anonymouse user
+     * RESTful Web Services
+     *   - Access POST on Webform Submit resource
+     */
     
     const data = {
       "webform_id": "fansclub",

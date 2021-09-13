@@ -483,6 +483,12 @@ export const actionContactInfo = () => {
 
 /** SUBSCRIPTION FORM */
 /** NOTE: REST API IS USED FOR "WEBFORM" NOT THE JSONAPI */
+/**
+ * RESTful Web Services 
+ *  - Access GET on Webform 
+ *  - Access POST on Webform 
+ * PERMISSION need to be allowed to anonymouse user
+ */
 export const actionSubscriptionForm = () => {
 
   console.log("THIS IS is action subscription");
@@ -493,7 +499,7 @@ export const actionSubscriptionForm = () => {
     }
   }
 
-  const subscriptionUrl = `${baseurl.URL}/webform_rest/fansclub/fields?_format=json`;
+  const subscriptionUrl = `${baseurl.URL}/webform/fansclub?_format=json`;
   const SUBSCRIPTION_FORM = subscriptionUrl;
 
   console.log("THIS IS is action subscription", SUBSCRIPTION_FORM);
