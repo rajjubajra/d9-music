@@ -5,7 +5,7 @@ function Logo() {
   const url_1 = './yellow-website-square150x150.png';
   const url_2 = '../yellow-website-square150x150.png'
 
-  const [imageLoaded, setImageLoaded] = false;
+  const [imageLoaded, setImageLoaded] = useState(false);
 
 
 
