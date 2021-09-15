@@ -1,22 +1,25 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function Logo() {
 
-  const url_1 = './yellow-website-square150x150.png';
-  const url_2 = '../yellow-website-square150x150.png'
+  const [loaded, setLoaded] = useState(false);
+  const [imgUrl, setimgUrl] = useState('');
 
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-
+  const url = ['./yellow-website-square150x150.png', './../yellow-website-square150x150'];
+  
+  for(let i = 0; i < url.length && !loaded ; i++) {
+    setimgUrl(url[i])
+    loaded && setLoaded(true);
+  }
 
   return (
     <div>
       <img 
         width='50px'
         height='auto'
-        src={imageLoaded ? url_1 : url_2 }
-        onLoad={()=>setImageLoaded(true)} 
-        onError={()=>setImageLoaded(false)}
+        src={imgUrl}
+        onLoad= {() => setLoaded(true)}
+        onError= {() => setLoaded(false)}
         alt="logo" />
     </div> 
   )
