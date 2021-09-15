@@ -16,6 +16,7 @@ function Logo() {
         height='auto'
         src={imageLoaded ? url_1 : url_2 }
         onLoad={()=>setImageLoaded(true)} 
+        onError={()=>setImageLoaded(false)}
         alt="logo" />
     </div> 
   )
