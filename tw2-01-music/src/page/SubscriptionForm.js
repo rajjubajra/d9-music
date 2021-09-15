@@ -78,7 +78,9 @@ function SubscriptionForm() {
       <div className="text-1xl">
         {submitForm && form_fetched && form.attributes.settings.confirmation_message }
       </div>
-      <div className="w-full flex">
+
+       {/** SUBSCRIPTION FORM */}
+      <div className={ submitForm ?  "hidden" : "w-full flex"}>
         <form onSubmit={handleSubmit}  method="post" class="w-full mt-5 flex flex-col">
         <div>
           <input
@@ -128,7 +130,15 @@ function SubscriptionForm() {
           value="Submit" />
         </div>          
         </form>
+        
       </div>
+  
+
+      {/** FORM SUBMITTED MESSAGE  */}
+      <div className={ submitForm ? "flex" : "hidden"} >
+        {form_fetched && form.attributes.settings.submission_exception_message}
+      </div>
+  
     </div>
   )
 }
