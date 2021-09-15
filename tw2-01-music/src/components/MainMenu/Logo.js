@@ -2,9 +2,9 @@
 
 function Logo() {
 
-  const url = ['./yellow-website-square150x150.png', './../yellow-website-square150x150'];
+  const url = ['./yellow-website-square150x150.png', './../yellow-website-square150x150.png'];
 
-  console.log(window.location.href);
+  //console.log(window.location.href);
 
   const img = window.location.href === 'https://yellow-website.com/d9-music/themes/tw2-01/form/fansclub' ? url[1] : url[0]; 
 
