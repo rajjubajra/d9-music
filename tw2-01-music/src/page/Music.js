@@ -33,7 +33,7 @@ function Music(){
   const [singleDataArr, setSingleDataArr] = useState('');
 
 
-  /** SEPEARATE 'file--file' type into an Array - 'file-file  */
+  /** SEPEARATE 'file--file' type into an Array - 'file-file  
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
@@ -44,7 +44,7 @@ function Music(){
     setFile_file(arr);
   },[musicDataFetched, musicDataInc]);
 
-  /** SEPERATE NOT 'file--file' type in an Array - 'media' */
+  /** SEPERATE NOT 'file--file' type in an Array - 'media' 
   useEffect(() => {
     const arr = [];
     musicDataFetched &&
@@ -62,13 +62,13 @@ function Music(){
   },[musicDataFetched, musicDataInc]);
 
 
-  /** get "URL" From "file_file" array combined with "media" array "id" */
+  /** get "URL" From "file_file" array combined with "media" array "id" 
   function getUri(id, arr){
       const index = arr.findIndex( el => el.id === id);
       return arr[index].uri;
   }
 
-/** get "FILE TYPE" From "file_file" array combined with "media" array "id" */
+/** get "FILE TYPE" From "file_file" array combined with "media" array "id" 
   function getFileType(id, arr){
     const index = arr.findIndex(el =>  el.id === id );
     return arr[index].filetype;
@@ -156,13 +156,14 @@ function Music(){
 
   console.log("Single data", singleDataArr);
 
+  */
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
-      {
+      {/** 
         id ? <MusicDetail singleData={singleDataArr} /> :
         dataArr.length > 0 && <MusicList listdata={dataArr} />
-      }   
+      */}   
     </div>
   )
 
