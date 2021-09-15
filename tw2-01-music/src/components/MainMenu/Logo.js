@@ -6,12 +6,14 @@ function Logo() {
 
   console.log(window.location.href);
 
+  const img = window.location.href === 'https://yellow-website.com/d9-music/themes/tw2-01/form/fansclub' ? url[1] : url[0]; 
+
   return (
     <div>
       <img 
         width='50px'
         height='auto'
-        src={url[0]}
+        src={img}
         alt="logo" />
     </div> 
   )
