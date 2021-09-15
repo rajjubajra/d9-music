@@ -482,13 +482,12 @@ export const actionContactInfo = () => {
 
 
 /** SUBSCRIPTION FORM */
-/** NOTE: REST API IS USED FOR "WEBFORM" NOT THE JSONAPI */
-/**
- * RESTful Web Services 
- *  - Access GET on Webform 
- *  - Access POST on Webform 
- * PERMISSION need to be allowed to anonymouse user
- */
+/** NOTE: 
+ * Webform Permission access 
+ * "ACCESS Webform Configuration" 
+ * to be allowed to anonymouse user
+ *  */
+
 export const actionSubscriptionForm = () => {
 
   console.log("THIS IS is action subscription");

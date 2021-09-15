@@ -10,8 +10,8 @@ import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 function SubscriptionForm() {
 
   const dispatch = useDispatch();
-  //const form = useSelector(state => state.reducerSubscriptionForm.subscription_form_data.data);
-  //const form_fetched = useSelector(state => state.reducerSubscriptionForm.subscription_form_fetched);
+  const form = useSelector(state => state.reducerSubscriptionForm.subscription_form_data.data);
+  const form_fetched = useSelector(state => state.reducerSubscriptionForm.subscription_form_fetched);
 
   //console.log("Conf message", form_fetched && form);
 
@@ -70,14 +70,13 @@ function SubscriptionForm() {
   return (
     <div className="w-full md:p-10">
       <h1 className="text-3xl">
-        FAN'S CLUB
-        {/* {form_fetched && form.attributes.title} */}
+        {form_fetched && form.attributes.title} 
       </h1>
       <div>
-        {/* {form_fetched && !submitForm && form.attributes.description} */}
+        {form_fetched && !submitForm && form.attributes.description}
       </div>
       <div className="text-1xl">
-        {/* {submitForm && form_fetched && form.attributes.settings.confirmation_message } */}
+        {submitForm && form_fetched && form.attributes.settings.confirmation_message }
       </div>
       <div className="w-full flex">
         <form onSubmit={handleSubmit}  method="post" class="w-full mt-5 flex flex-col">
