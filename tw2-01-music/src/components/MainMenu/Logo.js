@@ -1,12 +1,10 @@
 
 
-
 function Logo() {
-
 
   const url = ['./yellow-website-square150x150.png', './../yellow-website-square150x150'];
 
-  console.log(url);
+  console.log(window.location.href);
 
   return (
     <div>
