@@ -136,7 +136,8 @@ function SubscriptionForm() {
 
       {/** FORM SUBMITTED MESSAGE  */}
       <div className={ submitForm ? "flex" : "hidden"} >
-        {form_fetched && form.attributes.settings.submission_exception_message}
+        <div dangerouslySetInnerHTML={{__html:form_fetched 
+        && form.attributes.settings.submission_exception_message}}  />
       </div>
   
     </div>
