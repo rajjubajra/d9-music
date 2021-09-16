@@ -108,7 +108,7 @@ console.log("music data fetched",musicDataFetched,"Music Data Inc",musicDataInc)
   },[file_file, media]);
 
 
-  //console.log("FILE ARRAY", file_file);
+  console.log("FILE ARRAY", file_file);
   console.log("Media Array", media);
   console.log("Result", includedArr);
   //console.log("musicData", musicData);
