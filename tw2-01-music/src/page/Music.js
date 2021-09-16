@@ -22,11 +22,11 @@ function Music(){
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
 //const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
 
-    console.log("MUSIC DATA",musicData);
-    console.log("FETCHED",musicDataFetched);
-    console.log("INCLUDED",musicDataInc);
+    console.log("MUSIC DATA", musicData);
+    console.log("FETCHED", musicDataFetched);
+    console.log("INCLUDED", musicDataInc);
 
-
+    const [arr,setArr] = useState([]);
 
     useEffect(()=>{
 
@@ -42,12 +42,18 @@ function Music(){
           image: "",
           video: "",
         })
-      })
+      });
 
-      console.log("New Array: ", arr);
+      setArr(arr);
 
     },[musicData])
-  
+
+
+    console.log("NEW ARRAY", arr);
+
+    
+
+
   return(
     <div className="max-w-screen-xl p-10 m-auto">
       <h3>Music Album</h3>
