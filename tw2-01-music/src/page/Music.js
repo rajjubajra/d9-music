@@ -34,8 +34,6 @@ function Music(){
           return item.type === 'media--audio' &&
           arr1.some(el => el.id === item.id) &&
           arr.push({
-            id: item.id,
-            title: item.attributes.field_audio_title,
             data: item.relationships.field_media_audio_file.data,
           })
       })
