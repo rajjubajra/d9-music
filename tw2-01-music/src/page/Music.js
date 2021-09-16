@@ -65,7 +65,7 @@ function Music(){
 
       setArr(arr);
 
-    },[musicData, musicDataFetched])
+    },[musicData, musicDataFetched, musicDataInc])
 
     console.log("NEW ARRAY", arr);
 
