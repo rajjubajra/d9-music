@@ -32,16 +32,35 @@ function Music(){
     function audioArray( arr1,arr2){
       const arr = [];
       arr2.map( item => {
-          return item.type === 'media--audio' &&
+      return item.type === 'media--audio' &&
           arr1.some(el => el.id === item.id) &&
           arr.push(item.relationships.field_media_audio_file.data)
       })
       return arr;
     }
 
+    function imageArray(arr1, arr2){
+      const arr = [];
+      arr2.map( item => {
+        return item.type === 'media--image' &&
+        arr1.some(el => el.id === item.id) &&
+        arr.push(item.relationships.field_media_image.data)
+      })
+    }
+
+    function videoArray(arr1, arr2){
+      const arr = [];
+      arr2.map( item => {
+        return item.type === 'media--remote_video' &&
+        arr1.some(el => el.id === item.id) &&
+        arr.push({
+          youtube:item.attributes.field_media_oembed_video, 
+          name: item.attributes.name})
+      })
+    }
+
 
     useEffect(()=>{
-
       const arr = [];
       musicDataFetched &&
       musicData.map((item) => {
@@ -54,8 +73,8 @@ function Music(){
           title:title, 
           body: processed,
           audio: audioArray(audio, musicDataInc),
-          image: image,
-          video: video,
+          image: imageArray(image, musicDataInc),
+          video: videoArray(video, musicDataInc),
         })
       });
 
@@ -64,6 +83,10 @@ function Music(){
     },[musicData, musicDataFetched, musicDataInc])
 
     console.log("NEW ARRAY", arr);
+
+
+  /** add - uri in to the audio, image file */
+  
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
