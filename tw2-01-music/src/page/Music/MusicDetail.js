@@ -19,10 +19,10 @@ function MusicDetail({singleData}) {
   // },[singleData])
   
   
-  console.log("single data",singleData);
-  console.log("passsing",typeof(singleData));
+ // console.log("single data",singleData);
+ // console.log("passsing",typeof(singleData));
 
-  console.log("If undefined", singleData  !== undefined && singleData.title)
+  //console.log("If undefined", singleData  !== undefined && singleData.title)
   
 
   return (

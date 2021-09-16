@@ -109,7 +109,7 @@ console.log("music data fetched",musicDataFetched,"Music Data Inc",musicDataInc)
 
 
   //console.log("FILE ARRAY", file_file);
-  //console.log("Media Array", media);
+  console.log("Media Array", media);
   console.log("Result", includedArr);
   //console.log("musicData", musicData);
   console.log("usethisData", dataArr);
@@ -166,9 +166,9 @@ console.log("music data fetched",musicDataFetched,"Music Data Inc",musicDataInc)
 
   useEffect(() => {
     const index = dataArr.length > 0 && id && dataArr.findIndex( el => el.id === id);
-    console.log("INDEX",index);
-    console.log("selected data",dataArr[index]);
-    console.log("type of data", typeof(dataArr[index]));
+    //console.log("INDEX",index);
+    //console.log("selected data",dataArr[index]);
+    //console.log("type of data", typeof(dataArr[index]));
     setSingleDataArr(dataArr[index]);
   },[dataArr, id])
 
