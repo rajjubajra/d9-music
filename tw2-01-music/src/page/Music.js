@@ -28,6 +28,12 @@ function Music(){
 
     const [arr,setArr] = useState([]);
 
+    function audioArray( array1){
+      const map = new Map();
+      array1.forEach(item => map.set(item.id, item));
+      return map;
+    }
+
     useEffect(()=>{
 
       const arr = [];
@@ -41,7 +47,7 @@ function Music(){
           id: item.id, 
           title:title, 
           body: processed,
-          audio: audio,
+          audio: audioArray(audio),
           image: image,
           video: video,
         })
