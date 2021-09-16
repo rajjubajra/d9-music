@@ -11,19 +11,19 @@ function Music(){
 
   const dispatch = useDispatch();
 
-  /** RUN action  */
+/** RUN action  */
   useEffect(()=>{
     dispatch(actionMusic());
   },[dispatch])
 
-  /** DRUPAL DATA CREATED BY CONTENT TYPE */
+/** DRUPAL DATA CREATED BY CONTENT TYPE */
   const musicData = useSelector(state => state.reducerMusic.music_data.data);
   const musicDataFetched = useSelector(state => state.reducerMusic.music_fetched);
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
-  //const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
+//const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
 
 
-  //console.log(musicDataFetched,musicDataInc);
+//console.log(musicDataFetched,musicDataInc);
 
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
@@ -33,7 +33,7 @@ function Music(){
   const [singleDataArr, setSingleDataArr] = useState('');
 
 
-  /** SEPEARATE 'file--file' type into an Array - 'file-file  
+/** SEPEARATE 'file--file' type into an Array - 'file-file  */
   useEffect(()=>{
     const arr = [];
     musicDataFetched &&
@@ -44,7 +44,7 @@ function Music(){
     setFile_file(arr);
   },[musicDataFetched, musicDataInc]);
 
-  /** SEPERATE NOT 'file--file' type in an Array - 'media' 
+/** SEPERATE NOT 'file--file' type in an Array - 'media' */
   useEffect(() => {
     const arr = [];
     musicDataFetched &&
@@ -55,6 +55,8 @@ function Music(){
         audio_title: item.type === 'media--audio' ? item.attributes.field_audio_title : null,
         name:item.attributes.name,
         mediaId: item.type === 'media--audio' ? item.relationships.field_media_audio_file.data.id : item.relationships.field_media_image.data.id,
+        remote_video_url: item.attributes.field_media_oembed_video,
+        remote_video_title: item.attributes.name
       })
     })
     setMedia(arr);
@@ -62,13 +64,15 @@ function Music(){
   },[musicDataFetched, musicDataInc]);
 
 
-  /** get "URL" From "file_file" array combined with "media" array "id" 
+/** get "URL" From "file_file" array combined with "media" array "id" */
+
   function getUri(id, arr){
       const index = arr.findIndex( el => el.id === id);
       return arr[index].uri;
   }
 
-/** get "FILE TYPE" From "file_file" array combined with "media" array "id" 
+/** get "FILE TYPE" From "file_file" array combined with "media" array "id" */
+
   function getFileType(id, arr){
     const index = arr.findIndex(el =>  el.id === id );
     return arr[index].filetype;
@@ -83,7 +87,7 @@ function Music(){
         name: item.name,
         audio_title: item.audio_title,
         uri: getUri(item.mediaId, file_file),
-        filetype: getFileType(item.mediaId, file_file)
+        filetype: getFileType(item.mediaId, file_file),
       })
     })
     setIncludedArr(arr);
@@ -156,14 +160,13 @@ function Music(){
 
   console.log("Single data", singleDataArr);
 
-  */
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
-      {/** 
+      {
         id ? <MusicDetail singleData={singleDataArr} /> :
         dataArr.length > 0 && <MusicList listdata={dataArr} />
-      */}   
+      }   
     </div>
   )
 
