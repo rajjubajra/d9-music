@@ -28,10 +28,12 @@ function Music(){
 
     const [arr,setArr] = useState([]);
 
-    function audioArray( array1){
+    function audioArray( array1,array2){
       const map = new Map();
       array1.forEach(item => map.set(item.id, item));
-      return map;
+      array2.forEach(item => map.set(item.id, {...map.get(item.id),...item}))
+      const mergeArray = Array.from(map.values()); 
+      return mergeArray;
     }
 
     useEffect(()=>{
