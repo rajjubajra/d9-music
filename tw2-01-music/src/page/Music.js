@@ -28,13 +28,21 @@ function Music(){
 
     const [arr,setArr] = useState([]);
 
-    function audioArray( array1,array2){
-      const map = new Map();
-      array1.forEach(item => map.set(item.id, item));
-      array2.forEach(item => map.set(item.id, {...map.get(item.id),...item}))
-      const mergeArray = Array.from(map.values()); 
-      return mergeArray;
+    function audioArray( arr1,arr2){
+      let start = 0;
+      let merge = [];
+
+      while(start < arr1.length){
+          if(arr1[start].id === arr2[start].id){
+         //pushing the merged objects into array
+          merge.push({...arr1[start],...arr2[start]})
+      }
+      //incrementing start value
+        start = start+1
+      }
+      return merge;
     }
+
 
     useEffect(()=>{
 
@@ -49,7 +57,7 @@ function Music(){
           id: item.id, 
           title:title, 
           body: processed,
-          audio: audioArray(audio),
+          audio: audioArray(audio, musicDataInc),
           image: image,
           video: video,
         })
