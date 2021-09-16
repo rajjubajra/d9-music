@@ -31,14 +31,12 @@ function Music(){
     function audioArray( arr1,arr2){
       const arr = [];
       arr2.map( item => {
-          const {attributes:{field_audio_title}} = item;
-          const {relationships:{field_media_audio_file:{data}}} = item;
-          item.type === 'media--audio' &&
-          arr1.findIndex(el => el.id === item.id)
-          return arr.push({
+          return item.type === 'media--audio' &&
+          arr1.some(el => el.id === item.id) &&
+          arr.push({
             id: item.id,
-            title: field_audio_title,
-            data: data,
+            title: item.attributes.field_audio_title,
+            data: item.relationships.field_media_audio_file.data,
           })
       })
       return arr;
