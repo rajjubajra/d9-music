@@ -39,20 +39,20 @@ function Music(){
       return arr;
     }
 
-    function imageArray(arr1, arr2){
+    function imageArray(id, arr2){
       const arr = [];
       arr2.map( item => {
         return item.type === 'media--image' &&
-        arr1.some(el => el.id === item.id) &&
+        id === item.id &&
         arr.push(item.relationships.field_media_image.data)
       })
     }
 
-    function videoArray(arr1, arr2){
+    function videoArray(id, arr2){
       const arr = [];
       arr2.map( item => {
         return item.type === 'media--remote_video' &&
-        arr1.some(el => el.id === item.id) &&
+        id === item.id &&
         arr.push({
           youtube:item.attributes.field_media_oembed_video, 
           name: item.attributes.name})
@@ -66,15 +66,15 @@ function Music(){
       musicData.map((item) => {
         const { attributes:{title, field_music_body:{processed}} } = item;
         const { relationships:{field_music_audio:{data: audio}}} = item;
-        const { relationships:{field_music_image:{data: image}}} = item;
-        const { relationships:{field_music_video:{data: video}}} = item;
+        const { relationships:{field_music_image:{data:{id: imageId} }}} = item;
+        const { relationships:{field_music_video:{data:{id: videoId} }}} = item;
         return arr.push({
           id: item.id, 
           title:title, 
           body: processed,
           audio: audioArray(audio, musicDataInc),
-          image: imageArray(image, musicDataInc),
-          video: videoArray(video, musicDataInc),
+          image: imageArray(imageId, musicDataInc),
+          video: videoArray(videoId, musicDataInc),
         })
       });
 
