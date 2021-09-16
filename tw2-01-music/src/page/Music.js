@@ -28,13 +28,13 @@ function Music(){
 
     const [arr,setArr] = useState([]);
 
+
     function audioArray( arr1,arr2){
       const arr = [];
       arr2.map( item => {
           return item.type === 'media--audio' &&
           arr1.some(el => el.id === item.id) &&
-          item.relationships.field_media_audio_file.data.id === item.id &&
-          arr.push(item.attributes.uri)
+          arr.push(item.relationships.field_media_audio_file.data)
       })
       return arr;
     }
