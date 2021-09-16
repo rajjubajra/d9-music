@@ -31,7 +31,7 @@ function Music(){
     useEffect(()=>{
 
       const arr = [];
-
+      musicDataFetched &&
       musicData.map((item) => {
         const { attributes:{title, field_music_body:{processed}} } = item;
         return arr.push({
@@ -46,13 +46,9 @@ function Music(){
 
       setArr(arr);
 
-    },[musicData])
-
+    },[musicData, musicDataFetched])
 
     console.log("NEW ARRAY", arr);
-
-    
-
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
