@@ -29,18 +29,19 @@ function Music(){
     const [arr,setArr] = useState([]);
 
     function audioArray( arr1,arr2){
-      let start = 0;
-      let merge = [];
-
-      while(start < arr1.length){
-          if(arr1[start].id === arr2[start].id){
-         //pushing the merged objects into array
-          merge.push({...arr1[start],...arr2[start]})
-      }
-      //incrementing start value
-        start = start+1
-      }
-      return merge;
+      const arr = [];
+      arr2.map( item => {
+          const {attributes:{field_audio_title}} = item;
+          const {relationships:{field_media_audio_file:{data}}} = item;
+          item.type === 'media--audio' &&
+          arr1.findIndex(el => el.id === item.id)
+          return arr.push({
+            id: item.id,
+            title: field_audio_title,
+            data: data,
+          })
+      })
+      return arr;
     }
 
 
