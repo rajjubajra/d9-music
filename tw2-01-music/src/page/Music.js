@@ -34,13 +34,16 @@ function Music(){
       musicDataFetched &&
       musicData.map((item) => {
         const { attributes:{title, field_music_body:{processed}} } = item;
+        const { relationships:{field_music_audio:{data: audio}}} = item;
+        const { relationships:{field_music_image:{data: image}}} = item;
+        const { relationships:{field_music_video:{data: video}}} = item;
         return arr.push({
           id: item.id, 
           title:title, 
           body: processed,
-          audio: "",
-          image: "",
-          video: "",
+          audio: audio,
+          image: image,
+          video: video,
         })
       });
 
