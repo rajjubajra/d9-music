@@ -23,7 +23,7 @@ function Music(){
 //const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
 
 
-//console.log(musicDataFetched,musicDataInc);
+console.log("music data fetched",musicDataFetched,"Music Data Inc",musicDataInc);
 
   /** NEW WORKOUT */
   const [file_file, setFile_file] = useState([]);
@@ -44,8 +44,24 @@ function Music(){
     setFile_file(arr);
   },[musicDataFetched, musicDataInc]);
 
+
+
+  function getMediaId(type, item){
+    switch(type){
+      case 'media--audio':
+        return item.relationships.field_media_audio_file.data.id;
+      case 'media--image':
+        return item.relationships.field_media_image.data.id;
+      case 'media--remote_video':
+        return item.id;
+      default:
+        return null
+    }
+  }
+
 /** SEPERATE NOT 'file--file' type in an Array - 'media' */
   useEffect(() => {
+
     const arr = [];
     musicDataFetched &&
     musicDataInc.map((item)=>{
@@ -54,9 +70,7 @@ function Music(){
         id: item.id, 
         audio_title: item.type === 'media--audio' ? item.attributes.field_audio_title : null,
         name:item.attributes.name,
-        mediaId: item.type === 'media--audio' ? item.relationships.field_media_audio_file.data.id : item.relationships.field_media_image.data.id,
-        remote_video_url: item.attributes.field_media_oembed_video,
-        remote_video_title: item.attributes.name
+        mediaId: getMediaId(item.type, item)
       })
     })
     setMedia(arr);
