@@ -25,6 +25,28 @@ function Music(){
     console.log("MUSIC DATA",musicData);
     console.log("FETCHED",musicDataFetched);
     console.log("INCLUDED",musicDataInc);
+
+
+
+    useEffect(()=>{
+
+      const arr = [];
+
+      musicData.map((item) => {
+        const { attributes:{title, field_music_body:{processed}} } = item;
+        return arr.push({
+          id: item.id, 
+          title:title, 
+          body: processed,
+          audio: "",
+          image: "",
+          video: "",
+        })
+      })
+
+      console.log("New Array: ", arr);
+
+    },[musicData])
   
   return(
     <div className="max-w-screen-xl p-10 m-auto">
