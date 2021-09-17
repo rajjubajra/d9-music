@@ -47,10 +47,9 @@ function Homepage() {
           md:grid-cols-2 md:grid-rows-2 
           lg:grid-cols-3 lg:grid-rows-1">
             <div className="px-10">
-              <h1 className="text-5xl font-thin text-right py-5 tracking-widest
-              md:w-1/2 md:transform md:-rotate-90 md:relative md:top-24 md:left-1/4
-              ">
-                {item.title}
+              <h1 className="text-5xl font-thin text-right py-5
+              md:w-1/2 md:transform md:-rotate-90 md:relative md:top-24 md:left-1/4 uppercase tracking-widest">
+                YW4 Music One
               </h1>
               </div>
             <div className="px-10">
@@ -67,6 +66,7 @@ function Homepage() {
             md:col-span-2 md:flex md:justify-end 
             lg:col-auto">
               <div className="md:w-1/2 lg:w-full pb-8 text-right">
+                <h2 className="text-2xl">{item.title}</h2>
                 <div  className="font-extralight my-5 text-right" 
                   dangerouslySetInnerHTML={{__html: item.body}} />
                 <div className="md:text-right md:mt-10">

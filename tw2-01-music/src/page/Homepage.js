@@ -47,8 +47,8 @@ function Homepage() {
           md:grid-cols-2 md:grid-rows-2 
           lg:grid-cols-3 lg:grid-rows-1">
             <div className="px-10">
-              <h1 className="text-5xl font-thin text-right py-5 tracking-widest
-              md:w-1/2 md:transform md:-rotate-90 md:relative md:top-24 md:left-1/4 uppercase">
+              <h1 className="text-5xl font-thin text-right py-5
+              md:w-1/2 md:transform md:-rotate-90 md:relative md:top-24 md:left-1/4 uppercase tracking-widest">
                 YW4 Music One
               </h1>
               </div>
