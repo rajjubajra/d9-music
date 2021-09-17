@@ -1,4 +1,3 @@
-import React,{useEffect} from 'react';
 import ImageOnload from '../../components/ImageOnload';
 import Iframe from 'react-iframe';
 import {RiAmazonFill} from 'react-icons/ri';
@@ -62,6 +61,15 @@ function MusicDetail({index, arr}) {
             id="myId"
             />
         </div>
+
+        <div className="px-10 py-8">
+          <Iframe 
+            url={arr[index].video[0].youtube}
+            width="100%"
+            id="myId"
+          />  
+        </div>
+
       </div>
     </div>
 
