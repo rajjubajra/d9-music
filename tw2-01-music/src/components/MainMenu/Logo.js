@@ -12,7 +12,7 @@ function Logo() {
     <div>
       <img 
         width='50px'
-        height='auto'
+        height='50px'
         src={img}
         alt="logo" />
     </div> 
