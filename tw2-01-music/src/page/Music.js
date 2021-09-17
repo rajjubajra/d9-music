@@ -51,8 +51,9 @@ function Music(){
       }  
 
       arr2.map( item => {
-        const {relationships:{field_media_image:{data:{id: imageId}}}} = item;
-        return id === item.id && getUri(imageId, arr2);
+        //const {relationships:{field_media_image:{data:{id: imageId}}}} = item;
+        return id === item.id && 
+        getUri(item.relationships.field_media_image.data.id, arr2);
       });
     
     }
