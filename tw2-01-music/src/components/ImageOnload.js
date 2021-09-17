@@ -3,15 +3,22 @@ import LoadingBar from '../components/LoadingBar';
 
 function ImageOnload({src, alt, cssClass}) {
 
-  const [status, setStatus] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [blur, setBlur] = useState('hidden');
-
-  console.log("status",status, "loading",loading);  
+  const [image, setImage] = useState('');
+  
+  console.log("loading",loading);  
 
   useEffect(()=>{
-    status && setLoading(true);
-  },[status])
+
+    const img = new Image();
+        img.onload =() => {
+          // image  has been loaded
+          setLoading(true);
+        };
+
+        img.src = src;
+
+  },[src])
 
   
 
@@ -20,9 +27,7 @@ function ImageOnload({src, alt, cssClass}) {
     <img 
     width="100%"
     height="100%"
-    className={`${blur} ${cssClass}`}
-    onLoad={setStatus(true)}
-    onError={setStatus(false)}
+    className={cssClass}
     src={src} 
     alt={alt} 
     /> 
