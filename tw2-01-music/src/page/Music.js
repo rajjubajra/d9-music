@@ -117,7 +117,7 @@ function Music(){
     <div className="max-w-screen-xl p-10 m-auto">
       {
         id 
-        ? <MusicDetail id={id} arr={arr} />
+        ? <MusicDetail index={id} arr={arr} />
         : <MusicList listdata={arr} />
       }
     </div>

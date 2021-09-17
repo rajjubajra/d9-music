@@ -23,7 +23,6 @@ function MusicList({listdata}) {
             alt="Cover"
             />
           }
-          
         </div>
         <div className="py-4">
           <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
