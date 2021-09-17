@@ -110,12 +110,16 @@ function Music(){
 
     },[musicData, musicDataFetched, musicDataInc])
 
-    console.log("NEW ARRAY", arr);
+    console.log("NEW ARRAY", arr, id);
   
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
-      <MusicList listdata={arr} />
+      {
+        id 
+        ? <MusicDetail id={id} arr={arr} />
+        : <MusicList listdata={arr} />
+      }
     </div>
   )
 

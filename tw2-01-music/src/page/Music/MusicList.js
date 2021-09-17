@@ -10,7 +10,7 @@ function MusicList({listdata}) {
                     font-extralight">
     {
       listdata.length > 0 
-      && listdata.map( item => {
+      && listdata.map( (item,index) => {
         return <div className="w-full lg:max-w-screen-sm" key={item.id}>
           <div>
             <h3 className="text-3xl py-4">{item.title}</h3>
@@ -28,7 +28,7 @@ function MusicList({listdata}) {
         <div className="py-4">
           <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
         </div>
-        <div><BtnReadMore link={`/d9-music/themes/tw2-01/music/${item.id}`} /></div>
+        <div><BtnReadMore link={`/d9-music/themes/tw2-01/music/${index}`} /></div>
       </div>
       })
     }
