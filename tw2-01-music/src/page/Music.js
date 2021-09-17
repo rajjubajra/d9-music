@@ -31,16 +31,32 @@ function Music(){
 
     function audioArray( arr1,arr2){
       const arr = [];
+
+      /** GET AUDIO URI AND PUSH INTO THE ARR */
+      function getAudioUri(audioId, arr2){
+        arr2.map(item=>{
+          return audioId === item.id 
+          && arr.push(item.attributes.uri)
+        })
+      }
+
+      /** GET AUDIO ID AND RUN FUNCTION TO GET URI */
       arr2.map( item => {
       return item.type === 'media--audio' &&
-          arr1.some(el => el.id === item.id) &&
-          arr.push(item.relationships.field_media_audio_file.data)
+          arr1.some(el => el.id === item.id) 
+          && getAudioUri(item.relationships.field_media_audio_file.data.id, arr2)
       })
+
       return arr;
     }
 
+
+    /** GET IMAGE URI */
     function imageArray(id, arr2){
+      
       const arr = [];
+      
+      /** GET IMAGE URI */
       function getUri(imageId, arr2){
         arr2.map(item => {
           return item.id === imageId &&
@@ -48,20 +64,22 @@ function Music(){
         })
       }  
 
+      /** GET ID FOR IMAGE URI */
       arr2.map( item => {
-        //const {relationships:{field_media_image:{data:{id: imageId}}}} = item;
         return id === item.id && 
         getUri(item.relationships.field_media_image.data.id, arr2);
       });
+
+      /** RETURN IMAGE-URI IN ARRAY */
       return arr;
     
     }
 
+    /** GET YOUTBE - VIDEO URL */
     function videoArray(id, arr2){
       const arr = [];
       arr2.map( item => {
-        return item.type === 'media--remote_video' &&
-        id === item.id &&
+        return id === item.id &&
         arr.push({
           youtube:item.attributes.field_media_oembed_video, 
           name: item.attributes.name})
