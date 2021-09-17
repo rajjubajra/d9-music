@@ -4,12 +4,18 @@ import LoadingBar from '../components/LoadingBar';
 function ImageOnload({src, alt, cssClass}) {
 
   const [status, setStatus] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [blur, setBlur] = useState('hidden');
 
   console.log(status);  
 
+  useEffect(()=>{
+    status && setLoading(true);
+  },[status])
+
+
   return (
-    status ?
+    loading ?
     <img 
     width="100%"
     height="100%"
