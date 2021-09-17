@@ -21,8 +21,8 @@ function ImageOnload({src, alt, cssClass}) {
     width="100%"
     height="100%"
     className={`${blur} ${cssClass}`}
-    onLoad={()=>setStatus(true)}
-    onError={()=>setStatus(false)}
+    onLoad={setStatus(true)}
+    onError={setStatus(false)}
     src={src} 
     alt={alt} 
     /> 
