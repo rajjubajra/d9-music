@@ -1,18 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import LoadingBar from '../components/LoadingBar';
 
 function ImageOnload({src, alt, cssClass}) {
 
   const [status, setStatus] = useState(false);
   const [blur, setBlur] = useState('hidden');
-  console.log(status);
 
-  useEffect(()=>{
-    status && setBlur('');
-  },[status])
-
-  
+  console.log(status);  
 
   return (
+    status ?
     <img 
     width="100%"
     height="100%"
@@ -22,6 +19,7 @@ function ImageOnload({src, alt, cssClass}) {
     src={src} 
     alt={alt} 
     /> 
+    : <LoadingBar /> 
   )
 }
 
