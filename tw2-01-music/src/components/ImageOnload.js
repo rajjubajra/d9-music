@@ -7,12 +7,13 @@ function ImageOnload({src, alt, cssClass}) {
   const [loading, setLoading] = useState(false);
   const [blur, setBlur] = useState('hidden');
 
-  console.log(status);  
+  console.log("status",status, "loading",loading);  
 
   useEffect(()=>{
     status && setLoading(true);
   },[status])
 
+  
 
   return (
     loading ?
