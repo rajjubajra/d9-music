@@ -40,12 +40,21 @@ function Music(){
     }
 
     function imageArray(id, arr2){
-      const arr = [];
+      
+      function getUri(imageId, arr2){
+        const arr = [];
+        arr2.map(item => {
+          return item.id === imageId &&
+          arr.push(item.attributes.uri)
+        })
+        return arr;
+      }  
+
       arr2.map( item => {
-        return id === item.id &&
-        arr.push(item.relationships.field_media_image.data)
+        const {relationships:{field_media_image:{data:{id: imageId}}}} = item;
+        return id === item.id && getUri(imageId, arr2);
       });
-      return arr;
+    
     }
 
     function videoArray(id, arr2){
