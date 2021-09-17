@@ -43,10 +43,9 @@ function Music(){
       console.log("image id:-",id);
       const arr = [];
       arr2.map( item => {
-        return item.type === 'media--image' &&
-        id === item.id &&
-        arr.push(item.relationships.field_media_image.data)
-      })
+        return id === item.id &&
+        arr.push(item.id)
+      });
     }
 
     function videoArray(id, arr2){
