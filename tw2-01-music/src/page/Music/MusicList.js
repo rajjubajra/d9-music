@@ -9,12 +9,12 @@ function MusicList({listdata}) {
                     md:grid-cols-2 lg:grid-cols-3
                     font-extralight">
     {
-      listdata.length > 0 && listdata.map( item => {
-        return <div className="w-full
-                lg:max-w-screen-sm" key={item.id}>
-        <div>
-          <h3 className="text-3xl py-4">{item.title}</h3>
-        </div>
+      listdata.length > 0 
+      && listdata.map( item => {
+        return <div className="w-full lg:max-w-screen-sm" key={item.id}>
+          <div>
+            <h3 className="text-3xl py-4">{item.title}</h3>
+          </div>
         <div>
           {
             item.image && <ImageOnload 

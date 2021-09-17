@@ -20,15 +20,16 @@ function Music(){
   const musicData = useSelector(state => state.reducerMusic.music_data.data);
   const musicDataFetched = useSelector(state => state.reducerMusic.music_fetched);
   const musicDataInc = useSelector(state => state.reducerMusic.music_data.included);
-//const musicDataLength = useSelector(state => state.reducerMusic.music_dataLength);
+
 
     console.log("MUSIC DATA", musicData);
     console.log("FETCHED", musicDataFetched);
     console.log("INCLUDED", musicDataInc);
 
+    
     const [arr,setArr] = useState([]);
 
-
+    /** MERGE ARRAY BY id */
     function audioArray( arr1,arr2){
       const arr = [];
 
@@ -49,7 +50,6 @@ function Music(){
 
       return arr;
     }
-
 
     /** GET IMAGE URI */
     function imageArray(id, arr2){
@@ -111,14 +111,11 @@ function Music(){
     },[musicData, musicDataFetched, musicDataInc])
 
     console.log("NEW ARRAY", arr);
-
-
-  /** add - uri in to the audio, image file */
   
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
-      <h3>Music Album</h3>
+      <MusicList listdata={arr} />
     </div>
   )
 
