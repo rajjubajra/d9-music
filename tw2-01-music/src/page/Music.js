@@ -43,8 +43,9 @@ function Music(){
       console.log("image id:-",id);
       const arr = [];
       arr2.map( item => {
+        console.log("item id:",item.id);
         return id === item.id &&
-        arr.push(item.id)
+        arr.push({id:item.id})
       });
     }
 
