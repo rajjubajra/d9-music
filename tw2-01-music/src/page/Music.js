@@ -116,7 +116,7 @@ function Music(){
 
   return(
     <div className="max-w-screen-xl p-10 m-auto">
-      { arr.length < 0 ?
+      { musicDataFetched ?
         /** SECOND CODTIONTION */
         id 
         ? <MusicDetail index={id} arr={arr} />
