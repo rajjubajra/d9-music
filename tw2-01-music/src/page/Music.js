@@ -40,6 +40,7 @@ function Music(){
     }
 
     function imageArray(id, arr2){
+      console.log("image id:-",id);
       const arr = [];
       arr2.map( item => {
         return item.type === 'media--image' &&
