@@ -40,13 +40,12 @@ function Music(){
     }
 
     function imageArray(id, arr2){
-      console.log("image id:-",id);
       const arr = [];
       arr2.map( item => {
-        console.log("item id:",item.id);
         return id === item.id &&
-        arr.push({id:item.id})
+        arr.push(item.relationships.field_media_image.data)
       });
+      return arr;
     }
 
     function videoArray(id, arr2){
@@ -58,6 +57,7 @@ function Music(){
           youtube:item.attributes.field_media_oembed_video, 
           name: item.attributes.name})
       })
+      return arr;
     }
 
 
