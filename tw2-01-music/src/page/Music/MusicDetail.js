@@ -54,8 +54,7 @@ function MusicDetail({index, arr}) {
 
 
         <div className="px-10 py-8">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ro4k70dHCL0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
+          <iframe width="100%" height="audo" src={arr[index].video[0].youtube} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
         </div>
 
 
