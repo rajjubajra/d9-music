@@ -11,23 +11,25 @@ function MusicList({listdata}) {
     {
       listdata.length > 0 
       && listdata.map( (item,index) => {
-        return <div className="w-full lg:max-w-screen-sm" key={item.id}>
+        return <div className="relative w-full lg:max-w-screen-sm" key={item.id}>
           <div>
-            <h3 className="text-3xl py-4">{item.title}</h3>
+            <h3 className="lg:text-3xl md:text-2xl py-4">{item.title}</h3>
           </div>
-        <div>
-          {
-            item.image && <ImageOnload 
-            cssClass="w-full h-64 object-cover" 
-            src={item.image[0].url} 
-            alt="Cover"
-            />
-          }
-        </div>
-        <div className="py-4">
-          <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
-        </div>
-        <div><BtnReadMore link={`/d9-music/themes/tw2-01/music/${index}`} /></div>
+          <div>
+            {
+              item.image && <ImageOnload 
+              cssClass="w-full h-64 object-cover" 
+              src={item.image[0].url} 
+              alt="Cover"
+              />
+            }
+          </div>
+          <div className="py-4 mb-5">
+            <div dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
+          </div>
+          <div className="absolute bottom-0">
+            <BtnReadMore link={`/d9-music/themes/tw2-01/music/${index}`} />
+          </div>
       </div>
       })
     }

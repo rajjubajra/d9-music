@@ -49,7 +49,7 @@ function Gallery() {
   
   return (
     <div className="max-w-screen-xl m-auto p-10">
-    <div className="grid grid-cols-12 grid-flow-row gap-4">
+    <div className="grid grid-cols-12 grid-flow-row gap-6 ">
       {
         arr.map(item=>{
          // return(<Gear title={item.title} src={item.image} text={item.body} />
