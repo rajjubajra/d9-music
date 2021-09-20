@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react';
 import ImageOnload from '../../components/ImageOnload';
 import Iframe from 'react-iframe';
 import {RiAmazonFill} from 'react-icons/ri';
@@ -10,7 +11,15 @@ import BtnBack from '../../components/Buttons/BtnBack';
 
 function MusicDetail({index, arr}) {
 
-  console.log("youtube link",arr[index].video[0].youtube);
+
+  const [youtube, setYoutube] = useState();
+
+  useEffect(()=>{
+
+  const ytube = arr[index].video[0].youtube;
+  setYoutube(ytube.replace("https://youtu.be/", ""));
+
+  },[arr, index])
 
   return (
     <div>
@@ -55,9 +64,6 @@ function MusicDetail({index, arr}) {
         </div>
 
 
-        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/H5YhtRpQelc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
         <div className="px-10 py-8">
           <h3 className="py-4">Play</h3>
           <Iframe  
@@ -67,7 +73,13 @@ function MusicDetail({index, arr}) {
             />
         </div>
 
-      
+        <div className="px-10 py-8">
+          <Iframe 
+            url={`https://www.youtube.com/embed/${youtube}`}
+            width="100%"
+            id="myId"
+          />  
+        </div>
 
       </div>
     </div>
