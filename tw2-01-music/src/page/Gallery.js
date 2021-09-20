@@ -54,14 +54,15 @@ function Gallery() {
         arr.map(item=>{
          // return(<Gear title={item.title} src={item.image} text={item.body} />
             return <div key={item.id} className="md:col-span-4 col-span-12">
-                <h1>{item.title}</h1>
                 <div>
                   <ImageOnload 
                   cssClass="w-64"
                   src={item.image} 
                   alt="gallery" />
                 </div>
-                <div dangerouslySetInnerHTML={{__html: item.body}} />
+                <h2 className="text-2xl">{item.title}</h2>
+                <div className="text-sm tracking-wide" 
+                dangerouslySetInnerHTML={{__html: item.body}} />
             </div> 
         })
       }
