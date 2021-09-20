@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-//import ImageOnload from '../components/ImageOnload';
+import ImageOnload from '../components/ImageOnload';
 import {actionGallery} from '../redux/actions';
 import Gear from './Gear';
 
@@ -49,11 +49,11 @@ function Gallery() {
   
   return (
     <div className="max-w-screen-xl m-auto p-10">
-    <div className="grid grid-cols-3 grid-rows-3 gap-3 p-10">
+    <div className="grid grid-cols-12 grid-flow-row gap-3 p-10">
       {
         arr.map(item=>{
-          return(<Gear title={item.title} src={item.image} text={item.body} />
-            /* <div key={item.id} className="m-12">
+         // return(<Gear title={item.title} src={item.image} text={item.body} />
+            return <div key={item.id} className="md:col-span-4 col-span-12">
                 <h1>{item.title}</h1>
                 <div>
                   <ImageOnload 
@@ -62,8 +62,7 @@ function Gallery() {
                   alt="gallery" />
                 </div>
                 <div dangerouslySetInnerHTML={{__html: item.body}} />
-            </div> */
-          )
+            </div> 
         })
       }
     </div>
