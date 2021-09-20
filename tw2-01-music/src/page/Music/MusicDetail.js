@@ -10,6 +10,8 @@ import BtnBack from '../../components/Buttons/BtnBack';
 
 function MusicDetail({index, arr}) {
 
+  console.log("youtube link",arr[index].video[0].youtube);
+
   return (
     <div>
       <div className="grid grid-cols-12 gap-8 max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
