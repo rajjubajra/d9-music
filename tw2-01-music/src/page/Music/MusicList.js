@@ -13,7 +13,7 @@ function MusicList({listdata}) {
       && listdata.map( (item,index) => {
         return <div className="relative w-full lg:max-w-screen-sm" key={item.id}>
           <div>
-            <h3 className="lg:text-3xl md:text-2xl py-4">{item.title}</h3>
+            <h3 className="lg:text-3xl text-xl py-4">{item.title}</h3>
           </div>
           <div>
             {
@@ -30,6 +30,7 @@ function MusicList({listdata}) {
           <div className="absolute bottom-0">
             <BtnReadMore link={`/d9-music/themes/tw2-01/music/${index}`} />
           </div>
+
       </div>
       })
     }
