@@ -54,15 +54,6 @@ function MusicDetail({index, arr}) {
 
 
         <div className="px-10 py-8">
-          <h3 className="py-4">Play</h3>
-          <Iframe  
-            url="https://open.spotify.com/embed/playlist/37i9dQZF1DX3PFzdbtx1Us" width="100%" 
-            height="380" 
-            id="myId"
-            />
-        </div>
-
-        <div className="px-10 py-8">
         <Iframe url={arr[index].video[0].youtube}
             width="100%"
             height="auto"
@@ -72,6 +63,18 @@ function MusicDetail({index, arr}) {
             position="relative"/>
           
         </div>
+
+
+        <div className="px-10 py-8">
+          <h3 className="py-4">Play</h3>
+          <Iframe  
+            url="https://open.spotify.com/embed/playlist/37i9dQZF1DX3PFzdbtx1Us" width="100%" 
+            height="380" 
+            id="myId"
+            />
+        </div>
+
+      
 
       </div>
     </div>
