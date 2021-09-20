@@ -56,7 +56,7 @@ function Gallery() {
             return <div key={item.id} className="md:col-span-4 col-span-12">
                 <div>
                   <ImageOnload 
-                  cssClass="w-64"
+                  cssClass="max-w-md"
                   src={item.image} 
                   alt="gallery" />
                 </div>
