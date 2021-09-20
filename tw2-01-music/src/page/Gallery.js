@@ -49,7 +49,7 @@ function Gallery() {
   
   return (
     <div className="max-w-screen-xl m-auto p-10">
-    <div className="grid grid-cols-12 grid-flow-row gap-3 p-10">
+    <div className="grid grid-cols-12 grid-flow-row gap-4">
       {
         arr.map(item=>{
          // return(<Gear title={item.title} src={item.image} text={item.body} />
@@ -60,7 +60,7 @@ function Gallery() {
                   src={item.image} 
                   alt="gallery" />
                 </div>
-                <h2 className="text-2xl">{item.title}</h2>
+                <h2 className="text-2xl font-light">{item.title}</h2>
                 <div className="text-sm tracking-wide" 
                 dangerouslySetInnerHTML={{__html: item.body}} />
             </div> 
