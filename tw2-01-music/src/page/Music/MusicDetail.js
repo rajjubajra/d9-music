@@ -63,11 +63,14 @@ function MusicDetail({index, arr}) {
         </div>
 
         <div className="px-10 py-8">
-          <Iframe 
-            url={arr[index].video[0].youtube}
+        <Iframe url={arr[index].video[0].youtube}
             width="100%"
+            height="auto"
             id="myId"
-          />  
+            className="myClassname"
+            display="initial"
+            position="relative"/>
+          
         </div>
 
       </div>
