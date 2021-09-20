@@ -15,7 +15,9 @@ function MusicDetail({index, arr}) {
   const [youtube, setYoutube] = useState();
 
   useEffect(()=>{
-
+  /** Drupal media do not accept embed url
+   * so separated uniqe code from the url
+   */
   const ytube = arr[index].video[0].youtube;
   setYoutube(ytube.replace("https://youtu.be/", ""));
 
