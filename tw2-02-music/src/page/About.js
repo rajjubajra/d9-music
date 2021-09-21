@@ -49,11 +49,11 @@ function About() {
 
               <div className="grid grid-flow-row gap-10 relative z-10">
                         <div className="text-6xl">About</div>
-                        <div className="text-2xl tracking-wider">
+                        <div className="text-2xl font-extralight tracking-wider">
                         <div dangerouslySetInnerHTML={{__html: item.body.substring(0,250)}} />
                         </div>
                         <div className="tracking-wider">
-                          <div dangerouslySetInnerHTML={{__html: item.body}} />
+                          <div className="font-light text-sm" dangerouslySetInnerHTML={{__html: item.body}} />
                         </div>
 
                       <div className="text-6xl">
