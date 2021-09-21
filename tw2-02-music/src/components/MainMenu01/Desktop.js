@@ -13,7 +13,7 @@ function Desktop({menudata, length,menu}) {
           menudata.map((item)=>{
             const {attributes:{title}} = item;
             //return menu.some(el => el === title) &&
-            <div>
+          return <div>
               <Link className="px-4 py-4 m-1 font-extralight 
               tracking-wider uppercase text-sm cursor-pointer" to="#">
               {title}</Link> 

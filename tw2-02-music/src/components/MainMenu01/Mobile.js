@@ -15,7 +15,7 @@ function Mobile({menudata,length ,menu}) {
           length > 0 && 
           menudata.map((item)=>{
             const {attributes:{title}} = item;
-            //return menu.some(el => el === title) &&
+            return menu.some(el => el === title) &&
             <div>
               <Link onClick={() => setShow(false)} className="px-4 py-4 m-1 font-extralight 
               tracking-wider uppercase text-sm cursor-pointer" to="#">
