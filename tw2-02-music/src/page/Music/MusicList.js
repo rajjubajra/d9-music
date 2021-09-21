@@ -56,7 +56,7 @@ function MusicList({listdata}) {
           </div>
           <div 
           className="absolute bottom-0">
-            <BtnReadMore link={`/music/${currnetPage}`} />
+            <BtnReadMore link={`/d9-music/themes/tw2-02/music/${currnetPage}`} />
           </div>
         </div>
 
