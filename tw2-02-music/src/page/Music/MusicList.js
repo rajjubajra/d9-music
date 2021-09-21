@@ -50,11 +50,11 @@ function MusicList({listdata}) {
           <h2 className="text-3xl font-extralight pb-10">{listdata.length > 0 && 
             listdata[currnetPage].title}</h2>
           <div>{listdata.length > 0  && 
-            <div  className="font-extralight tracking-wider"
+            <div  className="font-extralight tracking-wider mb-5"
                   dangerouslySetInnerHTML={{__html: 
                   listdata[currnetPage].body.substring(0,500)}} /> }
           </div>
-          <div><BtnReadMore link="#" /></div>
+          <div className="absolute bottom-0"><BtnReadMore link="#" /></div>
         </div>
 
     {/** NEXT AND PREV BUTTONS */}
