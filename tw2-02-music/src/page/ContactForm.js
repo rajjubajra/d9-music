@@ -62,8 +62,8 @@ function Contact() {
 
   return (
 
-    <div>
-      <h1 className="text-3xl font-extralight m-5">
+    <div className="md:p-10">
+      <h1 className="text-3xl font-extralight my-5">
         {contact_form_fetched && contact_form.attributes.title}
       </h1>
       <div className="font-extralight tracking-wider">
@@ -103,7 +103,7 @@ function Contact() {
           </div>
           <div className="col-span-2 mt-2">
             <input 
-            className="px-4 py-1 h-10 border border-gray-400 text-gray-500" 
+            className="px-4 py-1 h-10 border border-gray-400 text-gray-500 cursor-pointer" 
             type="submit" 
             value="Submit" />
           </div>  
