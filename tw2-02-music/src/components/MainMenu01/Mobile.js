@@ -22,8 +22,8 @@ function Mobile({menudata,length ,menu}) {
               newurl[2] = 'tw2-02';
               const useUrl = newurl.join('/');
             return menu.some(el => el === title) &&
-            <div>
-              <Link onClick={() => setShow(false)} className="px-4 py-4 m-1 font-extralight 
+            <div className="my-2">
+              <Link onClick={() => setShow(false)} className="px-4 py-2 m-1 font-extralight 
               tracking-wider uppercase text-sm cursor-pointer" to={`/${useUrl}`}>
               {title}</Link> 
             </div>
