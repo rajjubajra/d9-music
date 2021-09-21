@@ -5,8 +5,8 @@ import {useDispatch} from 'react-redux';
 import {actionNav, actionHome} from './redux/actions';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-const MenuBar = Loadable({
-  loader: () => import ('./components/MainMenu/MenuBar'),
+const MenuBar01 = Loadable({
+  loader: () => import ('./components/MainMenu01/MenuBar01'),
   loading: LoadingBar,
 });
 
@@ -65,7 +65,7 @@ function App() {
     <div className="max-w-screen-xl m-auto">
       <header className="App-header">
         <BrowserRouter>
-          <MenuBar />
+          <MenuBar01 />
           <Switch>
             <Route exact path={`${baseurl}/`} component={Homepage} />
             <Route exact path={`${baseurl}/tour`} component={Tour} />
