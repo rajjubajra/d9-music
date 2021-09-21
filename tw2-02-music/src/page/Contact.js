@@ -7,11 +7,7 @@ function Contact() {
 
   return (
     <div className="w-full max-w-screen-xl m-auto p-10">
-      {/** TITLE */}
-      <div>
-        <h2 className="text-2xl py-6">Please send your enquiry</h2>
-      </div>
-
+      
       {/** FORM */}
       <div className="pb-16">
         <ContactForm />
