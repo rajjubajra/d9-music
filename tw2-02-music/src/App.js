@@ -60,7 +60,7 @@ function App() {
   useEffect(() => console.log("Refresh"));
 
   return (
-    <div className="max-w-screen-xl m-auto">
+    <div className="App">
       <header className="App-header">
         <BrowserRouter>
           <MenuBar01 />
