@@ -16,7 +16,8 @@ function MusicDetail02({arr, index}) {
 
   return (
     <div className="w-full max-w-screen-xl m-auto p-10">
-      <div className="grid grid-cols-2 grid-flow-row">
+      <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row">
+
         <div>
           <h3 className="text-3xl my-5">{fetched && arr[index].title}</h3>
           <div>
@@ -26,10 +27,9 @@ function MusicDetail02({arr, index}) {
             alt="cover" />}
           </div>
           <div className="my-6">
-            <div dangerouslySetInnerHTML={{__html: fetched && arr[index].body}} />
+            <div className="font-light" dangerouslySetInnerHTML={{__html: fetched && arr[index].body}} />
           </div>
         </div>
-
 
         <div className="px-10">
           <h3 className="text-2xl">Play List:</h3>
@@ -41,6 +41,7 @@ function MusicDetail02({arr, index}) {
             <div className="p-10 border border-gray-200 cursor-pointer"><SiApplemusic /></div>
           </div>
         </div>
+
       </div>
     </div>
   )
