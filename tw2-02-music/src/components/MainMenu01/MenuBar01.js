@@ -28,11 +28,11 @@ function MenuBar01() {
     <div className="w-full py-3 bg-gray-100">
       
       <div className="md:hidden block">
-        <Mobile menudata={menudata} length={length} menu={menu} />
+        <Mobile menudata={state} length={length} menu={menu} />
       </div>
 
       <div className="hidden md:block">
-        <Desktop menudata={menudata} length={length} menu={menu} />
+        <Desktop menudata={state} length={length} menu={menu} />
       </div>
       
     </div>

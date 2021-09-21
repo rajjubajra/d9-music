@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import MenuIcon from './MenuIcon';
 import {Link} from 'react-router-dom';
 
-function Mobile({menudata, menu}) {
+function Mobile({menudata,length ,menu}) {
 
   const [show, setShow] = useState(false);
 
@@ -12,13 +12,14 @@ function Mobile({menudata, menu}) {
     {show && 
       <div className="flex flex-col my-5">
         { 
-          menudata.length > 0 && 
+          length > 0 && 
           menudata.map((item)=>{
-            return menu.some(el => el === item.title) &&
+            const {attributes:{title}} = item;
+            return menu.some(el => el === title) &&
             <div>
               <Link onClick={() => setShow(false)} className="px-4 py-4 m-1 font-extralight 
               tracking-wider uppercase text-sm cursor-pointer" to="#">
-              {item.title}</Link> 
+              {title}</Link> 
             </div>
             })
         }
