@@ -77,8 +77,8 @@ function Homepage() {
 
         {/** TEXT BLOCK */}        
             <div className="relative order-2 md:order-1">
-              <h2 className="text-3xl font-extralight pb-10">{fetched && arr[currnetPage].title}</h2>
-              <div>{fetched && 
+              <h2 className="text-3xl font-extralight pb-10">{arr.length > 0 && arr[currnetPage].title}</h2>
+              <div>{arr.length > 0  && 
                 <div  className="font-extralight tracking-wider"
                       dangerouslySetInnerHTML={{__html: 
                       arr[currnetPage].body.substring(0,500)}} /> }
@@ -106,7 +106,7 @@ function Homepage() {
             
         {/*** Image Block ****/}
             <div className="order-1 md:order-2">
-              {fetched && <ImageOnload 
+              {arr.length > 0  && <ImageOnload 
               cssClass="w-full h-5/6 object-cover"
               src={arr[currnetPage].image} 
               alt="cover" /> }
