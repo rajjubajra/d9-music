@@ -22,7 +22,7 @@ function MainMenu({showHideNav}) {
           const newurl = url.split('/');
           newurl[0] = 'd9-music';
           newurl[1] = 'themes';
-          newurl[2] = 'tw2-01';
+          newurl[2] = 'tw2-02';
           const useUrl = newurl.join('/');
           return <div key={index}>
             <Link exact="true" 
