@@ -65,7 +65,7 @@ function App() {
     <div className="max-w-screen-xl m-auto">
       <header className="App-header">
         <BrowserRouter>
-          
+          <MenuBar01 />
           <Switch>
             <Route exact path={`${baseurl}/`} component={Homepage} />
             <Route exact path={`${baseurl}/tour`} component={Tour} />
