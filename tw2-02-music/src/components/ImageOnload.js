@@ -6,7 +6,7 @@ function ImageOnload({src, alt, cssClass}) {
   const [loading, setLoading] = useState(false);
   //const [image, setImage] = useState('');
   
-  console.log("loading",loading);  
+  //console.log("loading",loading);  
 
   useEffect(()=>{
     const img = new Image();

@@ -25,9 +25,6 @@ function MenuBar() {
               <div className="flex relative">
                 <div onClick={showHideNav} >
                   <MenuIcon crossed={mobileMenu} />
-                </div>
-                <div className="relative top-5">
-                  <SearchIcon />
                 </div>   
               </div>
             </div>
