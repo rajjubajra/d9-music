@@ -15,7 +15,7 @@ function MusicDetail02({arr, index}) {
   },[arr.length])
 
   return (
-    <div className="w-full max-w-screen-xl m-auto p-10">
+    <div className="w-full max-w-screen-xl m-auto md:p-10 p-1">
       <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row">
 
         <div>
