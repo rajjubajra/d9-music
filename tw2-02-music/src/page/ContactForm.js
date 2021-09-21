@@ -61,11 +61,68 @@ function Contact() {
   }
 
   return (
+
     <div>
-      <h1 className="text-3xl text-center m-5">
+      <h1 className="text-3xl font-extralight m-5">
         {contact_form_fetched && contact_form.attributes.title}
       </h1>
-      <div className="text-center">
+      <div className="font-extralight tracking-wider">
+        {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
+      <div className="text-1xl text-center">
+        {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
+      </div>
+      <form onSubmit={handleSubmit}  method="post">
+        <div className="grid grid-cols-2 grid-flow-row">
+          <div className="col-span-2 md:col-span-1">
+            <input 
+            className="border-t border-l border-r 
+            md:border-r-0
+            border-gray-300 
+            p-1 w-full" 
+            type="text" 
+            placeholder="Name" 
+            value={name}
+            onChange={(e)=>setName(e.target.value)}
+            />
+          </div>  
+          <div className="col-span-2 md:col-span-1">
+            <input 
+            className="border-t border-l border-r 
+            border-gray-300 p-1 w-full" 
+            type="text" 
+            placeholder="Email" 
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+            />
+          </div>
+          <div className="h-20 col-span-2">
+            <textarea 
+            className="col-span-2 border border-gray-300 p-1 w-full h-20" placeholder="Message"
+            value={message}
+            onChange={(e)=>setMessage(e.target.value)}></textarea>
+          </div>
+          <div className="col-span-2 mt-2">
+            <input 
+            className="px-4 py-1 h-10 border border-gray-400 text-gray-500" 
+            type="submit" 
+            value="Submit" />
+          </div>  
+        </div>
+      </form>
+    </div>
+    
+  )
+}
+
+export default Contact
+
+
+
+{/* <div className="w-full max-w-screen-xl m-auto p-10">
+      <h1 className="text-3xl font-extralight m-5">
+        {contact_form_fetched && contact_form.attributes.title}
+      </h1>
+      <div className="font-extralight tracking-wider">
         {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
       <div className="text-1xl text-center">
         {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
@@ -74,7 +131,7 @@ function Contact() {
         <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
         <div>
           <input 
-          className="w-full md:w-1/2 outline-none p-2 border-gray-500 
+          className="w-full  outline-none p-2 border-gray-500 
           border-l border-r border-t border-b-0
           md:border-l md:border-r md:border-t md:border-b-0" 
           required
@@ -86,7 +143,7 @@ function Contact() {
           onChange={(e)=>setName(e.target.value)}
           />
           <input 
-          className="w-full md:w-1/2 outline-none border-gray-500 p-2
+          className="w-full  outline-none border-gray-500 p-2
           border-l border-r border-t border-b-0 
           md:border-l-0 md:border-r md:border-t md:border-b-0"
           required  
@@ -118,8 +175,4 @@ function Contact() {
         </div>          
         </form>
       </div>
-    </div>
-  )
-}
-
-export default Contact
+    </div> */}
