@@ -115,7 +115,7 @@ function Music(){
   
 
   return(
-    <div className="max-w-screen-xl p-10 m-auto">
+    <div className="max-w-screen-xl md:p-10 p-1 m-auto">
       { musicDataFetched ?
         /** SECOND CODTIONTION */
         id 
