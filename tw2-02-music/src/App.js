@@ -59,21 +59,16 @@ function App() {
   const baseurl = `/d9-music/themes/tw2-02`
   useEffect(() => console.log("Refresh"));
 
-  
-
   return (
     <div className="max-w-screen-xl m-auto">
       <header className="App-header">
         <BrowserRouter>
           <MenuBar01 />
           <Switch>
-            <Route exact path={`${baseurl}/`} component={Homepage} />
-            <Route exact path={`${baseurl}/tour`} component={Tour} />
-            <Route exact path={`${baseurl}/news`} component={News} />
+            <Route exact path={`${baseurl}/`} component={Music} />
             <Route exact path={`${baseurl}/about`} component={About} />
             <Route exact path={`${baseurl}/music`} component={Music} />
             <Route exact path={`${baseurl}/music/:id`} component={Music} />
-            <Route exact path={`${baseurl}/gallery`} component={Gallery} />
             <Route exact path={`${baseurl}/form/fansclub`} component={Contact} />
           </Switch>  
           
