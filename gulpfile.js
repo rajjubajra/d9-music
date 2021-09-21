@@ -18,12 +18,12 @@ const {src, dest, watch, series} = require('gulp');
 
 
 function moveFiles(){
-  return src('./tw2-01-music/build/**/*.*')
-  .pipe(dest('./tw2-01'))
+  return src('./tw2-02-music/build/**/*.*')
+  .pipe(dest('./tw2-02'))
 }
 
 function watchTask(){
-  watch('./tw2-01-music/build/**/*.*');
+  watch('./tw2-02-music/build/**/*.*');
 }
 
 //default gulp
