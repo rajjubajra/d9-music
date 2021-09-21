@@ -38,6 +38,7 @@ function Contact() {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
+
     console.log(name, email, message);
 
     const data = {
@@ -71,10 +72,13 @@ function Contact() {
       <div className="text-1xl text-center">
         {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
       </div>
+
+      { !submitMessage &&
       <form onSubmit={handleSubmit}  method="post">
         <div className="grid grid-cols-2 grid-flow-row">
           <div className="col-span-2 md:col-span-1">
             <input 
+            required
             className="border-t border-l border-r 
             md:border-r-0 border-gray-300 
             outline-none p-1 w-full" 
@@ -86,6 +90,7 @@ function Contact() {
           </div>  
           <div className="col-span-2 md:col-span-1">
             <input 
+            required
             className="border-t border-l border-r border-gray-300 
             outline-none p-1 w-full" 
             type="text" 
@@ -96,6 +101,7 @@ function Contact() {
           </div>
           <div className="h-20 col-span-2">
             <textarea 
+            required
             className="col-span-2 border border-gray-300 
             outline-none p-1 w-full h-20" placeholder="Message"
             value={message}
@@ -110,70 +116,10 @@ function Contact() {
           </div>  
         </div>
       </form>
+      }
     </div>
     
   )
 }
 
 export default Contact
-
-
-
-{/* <div className="w-full max-w-screen-xl m-auto p-10">
-      <h1 className="text-3xl font-extralight m-5">
-        {contact_form_fetched && contact_form.attributes.title}
-      </h1>
-      <div className="font-extralight tracking-wider">
-        {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
-      <div className="text-1xl text-center">
-        {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
-      </div>
-      <div className="w-full flex justify-center align-middle">
-        <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
-        <div>
-          <input 
-          className="w-full  outline-none p-2 border-gray-500 
-          border-l border-r border-t border-b-0
-          md:border-l md:border-r md:border-t md:border-b-0" 
-          required
-          type="text" 
-          id="name"  
-          name="name"  
-          placeholder="Name" 
-          value={name}
-          onChange={(e)=>setName(e.target.value)}
-          />
-          <input 
-          className="w-full  outline-none border-gray-500 p-2
-          border-l border-r border-t border-b-0 
-          md:border-l-0 md:border-r md:border-t md:border-b-0"
-          required  
-          type="text" 
-          id="email" 
-          name="email" 
-          placeholder="Email" 
-          value={email}
-          onChange={(e)=>setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <textarea 
-          className="w-full border border-gray-500 p-2 h-60 outline-none"  
-          required
-          name="message" 
-          id="message"  
-          placeholder="Message"
-          value={message}
-          onChange={(e)=>setMessage(e.target.value)}
-          ></textarea>
-        </div>
-        <div>
-          <input  
-          className="border cursor-pointer border-gray-500 p-4 outline-none"  type="submit" 
-          id="submit" 
-          name="submit" 
-          value="Submit" />
-        </div>          
-        </form>
-      </div>
-    </div> */}
