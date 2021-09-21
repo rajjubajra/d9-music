@@ -21,7 +21,7 @@ function Desktop({menudata, length,menu}) {
               return menu.some(el => el === title) &&
               <div>
               <Link className="px-4 py-4 m-1 font-extralight 
-              tracking-wider uppercase text-sm cursor-pointer" to={useUrl}>
+              tracking-wider uppercase text-sm cursor-pointer" to={`/${useUrl}`}>
               {title}</Link> 
             </div>
             })
