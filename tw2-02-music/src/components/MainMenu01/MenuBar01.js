@@ -11,16 +11,6 @@ function MenuBar01() {
 
       console.log("Menu state: ",state);
 
-      const [menudata, setMenudata] = useState([]);
-      
-      useEffect(()=>{
-    
-        fetch('http://localhost:3000/data/mainmenu.json')
-        .then(res => res.json())
-        .then(data => setMenudata(data))
-        .catch(err => console.log(err))
-    
-      },[]);
 
       const menu = ["Music", "About", "Contact"];
     
