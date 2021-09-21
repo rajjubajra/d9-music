@@ -54,7 +54,10 @@ function MusicList({listdata}) {
                   dangerouslySetInnerHTML={{__html: 
                   listdata[currnetPage].body.substring(0,500)}} /> }
           </div>
-          <div className="absolute bottom-0"><BtnReadMore link="#" /></div>
+          <div 
+          className="absolute bottom-0">
+            <BtnReadMore link={`/music/${currnetPage}`} />
+          </div>
         </div>
 
     {/** NEXT AND PREV BUTTONS */}

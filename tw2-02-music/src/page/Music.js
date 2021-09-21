@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionMusic} from '../redux/actions';
 import MusicList from './Music/MusicList';
+import MusicDetail02 from './Music/MusicDetail02';
 import {useParams} from 'react-router-dom';
 import LoadingBar from '../components/LoadingBar';
 
@@ -118,7 +119,7 @@ function Music(){
       { musicDataFetched ?
         /** SECOND CODTIONTION */
         id 
-        ? "<MusicDetail index={id} arr={arr} />"
+        ? <MusicDetail02 index={id} arr={arr} />
         : <MusicList listdata={arr} />
         /******/
         : <LoadingBar />
