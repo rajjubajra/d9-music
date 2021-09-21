@@ -10,25 +10,12 @@ const MenuBar01 = Loadable({
   loading: LoadingBar,
 });
 
-const Homepage = Loadable({
-  loader: () => import('./page/Homepage'),
-  loading: LoadingBar,
-})
-
-const Tour = Loadable({
-  loader: () => import('./page/Tour'),
-  loading: LoadingBar,
-})
 
 const About = Loadable({
   loader: () => import('./page/About'),
   loading: LoadingBar,
 })
 
-const Gallery = Loadable({
-  loader: () => import('./page/Gallery'),
-  loading: LoadingBar,
-})
 
 const Music = Loadable({
   loader: () => import('./page/Music'),
@@ -37,11 +24,6 @@ const Music = Loadable({
 
 const Contact = Loadable({
   loader: () => import('./page/Contact'),
-  loading: LoadingBar,
-})
-
-const News = Loadable({
-  loader: () => import('./page/News'),
   loading: LoadingBar,
 })
 
