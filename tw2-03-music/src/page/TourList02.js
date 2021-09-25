@@ -30,9 +30,13 @@ function TourList02({tourdata}) {
 
   const month = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+  function dateFormat(date, monthArr){
+    const nDate = new Date(date);
+    return  monthArr[nDate.getMonth()] +' ' + nDate.getDate() +', '+ nDate.getFullYear()
+  }
+
   return (
-    <div className="w-full max-w-screen-xl m-auto p-10 relative
-    grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2">
+    <div className="w-full max-w-screen-xl m-auto p-10 relative grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2 font-extralight">
 
       {/** TOUR LIST */}
       <div>
@@ -41,11 +45,11 @@ function TourList02({tourdata}) {
           fetched > 0 &&
           tourdata.map((item, index) => {
               const {attributes:{title, field_event_date, field_event_details, field_event_location:{processed}, field_buy_ticket}} = item;
-              const date = new Date(field_event_date);
+          
               return  <div key={item.id} className="grid grid-cols-12 grid-flow-row gap-2 py-5
               border-t border-gray-300">
                 <div className="col-span-12">
-                {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}
+                  dateFormat(field_event_date, month)
                 </div>
                 <div className="col-span-12">
                   <h2 className="text-2xl">{title}</h2>
@@ -84,7 +88,7 @@ function TourList02({tourdata}) {
         <div className="grid grid-col-12 grid-flow-row gap-5">
           <div className="col-span-6">
             <div className="h-40 flex justify-center items-center border border-gray-300">
-              {fetched && tourdata[event].attributes.field_event_date}
+              {fetched &&  dateFormat(tourdata[event].attributes.field_event_date, month)}
             </div>
           </div>
           <div className="col-span-6">
