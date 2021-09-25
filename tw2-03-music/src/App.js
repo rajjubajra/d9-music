@@ -56,7 +56,7 @@ function App() {
       dispatch(actionHome());
   },[dispatch])
   
-  const baseurl = `/d9-music/themes/tw2-01`
+  const baseurl = `/d9-music/themes/tw2-03`
   useEffect(() => console.log("Refresh"));
 
   
@@ -76,7 +76,6 @@ function App() {
             <Route exact path={`${baseurl}/gallery`} component={Gallery} />
             <Route exact path={`${baseurl}/form/fansclub`} component={Contact} />
           </Switch>  
-          
         </BrowserRouter>
       </header>
     </div>

@@ -24,7 +24,7 @@ function MainNav() {
           const newurl = url.split('/');
           newurl[0] = 'd9-music';
           newurl[1] = 'themes';
-          newurl[2] = 'tw2-01';
+          newurl[2] = 'tw2-03';
           const useUrl = newurl.join('/');
           //console.log("new url",newurl,"use url",useUrl);
           return <Link className="m-1" to={`/${useUrl}`}>{title}</Link>
