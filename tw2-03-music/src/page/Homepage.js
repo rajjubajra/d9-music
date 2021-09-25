@@ -42,19 +42,19 @@ function Homepage() {
             return <div key={item.id} className="grid md:grid-cols-12 w-full md:h-screen">
                   <div className="md:col-span-2 relative md:order-1 order-2">
                     <div className="md:absolute md:bottom-52">
-                      <h2 className="text-6xl md:transform md:-rotate-90 mt-5">
-                        {item.title}</h2>
+                      <h2 className="text-6xl font-extralight md:transform md:-rotate-90 mt-5">
+                      YW4 Music Three</h2>
                     </div>
                   </div>
 
                   <div className="md:col-span-4 p-10 md:order-2 order-3">
                     <div dangerouslySetInnerHTML={{__html: item.body }} />
-                    <div className="mt-5"><BtnReadMore link="#" /></div>
+                    <div className="mt-5 font-extralight"><BtnReadMore link="#" /></div>
                   </div>
                   <div className="md:col-span-6 relative md:order-3 order-1">
                     <div>
                       <ImageOnload 
-                        cssClass="h-40 md:h-screen md:py-40 w-full object-cover"
+                        cssClass="h-40 md:h-screen px-10 md:py-40 w-full object-cover"
                         src={item.image} 
                         alt={item.alt} />
                     </div>
