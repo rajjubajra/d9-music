@@ -11,6 +11,7 @@ function TourList02({tourdata}) {
   const [viewDetail, setViewDetail] = useState(false);
   
 
+
   useEffect(() => {
     tourdata.length > 0 && setFetched(true);
   },[tourdata.length])
@@ -24,6 +25,7 @@ function TourList02({tourdata}) {
  
 
   console.log("view details",viewDetail);
+  console.log("rTour data", tourdata);
 
   return (
     <div className="w-full max-w-screen-xl m-auto p-10 relative
@@ -33,7 +35,7 @@ function TourList02({tourdata}) {
       <div>
         <h2 className="text-3xl">Tour</h2>
         {
-          fetched &&
+          tourdata.length > 0 &&
           tourdata.map((item, index) => {
               return  <div key={item.id} className="grid grid-cols-12 grid-flow-row gap-2 py-5
               border-t border-gray-300">
