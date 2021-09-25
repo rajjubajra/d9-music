@@ -42,14 +42,14 @@ function Homepage() {
             return <div key={item.id} className="grid md:grid-cols-12 w-full md:h-screen">
                   <div className="md:col-span-2 relative md:order-1 order-2">
                     <div className="md:absolute md:bottom-52">
-                      <h2 className="text-6xl font-extralight md:transform md:-rotate-90 mt-5">
+                      <h2 className="text-6xl font-extralight md:transform md:-rotate-90 mt-5 tracking-wider uppercase">
                       YW4 Music Three</h2>
                     </div>
                   </div>
 
-                  <div className="md:col-span-4 p-10 md:order-2 order-3">
+                  <div className="md:col-span-4 p-10 md:order-2 order-3 font-extralight">
                     <div dangerouslySetInnerHTML={{__html: item.body }} />
-                    <div className="mt-5 font-extralight"><BtnReadMore link="#" /></div>
+                    <div className="mt-5"><BtnReadMore link="#" /></div>
                   </div>
                   <div className="md:col-span-6 relative md:order-3 order-1">
                     <div>
