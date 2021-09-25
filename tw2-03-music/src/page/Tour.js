@@ -17,9 +17,12 @@ function Tour() {
   },[dispatch])
 
 
+
+  const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
   return (
     <div>
-      <TourList02 tourdata={length > 0 ? data : []} /> 
+      <TourList02 tourdata={length > 0 ? data : []} monthArr={monthArr} /> 
     </div>
   )
 }
