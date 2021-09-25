@@ -49,7 +49,7 @@ function TourList02({tourdata}) {
                 </div>
                 <div className="col-span-12">
                   <h2 className="text-2xl">{title}</h2>
-                  <div>{processed}</div>
+                  <div><div dangerouslySetInnerHTML={{__html: processed}} /></div>
                 </div>
                 <div className="col-span-6 border border-gray-200">
                   <div className="cursor-pointer p-2 text-sm flex"
@@ -63,6 +63,8 @@ function TourList02({tourdata}) {
           })
         }
       </div>
+
+
       {/** TOUR DETAILS */}
       <div className={`${viewDetail ? 'block' : 'hidden'} 
       absolute top-0 md:relative z-10 bg-white
@@ -70,19 +72,19 @@ function TourList02({tourdata}) {
 
         <div className="w-full flex justify-end">
           <div className="cursor-pointer md:hidden" 
-          onClick={() => setViewDetail(false)} >
+                onClick={() => setViewDetail(false)} >
             <GrClose />
           </div>    
         </div>
         
         
         <h2 className="text-3xl">
-          {fetched && tourdata[event].title}
+          {fetched && tourdata[event].attributes.title}
         </h2>
         <div className="grid grid-col-12 grid-flow-row gap-5">
           <div className="col-span-6">
             <div className="h-40 flex justify-center items-center border border-gray-300">
-              {fetched && tourdata[event].date}
+              {fetched && tourdata[event].attribures.field_event_date}
             </div>
           </div>
           <div className="col-span-6">
@@ -93,19 +95,21 @@ function TourList02({tourdata}) {
 
           <div className="col-span-12">
             <h3>Location</h3>
-            <div>{fetched && tourdata[event].venue}</div>
+            <div>{fetched && 
+              <div dangerouslySetInnerHTML={{__html: 
+              tourdata[event].attribures.field_event_location.processed }} /> }
+            </div>
           </div>
           
           <div className="col-span-12">
             <div>{ fetched && 
-              <div dangerouslySetInnerHTML={{__html: tourdata[event].details}} />
+              <div dangerouslySetInnerHTML={{__html: 
+              tourdata[event].attributes.field_event_details.processed }} />
               } 
             </div>
           </div>
         </div>
-      </div>
-
-      
+      </div>      
     </div>
   )
 }
