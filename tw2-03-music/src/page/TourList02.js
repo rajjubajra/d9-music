@@ -84,7 +84,7 @@ function TourList02({tourdata}) {
         <div className="grid grid-col-12 grid-flow-row gap-5">
           <div className="col-span-6">
             <div className="h-40 flex justify-center items-center border border-gray-300">
-              {fetched && tourdata[event].attribures.field_event_date}
+              {fetched && tourdata[event].attributes.field_event_date}
             </div>
           </div>
           <div className="col-span-6">
@@ -97,7 +97,7 @@ function TourList02({tourdata}) {
             <h3>Location</h3>
             <div>{fetched && 
               <div dangerouslySetInnerHTML={{__html: 
-              tourdata[event].attribures.field_event_location.processed }} /> }
+              tourdata[event].attributes.field_event_location.processed }} /> }
             </div>
           </div>
           
