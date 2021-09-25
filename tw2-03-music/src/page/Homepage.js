@@ -5,7 +5,6 @@ import BtnReadMore from '../components/Buttons/BtnReadMore';
 
 function Homepage() {
 
-  //const dispatch = useDispatch();
   const data = useSelector(state => state.reducerHomePage.home_data.data);
   const included = useSelector(state => state.reducerHomePage.home_data.included);
   const length = useSelector(state => state.reducerHomePage.home_dataLength );
@@ -42,7 +41,7 @@ function Homepage() {
             return <div key={item.id} className="grid md:grid-cols-12 w-full md:h-screen">
                   <div className="md:col-span-2 relative md:order-1 order-2">
                     <div className="md:absolute md:bottom-52">
-                      <h2 className="text-6xl font-extralight md:transform md:-rotate-90 mt-5 tracking-wider uppercase">
+                      <h2 className="lg:text-6xl md:text-5xl font-extralight md:transform md:-rotate-90 mt-5 tracking-wider uppercase">
                       YW4 Music Three</h2>
                     </div>
                   </div>
@@ -67,51 +66,3 @@ function Homepage() {
 }
 
 export default Homepage
-
-/** 
- * <div className="w-full min-h-screen flex align-middle">
-
-      {
-        arr.length > 0 &&
-        arr.map((item)=>{
-        return <div key={item.id} className="w-full p-5 max-w-screen-xl m-auto">
-
-          <div className="grid gap-3 
-          md:grid-cols-2 md:grid-rows-2 
-          lg:grid-cols-3 lg:grid-rows-1">
-            <div className="px-10">
-              <h1 className="text-5xl font-thin text-right py-5
-              md:w-1/2 md:transform md:-rotate-90 md:relative md:top-24 md:left-1/4 uppercase tracking-widest">
-                YW4 Music One
-              </h1>
-              </div>
-            <div className="px-10">
-              <div className="py-5 md:flex md:justify-end lg:w-2/3">
-                <ImageOnload 
-                  height={item.image_height}
-                  width={item.image_width}
-                  src={item.image} 
-                  alt="Homepage"  
-                cssClass="h-64 w-full md:h-96 md:w-64 object-cover" />
-              </div>
-            </div>
-            <div className="px-10 
-            md:col-span-2 md:flex md:justify-end 
-            lg:col-auto">
-              <div className="md:w-1/2 lg:w-full pb-8 text-right">
-                <h2 className="text-2xl">{item.title}</h2>
-                <div  className="font-extralight my-5 text-right" 
-                  dangerouslySetInnerHTML={{__html: item.body}} />
-                <div className="md:text-right md:mt-10">
-                  <BtnReadMore link={item.link} />
-                </div>
-            </div>
-            </div>
-          </div>
-        </div>
-        })
-      }
-    
-    </div>
- * 
-*/

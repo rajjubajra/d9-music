@@ -1,8 +1,7 @@
 import React,{useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionTour} from '../redux/actions'
-import {Link} from 'react-router-dom';
-import TourList from './TourList';
+import TourList02 from './TourList02';
 
 function Tour() {
 
@@ -20,7 +19,7 @@ function Tour() {
 
   return (
     <div>
-      <TourList tourdata={length > 0 ? data : []} /> 
+      <TourList02 tourdata={length > 0 ? data : []} /> 
     </div>
   )
 }
