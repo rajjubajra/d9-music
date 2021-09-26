@@ -7,7 +7,7 @@ import {actionTour} from '../redux/actions';
 function Tour() {
   const dispatch = useDispatch();
 
-  const tourdata = useSelector(state => state.reducderTour.tour_data);
+  const tourdata = useSelector(state => state.reducerTour.tour_data);
 
   console.log(tourdata);
 
