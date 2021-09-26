@@ -24,17 +24,17 @@ function Tour() {
     dispatch(actionTour());
   },[dispatch])
 
-  useEffect(()=>{
-    const {attributes:{field_event_date:date, title, 
-      field_event_location:{processed:venue}, 
-      field_event_details:{processed:body}}
-    } = tourdata[event];
+  // useEffect(()=>{
+  //   const {attributes:{field_event_date:date, title, 
+  //     field_event_location:{processed:venue}, 
+  //     field_event_details:{processed:body}}
+  //   } = tourdata;
 
-    setEventDate(date);
-    setTitle(title);
-    setVenue(venue);
-    setBody(body);
-  },[tourdata, event])
+  //   setEventDate(date);
+  //   setTitle(title);
+  //   setVenue(venue);
+  //   setBody(body);
+  // },[tourdata, event])
 
   const view = (index) => ( setEvent(index) );
 
@@ -72,7 +72,7 @@ function Tour() {
       </div>
 
       {/* * TOUR DETAILS */}
-      <div>
+      {/* <div>
         {fetched &&
           <TourDetail02 
             event_title={title}
@@ -81,7 +81,7 @@ function Tour() {
             body={body}
           />
         }
-      </div> 
+      </div>  */}
 
     </div>
   )
