@@ -27,12 +27,12 @@ function Tour() {
   const [body, setBody] = useState('');
 
   useEffect(()=>{
-    const {attributes:{field_event_date:date, title, 
-      field_event_location:{processed:venue}, 
-      field_event_details:{processed:body}}
+    const {attributes:{field_event_date, title, 
+      field_event_location:{processed: venue, }, 
+      field_event_details:{processed: body}}
     } = tourdata;
 
-    setEventDate(date);
+    setEventDate(field_event_date);
     setTitle(title);
     setVenue(venue);
     setBody(body);
