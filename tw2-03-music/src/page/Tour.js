@@ -13,11 +13,11 @@ function Tour() {
 
   console.log(tourdata, "fetched", fetched);
 
-  const [event, setEvent] = useState(0)
-  const [eventDate, setEventDate] = useState('');
-  const [title, setTitle] = useState('');
-  const [venue, setVenue] = useState('');
-  const [body, setBody] = useState('');
+  // const [event, setEvent] = useState(0)
+  // const [eventDate, setEventDate] = useState('');
+  // const [title, setTitle] = useState('');
+  // const [venue, setVenue] = useState('');
+  // const [body, setBody] = useState('');
 
 
   useEffect(()=>{
@@ -36,7 +36,7 @@ function Tour() {
   //   setBody(body);
   // },[tourdata, event])
 
-  const view = (index) => ( setEvent(index) );
+  //const view = (index) => ( setEvent(index) );
 
   const dateFormat = (date) => {
 
