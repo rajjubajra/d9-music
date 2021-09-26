@@ -71,7 +71,7 @@ function Tour() {
         }
       </div>
 
-      {/* * TOUR DETAILS
+      {/* * TOUR DETAILS */}
       <div>
         {fetched &&
           <TourDetail02 
@@ -81,7 +81,7 @@ function Tour() {
             body={body}
           />
         }
-      </div> */}
+      </div> 
 
     </div>
   )

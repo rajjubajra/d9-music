@@ -1,7 +1,9 @@
 import {GrFormNextLink} from 'react-icons/gr';
 
 
+
 function TourList02({date, title, venue, view, index}) {
+
 
   return (
       <div className="grid grid-cols-12 grid-flow-row gap-2 py-5
@@ -12,8 +14,9 @@ function TourList02({date, title, venue, view, index}) {
                   <div>{venue}</div>
               </div>
               <div className="col-span-6 border border-gray-200">
-                  <div className="cursor-pointer p-2 text-sm flex">
-                  <div>View Detail </div>
+                  <div className="cursor-pointer p-2 text-sm flex"
+                    onClick={() => view(index)} >
+                  <div>View Detail</div>
                   <div className="pt-1 px-2"><GrFormNextLink /></div>
               </div>
           </div>
