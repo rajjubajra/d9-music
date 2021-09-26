@@ -16,13 +16,21 @@ function Tour() {
     dispatch(actionTour());
   },[dispatch])
 
+  
+  function ViewDetail(index){
+    return console.log("index passed",index);
+
+  }
+
 
 
   const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   return (
     <div>
-      <TourList02 tourdata={length > 0 ? data : []} monthArr={monthArr} /> 
+      <TourList02 
+      tourdata={length > 0 ? data : []} monthArr={monthArr} 
+      viewDetail={ViewDetail}/> 
     </div>
   )
 }

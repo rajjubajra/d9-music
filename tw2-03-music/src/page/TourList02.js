@@ -3,7 +3,7 @@ import {GrFormNextLink, GrClose} from 'react-icons/gr';
 
 
 
-function TourList02({tourdata, monthArr}) {
+function TourList02({tourdata, monthArr, ViewDetail}) {
 
 
   return (
@@ -27,7 +27,9 @@ function TourList02({tourdata, monthArr}) {
                   <div><div dangerouslySetInnerHTML={{__html: processed}} /></div>
                 </div>
                 <div className="col-span-6 border border-gray-200">
-                  <div className="cursor-pointer p-2 text-sm flex">
+                  <div 
+                  className="cursor-pointer p-2 text-sm flex"
+                  onClick={ViewDetail(index)}>
                   <div>View Detail</div>
                   <div className="pt-1 px-2">
                     <GrFormNextLink />
