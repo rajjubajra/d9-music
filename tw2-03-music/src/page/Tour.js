@@ -55,7 +55,7 @@ function Tour() {
       <div>
         <h2 className="text-3xl">Tour</h2>
         {
-          fetched &&
+          {/* fetched &&
           tourdata.map((item, index) => {
             const {attributes:{field_event_date:date, title, 
             field_event_location:{processed:venue}}} = item;
@@ -67,7 +67,7 @@ function Tour() {
                 index={index}
                 view={view}
               />
-          })
+          }) */}
         }
       </div>
 
