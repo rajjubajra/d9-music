@@ -14,8 +14,7 @@ function TourList02({date, title, venue, view, index}) {
                   <div>{venue}</div>
               </div>
               <div className="col-span-6 border border-gray-200">
-                  <div className="cursor-pointer p-2 text-sm flex"
-                    onClick={() => view(index)} >
+                  <div className="cursor-pointer p-2 text-sm flex">
                   <div>View Detail</div>
                   <div className="pt-1 px-2"><GrFormNextLink /></div>
               </div>

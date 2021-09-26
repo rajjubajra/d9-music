@@ -57,7 +57,8 @@ function Tour() {
         {
           fetched &&
           tourdata.map((item, index) => {
-            const {attributes:{field_event_date:date, title, field_event_location:{processed:venue}}} = item;
+            const {attributes:{field_event_date:date, title, 
+            field_event_location:{processed:venue}}} = item;
             return <TourList02
                 id={item.id}
                 date={dateFormat(date)}
