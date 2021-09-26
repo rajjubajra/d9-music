@@ -1,0 +1,1 @@
+{"version":3,"sources":["page/Tour.js"],"names":["Tour"],"mappings":"oHAAA,uBAUeA,UARf,WACE,OACE","file":"static/js/12.1f5c796f.chunk.js","sourcesContent":["import React from 'react'\n\nfunction Tour() {\n  return (\n    <div>\n      this is test page\n    </div>\n  )\n}\n\nexport default Tour\n"],"sourceRoot":""}

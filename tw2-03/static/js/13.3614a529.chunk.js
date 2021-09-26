@@ -1,2 +1,0 @@
-(this["webpackJsonptw2-03-music"]=this["webpackJsonptw2-03-music"]||[]).push([[13],{90:function(c,e,t){"use strict";t.r(e);var s=t(0),i=t(16),r=t(19),l=(t(75),t(3));e.default=function(){var c=Object(i.b)();return Object(s.useEffect)((function(){c(Object(r.i)())}),[c]),Object(l.jsx)("div",{className:"w-full max-w-screen-xl m-auto p-10 relative grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2",children:Object(l.jsxs)("div",{children:[Object(l.jsx)("h2",{className:"text-3xl",children:"Tour"}),{}]})})}}}]);
-//# sourceMappingURL=13.3614a529.chunk.js.map

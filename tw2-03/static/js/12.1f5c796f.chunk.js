@@ -1,0 +1,2 @@
+(this["webpackJsonptw2-03-music"]=this["webpackJsonptw2-03-music"]||[]).push([[12],{84:function(t,s,i){"use strict";i.r(s);i(0);var c=i(3);s.default=function(){return Object(c.jsx)("div",{children:"this is test page"})}}}]);
+//# sourceMappingURL=12.1f5c796f.chunk.js.map
