@@ -28,14 +28,13 @@ function Tour() {
 
   useEffect(()=>{
     const {attributes:{field_event_date, title, 
-      field_event_location:{processed: venue, }, 
-      field_event_details:{processed: body}}
+      field_event_location:{processed}}
     } = tourdata;
 
-    setEventDate(field_event_date);
-    setTitle(title);
-    setVenue(venue);
-    setBody(body);
+    // setEventDate(field_event_date);
+    // setTitle(title);
+    // setVenue(venue);
+    // setBody(body);
   },[tourdata, event])
 
   const view = (index) => ( setEvent(index) );
