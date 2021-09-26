@@ -8,10 +8,10 @@ import TourDetail02 from './TourDetail02';
 function Tour() {
 
   const dispatch = useDispatch();
-  const tourdata = useSelector(state => state.reducerTour.tour_data.data);
-  const fetched = useSelector(state => state.reducerTour.tour_feched);
+  //const tourdata = useSelector(state => state.reducerTour.tour_data.data);
+  //const fetched = useSelector(state => state.reducerTour.tour_feched);
 
-  console.log(tourdata, "fetched", fetched);
+  //console.log(tourdata, "fetched", fetched);
 
   // const [event, setEvent] = useState(0)
   // const [eventDate, setEventDate] = useState('');
