@@ -43,6 +43,14 @@ function News() {
 
       const arr1 = [];
 
+      function getImageUrl(mediaId){
+        included.map(item => {
+            return item.id === mediaId && 
+                  item.type === 'file--file' &&
+                  item.attributes.uri.url
+        });
+      }
+
       included.map(item =>{
         // const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
         /** note: distructuring did not worked */
@@ -52,10 +60,12 @@ function News() {
           mediaId: item.relationships.field_media_image.data.id,
           alt: item.relationships.field_media_image.data.meta.alt,
           height: item.relationships.field_media_image.data.meta.height,
-          width: item.relationships.field_media_image.data.width,
-          imageTitle: item.relationships.field_media_image.data.title
+          width: item.relationships.field_media_image.data.meta.width,
+          imageTitle: item.relationships.field_media_image.data.meta.title,
+          url: getImageUrl(item.relationships.field_media_image.data.id)
         })
       });
+      
       return arr1;
     }
 
