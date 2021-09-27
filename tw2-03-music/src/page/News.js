@@ -11,7 +11,7 @@ function News() {
   const dispatch = useDispatch();
   const data = useSelector(state => state.reducerNews.news_data.data);
   const inc_data = useSelector(state => state.reducerNews.news_data.included);
-  const length = useSelector(state => state.reducerNews.news_dataLength);
+  const fetched = useSelector(state => state.reducerNews.news_fetched);
 
   const [arr, setArr] = useState([]);
   
@@ -22,7 +22,7 @@ function News() {
   const [image, setImage] = useState('');
   const [body, setBody] = useState('');
 
-  console.log("news",data,"news length", length, "arr", arr);
+  console.log("news",data,"news length", fetched, "arr", arr);
 
   useEffect(()=>{
     dispatch(actionNews());
@@ -31,7 +31,7 @@ function News() {
 
   useEffect(()=>{
     const newdata = [];
-    length > 0 && 
+    fetched && 
     data.map(item => {
       const {attributes:{title, field_news_body, field_news_date}} = item;
       inc_data.map(inc => {
@@ -52,7 +52,7 @@ function News() {
         return setArr(newdata);
       })
     })
-  },[data, inc_data, length])
+  },[data, inc_data, fetched])
 
   /** set readmore to true */
   useEffect(()=>{
@@ -62,11 +62,11 @@ function News() {
 
   /** Populate readmore component */
   useEffect(()=>{
-    setTitle( viewReadMore && arr[index].title);
-    setImage( viewReadMore && arr[index].image);
-    setDate( viewReadMore && arr[index].data);
-    setBody(viewReadMore && arr[index].body);
-  },[arr, index, viewReadMore])
+    setTitle( fetched && viewReadMore &&  arr[index].title);
+    setImage( fetched && viewReadMore && arr[index].image);
+    setDate( fetched && viewReadMore && arr[index].data);
+    setBody(fetched && viewReadMore && arr[index].body);
+  },[arr, index, viewReadMore, fetched])
 
   console.log("data arr news", arr, "index", index);
 
