@@ -14,7 +14,9 @@ function News() {
   const length = useSelector(state => state.reducerNews.news_dataLength);
 
   const [arr, setArr] = useState([]);
-  const [index, setIndex] = useState('');
+  
+  const [viewReadMore, setViewReadMore] = useState(false);
+  const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [image, setImage] = useState('');
@@ -52,13 +54,19 @@ function News() {
     })
   },[data, inc_data, length])
 
+  /** set readmore to true */
+  useEffect(()=>{
+    setViewReadMore( index !== '' && true);
+  },[index])
 
-  // useEffect(()=>{
-  //   setTitle(index !== '' && arr[index].title);
-  //   setImage(index !== '' && arr[index].image);
-  //   setDate(index !== '' && arr[index].data);
-  //   setBody(index !== '' && arr[index].body);
-  // },[arr, index])
+
+  /** Populate readmore component */
+  useEffect(()=>{
+    setTitle( viewReadMore && arr[index].title);
+    setImage( viewReadMore && arr[index].image);
+    setDate( viewReadMore && arr[index].data);
+    setBody(viewReadMore && arr[index].body);
+  },[arr, index, viewReadMore])
 
   console.log("data arr news", arr, "index", index);
 
@@ -69,7 +77,7 @@ function News() {
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ", "+ dt.getFullYear()
   }
   
-  const readmore = () => (setIndex(index))
+  const readmore = () => ( console.log("yes clicked"))
 
   return (
     <div className="max-w-screen-xl m-auto p-10">
@@ -78,7 +86,7 @@ function News() {
         <h2 className="text-3xl">News</h2>
         {/** NEWS LIST */}
         {
-          arr.length > 0 && index === '' &&
+          arr.length > 0 && !readmore &&
           arr.map((item, index) =>{
                 return <NewsList02 
                           title={item.title} 
@@ -91,7 +99,7 @@ function News() {
                           /> })
         }
         {/** NEWS READMORE */}
-        { index !== '' &&
+        { readmore &&
           <NewsDetail02 
             date={date}
             title={title}
