@@ -45,7 +45,7 @@ function Tour() {
     const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     const dt = new Date(date);
-    return `${dt.getDate()},  ${monthArr[dt.getMonth()]}, ${dt.getFullYear}`;
+    return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ","+ dt.getFullYear()
 
   }
 

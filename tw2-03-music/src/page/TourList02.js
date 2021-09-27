@@ -11,7 +11,9 @@ function TourList02({date, title, venue, view, index}) {
           <div className="col-span-12">{date}</div>
               <div className="col-span-12">
                   <h2 className="text-2xl">{title}</h2>
-                  <div>{venue}</div>
+                  <div>
+                    <div dangerouslySetInnerHTML={{__html: venue}} />
+                  </div>
               </div>
               <div className="col-span-6 border border-gray-200">
                   <div className="cursor-pointer p-2 text-sm flex"
