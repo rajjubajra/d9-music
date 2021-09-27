@@ -61,11 +61,11 @@ function Contact() {
   }
 
   return (
-    <div>
-      <h1 className="text-3xl m-5">
+    <div className="px-10">
+      <h1 className="text-3xl m-5 px-5">
         {contact_form_fetched && contact_form.attributes.title}
       </h1>
-      <div>
+      <div className="px-10">
         {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
       <div className="text-1xl">
         {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
