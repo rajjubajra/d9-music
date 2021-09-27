@@ -60,7 +60,7 @@ function News() {
     setBody(index !== '' && arr[index].body);
   },[arr, index])
 
-  //console.log("data arr news", arr);
+  console.log("data arr news", arr, "index", index);
 
   const dateFormat = (date) => {
     const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
