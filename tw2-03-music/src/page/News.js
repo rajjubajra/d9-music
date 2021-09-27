@@ -48,7 +48,7 @@ function News() {
         imageId === item.id &&
         arr1.push({
           id: item.id, 
-          // mediaId: id,
+          mediaId: item.relationships.field_media_image.data.id,
           // alt: alt,
           // height: height,
           // width: width,
