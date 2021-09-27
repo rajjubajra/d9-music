@@ -43,13 +43,10 @@ function News() {
       const arr1 = [];
     
       function getImageUrl(mediaId){
-        const imgurl = included.map(item => {
-              return item.id === mediaId && 
-                    item.type === 'file--file' &&
-                  item.attributes.uri.url
-        });
-        console.log("IMAGE URL", imgurl);
-        return imgurl;
+        return included.filter(el => el.id === mediaId).map(item =>{
+            return item.attributes.uri.url;
+        })
+
       }
 
       included.map(item =>{
