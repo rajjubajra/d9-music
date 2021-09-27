@@ -117,7 +117,7 @@ function News() {
         {/** NEWS READMORE */}
         { viewReadMore &&
           <NewsDetail02 
-            date={date}
+            date={dateFormate(date)}
             title={title}
             image={image}
             body={body} 

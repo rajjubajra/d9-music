@@ -17,7 +17,7 @@ function NewsList02({image,article_id,date, title, body, readmore, index}) {
                     </div>
                     <div className="col-span-9">
                       <div>
-                        <p className="text-xs">{article_id}</p>
+                        <p className="text-xs">{article_id.substring(0,5)}...</p>
                       </div>
                       <div>{date}</div>
                       <div><h3 className="text-2xl my-2">{title}</h3></div>
