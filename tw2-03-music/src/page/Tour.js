@@ -17,8 +17,6 @@ function Tour() {
     dispatch(actionTour());
   },[dispatch])
 
-
-
   console.log(tourdata, "fetched", fetched);
 
   const [event, setEvent] = useState(0)
@@ -29,10 +27,13 @@ function Tour() {
 
 
   useEffect(()=>{
+    
+    setEventDate(fetched && tourdata.attributes.field_event_date);
+    setTitle(fetched && tourdata.attributes.title);
+    setVenue(fetched && tourdata.attributes.field_event_location.processed);
+    setBody(fetched && tourdata.attributes.field_event_details.processed);
 
-    const {attributes:{title, field_event_date}} = tourdata
-
-  },[tourdata])
+  },[fetched, tourdata])
 
 
 
