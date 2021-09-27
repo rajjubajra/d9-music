@@ -49,7 +49,7 @@ function News() {
       /** get Image URL */
       function getImageUrl(mediaId){
         return included.filter(el => el.id === mediaId).map(item =>{
-            return item.attributes.uri.url;
+            return item.attributes.uri;
         })
       }
 
@@ -94,36 +94,6 @@ function News() {
     dispatch(actionNews());
   },[dispatch])
 
-
-    /** CREATING NEW 'arr' 
-    * - Complied and Simlified Drupal Json data
-    * - Stored into  'arr' state 
-    */
-  // useEffect(()=>{
-  //   const newdata = [];
-  //   fetched && 
-  //   data.map(item => {
-      
-  //     const {attributes:{title, field_news_body, field_news_date}} = item;
-
-  //     inc_data.map(inc => {
-        
-  //       const { attributes:{uri}, id } = inc;
-  //       /** stop repeat push */
-  //       const hasId = newdata.some((el) => el.incId === id);
-
-  //       if(inc.type === 'file--file' && !hasId){
-  //         newdata.push({
-  //           title: title, 
-  //           body: field_news_body.processed, 
-  //           date: field_news_date, 
-  //           incId: id,
-  //           image: uri.url});
-  //       }
-  //       return setArr(newdata);
-  //     })
-  //   })
-  // },[data, inc_data, fetched])
 
   
   /** POPULATING ReadMore Page Components */
