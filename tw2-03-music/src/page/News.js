@@ -59,10 +59,10 @@ function News() {
 
   /** Populate readmore component */
   useEffect(()=>{
-    setTitle( arr[index].title);
-    setImage( arr[index].image);
-    setDate( arr[index].data);
-    setBody( arr[index].body);
+    setTitle( arr.length > 0 && arr[index].title);
+    setImage( arr.length > 0 && arr[index].image);
+    setDate( arr.length > 0 && arr[index].data);
+    setBody( arr.length > 0 && arr[index].body);
   },[arr, index])
 
   console.log("data arr news", arr, "index", index, "view readmore", viewReadMore);
