@@ -56,8 +56,16 @@ function News() {
     <div className="max-w-screen-xl m-auto p-10">
       <div className="w-full max-w-screen-xl m-auto p-10">
         <h2 className="text-3xl">News</h2>
-
-        {/* <NewsList02 /> */}
+        {
+          arr.length > 0 &&
+          arr.map((item) =>{
+                return <NewsList02 
+                          title={item.title} 
+                          date={item.data}
+                          image={item.image} 
+                          body={item.body}
+                          article_id={item.incId} /> })
+        }
       </div>    
     </div>
   )

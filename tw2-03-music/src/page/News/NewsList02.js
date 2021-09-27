@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react';
 import BtnReadMore from '../../components/Buttons/BtnReadMore';
 import ImageOnload from '../../components/ImageOnload';
 
