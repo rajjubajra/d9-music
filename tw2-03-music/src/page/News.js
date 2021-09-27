@@ -75,8 +75,8 @@ function News() {
   }
   
   const readmore = () => { 
-    setViewReadMore(true)
-    setIndex(index)
+    // setViewReadMore(true)
+    // setIndex(index)
     console.log("yes it is clicked");
   }
 
