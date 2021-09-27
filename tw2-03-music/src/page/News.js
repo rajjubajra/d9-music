@@ -53,12 +53,12 @@ function News() {
   },[data, inc_data, length])
 
 
-  useEffect(()=>{
-    setTitle(index !== '' && arr[index].title);
-    setImage(index !== '' && arr[index].image);
-    setDate(index !== '' && arr[index].data);
-    setBody(index !== '' && arr[index].body);
-  },[arr, index])
+  // useEffect(()=>{
+  //   setTitle(index !== '' && arr[index].title);
+  //   setImage(index !== '' && arr[index].image);
+  //   setDate(index !== '' && arr[index].data);
+  //   setBody(index !== '' && arr[index].body);
+  // },[arr, index])
 
   console.log("data arr news", arr, "index", index);
 
