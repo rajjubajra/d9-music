@@ -28,12 +28,12 @@ function Tour() {
 
   useEffect(()=>{
     
-    setEventDate(fetched && tourdata.attributes.field_event_date);
-    setTitle(fetched && tourdata.attributes.title);
-    setVenue(fetched && tourdata.attributes.field_event_location.processed);
-    setBody(fetched && tourdata.attributes.field_event_details.processed);
+    setEventDate(fetched && tourdata[event].attributes.field_event_date);
+    setTitle(fetched && tourdata[event].attributes.title);
+    setVenue(fetched && tourdata[event].attributes.field_event_location.processed);
+    setBody(fetched && tourdata[event].attributes.field_event_details.processed);
 
-  },[fetched, tourdata])
+  },[fetched, tourdata, event])
 
 
 
