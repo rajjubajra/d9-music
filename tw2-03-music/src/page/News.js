@@ -51,6 +51,13 @@ function News() {
   },[data, inc_data, length])
 
   //console.log("data arr news", arr);
+
+  const dateFormat = (date) => {
+    const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    const dt = new Date(date);
+    return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ","+ dt.getFullYear()
+  }
   
   return (
     <div className="max-w-screen-xl m-auto p-10">
@@ -61,7 +68,7 @@ function News() {
           arr.map((item) =>{
                 return <NewsList02 
                           title={item.title} 
-                          date={item.data}
+                          date={dateFormat(item.data)}
                           image={item.image} 
                           body={item.body}
                           article_id={item.incId} /> })

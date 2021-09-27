@@ -6,6 +6,7 @@ import ImageOnload from '../../components/ImageOnload';
 
 function NewsList02({image,article_id,date, title, body}) {
 
+
   return (
       <div>
           <div className="grid md:grid-cols-12 my-10">
