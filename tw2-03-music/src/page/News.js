@@ -68,7 +68,7 @@ function News() {
       /** create new array */
       return dataArr.push({
         id: id, date:date, title:title, body: body, 
-        image:getImageDetail(imageId)
+        image:[getImageDetail(imageId)]
       });
     });
 
