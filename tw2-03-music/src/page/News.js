@@ -10,6 +10,7 @@ function News() {
 
   /** fetching data via redux */
   const dispatch = useDispatch();
+  const newsdata = useSelector(state => state.reducerNews.news_data);
   const data = useSelector(state => state.reducerNews.news_data.data);
   const inc_data = useSelector(state => state.reducerNews.news_data.included);
   const fetched = useSelector(state => state.reducerNews.news_fetched);
@@ -28,23 +29,32 @@ function News() {
   const [body, setBody] = useState('');
 
 
-  //console.log("news",data,"news length", fetched, "arr", arr);
+  console.log("news",data,"news length", fetched, "arr", arr);
+
+  useEffect(()=>{
+
+    const {data, included} = newsdata; 
+    console.log("newsdata: ",data, included);
+
+  },[newsdata])
 
   /** RUN REDUX ACTION TO LOAD DATA */
   useEffect(()=>{
     dispatch(actionNews());
   },[dispatch])
 
-  
-  useEffect(()=>{
-    /** CREATING NEW 'arr' 
+
+   /** CREATING NEW 'arr' 
     * - Complied and Simlified Drupal Json data
     * - Stored into  'arr' state 
     */
+  useEffect(()=>{
     const newdata = [];
     fetched && 
     data.map(item => {
+      
       const {attributes:{title, field_news_body, field_news_date}} = item;
+
       inc_data.map(inc => {
         
         const { attributes:{uri}, id } = inc;
@@ -52,11 +62,10 @@ function News() {
         const hasId = newdata.some((el) => el.incId === id);
 
         if(inc.type === 'file--file' && !hasId){
-              
           newdata.push({
             title: title, 
             body: field_news_body.processed, 
-            data: field_news_date, 
+            date: field_news_date, 
             incId: id,
             image: uri.url});
         }
@@ -70,7 +79,7 @@ function News() {
   useEffect(()=>{
     setTitle( arr.length > 0 && arr[index].title);
     setImage( arr.length > 0 && arr[index].image);
-    setDate( arr.length > 0 && arr[index].data);
+    setDate( arr.length > 0 && arr[index].date);
     setBody( arr.length > 0 && arr[index].body);
   },[arr, index])
 
@@ -106,7 +115,7 @@ function News() {
           arr.map((item, index) =>{
                 return <NewsList02 
                           title={item.title} 
-                          date={dateFormate(item.data)}
+                          date={dateFormate(item.date)}
                           image={item.image} 
                           body={item.body}
                           article_id={item.incId} 
