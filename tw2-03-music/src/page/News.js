@@ -49,7 +49,7 @@ function News() {
       /** get Image URL */
       function getImageUrl(mediaId){
         return included.filter(el => el.id === mediaId).map(item =>{
-            return item.attributes.uri;
+            return item.attributes.uri.url;
         })
       }
 
