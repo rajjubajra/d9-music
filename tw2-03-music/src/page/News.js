@@ -169,7 +169,7 @@ function News() {
                           date={dateFormate(item.date)}
                           image={item.image[0].url} 
                           body={item.body}
-                          article_id={item.incId} 
+                          article_id={item.id} 
                           index={index}
                           readmore={readmore}
                           /> })
