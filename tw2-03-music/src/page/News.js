@@ -72,7 +72,6 @@ function News() {
 
     console.log("ARRAY ONE", dataArr)
 
-
   },[fetched, newsdata])
 
   /** RUN REDUX ACTION TO LOAD DATA */
@@ -81,7 +80,7 @@ function News() {
   },[dispatch])
 
 
-   /** CREATING NEW 'arr' 
+    /** CREATING NEW 'arr' 
     * - Complied and Simlified Drupal Json data
     * - Stored into  'arr' state 
     */
