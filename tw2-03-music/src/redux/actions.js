@@ -404,41 +404,41 @@ export const actionMediaRemoteVideo = () => {
 
 
 // /** BASIC CONTACT FORM */
-// export const actionBasicContactForm = () => {
+export const actionBasicContactForm = () => {
 
-//   const headers = {
-//     headers: {
-//     'Accept': 'application/vnd.api+json'
-//     }
-//   }
+   const headers = {
+     headers: {
+     'Accept': 'application/vnd.api+json'
+     }
+   }
 
-//   const imageUrl = `${baseurl.URL}/jsonapi/webform/webform/8979d944-eba5-4587-9d0b-2002f663d15b`;
-//   const CONTACT_FORM = imageUrl;
+   const imageUrl = `${baseurl.URL}/jsonapi/webform/webform/8979d944-eba5-4587-9d0b-2002f663d15b`;
+   const CONTACT_FORM = imageUrl;
 
-//   return function (dispatch) {
+   return function (dispatch) {
 
-//   /** TOUR */
-//   dispatch({
-//     type: actionTypes.BASIC_CONTACT_FORM_START_FETCHING
-//   });
+   /** TOUR */
+   dispatch({
+     type: actionTypes.BASIC_CONTACT_FORM_START_FETCHING
+   });
   
-//   const reqImage = axios.get(CONTACT_FORM, headers)
-//   reqImage.then((res) => {
-//       console.log("action news",res.data)
-//       dispatch({
-//         type: actionTypes.BASIC_CONTACT_FORM_FETCHED,
-//         data: res.data
-//       })
-//     })
-//     .catch(err => {
-//       dispatch({
-//         type: actionTypes.BASIC_CONTACT_FORM_FETCH_ERROR,
-//         fetched: false,
-//         error: err
-//       })
-//     }) 
-//   }
-// }// actionBasicContactForm Closed
+   const reqImage = axios.get(CONTACT_FORM, headers)
+   reqImage.then((res) => {
+       console.log("action news",res.data)
+       dispatch({
+         type: actionTypes.BASIC_CONTACT_FORM_FETCHED,
+         data: res.data
+       })
+     })
+     .catch(err => {
+       dispatch({
+         type: actionTypes.BASIC_CONTACT_FORM_FETCH_ERROR,
+         fetched: false,
+         error: err
+       })
+     }) 
+   }
+ }// actionBasicContactForm Closed
 
 
 

@@ -1,6 +1,5 @@
-//import ContactForm from './ContactForm';
-import SubscriptionFrom from './SubscriptionForm';
-import ContactInfo from './ContactInfo';
+import ContactForm from './Contact/ContactForm';
+import ContactInfo from './Contact/ContactInfo';
 
 
 
@@ -15,7 +14,7 @@ function Contact() {
       </div>
 
       <div className="col-span-12 md:col-span-8 mt-10 md:mt-0">
-        <SubscriptionFrom />
+        <ContactForm />
       </div>
       
     </div>
