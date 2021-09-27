@@ -6,8 +6,8 @@ import TourList02 from './TourList02';
 
 
 function Tour() {
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const tourdata = useSelector(state => state.reducerTour.tour_data.data);
   const fetched = useSelector(state => state.reducerTour.tour_fetched);
 
@@ -27,16 +27,15 @@ function Tour() {
   const [venue, setVenue] = useState('');
   const [body, setBody] = useState('');
 
-  // useEffect(()=>{
-  //   const {attributes:{field_event_date, title, 
-  //     field_event_location:{processed}}
-  //   } = tourdata;
 
-  //   // setEventDate(field_event_date);
-  //   // setTitle(title);
-  //   // setVenue(venue);
-  //   // setBody(body);
-  // },[tourdata, event])
+  useEffect(()=>{
+
+    const {attributes:{title, field_event_date}} = tourdata
+
+  },[tourdata])
+
+
+
 
   const view = (index) => ( setEvent(index) );
 
@@ -46,7 +45,6 @@ function Tour() {
 
     const dt = new Date(date);
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ","+ dt.getFullYear()
-
   }
 
   console.log(eventDate, title, venue, event, body);
@@ -54,7 +52,7 @@ function Tour() {
 
   return (
     <div className="w-full max-w-screen-xl m-auto p-10 relative
-    grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2">
+    grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2 font-extralight">
     {/** TOUR LIST */}
       <div>
         <h2 className="text-3xl">Tour</h2>
