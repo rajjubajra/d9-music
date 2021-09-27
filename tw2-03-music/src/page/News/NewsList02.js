@@ -9,7 +9,7 @@ function NewsList02({image,article_id,date, title, body}) {
 
   return (
       <div>
-          <div className="grid md:grid-cols-12 my-10">
+          <div className="grid md:grid-cols-12 my-10 font-extralight">
                     <div className="col-span-3">
                       <div className="py-5 md:pr-5 m-5 md:border-r border-gray-400">
                         <ImageOnload src={image} alt="news" />
@@ -17,7 +17,7 @@ function NewsList02({image,article_id,date, title, body}) {
                     </div>
                     <div className="col-span-9">
                       <div>
-                        <p>{article_id}</p>
+                        <p className="text-xs">{article_id}</p>
                       </div>
                       <div>{date}</div>
                       <div><h3 className="text-2xl my-2">{title}</h3></div>
