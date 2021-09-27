@@ -25,7 +25,7 @@ function NewsList02({image,article_id,date, title, body, readmore, index}) {
                         <div dangerouslySetInnerHTML={{__html: body.substring(0, 200)}} />
                       </div>
                       <div className="my-5">
-                        <div onClick={() => readmore(index)}><BtnReadMore link="#" /></div>
+                        <div onClick={() => readmore(index, true)}><BtnReadMore link="#" /></div>
                       </div>
                     </div>
               </div>

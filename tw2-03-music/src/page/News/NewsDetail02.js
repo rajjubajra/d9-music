@@ -2,14 +2,16 @@ import ImageOnload from '../../components/ImageOnload';
 import {GrClose} from 'react-icons/gr';
 
 
-function NewsDetail02({ date, title, image, body}) {
+function NewsDetail02({ date, title, image, body, readmore}) {
 
 
   return (
-    <div className="w-full max-w-screen-xl m-auto p-10">
+    <div className="w-full max-w-screen-xl m-auto font-extralight">
 
-      <div className="w-full flex justify-end p-5 cursor-pointer" 
-        title="close">
+      <div 
+      className="w-full flex justify-end  cursor-pointer" 
+      title="close"
+      onClick={() => readmore(0, false)}>
         <GrClose />
         </div>
   

@@ -8,13 +8,18 @@ import NewsDetail02 from './News/NewsDetail02';
 
 function News() {
 
+  /** fetching data via redux */
   const dispatch = useDispatch();
   const data = useSelector(state => state.reducerNews.news_data.data);
   const inc_data = useSelector(state => state.reducerNews.news_data.included);
   const fetched = useSelector(state => state.reducerNews.news_fetched);
 
+
+  /** SET compiled and simplified NEW ARRAY */
   const [arr, setArr] = useState([]);
   
+
+  /** VIEW READ-MORE PAGE CONTENTS */
   const [viewReadMore, setViewReadMore] = useState(false);
   const [index, setIndex] = useState(0);
   const [title, setTitle] = useState('');
@@ -22,14 +27,20 @@ function News() {
   const [image, setImage] = useState('');
   const [body, setBody] = useState('');
 
-  console.log("news",data,"news length", fetched, "arr", arr);
 
+  //console.log("news",data,"news length", fetched, "arr", arr);
+
+  /** RUN REDUX ACTION TO LOAD DATA */
   useEffect(()=>{
     dispatch(actionNews());
   },[dispatch])
 
-
+  
   useEffect(()=>{
+    /** CREATING NEW 'arr' 
+    * - Complied and Simlified Drupal Json data
+    * - Stored into  'arr' state 
+    */
     const newdata = [];
     fetched && 
     data.map(item => {
@@ -55,9 +66,7 @@ function News() {
   },[data, inc_data, fetched])
 
   
-
-
-  /** Populate readmore component */
+  /** POPULATING ReadMore Page Components */
   useEffect(()=>{
     setTitle( arr.length > 0 && arr[index].title);
     setImage( arr.length > 0 && arr[index].image);
@@ -65,20 +74,25 @@ function News() {
     setBody( arr.length > 0 && arr[index].body);
   },[arr, index])
 
-  console.log("data arr news", arr, "index", index, "view readmore", viewReadMore);
-  console.log(title, date, image , body);
+  //console.log("data arr news", arr, "index", index, "view readmore", viewReadMore);
+  //console.log(title, date, image , body);
 
-  const dateFormat = (date) => {
+  /** CHANGING DATE  "D MMM, YYYY" FORMATE  */
+  const dateFormate = (date) => {
     const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     const dt = new Date(date);
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ", "+ dt.getFullYear()
   }
   
-  const readmore = (index) => { 
-    setViewReadMore(true)
+  /** ReadMore function 
+   * "onClick" from Child Component "NewsList02" status to "True"
+   * "onClick" from Child Component "NewsDetail02" status to "False"
+   */
+  const readmore = (index, status) => { 
+    setViewReadMore(status)
     setIndex(index)
-    console.log("yes it is clicked");
+    //console.log("yes it is clicked");
   }
 
   return (
@@ -92,7 +106,7 @@ function News() {
           arr.map((item, index) =>{
                 return <NewsList02 
                           title={item.title} 
-                          date={dateFormat(item.data)}
+                          date={dateFormate(item.data)}
                           image={item.image} 
                           body={item.body}
                           article_id={item.incId} 
@@ -107,6 +121,7 @@ function News() {
             title={title}
             image={image}
             body={body} 
+            readmore={readmore}
           />
         }
       </div>
