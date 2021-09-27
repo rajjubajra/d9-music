@@ -28,7 +28,7 @@ function TourDetail02({event_title, date, venue, body}) {
 
           <div className="col-span-12">
             <h3>Location</h3>
-            <div>{venue}</div>
+            <div><div dangerouslySetInnerHTML={{__html: venue}} /></div>
           </div>
           
           <div className="col-span-12">

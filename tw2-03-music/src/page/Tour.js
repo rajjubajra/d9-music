@@ -36,18 +36,16 @@ function Tour() {
 
   },[fetched, tourdata, event])
 
-
-
-
   const view = (index) => ( setEvent(index) );
 
   const dateFormat = (date) => {
-
     const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     const dt = new Date(date);
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ","+ dt.getFullYear()
   }
+
+  const dnagerHtml = (body) => (<div dangerouslySetInnerHTML={{__html: body}} />)
 
   console.log(eventDate, title, venue, event, body);
 
