@@ -78,7 +78,7 @@ function News() {
         <h2 className="text-3xl">News</h2>
         {/** NEWS LIST */}
         {
-          arr.length > 0 && 
+          arr.length > 0 && index === '' &&
           arr.map((item, index) =>{
                 return <NewsList02 
                           title={item.title} 
@@ -91,7 +91,7 @@ function News() {
                           /> })
         }
         {/** NEWS READMORE */}
-        {
+        { index !== '' &&
           <NewsDetail02 
             date={date}
             title={title}
