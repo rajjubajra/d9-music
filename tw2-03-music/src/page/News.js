@@ -11,8 +11,6 @@ function News() {
   /** fetching data via redux */
   const dispatch = useDispatch();
   const newsdata = useSelector(state => state.reducerNews.news_data);
-  const data = useSelector(state => state.reducerNews.news_data.data);
-  const inc_data = useSelector(state => state.reducerNews.news_data.included);
   const fetched = useSelector(state => state.reducerNews.news_fetched);
 
 
@@ -29,7 +27,7 @@ function News() {
   const [body, setBody] = useState('');
 
 
-  console.log("news",data,"news length", fetched, "arr", arr);
+  //console.log("news ", fetched, "arr", arr);
 
   /** CREATING NEW 'arr' 
     * - Complied and Simlified Drupal Json data
@@ -50,7 +48,7 @@ function News() {
             return item.attributes.uri.url;
         })
       }
-      
+
       const arr1 = [];
       included.map(item =>{
         // const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
