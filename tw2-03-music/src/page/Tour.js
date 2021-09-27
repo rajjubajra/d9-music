@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionTour} from '../redux/actions';
 import TourList02 from './TourList02';
+import TourDetail02 from './TourDetail02';
 
 
 
@@ -70,9 +71,21 @@ function Tour() {
                 index={index}
                 view={view}
               />
-          }) 
+          })
         }
-      </div>
+        </div>
+         {/* * TOUR DETAILS */}
+        <div>
+        {fetched &&
+          <TourDetail02 
+            event_title={title}
+            date={dateFormat(eventDate)}
+            venue={venue}
+            body={body}
+          />
+        }  
+        </div>
+
   </div>
   )
 }
