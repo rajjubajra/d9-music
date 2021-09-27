@@ -66,6 +66,7 @@ function News() {
   // },[arr, index, viewReadMore, fetched])
 
   console.log("data arr news", arr, "index", index, "view readmore", viewReadMore);
+  console.log(title, date, image , body);
 
   const dateFormat = (date) => {
     const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
