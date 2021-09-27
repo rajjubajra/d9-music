@@ -65,7 +65,7 @@ function News() {
   //   setBody(arr.length > 0 && viewReadMore && arr[index].body);
   // },[arr, index, viewReadMore, fetched])
 
-  console.log("data arr news", arr, "index", index);
+  console.log("data arr news", arr, "index", index, "view readmore", viewReadMore);
 
   const dateFormat = (date) => {
     const monthArr = ["","Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -87,7 +87,7 @@ function News() {
         <h2 className="text-3xl">News</h2>
         {/** NEWS LIST */}
         {
-          arr.length > 0 &&
+          arr.length > 0 && !viewReadMore &&
           arr.map((item, index) =>{
                 return <NewsList02 
                           title={item.title} 
@@ -100,7 +100,7 @@ function News() {
                           /> })
         }
         {/** NEWS READMORE */}
-        { readmore &&
+        { viewReadMore &&
           <NewsDetail02 
             date={date}
             title={title}
