@@ -4,7 +4,7 @@ import ImageOnload from '../../components/ImageOnload';
 
 
 
-function NewsList02({image,article_id,date, title, body}) {
+function NewsList02({image,article_id,date, title, body, readmore, index}) {
 
 
   return (
@@ -25,7 +25,7 @@ function NewsList02({image,article_id,date, title, body}) {
                         <div dangerouslySetInnerHTML={{__html: body.substring(0, 200)}} />
                       </div>
                       <div className="my-5">
-                        <div><BtnReadMore link="#" /></div>
+                        <div onClick={() => readmore(index)}><BtnReadMore link="#" /></div>
                       </div>
                     </div>
               </div>

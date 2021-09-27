@@ -5,8 +5,8 @@ import {GrFormNextLink} from 'react-icons/gr';
 function TourList02({date, title, venue, view, index}) {
 
 
-  return (
-      <div className="grid grid-cols-12 grid-flow-row gap-2 py-5
+    return (
+    <div className="grid grid-cols-12 grid-flow-row gap-2 py-5
               border-t border-gray-300">
           <div className="col-span-12">{date}</div>
               <div className="col-span-12">
