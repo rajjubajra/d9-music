@@ -122,9 +122,9 @@ function News() {
   }
 
   return (
-    <div className="max-w-screen-xl m-auto px-10">
+    <div className="max-w-screen-xl m-auto p-10">
       
-      <div className="w-full max-w-screen-xl m-auto">
+      <div className="w-full max-w-screen-xl m-auto px-10">
         <h2 className="text-3xl">News</h2>
         {/** NEWS LIST */}
         {
