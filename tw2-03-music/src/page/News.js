@@ -39,15 +39,15 @@ function News() {
     const dataArr = [];
    
 
-    function getImageDetail(imageId){
+    async function getImageDetail(imageId){
 
       const arr1 = [];
       const arr2 = [];
       console.log("Arr1", arr1);
 
-      included.map(item =>{
+        await included.map(item =>{
         const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
-        return imageId === item.id &&
+        imageId === item.id &&
         arr1.push({
           id: item.id, 
           mediaId: id,
@@ -67,7 +67,8 @@ function News() {
       /** create new array */
       return dataArr.push({
         id: id, date:date, title:title, body: body, 
-        image:getImageDetail(imageId)});
+        image:getImageDetail(imageId)
+      });
     });
 
     console.log("ARRAY ONE", dataArr)
