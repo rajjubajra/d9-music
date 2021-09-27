@@ -129,7 +129,7 @@ function News() {
   /** POPULATING ReadMore Page Components */
   useEffect(()=>{
     setTitle( arr.length > 0 && arr[index].title);
-    setImage( arr.length > 0 && arr[index].image[0].url[0]);
+    setImage( arr.length > 0 && arr[index].image[0].url);
     setDate( arr.length > 0 && arr[index].date);
     setBody( arr.length > 0 && arr[index].body);
   },[arr, index])
@@ -167,7 +167,7 @@ function News() {
                 return <NewsList02 
                           title={item.title} 
                           date={dateFormate(item.date)}
-                          image={item.image[0].url[0]} 
+                          image={item.image[0].url} 
                           body={item.body}
                           article_id={item.incId} 
                           index={index}
