@@ -41,18 +41,22 @@ function News() {
 
     function getImageDetail(imageId){
 
+      const arr1 = [];
+
       included.map(item =>{
-        const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
-        return imageId === item.id &&
-        {
+        // const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
+        imageId === item.id &&
+        arr1.push({
           id: item.id, 
-          mediaId: id,
-          alt: alt,
-          height: height,
-          width: width,
-          imageTitle: title
-        }
+          // mediaId: id,
+          // alt: alt,
+          // height: height,
+          // width: width,
+          // imageTitle: title
+        })
       });
+
+      return arr1;
       
     }
 
@@ -64,7 +68,7 @@ function News() {
       /** create new array */
       return dataArr.push({
         id: id, date:date, title:title, body: body, 
-        image:getImageDetail(imageId)
+        image:[getImageDetail(imageId)]
       });
     });
 
