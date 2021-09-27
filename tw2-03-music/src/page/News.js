@@ -36,7 +36,44 @@ function News() {
     const {data, included} = newsdata; 
     console.log("newsdata: ",data, included);
 
-  },[newsdata])
+    const dataArr = [];
+   
+
+    function getImageDetail(imageId){
+
+      const arr1 = [];
+      const arr2 = [];
+      console.log("Arr1", arr1);
+
+      included.map(item =>{
+        const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
+        return imageId === item.id &&
+        arr1.push({
+          id: item.id, 
+          mediaId: id,
+          alt: alt,
+          height: height,
+          width: width,
+          imageTitle: title
+        })
+      });
+    }
+
+
+    fetched &&
+    data.map(item=>{
+      const { id, attributes:{title, field_news_body:{processed:body}, field_news_date:date}} = item;
+      const { relationships:{field_news_media:{data:{id: imageId}}}} = item;
+      /** create new array */
+      return dataArr.push({
+        id: id, date:date, title:title, body: body, 
+        image:getImageDetail(imageId)});
+    });
+
+    console.log("ARRAY ONE", dataArr)
+
+
+  },[fetched, newsdata])
 
   /** RUN REDUX ACTION TO LOAD DATA */
   useEffect(()=>{
