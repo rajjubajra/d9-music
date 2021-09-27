@@ -64,7 +64,7 @@ function News() {
           height: item.relationships.field_media_image.data.meta.height,
           width: item.relationships.field_media_image.data.meta.width,
           imageTitle: item.relationships.field_media_image.data.meta.title,
-          url: getImageUrl(item.relationships.field_media_image.data.id)
+          url: [getImageUrl(item.relationships.field_media_image.data.id)]
         })
       });
 
