@@ -62,16 +62,16 @@ function Contact() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center m-5">
+      <h1 className="text-3xl m-5">
         {contact_form_fetched && contact_form.attributes.title}
       </h1>
-      <div className="text-center">
+      <div>
         {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
-      <div className="text-1xl text-center">
+      <div className="text-1xl">
         {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
       </div>
       <div className="w-full flex justify-center align-middle">
-        <form onSubmit={handleSubmit}  method="post" class="w-full md:w-3/6 p-4 m-5 flex flex-col">
+        <form onSubmit={handleSubmit}  method="post" class="w-full p-4 m-5 flex flex-col">
         <div>
           <input 
           className="w-full md:w-1/2 outline-none p-2 border-gray-500 
