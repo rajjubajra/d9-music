@@ -58,12 +58,12 @@ function News() {
 
 
   /** Populate readmore component */
-  // useEffect(()=>{
-  //   setTitle( arr.length > 0 && viewReadMore &&  arr[index].title);
-  //   setImage( arr.length > 0 && viewReadMore && arr[index].image);
-  //   setDate( arr.length > 0 && viewReadMore && arr[index].data);
-  //   setBody(arr.length > 0 && viewReadMore && arr[index].body);
-  // },[arr, index, viewReadMore, fetched])
+  useEffect(()=>{
+    setTitle( arr[index].title);
+    setImage( arr[index].image);
+    setDate( arr[index].data);
+    setBody( arr[index].body);
+  },[arr, index])
 
   console.log("data arr news", arr, "index", index, "view readmore", viewReadMore);
   console.log(title, date, image , body);
@@ -75,7 +75,7 @@ function News() {
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ", "+ dt.getFullYear()
   }
   
-  const readmore = () => { 
+  const readmore = (index) => { 
     setViewReadMore(true)
     setIndex(index)
     console.log("yes it is clicked");
