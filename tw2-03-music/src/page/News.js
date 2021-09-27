@@ -45,19 +45,18 @@ function News() {
 
       included.map(item =>{
         // const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
+        /** note: distructuring did not worked */
         imageId === item.id &&
         arr1.push({
           id: item.id, 
           mediaId: item.relationships.field_media_image.data.id,
-          // alt: alt,
-          // height: height,
-          // width: width,
-          // imageTitle: title
+          alt: item.relationships.field_media_image.data.meta.alt,
+          height: item.relationships.field_media_image.data.meta.height,
+          width: item.relationships.field_media_image.data.width,
+          imageTitle: item.relationships.field_media_image.data.title
         })
       });
-
       return arr1;
-      
     }
 
 
