@@ -54,10 +54,7 @@ function News() {
     })
   },[data, inc_data, fetched])
 
-  /** set readmore to true */
-  useEffect(()=>{
-    setViewReadMore( index !== '' && true);
-  },[index])
+  
 
 
   /** Populate readmore component */
@@ -77,7 +74,10 @@ function News() {
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ", "+ dt.getFullYear()
   }
   
-  const readmore = () => ( console.log("yes clicked"))
+  const readmore = () => { 
+    setViewReadMore(true)
+    setIndex(index)
+  }
 
   return (
     <div className="max-w-screen-xl m-auto p-10">
