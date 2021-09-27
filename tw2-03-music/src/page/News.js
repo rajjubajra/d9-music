@@ -31,22 +31,26 @@ function News() {
 
   console.log("news",data,"news length", fetched, "arr", arr);
 
+  /** CREATING NEW 'arr' 
+    * - Complied and Simlified Drupal Json data
+    * - Stored into  'arr' state 
+    */
   useEffect(()=>{
 
     const {data, included} = newsdata; 
-    console.log("newsdata: ",data, included);
+    //console.log("newsdata: ",data, included);
 
     const dataArr = [];
   
     function getImageDetail(imageId){
 
       const arr1 = [];
-    
+
+      /** get Image URL */
       function getImageUrl(mediaId){
         return included.filter(el => el.id === mediaId).map(item =>{
             return item.attributes.uri.url;
         })
-
       }
 
       included.map(item =>{
@@ -80,6 +84,8 @@ function News() {
     });
 
     console.log("ARRAY ONE", dataArr)
+    setArr(dataArr);
+    
 
   },[fetched, newsdata])
 
@@ -93,37 +99,37 @@ function News() {
     * - Complied and Simlified Drupal Json data
     * - Stored into  'arr' state 
     */
-  useEffect(()=>{
-    const newdata = [];
-    fetched && 
-    data.map(item => {
+  // useEffect(()=>{
+  //   const newdata = [];
+  //   fetched && 
+  //   data.map(item => {
       
-      const {attributes:{title, field_news_body, field_news_date}} = item;
+  //     const {attributes:{title, field_news_body, field_news_date}} = item;
 
-      inc_data.map(inc => {
+  //     inc_data.map(inc => {
         
-        const { attributes:{uri}, id } = inc;
-        /** stop repeat push */
-        const hasId = newdata.some((el) => el.incId === id);
+  //       const { attributes:{uri}, id } = inc;
+  //       /** stop repeat push */
+  //       const hasId = newdata.some((el) => el.incId === id);
 
-        if(inc.type === 'file--file' && !hasId){
-          newdata.push({
-            title: title, 
-            body: field_news_body.processed, 
-            date: field_news_date, 
-            incId: id,
-            image: uri.url});
-        }
-        return setArr(newdata);
-      })
-    })
-  },[data, inc_data, fetched])
+  //       if(inc.type === 'file--file' && !hasId){
+  //         newdata.push({
+  //           title: title, 
+  //           body: field_news_body.processed, 
+  //           date: field_news_date, 
+  //           incId: id,
+  //           image: uri.url});
+  //       }
+  //       return setArr(newdata);
+  //     })
+  //   })
+  // },[data, inc_data, fetched])
 
   
   /** POPULATING ReadMore Page Components */
   useEffect(()=>{
     setTitle( arr.length > 0 && arr[index].title);
-    setImage( arr.length > 0 && arr[index].image);
+    setImage( arr.length > 0 && arr[index].image[0].url[0]);
     setDate( arr.length > 0 && arr[index].date);
     setBody( arr.length > 0 && arr[index].body);
   },[arr, index])
@@ -161,7 +167,7 @@ function News() {
                 return <NewsList02 
                           title={item.title} 
                           date={dateFormate(item.date)}
-                          image={item.image} 
+                          image={item.image[0].url[0]} 
                           body={item.body}
                           article_id={item.incId} 
                           index={index}
