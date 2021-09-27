@@ -45,14 +45,14 @@ function Tour() {
     return dt.getDate()+" "+ monthArr[dt.getMonth()]+ ","+ dt.getFullYear()
   }
 
-  const dnagerHtml = (body) => (<div dangerouslySetInnerHTML={{__html: body}} />)
 
-  console.log(eventDate, title, venue, event, body);
+  //console.log(eventDate, title, venue, event, body);
 
 
   return (
     <div className="w-full max-w-screen-xl m-auto p-10 relative
     grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-2 font-extralight">
+    
     {/** TOUR LIST */}
       <div>
         <h2 className="text-3xl">Tour</h2>

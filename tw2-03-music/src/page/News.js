@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {actionNews} from '../redux/actions';
-//import ImageOnload from '../components/ImageOnload';
-import NewsList from './NewsList';
+import NewsList02 from './News/NewsList02';
 
 
 
@@ -15,7 +14,7 @@ function News() {
 
   const [arr, setArr] = useState([]);
 
-  //console.log("news",data,"news length", length);
+  console.log("news",data,"news length", length, "arr", arr);
 
   useEffect(()=>{
     dispatch(actionNews());
@@ -55,7 +54,11 @@ function News() {
   
   return (
     <div className="max-w-screen-xl m-auto p-10">
-      <NewsList listdata={length > 0 ? arr : []} />
+      <div className="w-full max-w-screen-xl m-auto p-10">
+        <h2 className="text-3xl">News</h2>
+
+        {/* <NewsList02 /> */}
+      </div>    
     </div>
   )
 }
