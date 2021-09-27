@@ -87,7 +87,7 @@ function News() {
         <h2 className="text-3xl">News</h2>
         {/** NEWS LIST */}
         {
-          arr.length > 0 && !readmore &&
+          arr.length > 0 &&
           arr.map((item, index) =>{
                 return <NewsList02 
                           title={item.title} 
@@ -109,7 +109,6 @@ function News() {
           />
         }
       </div>
-
     </div>
   )
 }
