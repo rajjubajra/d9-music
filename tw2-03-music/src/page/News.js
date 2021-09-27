@@ -43,16 +43,15 @@ function News() {
     const dataArr = [];
   
     function getImageDetail(imageId){
-
-      const arr1 = [];
-
+      
       /** get Image URL */
       function getImageUrl(mediaId){
         return included.filter(el => el.id === mediaId).map(item =>{
             return item.attributes.uri.url;
         })
       }
-
+      
+      const arr1 = [];
       included.map(item =>{
         // const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
         /** note: distructuring did not worked */
@@ -64,10 +63,9 @@ function News() {
           height: item.relationships.field_media_image.data.meta.height,
           width: item.relationships.field_media_image.data.meta.width,
           imageTitle: item.relationships.field_media_image.data.meta.title,
-          url: [getImageUrl(item.relationships.field_media_image.data.id)]
+          url: getImageUrl(item.relationships.field_media_image.data.id)
         })
       });
-
       return arr1;
     }
 
@@ -79,7 +77,7 @@ function News() {
       /** create new array */
       return dataArr.push({
         id: id, date:date, title:title, body: body, 
-        image:[getImageDetail(imageId)]
+        image:getImageDetail(imageId)
       });
     });
 
