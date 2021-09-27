@@ -39,25 +39,21 @@ function News() {
     const dataArr = [];
    
 
-    async function getImageDetail(imageId){
+    function getImageDetail(imageId){
 
-      const arr1 = [];
-      const arr2 = [];
-      console.log("Arr1", arr1);
-
-        await included.map(item =>{
+      included.map(item =>{
         const {relationships:{field_media_image:{data:{id, meta:{alt, height, width, title}}}}} = item;
-        imageId === item.id &&
-        arr1.push({
+        return imageId === item.id &&
+        {
           id: item.id, 
           mediaId: id,
           alt: alt,
           height: height,
           width: width,
           imageTitle: title
-        })
+        }
       });
-      return arr1;
+      
     }
 
 
@@ -68,7 +64,7 @@ function News() {
       /** create new array */
       return dataArr.push({
         id: id, date:date, title:title, body: body, 
-        image:[getImageDetail(imageId)]
+        image:getImageDetail(imageId)
       });
     });
 
