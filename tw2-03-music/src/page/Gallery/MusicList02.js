@@ -7,7 +7,7 @@ function MusicList02({item, index}) {
 
   return (
     <div className="w-full max-w-screen-xl m-auto p-10">
-      <div className="grid grid-cols-8 lg:grid-row-2 md:grid-rows-3 gap-4 ">
+      <div className="grid grid-cols-8 lg:grid-row-2 md:grid-rows-3 gap-4 font-extralight">
         <BlockOne />
         <BlockAll />
       </div>
