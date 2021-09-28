@@ -33,7 +33,7 @@ function MusicDetail({index, arr}) {
     <div>
       <div className="grid grid-cols-12 gap-8 max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
 
-      <div className="col-span-11 text-right cursor-pointer">
+      <div className="col-span-11 text-right cursor-pointer text-xs">
         <div onClick={() => copyShare()} title={shareTitle}>
             <div 
             onMouseEnter={() => setShareTitle("Copy Link")} 
