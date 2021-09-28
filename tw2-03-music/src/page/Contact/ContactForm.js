@@ -67,7 +67,7 @@ function Contact() {
       </h1>
       <div className="px-10">
         {contact_form_fetched && !submitMessage && contact_form.attributes.description}</div>
-      <div className="text-1xl">
+      <div className="text-1xl px-10">
         {submitMessage && contact_form_fetched && contact_form.attributes.settings.confirmation_message }
       </div>
       <div className="w-full flex justify-center align-middle">

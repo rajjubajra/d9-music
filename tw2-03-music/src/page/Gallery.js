@@ -1,8 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import ImageOnload from '../components/ImageOnload';
+import MusicList02 from './Gallery/MusicList02';
 import {actionGallery} from '../redux/actions';
-import Gear from './Gear';
+import BlockAll from './Gallery/BlockAll';
+import BlockOne from './Gallery/BlockOne';
+
 
 function Gallery() {
 
@@ -48,25 +50,16 @@ function Gallery() {
   
   
   return (
-    <div className="max-w-screen-xl m-auto p-10">
-    <div className="grid grid-cols-12 grid-flow-row gap-6 ">
+    <div className="w-full max-w-screen-xl m-auto p-10">
+      <div className="grid grid-cols-8 lg:grid-row-2 md:grid-rows-3 gap-4 ">
       {
-        arr.map(item=>{
-         // return(<Gear title={item.title} src={item.image} text={item.body} />
-            return <div key={item.id} className="md:col-span-4 col-span-12">
-                <div>
-                  <ImageOnload 
-                  cssClass="max-w-md"
-                  src={item.image} 
-                  alt="gallery" />
-                </div>
-                <h2 className="text-2xl font-light">{item.title}</h2>
-                <div className="text-sm tracking-wide" 
-                dangerouslySetInnerHTML={{__html: item.body}} />
-            </div> 
+        arr.map((item, index)=>{
+          return index === 0 
+          ? <BlockOne image={item.image} title={item.title} />   
+          : <BlockAll image={item.image} title={item.title} />
         })
       }
-    </div>
+      </div>
     </div>
   )
 
