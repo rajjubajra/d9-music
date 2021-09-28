@@ -11,7 +11,7 @@ function BlockOne({image, title}) {
             cssClass="md:h-96 md:w-3/4 object-cover
             h-40 w-full p-3 md:p-0 border border-gray-900"
             src={image} />
-            <div className="text-sm">{title}</div>
+            <div className="text-xs uppercase">{title}</div>
           </div>
     </div>
   )

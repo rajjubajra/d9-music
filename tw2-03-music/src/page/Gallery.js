@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import MusicList02 from './Gallery/MusicList02';
 import {actionGallery} from '../redux/actions';
 import BlockAll from './Gallery/BlockAll';
 import BlockOne from './Gallery/BlockOne';
@@ -51,7 +50,7 @@ function Gallery() {
   
   return (
     <div className="w-full max-w-screen-xl m-auto p-10">
-      <div className="grid grid-cols-8 lg:grid-row-2 md:grid-rows-3 gap-4 ">
+      <div className="grid grid-cols-8 lg:grid-row-2 md:grid-rows-3 gap-4 font-extralight">
       {
         arr.map((item, index)=>{
           return index === 0 

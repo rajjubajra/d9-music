@@ -9,7 +9,7 @@ function BlockAll({image, title}) {
             cssClass="border border-gray-900"
             src={image} />
           </div>
-          <div className="text-sm">{title}</div>
+          <div className="text-xm uppercase">{title}</div>
         </div>
   )
 }
