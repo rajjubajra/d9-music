@@ -13,7 +13,7 @@ function MusicDetail({index, arr}) {
 
 
   const [youtube, setYoutube] = useState();
-  const [shareTitle, setShareTitle] = useState('Copy Link');
+  const [shareTitle, setShareTitle] = useState('Share');
 
   useEffect(()=>{
   /** Drupal media do not accept embed url
@@ -34,7 +34,12 @@ function MusicDetail({index, arr}) {
       <div className="grid grid-cols-12 gap-8 max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
 
       <div className="col-span-11 text-right cursor-pointer">
-        <div onClick={() => copyShare()} title={shareTitle}>share</div>
+        <div onClick={() => copyShare()} title={shareTitle}>
+            <div 
+            onMouseEnter={() => setShareTitle("Copy Link")} 
+            onMouseLeave={() => setShareTitle("Share")}
+            >{shareTitle}</div>
+          </div>
       </div>
       <div className="text-center cursor-pointer">
         <Link to="/d9-music/themes/tw2-03/music"><BtnBack /></Link>
