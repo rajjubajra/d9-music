@@ -5,7 +5,7 @@ import {RiAmazonFill} from 'react-icons/ri';
 import {FaSpotify, FaGooglePlay, FaYoutube} from 'react-icons/fa';
 import {SiApplemusic} from 'react-icons/si';
 import BtnBack from '../../components/Buttons/BtnBack';
-//import {AiOutlinePlayCircle} from 'react-icons/ai';
+import {Link} from 'react-router-dom';
 
 
 
@@ -27,8 +27,12 @@ function MusicDetail({index, arr}) {
     <div>
       <div className="grid grid-cols-12 gap-8 max-w-screen-xl m-auto p-10 font-extralight tracking-wide">
 
-      <div className="col-span-11 text-right">share</div>
-      <div className="text-center"><BtnBack /></div>
+      <div className="col-span-11 text-right cursor-pointer">
+        <div onClick={() => {navigator.clipboard.writeText(window.location.href)}}>share</div>
+      </div>
+      <div className="text-center cursor-pointer">
+        <Link to="/d9-music/themes/tw2-03/music"><BtnBack /></Link>
+      </div>
       
       <div className="col-span-12 md:col-span-6">
         <div>
