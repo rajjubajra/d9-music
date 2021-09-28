@@ -28,7 +28,7 @@ function MusicList({listdata}) {
             <div className="text-sm tracking-wide" dangerouslySetInnerHTML={{__html: item.body.substring(0,400)}} />
           </div>
           <div className="absolute bottom-0">
-            <BtnReadMore link={`/d9-music/themes/tw2-01/music/${index}`} />
+            <BtnReadMore link={`/d9-music/themes/tw2-03/music/${index}`} />
           </div>
 
       </div>
