@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom';
 
 function MusicDetail({index, arr}) {
 
+  console.log("MUSIC DETAILS",index, arr);
 
   const [youtube, setYoutube] = useState();
   const [shareTitle, setShareTitle] = useState('Share');
@@ -36,8 +37,8 @@ function MusicDetail({index, arr}) {
       <div className="col-span-11 text-right cursor-pointer text-xs">
         <div onClick={() => copyShare()} title={shareTitle}>
             <div 
-            onMouseEnter={() => setShareTitle("Copy Link")} 
-            onMouseLeave={() => setShareTitle("Share")}
+            onMouseEnter={() => setShareTitle( shareTitle !== "Link copied" && "Copy Link")} 
+            onMouseLeave={() => setShareTitle( shareTitle !== "Link copied" && "Share")}
             >{shareTitle}</div>
           </div>
       </div>
