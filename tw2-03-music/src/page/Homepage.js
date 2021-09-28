@@ -55,7 +55,7 @@ function Homepage() {
                       <ImageOnload 
                         cssClass="h-40 md:h-screen px-10 md:py-40 w-full object-cover"
                         src={item.image} 
-                        alt={item.alt} />
+                        alt="Homepage" />
                     </div>
                   </div>
               </div>
