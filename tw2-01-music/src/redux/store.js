@@ -36,9 +36,7 @@ const reducer = combineReducers(
     reducerMediaRemoteVideo,
     reducerBasicContactForm,
     reducerContactInfo,
-    reducerSubscriptionForm
-
-    
+    reducerSubscriptionForm 
   }
 );
 
